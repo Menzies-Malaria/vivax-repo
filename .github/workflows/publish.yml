@@ -33,7 +33,7 @@ jobs:
 
       - name: Install R deps
         run: |
-          Rscript -e 'install.packages(c("readr", "dplyr", "stringr", "jsonlite", "crosstalk", "DT", "htmltools", "knitr"), repos = "https://cloud.r-project.org")'
+          Rscript -e 'install.packages(c("readr", "dplyr", "stringr", "jsonlite", "crosstalk", "DT", "htmltools", "knitr", "rmarkdown"), repos = "https://cloud.r-project.org")'
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2

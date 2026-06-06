@@ -33,7 +33,7 @@ The site reads data only from a live Google Sheet. Before building locally, set 
 
 ```bash
 # 1. Install R deps (one-time)
-Rscript -e 'install.packages(c("readr", "dplyr", "stringr", "jsonlite", "crosstalk", "DT", "htmltools", "knitr"), repos = "https://cloud.r-project.org")'
+Rscript -e 'install.packages(c("readr", "dplyr", "stringr", "jsonlite", "crosstalk", "DT", "htmltools", "knitr", "rmarkdown"), repos = "https://cloud.r-project.org")'
 
 # 2. Install Quarto (one-time): https://quarto.org/docs/get-started/
 
