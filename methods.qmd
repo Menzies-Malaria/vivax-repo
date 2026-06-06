@@ -39,7 +39,7 @@ The site is built with [Quarto](https://quarto.org). Data is stored in a single 
                                            │  publish-to-web CSV
                                            ▼
                                   ┌────────────────┐
-                                  │ Quarto render  │ ── reads CSVs at build time
+                                  │ Quarto render  │ ── reads live sheet CSV URLs
                                   │ (R)            │ ── writes static HTML
                                   └────────┬───────┘
                                            │

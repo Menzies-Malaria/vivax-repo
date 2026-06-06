@@ -19,15 +19,17 @@ The data lives in a Google Sheet. Updates flow in either directly (programme tea
 ├── contribute.qmd             # Embedded Google Form
 ├── data.qmd                   # Downloads + column dictionary
 ├── profiles/                  # Auto-generated per-country pages (one .qmd each)
-├── data/                      # CSV snapshots of the live sheet
 ├── scripts/
 │   ├── build_profiles.R       # Regenerates profiles/*.qmd from current data
-│   └── package-gated-site.sh    # Post-render: moves site behind login portal
+│   ├── fetch-sheet-data.sh    # Downloads sheet CSVs at build time (gitignored data/)
+│   └── package-gated-site.sh  # Post-render: moves site behind login portal
 ├── login_portal/                # Static login page (copied to _site/ root on deploy)
 └── .github/workflows/         # CI: fetches sheet → renders → publishes
 ```
 
 ## Quickstart (local)
+
+The site reads data only from a live Google Sheet. Before building locally, set the two publish-to-web CSV URLs (see [How the Google Sheet is wired up](#how-the-google-sheet-is-wired-up) below).
 
 ```bash
 # 1. Install R deps (one-time)
@@ -35,10 +37,15 @@ Rscript -e 'install.packages(c("readr", "dplyr", "stringr", "jsonlite", "crossta
 
 # 2. Install Quarto (one-time): https://quarto.org/docs/get-started/
 
-# 3. Build the country profile pages from the current data
+# 3. Export sheet URLs and fetch CSVs for download links on data.qmd
+export CHAR_DATA_URL="https://docs.google.com/spreadsheets/d/<ID>/pub?gid=<GID_1>&single=true&output=csv"
+export CASE_DATA_URL="https://docs.google.com/spreadsheets/d/<ID>/pub?gid=<GID_2>&single=true&output=csv"
+bash scripts/fetch-sheet-data.sh
+
+# 4. Build the country profile pages from the live sheet
 Rscript scripts/build_profiles.R
 
-# 4. Preview the site
+# 5. Preview the site
 quarto preview
 ```
 
@@ -58,28 +65,23 @@ Open <http://localhost:8080>, log in with the credentials you set, and confirm y
 
 ## How the Google Sheet is wired up
 
-The site reads two CSVs at build time. These can come from one of two sources:
+The site reads two tabs from a shared Google Sheet at build time via publish-to-web CSV URLs.
 
-### Option A — local CSVs (default; useful for development)
-
-The `data/` folder ships with CSV snapshots. With no environment variables set, the site reads those.
-
-### Option B — a live Google Sheet (recommended for production)
-
-1. Create a new Google Sheet. Add two tabs named exactly `Characteristic Data` and `Case Mgmt Data Points`. Copy the headers from `data/characteristic_data.csv` and `data/case_management.csv` into those tabs respectively, then paste the rows.
-2. **File → Share → Publish to web.** Pick each tab in turn, choose **CSV** as the format, and tick **Automatically republish when changes are made**. Copy the resulting URL.
-3. Set two environment variables (locally in your terminal, or as GitHub repo secrets) before building:
+1. Create a Google Sheet with two tabs named exactly `Characteristic Data` and `Case Mgmt Data Points`.
+2. **File → Share → Publish to web.** Pick each tab in turn, choose **CSV** as the format, and tick **Automatically republish when changes are made**. Copy the resulting URL for each tab.
+3. Set two environment variables before building:
 
    ```bash
    export CHAR_DATA_URL="https://docs.google.com/spreadsheets/d/<ID>/pub?gid=<GID_1>&single=true&output=csv"
    export CASE_DATA_URL="https://docs.google.com/spreadsheets/d/<ID>/pub?gid=<GID_2>&single=true&output=csv"
+   bash scripts/fetch-sheet-data.sh
    Rscript scripts/build_profiles.R
    quarto render
    ```
 
    On GitHub: **Settings → Secrets and variables → Actions → New repository secret**. Name them `CHAR_DATA_URL` and `CASE_DATA_URL`. The workflow in `.github/workflows/publish.yml` picks them up automatically.
 
-After Option B is in place, edits to the Google Sheet land on the public site the next time the workflow runs (weekly Monday at 06:00 UTC, or whenever you manually trigger it under **Actions → Publish → Run workflow**).
+Edits to the Google Sheet land on the live site the next time the workflow runs (weekly Monday at 06:00 UTC, or whenever you manually trigger it under **Actions → Publish → Run workflow**).
 
 ## How the Google Form is wired up
 

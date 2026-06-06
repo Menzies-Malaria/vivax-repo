@@ -18,12 +18,22 @@ root <- if (length(file_arg)) {
   normalizePath(getwd(), mustWork = TRUE)
 }
 
-CHAR_URL <- Sys.getenv("CHAR_DATA_URL", "data/characteristic_data.csv")
-CASE_URL <- Sys.getenv("CASE_DATA_URL", "data/case_management.csv")
+require_sheet_url <- function(name) {
+  url <- Sys.getenv(name, unset = "")
+  if (!nzchar(url)) {
+    stop(name, " is not set. Export publish-to-web CSV URLs from the Google Sheet (see README).", call. = FALSE)
+  }
+  if (!grepl("^https?://", url)) {
+    stop(name, " must be an https URL to the Google Sheet CSV export.", call. = FALSE)
+  }
+  url
+}
+
+CHAR_URL <- require_sheet_url("CHAR_DATA_URL")
+CASE_URL <- require_sheet_url("CASE_DATA_URL")
 
 load_sheet <- function(path) {
-  full <- if (grepl("^https?://", path)) path else file.path(root, path)
-  df <- read_csv(full, show_col_types = FALSE, na = character()) |>
+  df <- read_csv(path, show_col_types = FALSE, na = character()) |>
     mutate(across(everything(), as.character))
   df[is.na(df)] <- ""
   names(df) <- str_trim(names(df))

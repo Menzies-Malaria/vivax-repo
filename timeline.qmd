@@ -9,17 +9,13 @@ page-layout: full
 #| include: false
 
 suppressPackageStartupMessages({
-  library(readr)
   library(dplyr)
   library(jsonlite)
   library(stringr)
 })
 
-CASE_URL <- Sys.getenv("CASE_DATA_URL", "data/case_management.csv")
-case <- read_csv(CASE_URL, show_col_types = FALSE, na = character()) |>
-  mutate(across(everything(), as.character))
-case[is.na(case)] <- ""
-names(case) <- trimws(names(case))
+source("R/data_helpers.R")
+case <- load_case_data()
 
 case <- case |>
   filter(!str_detect(Country, " - "))

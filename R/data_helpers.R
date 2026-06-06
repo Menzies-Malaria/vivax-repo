@@ -1,9 +1,20 @@
 # Shared data-loading helpers for Quarto pages
 
-load_sheet <- function(path) {
-  if (!grepl("^https?://", path) && !file.exists(path)) {
-    stop("Data file not found at ", path)
+require_sheet_url <- function(name) {
+  url <- Sys.getenv(name, unset = "")
+  if (!nzchar(url)) {
+    stop(
+      name, " is not set. Export publish-to-web CSV URLs from the Google Sheet (see README).",
+      call. = FALSE
+    )
   }
+  if (!grepl("^https?://", url)) {
+    stop(name, " must be an https URL to the Google Sheet CSV export.", call. = FALSE)
+  }
+  url
+}
+
+load_sheet <- function(path) {
   df <- readr::read_csv(path, show_col_types = FALSE, na = character()) |>
     dplyr::mutate(dplyr::across(dplyr::everything(), as.character))
   df[is.na(df)] <- ""
@@ -11,11 +22,11 @@ load_sheet <- function(path) {
   df
 }
 
-load_characteristic_data <- function(path = Sys.getenv("CHAR_DATA_URL", "data/characteristic_data.csv")) {
+load_characteristic_data <- function(path = require_sheet_url("CHAR_DATA_URL")) {
   load_sheet(path)
 }
 
-load_case_data <- function(path = Sys.getenv("CASE_DATA_URL", "data/case_management.csv")) {
+load_case_data <- function(path = require_sheet_url("CASE_DATA_URL")) {
   load_sheet(path)
 }
 

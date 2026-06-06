@@ -38,17 +38,15 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Fetch live data from Google Sheets
+      - name: Verify sheet secrets
         run: |
-          mkdir -p data
-          if [ -n "$CHAR_DATA_URL" ]; then
-            curl -sSL "$CHAR_DATA_URL" -o data/characteristic_data.csv
+          if [ -z "$CHAR_DATA_URL" ] || [ -z "$CASE_DATA_URL" ]; then
+            echo "Error: CHAR_DATA_URL and CASE_DATA_URL must be set as repository secrets." >&2
+            exit 1
           fi
-          if [ -n "$CASE_DATA_URL" ]; then
-            curl -sSL "$CASE_DATA_URL" -o data/case_management.csv
-          fi
-          echo "data/ contents after fetch:"
-          ls -la data/
+
+      - name: Fetch live data from Google Sheets
+        run: bash scripts/fetch-sheet-data.sh
 
       - name: Generate country profile pages
         run: Rscript scripts/build_profiles.R
