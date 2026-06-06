@@ -8,8 +8,8 @@ project:
 website:
   title: "P. vivax Policy Repository"
   description: "A live, country-level repository of Plasmodium vivax case management policies and their implementation status."
-  site-url: "https://example.org/vivax-policy-repository"
-  repo-url: "https://github.com/your-org/vivax-policy-repository"
+  site-url: "https://menzies-malaria.github.io/vivax-repo/"
+  repo-url: "https://github.com/Menzies-Malaria/vivax-repo"
   page-navigation: true
   back-to-top-navigation: true
   reader-mode: false
@@ -34,7 +34,7 @@ website:
         href: contribute.qmd
     right:
       - icon: github
-        href: "https://github.com/your-org/vivax-policy-repository"
+        href: "https://github.com/Menzies-Malaria/vivax-repo"
         aria-label: GitHub
       - icon: download
         href: data.qmd
@@ -45,7 +45,7 @@ website:
     left: |
       *P. vivax* Policy Repository · Updated continuously from a live Google Sheet.
     center: |
-      Built with [Quarto](https://quarto.org). Code on [GitHub](https://github.com/your-org/vivax-policy-repository).
+      Built with [Quarto](https://quarto.org). Code on [GitHub](https://github.com/Menzies-Malaria/vivax-repo).
     right: |
       © 2025 · Licensed CC-BY-4.0
 
@@ -59,6 +59,12 @@ format:
     include-in-header:
       - text: |
           <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      - text: |
+          <script>
+          window.addEventListener('load', () => {
+            history.replaceState(null, null, "/vivax-repo/");
+          });
+          </script>
     include-after-body:
       - text: |
           <script src="assets/vivax-charts.js"></script>

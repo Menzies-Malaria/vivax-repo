@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+body {
+  background-color: #faf8f4;
+  color: #1a1f1f;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(26, 31, 31, 0.05), 0 8px 24px rgba(26, 31, 31, 0.06);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #0d4f4f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  text-align: center;
+}
+
+.subtitle {
+  color: #4a5252;
+  font-size: 0.95rem;
+  margin: 0 0 1.5rem;
+}
+
+#login-form {
+  width: 100%;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #e4ddd0;
+  border-radius: 8px;
+  background-color: #faf8f4;
+  color: #1a1f1f;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #4a5252;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0d4f4f;
+  box-shadow: 0 0 0 3px rgba(13, 79, 79, 0.12);
+}
+
+button {
+  width: 100%;
+  padding: 0.65rem;
+  margin-top: 0.75rem;
+  background-color: #0d4f4f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #0a3d3d;
+}
+
+#alert {
+  color: #c0521b;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #0d4f4f;
+}
+
+footer a:hover {
+  color: #c0521b;
+}

@@ -21,7 +21,9 @@ The data lives in a Google Sheet. Updates flow in either directly (programme tea
 ├── profiles/                  # Auto-generated per-country pages (one .qmd each)
 ├── data/                      # CSV snapshots of the live sheet
 ├── scripts/
-│   └── build_profiles.R       # Regenerates profiles/*.qmd from current data
+│   ├── build_profiles.R       # Regenerates profiles/*.qmd from current data
+│   └── package-gated-site.sh    # Post-render: moves site behind login portal
+├── login_portal/                # Static login page (copied to _site/ root on deploy)
 └── .github/workflows/         # CI: fetches sheet → renders → publishes
 ```
 
@@ -40,7 +42,19 @@ Rscript scripts/build_profiles.R
 quarto preview
 ```
 
-The site will open at <http://localhost:7676>.
+The site will open at <http://localhost:7676>. Local preview is **ungated** for authoring convenience.
+
+### Previewing the gated site locally
+
+To test the login portal layout locally:
+
+```bash
+quarto render
+RESTRICTED_PORTAL_USER=youruser RESTRICTED_PORTAL_PASS=yourpass bash scripts/package-gated-site.sh
+python3 -m http.server 8080 --directory _site
+```
+
+Open <http://localhost:8080>, log in with the credentials you set, and confirm you reach the site. The address bar will show `/vivax-repo/` once inside (URL masking).
 
 ## How the Google Sheet is wired up
 
@@ -90,14 +104,33 @@ NMCP focal point ──► Google Form ──► Sheet (Submissions tab)
                                   Live website
 ```
 
+## Partner login portal
+
+The deployed site is gated behind a static login portal. Visitors land on a login page; correct credentials redirect them to the full site via obfuscated URL paths derived from SHA1 hashes of the username and password.
+
+This is **security through obscurity** — suitable for partner gating, not for critically sensitive information. Anyone who knows or guesses the hashed URL can access pages directly. Use a **private repository** so source files are not publicly accessible.
+
+### Required GitHub secrets
+
+In **Settings → Secrets and variables → Actions**, add:
+
+| Secret | Purpose |
+|--------|---------|
+| `RESTRICTED_PORTAL_USER` | Partner username |
+| `RESTRICTED_PORTAL_PASS` | Partner password |
+| `CHAR_DATA_URL` | Google Sheet CSV URL (Characteristic Data tab) |
+| `CASE_DATA_URL` | Google Sheet CSV URL (Case Mgmt Data Points tab) |
+
+CI computes SHA1 hashes from the portal credentials and packages the rendered site under `a{userHash}/a{passHash}/`. Credentials are never stored in the repository.
+
 ## Deploying to GitHub Pages
 
 1. Push this repo to GitHub.
 2. **Settings → Pages → Source:** "GitHub Actions".
-3. Add `CHAR_DATA_URL` and `CASE_DATA_URL` repo secrets (see above).
+3. Add `CHAR_DATA_URL`, `CASE_DATA_URL`, `RESTRICTED_PORTAL_USER`, and `RESTRICTED_PORTAL_PASS` repo secrets (see above).
 4. Push to `main` or trigger **Actions → Publish**.
 
-The site will be served at `https://<your-org>.github.io/<repo-name>/`.
+The site will be served at `https://menzies-malaria.github.io/vivax-repo/`. The root URL shows the login portal; authenticated users reach the full repository content after logging in.
 
 ## Updating the data dictionary
 
@@ -106,7 +139,7 @@ The site will be served at `https://<your-org>.github.io/<repo-name>/`.
 ## Citing
 
 ```
-P. vivax Policy Repository. Updated [Month YYYY]. Available at: https://example.org/vivax-policy-repository.
+P. vivax Policy Repository. Updated [Month YYYY]. Available at: https://menzies-malaria.github.io/vivax-repo/.
 ```
 
 ## Licence

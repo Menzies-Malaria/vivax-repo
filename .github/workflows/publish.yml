@@ -20,6 +20,8 @@ jobs:
       # Set these as repo secrets, or paste your Google Sheet "publish to web" CSV URLs here.
       CHAR_DATA_URL: ${{ secrets.CHAR_DATA_URL }}
       CASE_DATA_URL: ${{ secrets.CASE_DATA_URL }}
+      RESTRICTED_PORTAL_USER: ${{ secrets.RESTRICTED_PORTAL_USER }}
+      RESTRICTED_PORTAL_PASS: ${{ secrets.RESTRICTED_PORTAL_PASS }}
 
     steps:
       - uses: actions/checkout@v4
@@ -53,6 +55,16 @@ jobs:
 
       - name: Render Quarto site
         run: quarto render
+
+      - name: Verify portal secrets
+        run: |
+          if [ -z "$RESTRICTED_PORTAL_USER" ] || [ -z "$RESTRICTED_PORTAL_PASS" ]; then
+            echo "Error: RESTRICTED_PORTAL_USER and RESTRICTED_PORTAL_PASS must be set as repository secrets." >&2
+            exit 1
+          fi
+
+      - name: Package gated site
+        run: bash scripts/package-gated-site.sh
 
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
