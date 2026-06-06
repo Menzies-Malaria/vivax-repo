@@ -1,0 +1,158 @@
+---
+title: "Explore the data"
+subtitle: "Filter, search, and download country-level *P. vivax* policy and implementation data."
+page-layout: full
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+suppressPackageStartupMessages({
+  library(readr)
+  library(dplyr)
+  library(jsonlite)
+  library(crosstalk)
+  library(DT)
+  library(htmltools)
+})
+
+source("R/explore_helpers.R")
+
+char <- load_characteristic_data()
+
+char <- char |>
+  mutate(
+    first_line = collapse_first_line(`Pv 1st line treatment`),
+    `2023 Case Numbers` = suppressWarnings(as.numeric(`2023 Case Numbers`))
+  )
+
+table_cols <- c(
+  "Country", "Region", "WHO Region",
+  "Reporting vivax cases (<5 years)",
+  "2023 Case Numbers",
+  "Proportion of P. vivax cases (2023) (%)",
+  "Pv 1st line treatment",
+  "Pv 2nd line treatment",
+  "Guidelines G6PD testing  (Y/N)",
+  "Implementation: G6PD testing  (Y/N)",
+  "Type of G6PD testing",
+  "Program Phase",
+  "Economic status"
+)
+
+explore_payload <- explore_chart_payload(char)
+
+shared <- SharedData$new(char, key = ~Country, group = "explore")
+char_table <- char |> select(any_of(table_cols))
+shared_table <- SharedData$new(char_table, key = ~Country, group = "explore")
+```
+
+```{r}
+#| label: explore-data
+#| echo: false
+#| results: asis
+
+cat(as.character(htmltools::tags$script(
+  id = "explore-data",
+  type = "application/json",
+  HTML(jsonlite::toJSON(explore_payload, auto_unbox = TRUE, dataframe = "rows", null = "null"))
+)))
+```
+
+## Filter the data
+
+Use any control below — selections apply to **every chart and the table** on this page.
+
+```{r}
+#| label: filters
+#| echo: false
+
+tagList(
+  tags$div(
+    class = "explore-filters",
+    bscols(
+      filter_select("region", "Region", shared, ~Region, multiple = TRUE),
+      filter_select("who_region", "WHO region", shared, ~`WHO Region`, multiple = TRUE),
+      filter_select(
+        "reporting",
+        "Reporting P. vivax (5 yrs)",
+        shared,
+        ~`Reporting vivax cases (<5 years)`,
+        multiple = TRUE
+      ),
+      filter_select("program_phase", "Programme phase", shared, ~`Program Phase`, multiple = TRUE),
+      filter_select(
+        "g6pd_guidelines",
+        "G6PD testing in guidelines",
+        shared,
+        ~`Guidelines G6PD testing  (Y/N)`,
+        multiple = TRUE
+      ),
+      filter_select(
+        "g6pd_implementation",
+        "G6PD testing implemented",
+        shared,
+        ~`Implementation: G6PD testing  (Y/N)`,
+        multiple = TRUE
+      ),
+      filter_select(
+        "first_line",
+        "First-line treatment",
+        shared,
+        ~`Pv 1st line treatment`,
+        multiple = TRUE
+      ),
+      widths = c(4, 4, 4, 4, 4, 4, 4),
+      device = "sm"
+    )
+  )
+)
+```
+
+## At a glance
+
+::: {.explore-chart}
+<div id="chart-cases" class="explore-chart__plot vivax-chart__plot--cases"></div>
+<p class="explore-chart__caption">Top 15 countries by reported *P. vivax* case numbers in 2023 (updates with filters above).</p>
+:::
+
+## G6PD testing: policy vs. implementation
+
+::: {.explore-chart}
+<div id="chart-g6pd" class="explore-chart__plot vivax-chart__plot--g6pd"></div>
+:::
+
+The gap between **policy** and **implementation** is one of the most actionable findings in the repository — and the gap is widest in countries that have only recently adopted G6PD testing into their guidelines.
+
+## First-line *P. vivax* treatment by region
+
+::: {.explore-chart}
+<div id="chart-heatmap" class="explore-chart__plot vivax-chart__plot--heatmap"></div>
+:::
+
+## Full data table
+
+The table below uses the same filters as the charts. To download the complete dataset (all columns), see [Data & downloads](data.qmd).
+
+```{r}
+#| label: table
+
+datatable(
+  shared_table,
+  filter = "none",
+  selection = "none",
+  class = "display compact stripe",
+  rownames = FALSE,
+  options = list(
+    dom = "frtip",
+    pageLength = 25,
+    lengthMenu = list(c(25, 50, 100, -1), c("25", "50", "100", "All")),
+    scrollX = TRUE
+  )
+)
+```
+
+::: {.callout-edit}
+Spot an inaccuracy or have a more recent guideline? Use the [contribute form](contribute.qmd) — submissions sync directly to the Google Sheet that this site reads from.
+:::

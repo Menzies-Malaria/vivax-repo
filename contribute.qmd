@@ -1,0 +1,64 @@
+---
+title: "Contribute an update"
+subtitle: "For National Malaria Control Programme staff, partners, and researchers."
+page-layout: article
+---
+
+::: {.lede}
+This repository is only as accurate as the data flowing into it. If you represent a National Malaria Control Programme (NMCP), or you've spotted a guideline that needs updating, please use the form below. Your submission is written directly to the Google Sheet that this site reads from.
+:::
+
+## How submissions flow
+
+1. You fill out the form (it takes 3–8 minutes depending on how much you choose to share).
+2. The response lands as a new row in the **`Submissions`** tab of the shared Google Sheet.
+3. The repository team reviews the submission, reconciles it against the existing record for that country, and (if appropriate) updates the corresponding row in the main data sheet.
+4. On the next site rebuild, your update appears here. Rebuilds happen automatically on a weekly schedule, and manually whenever a significant change comes in.
+
+::: {.callout-edit}
+**Sensitivity.** Per the project design, NMCPs may flag data points as visible only to other malaria programmes, partners, and researchers — not to the public site. The form includes a sensitivity question for each major section. Anything flagged "restricted" is held in a separate tab and does not render on the public site.
+:::
+
+## Submit an update
+
+```{=html}
+<div class="form-embed">
+  <!--
+    Replace FORM_ID below with your real Google Form ID. To get it:
+    1. Open the form in Google Forms → "Send" → embed icon (< >).
+    2. Copy the src URL from the iframe.
+    3. Paste it into the src attribute below.
+    For the form to write to your Sheet, in the Form's "Responses" tab,
+    click the green Sheets icon and link it to the Google Sheet behind this site.
+  -->
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSdC39i1fOXO4OPjhxVZnJ9gRVxkY0u-kOtBK3KE2jNpTd5Zng/viewform?embedded=true"
+    width="100%" height="1200"
+    frameborder="0" marginheight="0" marginwidth="0"
+    title="P. vivax Policy Repository — submit an update">
+    Loading form…
+  </iframe>
+</div>
+```
+
+## Prefer to email?
+
+If a longer conversation, an attached PDF of a new national guideline, or restricted information is involved, please email the repository team at **vivax-repository@example.org**. Use the subject line "Policy update — [Country name]".
+
+## What we ask for
+
+The form mirrors the structure of a country profile. The minimum useful submission is just three fields:
+
+- Country
+- The thing that has changed (a free-text box)
+- Your name and role (so we can follow up)
+
+The fuller form lets you supply any of: first-line treatment, second-line treatment, G6PD testing policy, G6PD implementation status, primaquine regimens by G6PD status, follow-up requirements, the latest guideline PDF or URL, the year of the guideline, and contact information for the programme.
+
+## Versioning
+
+Every change to a country's record is recorded with a date, the source (form, email, published guideline), and a brief note. The version history for any country is visible at the bottom of its [country profile](countries.qmd).
+
+::: {.callout-edit}
+**Setup note (for site administrators).** The iframe above requires two things to work: a Google Form with the fields above, and a link from the form's "Responses" tab to the same Google Sheet that the rest of the site reads from. See `methods.qmd`, the project README, and [`docs/google-form-template.md`](docs/google-form-template.md) for full setup instructions and copy-paste question wording.
+:::

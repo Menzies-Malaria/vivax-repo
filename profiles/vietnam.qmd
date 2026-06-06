@@ -1,0 +1,85 @@
+---
+title: "Vietnam"
+subtitle: "Western Pacific · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Western Pacific |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Pre-elimination |
+| **Economic status** | LMIC |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | Quinine |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | Yes |
+| **Type of G6PD testing** | Quantitative |
+| **Community malaria care** | Partial - referral |
+| **Community vivax care** | Partial - referral |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | MMPs, soldiers, travelers (from Africa), forest goers |
+| **Programme contact** | Dr. Ngô Đức Thắng, NMCP |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 195 |
+| **2022** | 163 |
+| **2021** | 233 |
+| **2020** | 573 |
+| **2019** | 1,541 |
+| **2018** | 1,751 |
+| ***P. vivax* share of malaria cases (2023)** | 52.3% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Vietnam","series":[{"year":"2018","value":1751},{"year":"2019","value":1541},{"year":"2020","value":573},{"year":"2021","value":233},{"year":"2022","value":163},{"year":"2023","value":195}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2023 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Recommended but test type not specified |
+| **G6PD implementation** | G6PD testing using STANDARD G6PD is rolled out in health facilities of eight high-risk provinces. GF funded. |
+| **Year of G6PD implementation** | 2022 |
+| **Health system level (G6PD)** | Up to health centre level |
+| **Policy on PQ (overall)** | Dependent on G6PD test result |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | Implemented |
+| **Year of treatment implementation** | 2023 |
+| **Type of treatment follow-up** | Side effect monitoring at the health centre |
+| **Implementation of follow-up** | Partial implementation |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | Maybe, unknown |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.5 mg/kg over 7 days or TQ (300mg) | Not specified |
+| **G6PD Intermediate Females** | PQ 0.25 mg/kg over 14 days | Close monitoring, proper counselling on AE, and reporting to the health facility |
+| **If no testing available** | PQ (dosage not specified) | Close monitoring |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

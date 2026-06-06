@@ -1,0 +1,55 @@
+---
+title: "Papua New Guinea"
+subtitle: "Western Pacific · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Western Pacific |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Burden reduction |
+| **Economic status** | LMIC |
+| **First-line treatment** | AL |
+| **Second-line treatment** | DHA-PPQ |
+| **Rationale for ACT use** | Because CQ resistance and AQ resistance, but less resistance for Pv. Maybe for easier case management to use the same first-line for both Pf and Pv? |
+| **G6PD testing in guidelines** | No |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | Yes |
+| **Community vivax care** | Partial - referral? |
+| **Follow-up of radical cure** | No |
+| **Cross-border transmission** | Yes, mostly into Papua Indonesia |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Mobile populations traveling from low endemic (or predominantly vivax malaria endemic) and epidemic prone areas in the highlands to (and from) highly endemic lowland areas, especially urban settlements in Madang and Morobe; People of all age groups living in epidemic-prone highland provinces during epidemic years; Pregnant women and young children (particularly those who are malnourished) living in highly endemic lowland areas. |
+| **Programme contact** | Dr Jacob Kisomb |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 209,647 |
+| **2022** | 211,111 |
+| **2021** | 172,964 |
+| **2020** | 186,981 |
+| **2019** | 163,237 |
+| **2018** | 138,006 |
+| ***P. vivax* share of malaria cases (2023)** | 25% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Papua New Guinea","series":[{"year":"2018","value":138006},{"year":"2019","value":163237},{"year":"2020","value":186981},{"year":"2021","value":172964},{"year":"2022","value":211111},{"year":"2023","value":209647}]}</script>
+</div>
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

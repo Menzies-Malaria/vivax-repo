@@ -1,0 +1,90 @@
+---
+title: "Indonesia"
+subtitle: "South-East Asia · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | South-East Asia |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Burden reduction |
+| **Economic status** | LMIC |
+| **First-line treatment** | DHA-PPQ |
+| **Second-line treatment** | Other ACT (Pyramax, AL) |
+| **Rationale for ACT use** | Resistance to CQ |
+| **G6PD testing in guidelines** | No |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | Yes |
+| **Community vivax care** | Yes |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Miners, plantation workers, indigenous communities |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 160,325 |
+| **2022** | 101,300 |
+| **2021** | 114,301 |
+| **2020** | 83,743 |
+| **2019** | 86,742 |
+| **2018** | 84,862 |
+| ***P. vivax* share of malaria cases (2023)** | 38.3% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Indonesia","series":[{"year":"2018","value":84862},{"year":"2019","value":86742},{"year":"2020","value":83743},{"year":"2021","value":114301},{"year":"2022","value":101300},{"year":"2023","value":160325}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2020 |
+| **Schizontocidal drug** | DHA-PPQ |
+| **G6PD testing policy** | Not explicitly mentioned (required for relapse cases) |
+| **G6PD implementation** | Rolled in the context of PAVE/SCOPE Implementation Study, planned implementaion 3 high burden provinces where high-dose 7-day PQ (1mg/kg total dose) is being rolled out |
+| **Year of G6PD implementation** | Planned for 2027 |
+| **Health system level (G6PD)** | Planned for health centres |
+| **Policy on PQ (overall)** | Dependent on G6PD status |
+| **Additional safety recommendations** | No information |
+| **Treatment implementation** | Implemented without G6PD testing |
+| **Year of treatment implementation** | 2014 |
+| **Type of treatment follow-up** | In patient - blood films everyday to confirm drug efficacy/parasite clearance; for primary care, patients are asked to return to the health facility on day 3, 7, 14, 21, 28 and provided with counselling while their urine color is monitored |
+| **Implementation of follow-up** | Partial implementation |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | Yes, 2026 |
+| **Treatments under consideration** | AL, Pyramax, Tafenoquine |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | https://apmen.org/sites/default/files/all_resources/Indonesia_Naional%20Plan%20for%20Malaria%20Elimination_2020-2024.pdf |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.25 mg/kg over 14 days | No information |
+| **G6PD Normal (Relapse)** | PQ 0.5 mg/kg over 14 days | No information |
+| **G6PD Deficient** | No PQ | No information |
+| **If no testing available** | Not specified |  |
+
+## Notes
+
+In the three high-burden areas, G6PD testing will be rolled out with high dose 7-day PQ. G6PD normal will receive the "optimal" dose, intermediates will received 0.5 mg/kg/day over 14 days, deficient provided 8 week. Follow up of patients will remain the same
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

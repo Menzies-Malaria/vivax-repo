@@ -1,0 +1,69 @@
+---
+title: "Zimbabwe"
+subtitle: "African · Africa"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Africa |
+| **WHO Region** | African |
+| **Reporting *P. vivax* cases (last 5 yrs)** | No |
+| **Programme phase** | _Not reported_ |
+| **Economic status** | _Not reported_ |
+| **First-line treatment** | _Not reported_ |
+| **Second-line treatment** | _Not reported_ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | _Not reported_ |
+| **G6PD testing implemented** | _Not reported_ |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | _Not reported_ |
+| **Community vivax care** | _Not reported_ |
+| **Follow-up of radical cure** | _Not reported_ |
+| **Cross-border transmission** | _Not reported_ |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 0 |
+| **2022** | _Not reported_ |
+| **2021** | _Not reported_ |
+| **2020** | _Not reported_ |
+| **2019** | _Not reported_ |
+| **2018** | _Not reported_ |
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | _Not reported_ |
+| **Schizontocidal drug** | _Not reported_ |
+| **G6PD testing policy** | _Not reported_ |
+| **G6PD implementation** | _Not reported_ |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | _Not reported_ |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

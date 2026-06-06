@@ -1,0 +1,81 @@
+---
+title: "China"
+subtitle: "Western Pacific · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Western Pacific |
+| **Reporting *P. vivax* cases (last 5 yrs)** | No |
+| **Programme phase** | Eliminated - Reintroduction prevention |
+| **Economic status** | LMIC |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | DHA-PPQ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | Yes |
+| **Type of G6PD testing** | SNP or ELISA |
+| **Community malaria care** | Yes |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Mobile migrant populations |
+| **Programme contact** | Dr Li Mei, China CDC |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 0 |
+| **2022** | _Not reported_ |
+| **2021** | _Not reported_ |
+| **2020** | _Not reported_ |
+| **2019** | _Not reported_ |
+| **2018** | _Not reported_ |
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | _Not reported_ |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Required |
+| **G6PD implementation** | SNP or ELISA implemented in hospitals |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | Hospitals |
+| **Policy on PQ (overall)** | PQ 22.5mg/day over 8 days (180mg total dose) |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | Implemented |
+| **Year of treatment implementation** | 2004 |
+| **Type of treatment follow-up** | DOT in hospital, then after discharge follow up by community or village doctors organized by public health unit staff |
+| **Implementation of follow-up** | Implemented |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | No |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 22.5mg/day over 8 days (180mg total dose) | Not specified |
+| **G6PD Deficient** | PQ 22.5mg/day over 8 days (180mg total dose) | Take under the close supervision of medical personnel |
+| **If no testing is available** | PQ 22.5mg/day over 8 days (180mg total dose) | Take under the close supervision of medical personnel |
+
+## Notes
+
+Exclusion of Pv (or Po) patients who have a personal or family of hemolysis,  pregnant women, children under 1 years old
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

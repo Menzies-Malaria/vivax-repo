@@ -1,0 +1,53 @@
+---
+title: "Data & downloads"
+subtitle: "The full dataset, in machine-readable form."
+---
+
+## Live Google Sheet
+
+The canonical source of truth is the shared Google Sheet:
+
+> [Open the live Google Sheet →](https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_SHEET_ID/edit?usp=sharing)
+
+This site is rebuilt regularly from this sheet. If you intend to use the data for research, please cite the sheet by its date of access (see [Methods](methods.qmd) for the suggested citation).
+
+## CSV downloads
+
+Snapshots of the two main tabs, fetched at the time this page was last built:
+
+- [`characteristic_data.csv`](data/characteristic_data.csv) — country-level burden, diagnostic, treatment, and implementation indicators.
+- [`case_management.csv`](data/case_management.csv) — detailed case management policy data, with sub-rows for primaquine regimen by G6PD status.
+
+```{r}
+#| include: false
+
+source("R/data_helpers.R")
+char <- load_characteristic_data()
+```
+
+The characteristic data file contains **`r ncol(char)`** columns across **`r nrow(char)`** countries.
+
+## Column dictionary
+
+```{r}
+#| output: asis
+
+knitr::kable(
+  column_dictionary_table(char),
+  col.names = c("Column", "Description"),
+  format = "pipe"
+)
+```
+
+## API
+
+There is no separate API; the Google Sheet itself is the API. You can pull either tab as CSV using the standard Sheets endpoint:
+
+```bash
+curl "https://docs.google.com/spreadsheets/d/<SHEET_ID>/gviz/tq?tqx=out:csv&sheet=Characteristic+Data" \
+  > characteristic_data.csv
+```
+
+## Licence
+
+The data is published under the **Creative Commons Attribution 4.0 International (CC-BY-4.0)** licence. You are free to share and adapt the material, including commercially, as long as you give appropriate credit (see citation in [the homepage footer](index.qmd)).

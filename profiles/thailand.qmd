@@ -1,0 +1,86 @@
+---
+title: "Thailand"
+subtitle: "South-East Asia · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | South-East Asia |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Pre-elimination |
+| **Economic status** | LMIC |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | DHA-PPQ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | Yes |
+| **Type of G6PD testing** | Quantitative |
+| **Community malaria care** | Yes |
+| **Community vivax care** | Yes |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes, especially from Myanmar |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Forest workers, rubber plantations/farmers, MMPs, military personnel |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 8,378 |
+| **2022** | 6,012 |
+| **2021** | 2,313 |
+| **2020** | 2,892 |
+| **2019** | 3,443 |
+| **2018** | 3,575 |
+| ***P. vivax* share of malaria cases (2023)** | 91.4% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Thailand","series":[{"year":"2018","value":3575},{"year":"2019","value":3443},{"year":"2020","value":2892},{"year":"2021","value":2313},{"year":"2022","value":6012},{"year":"2023","value":8378}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2025 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Required, Quantitative |
+| **G6PD implementation** | Use of FST at some health facilities. Testing implemented using the STANDARD Test health facilities high endemic areas. GF Funded |
+| **Year of G6PD implementation** | 2020 |
+| **Health system level (G6PD)** | Tertiary level hospitals |
+| **Policy on PQ (overall)** | Dependent on G6PD test result |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | Implemented |
+| **Year of treatment implementation** | 2025 |
+| **Type of treatment follow-up** | iDES, follow up treatment to ensure that the patient receives the full course of medication, has no serious side effects, and has recovered from the illness, including a negative viral load test after the day the medication was administered. Follow-up appointments for P. vivax (receiving 14 day PQ) scheduled for days 14, 28, 60, and 90. Follow-up appointments for P. vivax patients receiving Tafenoquine or Primaquine for 7 days are scheduled for days 7, 14, 28, 60, and 90. |
+| **Implementation of follow-up** | Implemented |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | Maybe, unknown |
+| **Treatments under consideration** | Pedeatric tafenoquine |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | TQ 300 mg, PQ 0.5 mg/kg over 7 days, PQ 0.25mg/kg over 14 days | Counselling for adverse events - acute hemolytic anemia for patients receiving tafenoquine & 7-day PQ, self-monitoring using a malaria patient card for all patients, including G6PD test results |
+| **G6PD Intermediate** | PQ 0.25 mg/kg over 14 days, PQ 0.75 mg/kg weekly for 8 weeks | Counseling for adverse events, self-monitoring using a malaria patient card for all patients, including G6PD test results |
+| **G6PD Deficient** | PQ 0.75 mg/kg weekly for 8 weeks | Counseling for adverse events, self-monitoring using a malaria patient card for all patients, including G6PD test results |
+| **If no testing available** | PQ 0.25 mg/kg over 14 days | Counseling for adverse events, self-monitoring using a malaria patient card for all patients, including G6PD test results |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

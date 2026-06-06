@@ -1,0 +1,145 @@
+/* Site components — uses tokens from theme.scss :root */
+
+.lede + p {
+  margin-top: 1rem;
+}
+
+/* Country grid cards */
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.85rem;
+  margin: 1.75rem 0;
+}
+
+.country-grid > p {
+  display: contents;
+  margin: 0;
+}
+
+.country-card {
+  border: 1px solid var(--vivax-rule, #e4ddd0);
+  background: var(--vivax-paper-elevated, #fff);
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: var(--vivax-ink, #1a1f1f);
+  border-radius: var(--vivax-radius-md, 12px);
+  box-shadow: var(--vivax-shadow-sm, 0 1px 2px rgba(26, 31, 31, 0.04));
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  display: block;
+}
+
+.country-card:hover {
+  border-color: rgba(13, 79, 79, 0.35);
+  transform: translateY(-3px);
+  box-shadow: var(--vivax-shadow-md, 0 8px 24px rgba(26, 31, 31, 0.06));
+  text-decoration: none;
+  color: var(--vivax-ink, #1a1f1f);
+}
+
+.country-card .name {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 1.08rem;
+  display: block;
+  letter-spacing: -0.01em;
+}
+
+.country-card .meta {
+  font-size: 0.8rem;
+  color: var(--vivax-ink-soft, #4a5252);
+  margin-top: 0.35rem;
+  line-height: 1.4;
+}
+
+/* Tags / pills */
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  background: var(--vivax-paper-2, #f0ebe3);
+  color: var(--vivax-ink, #1a1f1f);
+  margin-right: 0.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.tag.primary {
+  background: var(--vivax-primary, #0d4f4f);
+  color: #faf8f4;
+}
+
+.tag.accent {
+  background: var(--vivax-accent, #c0521b);
+  color: #faf8f4;
+}
+
+/* Explore filters */
+.explore-filters {
+  margin: 0 0 2rem;
+  padding: 1.25rem 1.35rem 0.5rem;
+  background: var(--vivax-paper-elevated, #fff);
+  border: 1px solid var(--vivax-rule, #e4ddd0);
+  border-radius: var(--vivax-radius-md, 12px);
+  box-shadow: var(--vivax-shadow-sm);
+}
+
+.explore-filters .form-group {
+  margin-bottom: 0.9rem;
+}
+
+.explore-filters .control-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--vivax-ink-soft, #4a5252);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+.explore-filters .selectize-control {
+  width: 100% !important;
+}
+
+.explore-filters .selectize-input {
+  min-height: 2.35rem;
+  border-radius: var(--vivax-radius-sm, 8px) !important;
+  border-color: var(--vivax-rule, #e4ddd0) !important;
+  box-shadow: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.explore-filters .selectize-input.focus {
+  border-color: var(--vivax-primary, #0d4f4f) !important;
+  box-shadow: 0 0 0 3px rgba(13, 79, 79, 0.12) !important;
+}
+
+.explore-chart__empty {
+  margin: 1rem 0;
+  color: var(--vivax-ink-soft, #4a5252);
+  font-size: 0.9rem;
+}
+
+/* Profile / article tables */
+.content table {
+  border-radius: var(--vivax-radius-sm, 8px);
+  overflow: hidden;
+}
+
+.content table:not(.table):not(.dataTable) {
+  border: 1px solid var(--vivax-rule, #e4ddd0);
+  box-shadow: var(--vivax-shadow-sm);
+}
+
+.content table:not(.table):not(.dataTable) th,
+.content table:not(.table):not(.dataTable) td {
+  padding: 0.65rem 0.85rem;
+}
+
+.content table:not(.table):not(.dataTable) tr:nth-child(even) {
+  background: rgba(240, 235, 227, 0.35);
+}

@@ -1,0 +1,86 @@
+---
+title: "Pakistan"
+subtitle: "Eastern Mediterranean · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Eastern Mediterranean |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Burden reduction |
+| **Economic status** | LMIC |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | DHA-PPQ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | Quantitative |
+| **Community malaria care** | Piloted |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | No |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Widespread transmission, but MMPs, ethnic minorities,national security forces |
+| **Programme contact** | Dr Muhammad Mukhtar, NCMP |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 1,761,637 |
+| **2022** | 1,178,058 |
+| **2021** | 301,169 |
+| **2020** | 293,077 |
+| **2019** | 323,355 |
+| **2018** | 314,572 |
+| ***P. vivax* share of malaria cases (2023)** | 64.2% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Pakistan","series":[{"year":"2018","value":314572},{"year":"2019","value":323355},{"year":"2020","value":293077},{"year":"2021","value":301169},{"year":"2022","value":1178058},{"year":"2023","value":1761637}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2024 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Recommended, quantitative |
+| **G6PD implementation** | Testing not implemented routinely, G6PD testing available at tertiary care hospital and in private labs. STANDARD G6PD test is being piloted. |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | Dependent on G6PD status |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | Implemented without G6PD testing |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | Close medical supervision when testing is not possible |
+| **Implementation of follow-up** | G6PD testing not conducted and follow-up not implemented except for highland populations with G6PD defiency is known to be a problem. |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | Yes, 2026 |
+| **Treatments under consideration** | Tafenoquine |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.5 mg/kg over 7 days | Counselling for adverse events |
+| **G6PD Deficient - Mild-Moderate** | PQ 0.75 mg/kg weekly for 8 weeks | Counselling for adverse events |
+| **G6PD Deficient - Severe** | No PQ |  |
+| **If no testing available** | PQ 0.25mg/kg over 14 days (maximum 15 mg) | Close medical supervision, counselling for adverse events |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

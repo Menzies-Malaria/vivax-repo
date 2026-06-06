@@ -1,0 +1,77 @@
+---
+title: "Republic of Korea (ROK)"
+subtitle: "Western Pacific · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Western Pacific |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Pre-elimination |
+| **Economic status** | HIC |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | _Not reported_ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | No |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | No |
+| **Mobile / migrant populations** | No |
+| **High-risk populations** | Active-duty soldiers, discharged veterans, and residents of Northern Gyeonggi-do, Incheon, and Gangwon-do, especially farmers and forest-goers. |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 644 |
+| **2022** | 348 |
+| **2021** | 274 |
+| **2020** | 356 |
+| **2019** | 485 |
+| **2018** | 501 |
+| ***P. vivax* share of malaria cases (2023)** | 97.3% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Republic of Korea (ROK)","series":[{"year":"2018","value":501},{"year":"2019","value":485},{"year":"2020","value":356},{"year":"2021","value":274},{"year":"2022","value":348},{"year":"2023","value":644}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2024 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Recommended but test type not specified |
+| **G6PD implementation** | Partially implemented. Testing not implemented in public facilities except for very few vivax cases in referral hospitals |
+| **Year of G6PD implementation** | 2020 |
+| **Health system level (G6PD)** | Referral hospitals, primary care hospitals |
+| **Policy on PQ (overall)** | PQ 14-day low dose (0.25mg/kg/day) or 7-day low dose (0.5mg/kg/day) |
+| **Additional safety recommendations** | Monitoring for adverse events |
+| **Treatment implementation** | Implemented |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | Health workers monitor patients for hemolytic anemia and other adverse events for a period of 42 days. |
+| **Implementation of follow-up** | Implemented |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | Yes, 2027 |
+| **Treatments under consideration** | Tafenoquine |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

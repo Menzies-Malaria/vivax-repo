@@ -1,0 +1,11 @@
+/.quarto/
+/_site/
+/_freeze/
+__pycache__/
+*.pyc
+.DS_Store
+.Rproj.user/
+.Rhistory
+/data/
+
+**/*.quarto_ipynb

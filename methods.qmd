@@ -1,0 +1,87 @@
+---
+title: "Methods"
+subtitle: "How the repository is built, maintained, and kept current."
+---
+
+## Source of data
+
+The repository draws on three streams of evidence, in this order of preference:
+
+1. **Direct communication with NMCPs.** Whenever possible, data is confirmed (or contributed) by a named focal point at the National Malaria Control Programme. The "Contact" field in each country profile records who provided or validated the information.
+2. **Publicly available national treatment guidelines.** When a focal point is not yet engaged, the policy is read from the most recent published guideline (linked in the country profile where available).
+3. **Published reviews and grey literature.** Where neither of the above is available, we draw on the 2023 *Pathogens* review of G6PD testing policy [@sadhewa2023] and on WHO World Malaria Reports [@whowmr2024], with that source clearly noted.
+
+## What is in the repository
+
+For each country, the repository captures:
+
+- **Burden indicators** — case numbers for the last five years, *P. vivax* share of total malaria cases, programme phase, populations at greatest risk.
+- **Diagnostic policy** — the type of malaria diagnostic in routine use; whether G6PD testing is recommended; whether it is implemented; the type and level of the health system where it is performed.
+- **Treatment policy** — first-line and second-line treatment; primaquine (PQ) or tafenoquine (TQ) regimens by G6PD status; additional safety recommendations; weight-based banding and dosage charts where present.
+- **Implementation status** — whether the policy is implemented, at which level of the health system, and when implementation began.
+- **Follow-up** — type of treatment follow-up, who conducts it, where it happens, whether it is implemented.
+- **Forward-looking detail** — planned next policy updates, treatments under active consideration, ongoing operational research, links to the National Strategic Plan.
+- **Provenance** — last policy update date, the named contact, and notes on data confidence where relevant.
+
+## The data pipeline
+
+The site is built with [Quarto](https://quarto.org). Data is stored in a single shared Google Sheet with the tabs `Characteristic Data`, `Case Mgmt Data Points`, `Submissions`, and `Restricted`. The public site reads only from the first two.
+
+```
+                            ┌──────────────────────────────┐
+   NMCP focal point         │      Google Sheet            │
+   ─────────────►  Form  ───►  • Characteristic Data       │
+                            │  • Case Mgmt Data Points     │
+   Repository team          │  • Submissions (form sink)   │
+   ─────────────►  Sheet ──►│  • Restricted (private)      │
+                            └──────────────┬───────────────┘
+                                           │
+                                           │  publish-to-web CSV
+                                           ▼
+                                  ┌────────────────┐
+                                  │ Quarto render  │ ── reads CSVs at build time
+                                  │ (Python + R)   │ ── writes static HTML
+                                  └────────┬───────┘
+                                           │
+                                           ▼
+                                    Public website
+```
+
+## Update cadence
+
+- **Continuously** — when an NMCP submits an update through the [form](contribute.qmd) or by email, the team triages it within five working days.
+- **Weekly** — the site rebuilds automatically every Monday at 06:00 UTC via GitHub Actions, pulling fresh CSV from the Google Sheet.
+- **Annually** — a full review of every country record is conducted to confirm currency and to update WHO World Malaria Report figures.
+
+## Reconciling differences
+
+Where information from a focal point conflicts with what is in the published guideline, both are kept. The country profile shows the focal point's account in the main body and a footnote with the discrepant published value. Conflicts of this kind are usually a sign that a guideline is in the middle of being revised; those countries are flagged for follow-up.
+
+## Data confidence
+
+Each country record carries an implicit confidence level based on its source:
+
+- **High** — confirmed in writing by an NMCP focal point within the last 12 months, with a public guideline that matches.
+- **Medium** — drawn from a current published guideline, not yet confirmed by an NMCP focal point.
+- **Low** — drawn from a published review or grey literature; the most recent guideline could not be located.
+
+Confidence is shown explicitly on each country profile.
+
+## Restricted information
+
+By design, NMCPs may flag specific data points as visible only to other malaria programmes, partners, and researchers. These are stored in the `Restricted` tab of the Google Sheet and do not render on the public site. Access for accredited users will be provided via a separate, authenticated build of the site — see the project roadmap.
+
+## Reproducibility
+
+The repository is open source. The full pipeline (Quarto project, CSV fetch scripts, profile generator, CI workflow) is published at the [project GitHub](https://github.com/your-org/vivax-policy-repository). Anyone can re-run a build from a snapshot of the public data and obtain the same site. Each release of the site is tagged with a date, and previous releases are archived for citation.
+
+## Limitations
+
+- **Lag.** A country's record reflects what's known at the time of the most recent submission or guideline. Implementation status can shift faster than published guidelines.
+- **Granularity.** Where a country has subnational variation (different policies in different provinces), we record the national policy and the *existence* of subnational variation, but not the variation itself in detail. The "Details of subnational program phases" field captures what we know.
+- **Translation.** Several guidelines are not published in English. Translations are noted in the source field. We rely on programme focal points for any disputed translations.
+
+## References
+
+::: {#refs}
+:::

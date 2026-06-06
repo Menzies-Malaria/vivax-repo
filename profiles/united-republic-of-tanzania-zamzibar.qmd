@@ -1,0 +1,54 @@
+---
+title: "United Republic of Tanzania (Zamzibar)"
+subtitle: "African · Africa"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Africa |
+| **WHO Region** | African |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | _Not reported_ |
+| **Economic status** | _Not reported_ |
+| **First-line treatment** | PQ |
+| **Second-line treatment** | _Not reported_ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | No |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | _Not reported_ |
+| **Community vivax care** | _Not reported_ |
+| **Follow-up of radical cure** | _Not reported_ |
+| **Cross-border transmission** | _Not reported_ |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 4 |
+| **2022** | 0 |
+| **2021** | 0 |
+| **2020** | 0 |
+| **2019** | 12 |
+| **2018** | 0 |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"United Republic of Tanzania (Zamzibar)","series":[{"year":"2019","value":12},{"year":"2023","value":4}]}</script>
+</div>
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

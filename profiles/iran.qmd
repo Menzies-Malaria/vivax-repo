@@ -1,0 +1,77 @@
+---
+title: "Iran"
+subtitle: "Eastern Mediterranean · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Eastern Mediterranean |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | _Not reported_ |
+| **Economic status** | _Not reported_ |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | _Not reported_ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | Yes |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | _Not reported_ |
+| **Community vivax care** | _Not reported_ |
+| **Follow-up of radical cure** | _Not reported_ |
+| **Cross-border transmission** | _Not reported_ |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 1,666 |
+| **2022** | 1,218 |
+| **2021** | 0 |
+| **2020** | 0 |
+| **2019** | 0 |
+| **2018** | 0 |
+| ***P. vivax* share of malaria cases (2023)** | 65.9% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Iran","series":[{"year":"2022","value":1218},{"year":"2023","value":1666}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | _Not reported_ |
+| **Schizontocidal drug** | _Not reported_ |
+| **G6PD testing policy** | _Not reported_ |
+| **G6PD implementation** | _Not reported_ |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | _Not reported_ |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

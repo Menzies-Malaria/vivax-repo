@@ -1,0 +1,78 @@
+---
+title: "Country profiles"
+subtitle: "A one-page summary of policy and implementation status for every *P. vivax* endemic country in the repository."
+page-layout: full
+---
+
+```{r}
+#| include: false
+
+suppressPackageStartupMessages({
+  library(readr)
+  library(dplyr)
+  library(htmltools)
+  library(stringr)
+})
+
+source("R/explore_helpers.R")
+
+char <- load_characteristic_data() |>
+  arrange(Region, Country)
+```
+
+::: {.lede}
+Browse by region. Each country card links to a fuller profile with the latest first-line treatment, G6PD testing status, programme phase, and contact information where available.
+:::
+
+```{r}
+#| label: country-grids
+#| echo: false
+#| results: asis
+
+slugify <- function(s) {
+  s <- tolower(str_trim(s))
+  s <- str_replace_all(s, "[^a-z0-9]+", "-")
+  str_replace_all(s, "(^-|-$)", "")
+}
+
+region_card <- function(name, phase, tx) {
+  meta_bits <- c()
+  if (nzchar(phase)) meta_bits <- c(meta_bits, phase)
+  if (nzchar(tx)) meta_bits <- c(meta_bits, paste0("1st-line: ", tx))
+  meta <- if (length(meta_bits)) paste(meta_bits, collapse = " · ") else "No detailed policy on file yet"
+
+  tags$a(
+    class = "country-card",
+    href = paste0("profiles/", slugify(name), ".html"),
+    tags$span(class = "name", name),
+    tags$span(class = "meta", meta)
+  )
+}
+
+regions <- c("Asia-Pacific", "Central and South America", "Africa")
+
+grids <- lapply(regions, function(region) {
+  sub <- char |> filter(Region == region)
+  if (!nrow(sub)) return(NULL)
+
+  cards <- lapply(seq_len(nrow(sub)), function(i) {
+    row <- sub[i, ]
+    region_card(
+      row$Country,
+      str_trim(row$`Program Phase`),
+      str_trim(row$`Pv 1st line treatment`)
+    )
+  })
+
+  tagList(
+    tags$h2(region),
+    tags$div(class = "country-grid", !!!cards)
+  )
+})
+
+cat(as.character(tagList(!!!grids)))
+```
+
+::: {.callout-edit}
+Country profile pages are generated automatically from the live Google Sheet at each rebuild. If a country is missing or out of date, please [submit an update](contribute.qmd).
+:::

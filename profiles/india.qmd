@@ -1,0 +1,81 @@
+---
+title: "India"
+subtitle: "South-East Asia · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | South-East Asia |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | _Not reported_ |
+| **Economic status** | _Not reported_ |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | _Not reported_ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | No |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | _Not reported_ |
+| **Community vivax care** | _Not reported_ |
+| **Follow-up of radical cure** | _Not reported_ |
+| **Cross-border transmission** | _Not reported_ |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 89,619 |
+| **2022** | 75,452 |
+| **2021** | 60,187 |
+| **2020** | 67,444 |
+| **2019** | 181,514 |
+| **2018** | 222,730 |
+| ***P. vivax* share of malaria cases (2023)** | 39.4% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"India","series":[{"year":"2018","value":222730},{"year":"2019","value":181514},{"year":"2020","value":67444},{"year":"2021","value":60187},{"year":"2022","value":75452},{"year":"2023","value":89619}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2013 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Not explicitly mentioned |
+| **G6PD implementation** | Testing not implemented at public health facilities |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days |
+| **Additional safety recommendations** | Under supervsion, Community health workers receive an incentive to follow-up patients  to help ensure adherence and safety |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf |
+| **National Strategic Plan (URL)** | https://ncvbdc.mohfw.gov.in/Doc/National-Strategic-Plan-Malaria-2023-27.pdf |
+
+## Notes
+
+Need to contact program, could be piloting the STANDARD Test
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

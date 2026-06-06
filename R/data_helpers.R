@@ -1,0 +1,83 @@
+# Shared data-loading helpers for Quarto pages
+
+load_sheet <- function(path) {
+  if (!grepl("^https?://", path) && !file.exists(path)) {
+    stop("Data file not found at ", path)
+  }
+  df <- readr::read_csv(path, show_col_types = FALSE, na = character()) |>
+    dplyr::mutate(dplyr::across(dplyr::everything(), as.character))
+  df[is.na(df)] <- ""
+  names(df) <- trimws(names(df))
+  df
+}
+
+load_characteristic_data <- function(path = Sys.getenv("CHAR_DATA_URL", "data/characteristic_data.csv")) {
+  load_sheet(path)
+}
+
+load_case_data <- function(path = Sys.getenv("CASE_DATA_URL", "data/case_management.csv")) {
+  load_sheet(path)
+}
+
+headline_stats <- function(char, case) {
+  case_main <- case |>
+    dplyr::filter(!stringr::str_detect(.data$Country, " - "))
+
+  list(
+    n_countries = dplyr::n_distinct(char$Country),
+    n_reporting = sum(stringr::str_starts(
+      trimws(char$`Reporting vivax cases (<5 years)`),
+      "Yes"
+    )),
+    n_implementing = sum(trimws(char$`Implementation: G6PD testing  (Y/N)`) == "Yes"),
+    n_with_policy = sum(nzchar(trimws(case_main$`Last Policy Update`)))
+  )
+}
+
+column_dictionary_notes <- function() {
+  c(
+    "Country" = "Country or territory name.",
+    "Region" = "Project-defined region: Africa, Asia-Pacific, or Central and South America.",
+    "WHO Region" = "WHO region: African, Americas, Eastern Mediterranean, South-East Asia, Western Pacific.",
+    "Reporting vivax cases (<5 years)" = "Whether the country has reported any P. vivax cases in the last five years.",
+    "2023 Case Numbers" = "Reported P. vivax cases in 2023.",
+    "2022 Case Numbers" = "Reported P. vivax cases in 2022.",
+    "2021 Case Numbers" = "Reported P. vivax cases in 2021.",
+    "2020 Case Numbers" = "Reported P. vivax cases in 2020.",
+    "2019 Case Numbers" = "Reported P. vivax cases in 2019.",
+    "2018 Case Numbers" = "Reported P. vivax cases in 2018.",
+    "Proportion of P. vivax cases (2023) (%)" = "P. vivax as a percentage of all reported malaria cases in 2023.",
+    "Type of malaria diagnostic (e.g., RDT, lab result, serology)" = "Diagnostics used routinely for malaria case detection.",
+    "Pv 1st line treatment" = "Recommended first-line treatment for uncomplicated P. vivax malaria.",
+    "Rationale for ACT use" = "Where an ACT is used first-line, the stated rationale.",
+    "Pv 2nd line treatment" = "Recommended second-line treatment.",
+    "G6PD deficiency prevalence" = "Estimated prevalence of G6PD deficiency, where reported.",
+    "Projects/Research determining G6PDd prevalence" = "Active or recent projects measuring G6PD prevalence.",
+    "Guidelines G6PD testing  (Y/N)" = "Whether G6PD testing is included in current national guidelines.",
+    "Implementation: G6PD testing  (Y/N)" = "Whether G6PD testing is implemented in practice.",
+    "Type of G6PD testing" = "Test format (qualitative, quantitative, SNP/ELISA, etc.).",
+    "Community malaria care" = "Existence of community-level case management.",
+    "Community vivax care" = "Existence of community-level vivax-specific care (including radical cure).",
+    "Follow-up of radical cure" = "Whether follow-up after radical cure is part of policy/practice.",
+    "Community follow-up of radical cure" = "Whether follow-up extends to the community level.",
+    "Program Phase" = "Stage of the national malaria programme: burden reduction, pre-elimination, elimination, eliminated.",
+    "Sub-national program phases (Y/N)" = "Whether the country has different programme phases in different subnational areas.",
+    "Details of subnational program phases" = "Free text describing subnational stratification.",
+    "Cross-border transmission" = "Whether cross-border transmission is a feature.",
+    "Mobile Migrant Populations" = "Whether mobile or migrant populations are a significant feature.",
+    "Type of high risk populations" = "Description of the populations at greatest risk.",
+    "Economic status" = "World Bank economic classification at time of recording.",
+    "Contact" = "Programme focal point or other point of contact."
+  )
+}
+
+column_dictionary_table <- function(char) {
+  notes <- column_dictionary_notes()
+  tibble::tibble(
+    Column = sprintf("`%s`", names(char)),
+    Description = vapply(names(char), function(col) {
+      clean <- trimws(col)
+      if (clean %in% names(notes)) notes[[clean]] else "\u2014"
+    }, character(1), USE.NAMES = FALSE)
+  )
+}

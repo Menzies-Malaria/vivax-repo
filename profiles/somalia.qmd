@@ -1,0 +1,85 @@
+---
+title: "Somalia"
+subtitle: "Eastern Mediterranean · Africa"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Africa |
+| **WHO Region** | Eastern Mediterranean |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Burden reduction |
+| **Economic status** | _Not reported_ |
+| **First-line treatment** | AL |
+| **Second-line treatment** | DHA-PPQ |
+| **Rationale for ACT use** | High efficacy |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | Not specified |
+| **Community malaria care** | Yes |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | _Not reported_ |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | No |
+| **High-risk populations** | Widespread transmission, but especially in Somaliland and Puntland, and other central and sourthern areas. Children under 5, pregnant women, IDPs, people in nomadic communities |
+| **Programme contact** | Hassan M Abukar, National Malaria Control Program Manager |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 161 |
+| **2022** | 762 |
+| **2021** | 2,048 |
+| **2020** | 0 |
+| **2019** | 2,921 |
+| **2018** | 0 |
+| ***P. vivax* share of malaria cases (2023)** | 1.2% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Somalia","series":[{"year":"2019","value":2921},{"year":"2021","value":2048},{"year":"2022","value":762},{"year":"2023","value":161}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2023 |
+| **Schizontocidal drug** | AL |
+| **G6PD testing policy** | Required but testing type not specified |
+| **G6PD implementation** | Not implemented but plans for: Pilot implementation in selected districts or facilities |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | _Not reported_ |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD normal** | _Not specified_ |  |
+| **G6PD deficient** | _Not specified_ |  |
+| **If no testing available** | _Not specified_ |  |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

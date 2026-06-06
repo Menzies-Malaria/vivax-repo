@@ -1,0 +1,86 @@
+---
+title: "Brazil"
+subtitle: "Americas · Central and South America"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Central and South America |
+| **WHO Region** | Americas |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | _Not reported_ |
+| **Economic status** | _Not reported_ |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | _Not reported_ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | No |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | Quantitative |
+| **Community malaria care** | _Not reported_ |
+| **Community vivax care** | _Not reported_ |
+| **Follow-up of radical cure** | _Not reported_ |
+| **Cross-border transmission** | _Not reported_ |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 115,785 |
+| **2022** | 108,626 |
+| **2021** | 115,258 |
+| **2020** | 119,911 |
+| **2019** | 136,947 |
+| **2018** | 168,552 |
+| ***P. vivax* share of malaria cases (2023)** | 84.3% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Brazil","series":[{"year":"2018","value":168552},{"year":"2019","value":136947},{"year":"2020","value":119911},{"year":"2021","value":115258},{"year":"2022","value":108626},{"year":"2023","value":115785}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2021 |
+| **Schizontocidal drug** | _Not reported_ |
+| **G6PD testing policy** | PQ: Recommended, qualitative or quantitative, TQ: Required, quantitative |
+| **G6PD implementation** | STANDARD G6PD rollout in context of feasibility studies  and implementation in two municipalities with temporary approval (review by CONITEC ongoing) |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | Dependent on G6PD test result |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD normal** | PQ 0.5 mg/kg/day over 7 days |  |
+| **G6PD normal (> 70% enzyme activity)** | TQ 300 mg |  |
+| **G6PD deficient (< 30% enzyme activity)** | PQ 0.75 mg/kg/week over 8 weeks | Under medical supervision in areas with access to tertiary care and commenced on Day 4 after completion of blood stage treatment |
+| **if no testing available** | PQ 0.5 mg/kg/day over 7 days | Advise patients to monitor for clinical symptoms and referral to reference hospital if suspected G6PD deficient or adverse events |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

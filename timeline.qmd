@@ -1,0 +1,118 @@
+---
+title: "Policy timeline"
+subtitle: "When countries last updated their *P. vivax* case management guidelines, and what's coming next."
+page-layout: full
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+suppressPackageStartupMessages({
+  library(readr)
+  library(dplyr)
+  library(jsonlite)
+  library(stringr)
+})
+
+CASE_URL <- Sys.getenv("CASE_DATA_URL", "data/case_management.csv")
+case <- read_csv(CASE_URL, show_col_types = FALSE, na = character()) |>
+  mutate(across(everything(), as.character))
+case[is.na(case)] <- ""
+names(case) <- trimws(names(case))
+
+case <- case |>
+  filter(!str_detect(Country, " - "))
+
+to_year <- function(v) {
+  s <- str_trim(as.character(v))
+  m <- str_extract(s, "(19|20)\\d{2}")
+  out <- as.integer(m)
+  out[!nzchar(s) | toupper(s) == "NA"] <- NA_integer_
+  out
+}
+
+yr_df <- case |>
+  mutate(
+    year = to_year(`Last Policy Update`),
+    Region = if_else(nzchar(Region), Region, "Unknown")
+  ) |>
+  filter(!is.na(year))
+
+timeline_payload <- list(
+  points = yr_df |>
+    transmute(
+      key = Country,
+      country = Country,
+      year = year,
+      region = Region,
+      drug = `Schizontocidal Drug`,
+      `next` = `Next policy update (Y/N, Year)`
+    ),
+  meta = list(
+    regionColors = list(
+      Africa = "#c0521b",
+      `Asia-Pacific` = "#0d4f4f",
+      `Central and South America` = "#d9a36a",
+      Unknown = "#8a9494"
+    ),
+    milestones = list(
+      list(year = 2015, label = "WHO 2015 GL"),
+      list(year = 2023, label = "WHO 2023 update"),
+      list(year = 2024, label = "WHO 2024 update")
+    )
+  )
+)
+```
+
+::: {.lede}
+The last decade has seen rapid change in *P. vivax* policy. WHO global recommendations were updated in 2023 and 2024, triggering revisions in many countries. This page tracks when each country last formally revised its national treatment guidelines.
+:::
+
+## Last policy update by country
+
+```{r}
+#| label: timeline-data
+#| echo: false
+#| results: asis
+
+cat(as.character(htmltools::tags$script(
+  id = "timeline-data",
+  type = "application/json",
+  htmltools::HTML(jsonlite::toJSON(timeline_payload, auto_unbox = TRUE, dataframe = "rows", null = "null"))
+)))
+```
+
+::: {.vivax-chart}
+<div id="chart-timeline" class="vivax-chart__plot vivax-chart__plot--timeline"></div>
+:::
+
+## Countries with planned updates
+
+```{r}
+#| label: planned
+#| output: asis
+
+upcoming <- case |>
+  filter(str_detect(`Next policy update (Y/N, Year)`, regex("^(yes|y,)", ignore_case = TRUE))) |>
+  transmute(
+    Country,
+    `Planned update` = `Next policy update (Y/N, Year)`,
+    `Treatments under consideration` = `Treatments Under Consideration`
+  ) |>
+  filter(nzchar(Country))
+
+if (nrow(upcoming)) {
+  knitr::kable(upcoming, format = "pipe")
+} else {
+  cat("_No countries have flagged a planned update at this time._")
+}
+```
+
+## Key global moments
+
+- **2015** — WHO recommends G6PD testing before primaquine in non-emergency settings.
+- **2023** — WHO updates global malaria guidelines to include single-dose tafenoquine for *P. vivax* radical cure where G6PD status is known.
+- **2024** — WHO further updates guidelines, expanding recommendations on shorter primaquine regimens.
+
+Countries that updated their guidelines in 2023–2025 are the most likely to reflect the latest WHO recommendations. Those with guidelines older than 2018 may pre-date several major changes — see the [country profile](countries.qmd) for the specific version on file.

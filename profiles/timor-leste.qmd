@@ -1,0 +1,77 @@
+---
+title: "Timor Leste"
+subtitle: "South-East Asia · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | South-East Asia |
+| **Reporting *P. vivax* cases (last 5 yrs)** | No |
+| **Programme phase** | Eliminated |
+| **Economic status** | LMIC |
+| **First-line treatment** | AL |
+| **Second-line treatment** | Quinine + Clindamycin |
+| **Rationale for ACT use** | Because of chloroquine resistance detected through iDES |
+| **G6PD testing in guidelines** | No |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | Yes |
+| **Community vivax care** | Yes |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes - imported cases from Indonesia |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+| **Programme contact** | Raul Sarmento, NMCP |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 0 |
+| **2022** | _Not reported_ |
+| **2021** | _Not reported_ |
+| **2020** | _Not reported_ |
+| **2019** | _Not reported_ |
+| **2018** | _Not reported_ |
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2016 |
+| **Schizontocidal drug** | AL |
+| **G6PD testing policy** | Not explicitely mentioned |
+| **G6PD implementation** | Not implemented |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | Dependent on G6PD status |
+| **Additional safety recommendations** | DOT, adverse event counseling |
+| **Treatment implementation** | Implemented without G6PD testing for imported cases |
+| **Year of treatment implementation** | 2016 |
+| **Type of treatment follow-up** | DOT, adverse event counseling |
+| **Implementation of follow-up** | Implemented for imported cases |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | No |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.25mg/kg daily for 14 days | DOT, adverse event counseling |
+| **G6PD Deficient** | PQ 0.75 mg/kg weekly for 8 weeks | DOT, adverse event counseling |
+| **Unknown G6PD level** | PQ 0.75 mg/kg weekly for 8 weeks | Supervision by health professionals (preferably DOT) |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

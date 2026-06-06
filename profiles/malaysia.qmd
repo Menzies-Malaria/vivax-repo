@@ -1,0 +1,78 @@
+---
+title: "Malaysia"
+subtitle: "Western Pacific · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Western Pacific |
+| **Reporting *P. vivax* cases (last 5 yrs)** | No |
+| **Programme phase** | Elimination |
+| **Economic status** | LMIC |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | AL/ASMQ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | Yes |
+| **Type of G6PD testing** | Qualitative |
+| **Community malaria care** | No |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Migrant workers in agriculture and forestry |
+| **Programme contact** | Dr. Tam Jenn Zhueng, Disease Control Division MoH |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 0 |
+| **2022** | _Not reported_ |
+| **2021** | _Not reported_ |
+| **2020** | _Not reported_ |
+| **2019** | _Not reported_ |
+| **2018** | _Not reported_ |
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2013 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Recommended but test type not specified |
+| **G6PD implementation** | Screening of neonates - qualitative screening |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | Hospital |
+| **Policy on PQ (overall)** | Dependent on G6PD status |
+| **Additional safety recommendations** | No information |
+| **Treatment implementation** | Implemented |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | Yes, 2026 |
+| **Treatments under consideration** | Low dose 7-day PQ |
+| **Treatment guidelines (URL)** | https://jknjohor.moh.gov.my/hsegamat/uploads/penerbitan/buletin/Bulletin_2015_Bil2_Malaria.pdf |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.5 mg/kg over 14 days | No information |
+| **G6PD Deficient - Mild** | PQ 0.75 mg/kg weekly for 8 weeks | No information |
+| **G6PD Deficient - Severe** | No PQ | No information |
+| **If no testing available** | Risk-assessment | No information |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

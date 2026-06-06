@@ -1,0 +1,86 @@
+---
+title: "Vanuatu"
+subtitle: "Western Pacific · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Western Pacific |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Pre-elimination |
+| **Economic status** | LMIC |
+| **First-line treatment** | AL |
+| **Second-line treatment** | DHA-PPQ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | Yes |
+| **Type of G6PD testing** | Qualitative |
+| **Community malaria care** | Yes |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | No |
+| **Mobile / migrant populations** | No |
+| **High-risk populations** | Remote communities, children under 5, travelers |
+| **Programme contact** | Dr Welsey Donald, NMCP |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 2,256 |
+| **2022** | 1,102 |
+| **2021** | 312 |
+| **2020** | 469 |
+| **2019** | 531 |
+| **2018** | 590 |
+| ***P. vivax* share of malaria cases (2023)** | 99.8% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Vanuatu","series":[{"year":"2018","value":590},{"year":"2019","value":531},{"year":"2020","value":469},{"year":"2021","value":312},{"year":"2022","value":1102},{"year":"2023","value":2256}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2021 |
+| **Schizontocidal drug** | AL |
+| **G6PD testing policy** | Recommended, Qualitative |
+| **G6PD implementation** | Partially implemented. |
+| **Year of G6PD implementation** | 2024 |
+| **Health system level (G6PD)** | Up to health centre level |
+| **Policy on PQ (overall)** | Dependent on G6PD status |
+| **Additional safety recommendations** | Under medical supervision |
+| **Treatment implementation** | Implemented with G6PD testing where available |
+| **Year of treatment implementation** | 2024 |
+| **Type of treatment follow-up** | DOT |
+| **Implementation of follow-up** | Not implemented, but patient clinical monitoring is conducted by care giver at home, as advised by the nurse |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | Maybe, unknown |
+| **Treatments under consideration** | High dose 7-day primaquine and tafenoquine |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **Male G6PD Normal** | PQ 0.5 mg/kg over 14 days | Under medical supervision |
+| **Female G6PD Normal** | PQ 0.25 mg/kg over 14 days | Under medical supervision |
+| **G6PD Deficient** | No PQ or PQ 0.75 mg/kg weekly for 8 weeks | Close medical supervision with access to blood transfusion |
+| **If no testing available** | PQ 0.25 mg/kg over 14 days | Close medical supervision |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

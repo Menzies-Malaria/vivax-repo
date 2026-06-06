@@ -1,0 +1,88 @@
+---
+title: "Peru"
+subtitle: "Americas · Central and South America"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Central and South America |
+| **WHO Region** | Americas |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Pre-elimination |
+| **Economic status** | Upper-middle-income |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | ASMQ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | Quantitative |
+| **Community malaria care** | No? Testing and referral? |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | No? |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Mobile populations, miners, loggers, farmers in hard to reach rural populations of the Amazon, especailly in Loreta |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 19,074 |
+| **2022** | 22,514 |
+| **2021** | 14,490 |
+| **2020** | 12,624 |
+| **2019** | 19,605 |
+| **2018** | 36,005 |
+| ***P. vivax* share of malaria cases (2023)** | 84.3% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Peru","series":[{"year":"2018","value":36005},{"year":"2019","value":19605},{"year":"2020","value":12624},{"year":"2021","value":14490},{"year":"2022","value":22514},{"year":"2023","value":19074}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2015 |
+| **Schizontocidal drug** | _Not reported_ |
+| **G6PD testing policy** | Not explicitely mentioned |
+| **G6PD implementation** | SD Biosensor use planned in context of PAVE studies in 2023 |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | PQ 0.5 mg/kg/day over 7 days |
+| **Additional safety recommendations** | Not specified |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | https://mesamalaria.org/wp-content/uploads/2024/08/Peru_NMESP_2022-2030.pdf |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD normal** | First line: PQ 0.5 mg/kg/day over 7 days, second line: TQ 300mg | Not specified |
+| **G6PD deficient** | Not specified | Not specified |
+
+## Notes
+
+New guidelines September 2025, inclusion of & G6PD testing a part of new guidelines
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

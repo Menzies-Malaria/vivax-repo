@@ -1,0 +1,77 @@
+---
+title: "Sri Lanka"
+subtitle: "South-East Asia · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | South-East Asia |
+| **Reporting *P. vivax* cases (last 5 yrs)** | No |
+| **Programme phase** | Eliminated |
+| **Economic status** | LMIC |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | AL |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | _Not reported_ |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | No |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | No? |
+| **Cross-border transmission** | _Not reported_ |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 0 |
+| **2022** | _Not reported_ |
+| **2021** | _Not reported_ |
+| **2020** | _Not reported_ |
+| **2019** | _Not reported_ |
+| **2018** | _Not reported_ |
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2023 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Recommended but test type not specified |
+| **G6PD implementation** | _Not reported_ |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | Dependent on G6PD status |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | https://www.humanitarianlibrary.org/sites/default/files/2024/03/Treatment-guidelines-Third-Edition--2023.pdf |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.5 mg/kg over 7 days | Counselling for adverse events |
+| **G6PD Deficient Mild-Moderate** | PQ 0.75 mg/kg weekly for 8 weeks | Counselling for adverse events |
+| **G6PD Defiency Severe** | No PQ | Not specified |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

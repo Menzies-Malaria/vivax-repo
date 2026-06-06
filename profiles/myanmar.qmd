@@ -1,0 +1,86 @@
+---
+title: "Myanmar"
+subtitle: "South-East Asia · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | South-East Asia |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Burden reduction |
+| **Economic status** | _Not reported_ |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | ACT |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | Yes |
+| **Community vivax care** | Yes |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes, with Thailand |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Traditional farming communities, forest goers and seasonal workers, defense services, IDPs, migrants |
+| **Programme contact** | Dr. Sein Hlyan Bo |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 187,345 |
+| **2022** | 127,797 |
+| **2021** | 63,909 |
+| **2020** | 43,578 |
+| **2019** | 32,788 |
+| **2018** | 36,502 |
+| ***P. vivax* share of malaria cases (2023)** | 82% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Myanmar","series":[{"year":"2018","value":36502},{"year":"2019","value":32788},{"year":"2020","value":43578},{"year":"2021","value":63909},{"year":"2022","value":127797},{"year":"2023","value":187345}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2022 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Recommended but test type not specified |
+| **G6PD implementation** | Not routinely implemented. Testing using STANDARD G6PD is only done in areas where SMRU works. GF funded. |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | Dependent on G6PD test result |
+| **Additional safety recommendations** | No information |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | https://moh.nugmyanmar.org/wp-content/uploads/2022/07/Malaria_Clinical_Management_Guidelines__June_2022___Ver_1__MOH_NUG_of_Myanmar.pdf |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.25 mg/kg over 14 days | No information |
+| **G6PD Deficient - MildModerate** | PQ 0.75 mg/kg weekly for 8 weeks | No information |
+| **G6PD Deficient - Severe** | No PQ | No information |
+| **If no testing available** | Risk-benefit assessment | No information |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

@@ -1,0 +1,86 @@
+---
+title: "Lao PDR"
+subtitle: "Western Pacific · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Western Pacific |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Pre-elimination/Elimination |
+| **Economic status** | LMIC |
+| **First-line treatment** | AL |
+| **Second-line treatment** | Pymarax or ASMQ |
+| **Rationale for ACT use** | Pf resistance to CQ and want to use the same ACT for Pf and Pv |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | Yes |
+| **Type of G6PD testing** | Quantitative |
+| **Community malaria care** | Yes |
+| **Community vivax care** | Yes |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Forest-goers, MMPs, military |
+| **Programme contact** | Dr Keo Chindavongsa, CMPE |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 591 |
+| **2022** | 1,780 |
+| **2021** | 2,536 |
+| **2020** | 1,879 |
+| **2019** | 4,444 |
+| **2018** | 4,099 |
+| ***P. vivax* share of malaria cases (2023)** | 87.8% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Lao PDR","series":[{"year":"2018","value":4099},{"year":"2019","value":4444},{"year":"2020","value":1879},{"year":"2021","value":2536},{"year":"2022","value":1780},{"year":"2023","value":591}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2022 |
+| **Schizontocidal drug** | AL |
+| **G6PD testing policy** | Recommended, quantitative |
+| **G6PD implementation** | Testing implemented using STANDARD G6PD countrywide. Restratification will lead to a reduction in the number of HCs that have G6PD tests, but tests will remain at the provincial and districy hospitals.  GF funded. |
+| **Year of G6PD implementation** | 2021 |
+| **Health system level (G6PD)** | Up to health centre level |
+| **Policy on PQ (overall)** | Dependent on G6PD test result |
+| **Additional safety recommendations** | Counselling for adverse events, VMW follow-up |
+| **Treatment implementation** | Implemented |
+| **Year of treatment implementation** | 2022 |
+| **Type of treatment follow-up** | VMW follow-up on day 3 and 7 for 7-day and week 3, 5, and 8 for 8-week PQ |
+| **Implementation of follow-up** | Partial implementation |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | Yes, 2026/2027 |
+| **Treatments under consideration** | Tafenoquine |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.5 mg/kg over 7 days | Counselling for adverse events, VMW follow-up |
+| **G6PD Intermediate Females** | PQ 0.75 mg/kg weekly for 8 weeks | Counselling for adverse events, VMW follow-up |
+| **G6PD Deficient** | PQ 0.75 mg/kg weekly for 8 weeks | Counselling for adverse events, VMW follow-up |
+| **If no testing available** | PQ 0.75 mg/kg weekly for 8 weeks | Counselling for adverse events, VMW follow-up |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

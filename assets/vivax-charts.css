@@ -1,0 +1,140 @@
+/* Vivax D3 charts (explore, timeline, country profiles) */
+.vivax-chart,
+.explore-chart {
+  margin: 0 0 2rem;
+  background: var(--vivax-paper-elevated, #fff);
+  border: 1px solid var(--vivax-rule, #e4ddd0);
+  border-radius: var(--vivax-radius-md, 12px);
+  box-shadow: var(--vivax-shadow-sm);
+  padding: 1rem 1.15rem 0.75rem;
+}
+
+.vivax-chart__plot,
+.explore-chart__plot {
+  width: 100%;
+  min-height: 200px;
+  overflow-x: auto;
+}
+
+#chart-cases.explore-chart__plot,
+.vivax-chart__plot--cases {
+  min-height: 520px;
+}
+
+#chart-g6pd.explore-chart__plot,
+.vivax-chart__plot--g6pd {
+  min-height: 420px;
+}
+
+#chart-heatmap.explore-chart__plot,
+.vivax-chart__plot--heatmap {
+  min-height: 400px;
+}
+
+#chart-timeline.vivax-chart__plot,
+.vivax-chart__plot--timeline {
+  min-height: 480px;
+}
+
+.vivax-chart__plot--cases-line {
+  min-height: 300px;
+}
+
+.vivax-chart__plot svg,
+.explore-chart__plot svg {
+  display: block;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 12px;
+  color: #1a1f1f;
+}
+
+.vivax-chart__caption,
+.explore-chart__caption {
+  font-size: 0.85rem;
+  color: #4a5252;
+  margin: 0.55rem 0 0;
+  padding: 0;
+}
+
+.vivax-chart__empty,
+.explore-chart__empty {
+  margin: 1rem 0;
+  color: #4a5252;
+  font-size: 0.9rem;
+}
+
+.vivax-chart .axis path,
+.vivax-chart .axis line,
+.explore-chart .axis path,
+.explore-chart .axis line {
+  stroke: #c8bc9e;
+}
+
+.vivax-chart .axis text,
+.explore-chart .axis text {
+  fill: #4a5252;
+}
+
+.vivax-chart .grid line,
+.explore-chart .grid line {
+  stroke: #e2d8bf;
+  stroke-opacity: 0.9;
+}
+
+.vivax-chart .grid path,
+.explore-chart .grid path {
+  stroke-width: 0;
+}
+
+.vivax-chart .legend--top text,
+.explore-chart .legend--top text {
+  font-size: 11px;
+}
+
+.vivax-chart .cell-label,
+.explore-chart .cell-label {
+  fill: #1a1f1f;
+  font-size: 11px;
+  pointer-events: none;
+}
+
+.vivax-chart .cell-label--light,
+.explore-chart .cell-label--light {
+  fill: #f7f3ec;
+}
+
+.vivax-tooltip,
+.explore-tooltip {
+  position: fixed;
+  z-index: 10000;
+  pointer-events: none;
+  padding: 0.5rem 0.7rem;
+  background: var(--vivax-ink, #1a1f1f);
+  color: var(--vivax-paper, #faf8f4);
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  border-radius: var(--vivax-radius-sm, 8px);
+  max-width: 280px;
+  opacity: 0;
+  box-shadow: var(--vivax-shadow-md);
+  transition: opacity 0.12s ease;
+}
+
+.vivax-tooltip.is-visible,
+.explore-tooltip.is-visible {
+  opacity: 1;
+}
+
+.vivax-chart__plot--timeline .timeline-stem {
+  pointer-events: none;
+}
+
+.vivax-chart__plot--timeline .axis--countries text {
+  font-size: 11px;
+  fill: #1a1f1f;
+}
+
+.vivax-chart__plot--timeline .timeline-milestone-label {
+  pointer-events: none;
+}

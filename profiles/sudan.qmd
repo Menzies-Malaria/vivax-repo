@@ -1,0 +1,85 @@
+---
+title: "Sudan"
+subtitle: "Eastern Mediterranean · Africa"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Africa |
+| **WHO Region** | Eastern Mediterranean |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Burden reduction |
+| **Economic status** | LMIC |
+| **First-line treatment** | AL |
+| **Second-line treatment** | DHAP |
+| **Rationale for ACT use** | Decreasing therapeutic efficacy of AS +SP (TES) |
+| **G6PD testing in guidelines** | No |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | Yes |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | No |
+| **High-risk populations** | Children under 5, IDPs, pregnant people |
+| **Programme contact** | Dr Samah Elhassan |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 39,616 |
+| **2022** | 124,730 |
+| **2021** | 175,590 |
+| **2020** | 170,202 |
+| **2019** | 194,904 |
+| **2018** | 143,314 |
+| ***P. vivax* share of malaria cases (2023)** | 11.2% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Sudan","series":[{"year":"2018","value":143314},{"year":"2019","value":194904},{"year":"2020","value":170202},{"year":"2021","value":175590},{"year":"2022","value":124730},{"year":"2023","value":39616}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2023 |
+| **Schizontocidal drug** | AL |
+| **G6PD testing policy** | Not explicitely mentioned, but testing not recommended or required |
+| **G6PD implementation** | _Not reported_ |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | Dependent on known G6PD status |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | Implemented |
+| **Year of treatment implementation** | 2000 |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | N |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | https://www.scribd.com/document/756601422/Sudan-Malaria-Case-Management-Protocol-2023-1#content=query:G6PD,pageNum:43,indexOnPage:0,bestMatch:false |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD normal** | Adults: PQ 15 mg/day for 14 days. Children:  0.25 mg/kg over 14 days | Not specified |
+| **G6PD deficient** | PQ 0.75 mg/kg weekly for 8 weeks | With close medical supervision |
+| **If no testing available** | Adults: PQ 15 mg/day for 14 days. Children:  0.25 mg/kg over 14 days | Not specified |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

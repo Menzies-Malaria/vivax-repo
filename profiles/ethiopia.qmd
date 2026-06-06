@@ -1,0 +1,77 @@
+---
+title: "Ethiopia"
+subtitle: "African · Africa"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Africa |
+| **WHO Region** | African |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | _Not reported_ |
+| **Economic status** | _Not reported_ |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | _Not reported_ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | No |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | _Not reported_ |
+| **Community vivax care** | _Not reported_ |
+| **Follow-up of radical cure** | _Not reported_ |
+| **Cross-border transmission** | _Not reported_ |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 904,398 |
+| **2022** | 388,416 |
+| **2021** | 252,589 |
+| **2020** | 263,877 |
+| **2019** | 166,340 |
+| **2018** | 102,412 |
+| ***P. vivax* share of malaria cases (2023)** | 28.3% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Ethiopia","series":[{"year":"2018","value":102412},{"year":"2019","value":166340},{"year":"2020","value":263877},{"year":"2021","value":252589},{"year":"2022","value":388416},{"year":"2023","value":904398}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2022 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Not required (not explicitely recommended) |
+| **G6PD implementation** | No testing implemented |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days |
+| **Additional safety recommendations** | Close  monitoring  counselling on AE and report to health facility in case of AE |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

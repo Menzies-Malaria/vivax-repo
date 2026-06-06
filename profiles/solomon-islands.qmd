@@ -1,0 +1,89 @@
+---
+title: "Solomon Islands"
+subtitle: "Western Pacific · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Western Pacific |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Burden reduction |
+| **Economic status** | LMIC |
+| **First-line treatment** | AL |
+| **Second-line treatment** | _Not reported_ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | Qualitative/Semi-quantitative |
+| **Community malaria care** | Yes? |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | No? |
+| **Cross-border transmission** | No |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 70,635 |
+| **2022** | 59,155 |
+| **2021** | 57,095 |
+| **2020** | 52,039 |
+| **2019** | 47,164 |
+| **2018** | 35,072 |
+| ***P. vivax* share of malaria cases (2023)** | 57.2% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Solomon Islands","series":[{"year":"2018","value":35072},{"year":"2019","value":47164},{"year":"2020","value":52039},{"year":"2021","value":57095},{"year":"2022","value":59155},{"year":"2023","value":70635}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2018 |
+| **Schizontocidal drug** | AL |
+| **G6PD testing policy** | Not explicitly mentioned |
+| **G6PD implementation** | Testing implemented using STANDARD G6PD in provincial hospitals. PoC implemented in pilot and research contexts and will be implemented in a phased approach. GF funded. |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | Dependent on G6PD test result |
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.25 mg/kg over 14 days | Counselling for adverse events |
+| **G6PD Deficient** | No PQ |  |
+| **If no testing available** | No PQ |  |
+
+## Notes
+
+Check with Dr Lyndes if updating the treatment guidelines to reflect G6PD testing
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

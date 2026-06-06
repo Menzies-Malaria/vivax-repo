@@ -1,0 +1,85 @@
+---
+title: "Nepal"
+subtitle: "South-East Asia · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | South-East Asia |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Pre-elimination |
+| **Economic status** | LMIC |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | DHA-PPQ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | Yes |
+| **Community vivax care** | Yes |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Mobile migrant populations, specifically Nepali who go to India for seasonal work, rural communities, indigenous comminuties, and individuals in the forest-fringe |
+| **Programme contact** | Dr Shashi Kandel, NMCP |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 12 |
+| **2022** | 33 |
+| **2021** | 29 |
+| **2020** | 68 |
+| **2019** | 118 |
+| **2018** | 488 |
+| ***P. vivax* share of malaria cases (2023)** | 80% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Nepal","series":[{"year":"2018","value":488},{"year":"2019","value":118},{"year":"2020","value":68},{"year":"2021","value":29},{"year":"2022","value":33},{"year":"2023","value":12}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2019 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Recommended but test type not specified |
+| **G6PD implementation** | Testing not implemented, piloted in 3 health facilities (below the district level). Phased implementation planned. |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
+| **Policy on PQ (overall)** | Dependent on G6PD status |
+| **Additional safety recommendations** | Under medical supervision, Counselling for adverse events |
+| **Treatment implementation** | Implemented without G6PD testing |
+| **Year of treatment implementation** | 2019 |
+| **Type of treatment follow-up** | Follow up on 3,7,14 for side effects and adherence done by village malaria workers in high burden areas and health facility staff in low burden areas |
+| **Implementation of follow-up** | Partial implementation |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | Yes, maybe 2027 |
+| **Treatments under consideration** | Low dose 7-day PQ (0.5mg/kg/day) |
+| **Treatment guidelines (URL)** | _Not reported_ |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.25 mg/kg over 14 days | Under medical supervision, Counselling for adverse events |
+| **G6PD Deficient** | Not specified | Under medical supervision, Counselling for adverse events |
+| **If no testing available** | PQ 0.25 mg/kg over 14 days | Under medical supervision, Counselling for adverse events |
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

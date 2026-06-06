@@ -1,0 +1,89 @@
+---
+title: "Cambodia"
+subtitle: "Western Pacific · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | Western Pacific |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | _Not reported_ |
+| **Economic status** | _Not reported_ |
+| **First-line treatment** | PY-AS |
+| **Second-line treatment** | _Not reported_ |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | Yes |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | _Not reported_ |
+| **Community vivax care** | _Not reported_ |
+| **Follow-up of radical cure** | _Not reported_ |
+| **Cross-border transmission** | _Not reported_ |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+| **Programme contact** | _Not reported_ |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 1,307 |
+| **2022** | 3,577 |
+| **2021** | 4,018 |
+| **2020** | 8,722 |
+| **2019** | 26,871 |
+| **2018** | 30,680 |
+| ***P. vivax* share of malaria cases (2023)** | 94.6% |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Cambodia","series":[{"year":"2018","value":30680},{"year":"2019","value":26871},{"year":"2020","value":8722},{"year":"2021","value":4018},{"year":"2022","value":3577},{"year":"2023","value":1307}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2022 |
+| **Schizontocidal drug** | PY-AS |
+| **G6PD testing policy** | Required, Quantitative |
+| **G6PD implementation** | Implemented |
+| **Year of G6PD implementation** | 2021 |
+| **Health system level (G6PD)** | Up to health centre level |
+| **Policy on PQ (overall)** | Dependent on G6PD test result |
+| **Additional safety recommendations** | Patient couselling, VMW follow-up |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | _Not reported_ |
+| **Treatments under consideration** | _Not reported_ |
+| **Treatment guidelines (URL)** | https://www.cnm.gov.kh/userfiles/DT%202022%20Guidelines_Final_14062022%20ENG.pdf |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.5 mg/kg over 7 days | Patient counselling, VMW Follow-up on day 3 and 7 at patients homes |
+| **G6PD Intermediate** | PQ 0.75 mg/kg weekly for 8 weeks | Patient counselling, VMW Follow-up once a week at patients homes |
+| **G6PD Deficient** | PQ 0.75 mg/kg weekly for 8 weeks | Patient counselling, VMW Follow-up once a week at patients homes |
+
+## Notes
+
+Changed to 7-day PQ in 2023
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+

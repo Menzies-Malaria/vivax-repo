@@ -1,0 +1,89 @@
+---
+title: "Bhutan"
+subtitle: "South-East Asia · Asia-Pacific"
+page-layout: article
+toc: true
+---
+
+[← Back to all countries](../countries.qmd)
+
+## Snapshot
+
+| | |
+|---|---|
+| **Region** | Asia-Pacific |
+| **WHO Region** | South-East Asia |
+| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| **Programme phase** | Elimination |
+| **Economic status** | LMIC |
+| **First-line treatment** | CQ |
+| **Second-line treatment** | ACT/AL |
+| **Rationale for ACT use** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | Yes |
+| **Type of G6PD testing** | Quantitative |
+| **Community malaria care** | Partial - fever referral |
+| **Community vivax care** | Partial - fever referral |
+| **Follow-up of radical cure** | Yes |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Construction workers (mobile migrant population) |
+| **Programme contact** | Dr |
+
+## Reported case numbers
+
+| | |
+|---|---|
+| **2023** | 0 |
+| **2022** | 0 |
+| **2021** | 7 |
+| **2020** | 22 |
+| **2019** | 2 |
+| **2018** | 5 |
+
+## Case trend
+
+<div class="vivax-chart">
+<div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
+<script type="application/json" class="vivax-chart-payload">{"country":"Bhutan","series":[{"year":"2018","value":5},{"year":"2019","value":2},{"year":"2020","value":22},{"year":"2021","value":7}]}</script>
+</div>
+
+## Case-management policy detail
+
+| | |
+|---|---|
+| **Last policy update** | 2024 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Recommended but test type not specified |
+| **G6PD implementation** | Testing implemented in 13 high risk areas (STANDARD G6PD Test) |
+| **Year of G6PD implementation** | 2023 |
+| **Health system level (G6PD)** | Up to health centre level |
+| **Policy on PQ (overall)** | Dependent on G6PD test result |
+| **Additional safety recommendations** | Close medical supervision and patient counselling |
+| **Treatment implementation** | Implemented |
+| **Year of treatment implementation** | 2023 |
+| **Type of treatment follow-up** | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year |
+| **Implementation of follow-up** | Implemented |
+| **Anti-malarials approved by NRA** | _Not reported_ |
+| **Next policy update** | Maybe |
+| **Treatments under consideration** | Prophylaxis treatment |
+| **Treatment guidelines (URL)** | https://moh.gov.bt/wp-content/uploads/2025/01/MALARIA-TREATMENT-PROTOCOL_FINAL-PRINT-VERSION.pdf ; https://moh.gov.bt/wp-content/uploads/2025/01/Revised-National-Guideline-on-Diagnosis-and-Treatment-on-Malaria-.pdf |
+| **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | PQ 0.5 mg/kg over 7 days | Close medical supervision and patient counselling |
+| **G6PD Intermediate** | PQ 0.5 mg/kg over 7 days | Close medical supervision and patient counselling |
+| **G6PD Deficient** | PQ 0.75 mg/kg weekly for 8 weeks | Close medical supervision and patient counselling |
+| **If no testing availabe** | Based on risk-benefit assessment | Close medical supervision and patient counselling |
+
+## Notes
+
+Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan
+
+---
+
+_Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._
+
