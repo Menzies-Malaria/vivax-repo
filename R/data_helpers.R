@@ -14,15 +14,37 @@ require_sheet_url <- function(name) {
   url
 }
 
+characteristic_data_source <- function(
+  local_path = "data/characteristic_data.csv"
+) {
+  if (nzchar(Sys.getenv("CHAR_DATA_URL", unset = ""))) {
+    return(require_sheet_url("CHAR_DATA_URL"))
+  }
+
+  if (file.exists(local_path)) {
+    return(local_path)
+  }
+
+  stop(
+    "CHAR_DATA_URL is not set and local characteristic data was not found at ",
+    local_path, ".",
+    call. = FALSE
+  )
+}
+
 load_sheet <- function(path) {
-  df <- readr::read_csv(path, show_col_types = FALSE, na = character()) |>
-    dplyr::mutate(dplyr::across(dplyr::everything(), as.character))
+  df <- readr::read_csv(
+    path,
+    col_types = readr::cols(.default = readr::col_character()),
+    na = character(),
+    show_col_types = FALSE
+  )
   df[is.na(df)] <- ""
   names(df) <- trimws(names(df))
   df
 }
 
-load_characteristic_data <- function(path = require_sheet_url("CHAR_DATA_URL")) {
+load_characteristic_data <- function(path = characteristic_data_source()) {
   load_sheet(path)
 }
 

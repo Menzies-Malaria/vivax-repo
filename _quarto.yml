@@ -22,6 +22,8 @@ website:
     left:
       - text: "Overview"
         href: index.qmd
+      - text: "Interactive map"
+        href: interactive-map.qmd
       - text: "Explore the data"
         href: explore.qmd
       - text: "Country profiles"

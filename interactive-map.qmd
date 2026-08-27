@@ -1,0 +1,118 @@
+---
+title: "Interactive policy map"
+subtitle: "Explore country-level *P. vivax* policy and implementation data."
+page-layout: full
+toc: false
+css: assets/interactive-map.css
+include-in-header:
+  - text: |
+      <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+include-after-body:
+  - text: |
+      <script src="assets/interactive-map.js"></script>
+---
+
+```{r}
+#| label: map-data
+#| include: false
+
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(htmltools)
+  library(jsonlite)
+})
+
+source("R/data_helpers.R")
+
+char <- load_characteristic_data()
+
+map_rows <- char |>
+  transmute(
+    country = trimws(.data$Country),
+    region = trimws(.data$Region),
+    who_region = trimws(.data$`WHO Region`),
+    reporting = trimws(.data$`Reporting vivax cases (<5 years)`),
+    cases_2023 = trimws(.data$`2023 Case Numbers`),
+    first_line = trimws(.data$`Pv 1st line treatment`),
+    second_line = trimws(.data$`Pv 2nd line treatment`),
+    g6pd_guidelines = trimws(.data$`Guidelines G6PD testing  (Y/N)`),
+    g6pd_implementation = trimws(.data$`Implementation: G6PD testing  (Y/N)`),
+    g6pd_type = trimws(.data$`Type of G6PD testing`),
+    program_phase = trimws(.data$`Program Phase`)
+  ) |>
+  filter(nzchar(.data$country))
+
+map_payload <- list(
+  countries = map_rows,
+  regions = sort(unique(map_rows$region[nzchar(map_rows$region)]))
+)
+
+map_json <- jsonlite::toJSON(
+  map_payload,
+  dataframe = "rows",
+  auto_unbox = TRUE,
+  na = "null",
+  null = "null"
+)
+
+map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
+```
+
+::: {.map-intro}
+Use the controls to change what the map shows. Hover over a country for a quick
+summary, or select it to keep its details open.
+:::
+
+```{=html}
+<div class="policy-map-shell">
+  <aside class="policy-map-controls" aria-label="Map controls">
+    <div class="policy-map-control">
+      <label for="policy-map-metric">Colour countries by</label>
+      <select id="policy-map-metric">
+        <option value="g6pd_guidelines">G6PD testing in guidelines</option>
+        <option value="g6pd_implementation">G6PD testing implemented</option>
+        <option value="first_line">First-line treatment</option>
+        <option value="program_phase">Programme phase</option>
+      </select>
+    </div>
+
+    <div class="policy-map-control">
+      <label for="policy-map-region">Region</label>
+      <select id="policy-map-region">
+        <option value="">All regions</option>
+      </select>
+    </div>
+
+    <button id="policy-map-reset" class="policy-map-reset" type="button">Reset view</button>
+
+    <div id="policy-map-legend" class="policy-map-legend" aria-label="Map legend"></div>
+    <p class="policy-map-note">Countries outside the repository are shown in grey.</p>
+  </aside>
+
+  <div class="policy-map-stage">
+    <div id="policy-map-status" class="policy-map-status" role="status">Loading country boundaries…</div>
+    <svg id="policy-map" class="policy-map" role="img" aria-label="Interactive world map of P. vivax policies"></svg>
+    <div id="policy-map-tooltip" class="policy-map-tooltip" role="tooltip" hidden></div>
+  </div>
+
+  <aside id="policy-map-details" class="policy-map-details" aria-live="polite">
+    <div class="policy-map-details__empty">
+      <span class="policy-map-details__eyebrow">Country details</span>
+      <h2>Select a country</h2>
+      <p>Choose a coloured country on the map to keep its policy summary here.</p>
+    </div>
+  </aside>
+</div>
+```
+
+```{r}
+#| label: map-json
+#| echo: false
+#| results: asis
+
+cat(as.character(tags$script(
+  id = "policy-map-data",
+  type = "application/json",
+  HTML(map_json)
+)))
+```
