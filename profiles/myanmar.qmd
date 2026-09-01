@@ -2,7 +2,7 @@
 title: "Myanmar"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes, with Thailand |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Traditional farming communities, forest goers and seasonal workers, defense services, IDPs, migrants |
-| **Programme contact** | Dr. Sein Hlyan Bo |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 
@@ -68,7 +68,7 @@ toc: true
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | https://moh.nugmyanmar.org/wp-content/uploads/2022/07/Malaria_Clinical_Management_Guidelines__June_2022___Ver_1__MOH_NUG_of_Myanmar.pdf |
+| **Treatment guidelines (URL)** | <a href="https://moh.nugmyanmar.org/wp-content/uploads/2022/07/Malaria_Clinical_Management_Guidelines__June_2022___Ver_1__MOH_NUG_of_Myanmar.pdf" target="_blank" rel="noopener noreferrer">https://moh.nugmyanmar.org/wp-content/uploads/2022/07/Malaria_Clinical_Management_Guidelines__June_2022___Ver_1__MOH_NUG_of_Myanmar.pdf</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
 ## Primaquine regimens by G6PD status

@@ -1,42 +1,59 @@
 .map-intro {
   max-width: 72ch;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1rem;
   color: var(--vivax-ink-soft, #4a5252);
 }
 
 .policy-map-shell {
-  display: grid;
-  grid-template-columns: minmax(190px, 0.8fr) minmax(480px, 2.6fr) minmax(250px, 1fr);
-  gap: 1rem;
-  align-items: stretch;
+  position: relative;
 }
 
 .policy-map-controls,
 .policy-map-stage,
-.policy-map-details {
+.policy-map-details,
+.policy-map-legend {
   border: 1px solid var(--vivax-rule, #e4ddd0);
   border-radius: var(--vivax-radius-md, 12px);
   background: var(--vivax-paper-elevated, #fff);
   box-shadow: var(--vivax-shadow-sm, 0 1px 2px rgba(26, 31, 31, 0.04));
 }
 
-.policy-map-controls,
-.policy-map-details {
-  padding: 1rem;
+.policy-map-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: end;
+  justify-content: center;
+  padding: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
-.policy-map-control + .policy-map-control {
-  margin-top: 1rem;
+.policy-map-control {
+  flex: 1 1 150px;
+  max-width: 230px;
+}
+
+.policy-map-control--primary {
+  flex-basis: 230px;
+  max-width: 290px;
+}
+
+.policy-map-control[hidden] {
+  display: none !important;
 }
 
 .policy-map-control label,
 .policy-map-legend__title {
   display: block;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
   color: var(--vivax-ink-soft, #4a5252);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.025em;
+}
+
+.policy-map-control--primary label {
+  color: var(--vivax-primary, #0d4f4f);
 }
 
 .policy-map-control select {
@@ -49,22 +66,28 @@
   color: var(--vivax-ink, #1a1f1f);
 }
 
+.policy-map-control--primary select {
+  border-color: var(--vivax-primary, #0d4f4f);
+  font-weight: 650;
+}
+
 .policy-map-control select:focus,
 .policy-map-reset:focus-visible,
-.policy-map-country:focus-visible {
+.policy-map-country:focus-visible,
+.policy-map-details__close:focus-visible {
   outline: 3px solid rgba(13, 79, 79, 0.2);
   outline-offset: 2px;
 }
 
 .policy-map-reset {
-  width: 100%;
-  padding: 0.55rem 0.75rem;
-  margin-top: 1rem;
+  min-height: 2.45rem;
+  padding: 0.5rem 0.8rem;
   border: 1px solid var(--vivax-primary, #0d4f4f);
   border-radius: var(--vivax-radius-sm, 8px);
   background: transparent;
   color: var(--vivax-primary, #0d4f4f);
-  font-weight: 650;
+  font-size: 0.78rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -73,23 +96,32 @@
 }
 
 .policy-map-legend {
-  margin-top: 1.25rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--vivax-rule, #e4ddd0);
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.65rem 0.8rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.policy-map-legend__title {
+  flex: 0 0 auto;
+  margin: 0;
+  padding-right: 0.85rem;
+  border-right: 1px solid var(--vivax-rule, #e4ddd0);
 }
 
 .policy-map-legend__item {
-  display: grid;
-  grid-template-columns: 0.85rem 1fr auto;
-  gap: 0.5rem;
+  display: inline-grid;
+  grid-template-columns: 0.78rem auto auto;
+  gap: 0.38rem;
   align-items: center;
-  margin: 0.42rem 0;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
 }
 
 .policy-map-legend__swatch {
-  width: 0.85rem;
-  height: 0.85rem;
+  width: 0.78rem;
+  height: 0.78rem;
   border: 1px solid rgba(26, 31, 31, 0.16);
   border-radius: 3px;
 }
@@ -100,15 +132,34 @@
 }
 
 .policy-map-note {
-  margin: 1rem 0 0;
+  margin: 0.35rem 0 0.7rem;
   color: var(--vivax-ink-soft, #4a5252);
-  font-size: 0.72rem;
-  line-height: 1.45;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.policy-map-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 310px);
+  gap: 0.85rem;
+  align-items: stretch;
+}
+
+/* Quarto adds its page-layout classes to this rendered wrapper. Reassert the
+   component grid so the country card remains beside, rather than below, the map. */
+.policy-map-content.page-columns {
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 310px) !important;
+}
+
+.policy-map-content.page-columns > .policy-map-stage,
+.policy-map-content.page-columns > .policy-map-details {
+  grid-column: auto !important;
+  width: auto;
 }
 
 .policy-map-stage {
   position: relative;
-  min-height: 560px;
+  min-height: 570px;
   overflow: hidden;
   background: #f7f3ec;
 }
@@ -117,7 +168,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 560px;
+  min-height: 570px;
   cursor: grab;
 }
 
@@ -161,7 +212,7 @@
 .policy-map-tooltip {
   position: fixed;
   z-index: 1000;
-  max-width: 260px;
+  max-width: 280px;
   padding: 0.65rem 0.75rem;
   border: 1px solid var(--vivax-rule, #e4ddd0);
   border-radius: 8px;
@@ -180,7 +231,29 @@
 }
 
 .policy-map-details {
-  min-height: 560px;
+  position: relative;
+  min-height: 570px;
+  max-height: 570px;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.policy-map-details__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.65rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--vivax-ink-soft, #4a5252);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.policy-map-details__close:hover {
+  background: rgba(13, 79, 79, 0.06);
 }
 
 .policy-map-details__eyebrow {
@@ -192,14 +265,14 @@
 }
 
 .policy-map-details h2 {
-  margin: 0.3rem 0 0.35rem;
+  margin: 0.3rem 2rem 0.35rem 0;
   color: var(--vivax-primary, #0d4f4f);
   font-size: 1.35rem;
 }
 
 .policy-map-details p {
   color: var(--vivax-ink-soft, #4a5252);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
 }
 
 .policy-map-detail-list {
@@ -207,20 +280,27 @@
 }
 
 .policy-map-detail-list > div {
-  padding: 0.65rem 0;
+  padding: 0.62rem 0;
   border-top: 1px solid var(--vivax-rule, #e4ddd0);
+}
+
+.policy-map-detail-list > div.is-highlighted {
+  padding: 0.7rem;
+  border: 1px solid rgba(13, 79, 79, 0.25);
+  border-radius: 8px;
+  background: rgba(13, 79, 79, 0.055);
 }
 
 .policy-map-detail-list dt {
   color: var(--vivax-ink-soft, #4a5252);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
 .policy-map-detail-list dd {
   margin: 0.18rem 0 0;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   line-height: 1.4;
 }
 
@@ -240,25 +320,53 @@
   color: #fff;
 }
 
-@media (max-width: 1050px) {
-  .policy-map-shell {
-    grid-template-columns: minmax(180px, 0.7fr) minmax(480px, 2fr);
-  }
-
-  .policy-map-details {
-    grid-column: 1 / -1;
-    min-height: 0;
-  }
-}
-
-@media (max-width: 760px) {
-  .policy-map-shell {
+/* Use the drawer only on an actual touch-oriented narrow device. Desktop
+   browser zoom must keep the details card in the right-hand map column. */
+@media (max-width: 900px) and (pointer: coarse) {
+  .policy-map-content,
+  .policy-map-content.page-columns {
     grid-template-columns: 1fr;
   }
 
-  .policy-map-stage,
-  .policy-map,
   .policy-map-details {
-    min-height: 420px;
+    position: fixed;
+    z-index: 1050;
+    top: 4.5rem;
+    right: 0;
+    bottom: 0;
+    width: min(88vw, 360px);
+    max-height: none;
+    min-height: 0;
+    border-radius: 12px 0 0 0;
+    box-shadow: -10px 0 30px rgba(26, 31, 31, 0.18);
+    transform: translateX(105%);
+    transition: transform 180ms ease;
+  }
+
+  .policy-map-details.is-open {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 620px) {
+  .policy-map-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: stretch;
+  }
+
+  .policy-map-control,
+  .policy-map-control--primary {
+    max-width: none;
+  }
+
+  .policy-map-control--primary,
+  .policy-map-reset {
+    grid-column: 1 / -1;
+  }
+
+  .policy-map-stage,
+  .policy-map {
+    min-height: 430px;
   }
 }

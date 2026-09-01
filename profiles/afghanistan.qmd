@@ -2,7 +2,7 @@
 title: "Afghanistan"
 subtitle: "Eastern Mediterranean · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Cross-border population, mobile grant populations, internally displaced |
-| **Programme contact** | Dr. Naeem, Malaria Program |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 

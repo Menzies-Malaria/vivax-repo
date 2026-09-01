@@ -2,7 +2,7 @@
 title: "South Sudan"
 subtitle: "African · Africa"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)

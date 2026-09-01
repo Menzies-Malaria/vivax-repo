@@ -2,7 +2,7 @@
 title: "Malaysia"
 subtitle: "Western Pacific · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Migrant workers in agriculture and forestry |
-| **Programme contact** | Dr. Tam Jenn Zhueng, Disease Control Division MoH |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 
@@ -60,7 +60,7 @@ toc: true
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | Yes, 2026 |
 | **Treatments under consideration** | Low dose 7-day PQ |
-| **Treatment guidelines (URL)** | https://jknjohor.moh.gov.my/hsegamat/uploads/penerbitan/buletin/Bulletin_2015_Bil2_Malaria.pdf |
+| **Treatment guidelines (URL)** | <a href="https://jknjohor.moh.gov.my/hsegamat/uploads/penerbitan/buletin/Bulletin_2015_Bil2_Malaria.pdf" target="_blank" rel="noopener noreferrer">https://jknjohor.moh.gov.my/hsegamat/uploads/penerbitan/buletin/Bulletin_2015_Bil2_Malaria.pdf</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
 ## Primaquine regimens by G6PD status

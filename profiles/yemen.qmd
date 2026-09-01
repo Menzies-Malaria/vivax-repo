@@ -2,7 +2,7 @@
 title: "Yemen"
 subtitle: "Eastern Mediterranean · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)

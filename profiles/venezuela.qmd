@@ -2,7 +2,7 @@
 title: "Venezuela"
 subtitle: "Americas · Central and South America"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)

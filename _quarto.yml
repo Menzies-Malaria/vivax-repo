@@ -4,6 +4,7 @@ project:
   resources:
     - assets/vivax-charts.js
     - assets/vivax-charts.css
+    - assets/sidebar-nav.js
 
 website:
   title: "P. vivax Policy Repository"
@@ -14,16 +15,17 @@ website:
   back-to-top-navigation: true
   reader-mode: false
 
-  navbar:
-    logo: assets/logo.svg
+  sidebar:
+    style: docked
     background: light
-    pinned: true
+    logo: assets/logo.svg
+    title: "P. vivax Policy Repository"
     search: true
-    left:
-      - text: "Overview"
-        href: index.qmd
+    contents:
       - text: "Interactive map"
-        href: interactive-map.qmd
+        href: index.qmd
+      - text: "Overview"
+        href: overview.qmd
       - text: "Explore the data"
         href: explore.qmd
       - text: "Country profiles"
@@ -34,13 +36,10 @@ website:
         href: methods.qmd
       - text: "Contribute / Update"
         href: contribute.qmd
-    right:
-      - icon: github
-        href: "https://github.com/Menzies-Malaria/vivax-repo"
-        aria-label: GitHub
-      - icon: download
+      - text: "Data & downloads"
         href: data.qmd
-        text: Data
+      - text: "GitHub repository"
+        href: "https://github.com/Menzies-Malaria/vivax-repo"
 
   page-footer:
     background: light
@@ -64,15 +63,19 @@ format:
       - text: |
           <script>
           window.addEventListener('load', () => {
-            history.replaceState(null, null, "/vivax-repo/");
+            const localHosts = new Set(["localhost", "127.0.0.1", "::1"]);
+            if (!localHosts.has(window.location.hostname)) {
+              history.replaceState(null, null, "/vivax-repo/");
+            }
           });
           </script>
     include-after-body:
       - text: |
           <script src="assets/vivax-charts.js"></script>
-    toc: true
+      - text: |
+          <script src="assets/sidebar-nav.js"></script>
+    toc: false
     toc-depth: 3
-    toc-location: right
     fig-cap-location: bottom
     code-tools: false
     code-copy: true

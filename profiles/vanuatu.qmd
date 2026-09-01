@@ -2,7 +2,7 @@
 title: "Vanuatu"
 subtitle: "Western Pacific · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | No |
 | **Mobile / migrant populations** | No |
 | **High-risk populations** | Remote communities, children under 5, travelers |
-| **Programme contact** | Dr Welsey Donald, NMCP |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 

@@ -2,7 +2,7 @@
 title: "Timor Leste"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes - imported cases from Indonesia |
 | **Mobile / migrant populations** | _Not reported_ |
 | **High-risk populations** | _Not reported_ |
-| **Programme contact** | Raul Sarmento, NMCP |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 

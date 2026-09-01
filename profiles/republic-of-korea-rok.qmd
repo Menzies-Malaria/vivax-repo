@@ -2,7 +2,7 @@
 title: "Republic of Korea (ROK)"
 subtitle: "Western Pacific · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)

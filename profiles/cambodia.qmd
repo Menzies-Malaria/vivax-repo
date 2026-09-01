@@ -2,7 +2,7 @@
 title: "Cambodia"
 subtitle: "Western Pacific · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -68,7 +68,7 @@ toc: true
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | https://www.cnm.gov.kh/userfiles/DT%202022%20Guidelines_Final_14062022%20ENG.pdf |
+| **Treatment guidelines (URL)** | <a href="https://www.cnm.gov.kh/userfiles/DT%202022%20Guidelines_Final_14062022%20ENG.pdf" target="_blank" rel="noopener noreferrer">https://www.cnm.gov.kh/userfiles/DT%202022%20Guidelines_Final_14062022%20ENG.pdf</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
 ## Primaquine regimens by G6PD status

@@ -2,7 +2,7 @@
 title: "Somalia"
 subtitle: "Eastern Mediterranean · Africa"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | No |
 | **High-risk populations** | Widespread transmission, but especially in Somaliland and Puntland, and other central and sourthern areas. Children under 5, pregnant women, IDPs, people in nomadic communities |
-| **Programme contact** | Hassan M Abukar, National Malaria Control Program Manager |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 

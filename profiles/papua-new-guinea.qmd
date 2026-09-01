@@ -2,7 +2,7 @@
 title: "Papua New Guinea"
 subtitle: "Western Pacific · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes, mostly into Papua Indonesia |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Mobile populations traveling from low endemic (or predominantly vivax malaria endemic) and epidemic prone areas in the highlands to (and from) highly endemic lowland areas, especially urban settlements in Madang and Morobe; People of all age groups living in epidemic-prone highland provinces during epidemic years; Pregnant women and young children (particularly those who are malnourished) living in highly endemic lowland areas. |
-| **Programme contact** | Dr Jacob Kisomb |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 

@@ -2,7 +2,7 @@
 title: "India"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -68,8 +68,8 @@ toc: true
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf |
-| **National Strategic Plan (URL)** | https://ncvbdc.mohfw.gov.in/Doc/National-Strategic-Plan-Malaria-2023-27.pdf |
+| **Treatment guidelines (URL)** | <a href="https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf" target="_blank" rel="noopener noreferrer">https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf</a> |
+| **National Strategic Plan (URL)** | <a href="https://ncvbdc.mohfw.gov.in/Doc/National-Strategic-Plan-Malaria-2023-27.pdf" target="_blank" rel="noopener noreferrer">https://ncvbdc.mohfw.gov.in/Doc/National-Strategic-Plan-Malaria-2023-27.pdf</a> |
 
 ## Notes
 

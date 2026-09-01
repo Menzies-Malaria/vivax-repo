@@ -12,10 +12,11 @@
   ];
 
   const metricLabels = {
-    g6pd_guidelines: "G6PD testing in guidelines",
-    g6pd_implementation: "G6PD testing implemented",
+    radical_cure_policy: "Radical-cure treatment policy",
+    g6pd_policy: "G6PD-testing policy",
+    g6pd_implementation: "G6PD-testing implementation",
+    treatment_implementation: "Treatment implementation",
     first_line: "First-line treatment",
-    program_phase: "Programme phase",
   };
 
   const aliases = {
@@ -74,15 +75,13 @@
       .replace(/'/g, "&#039;");
   }
 
-  function categoryFor(row, metric) {
-    return display(row[metric]);
-  }
-
   function categoryColors(categories, metric) {
     const colors = new Map();
-    if (metric === "g6pd_guidelines" || metric === "g6pd_implementation") {
-      colors.set("Yes", "#0d4f4f");
-      colors.set("No", "#c0521b");
+    if (metric.endsWith("implementation")) {
+      colors.set("Implemented", "#0d4f4f");
+      colors.set("Partial / planned", "#d9a36a");
+      colors.set("Not implemented", "#c0521b");
+      colors.set("Other / unclear", "#8b5e83");
       colors.set(NO_DATA, MUTED);
       return colors;
     }
@@ -92,8 +91,8 @@
     return colors;
   }
 
-  function detailItem(label, value) {
-    return `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(display(value))}</dd></div>`;
+  function detailItem(label, value, highlighted) {
+    return `<div${highlighted ? ' class="is-highlighted"' : ""}><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(display(value))}</dd></div>`;
   }
 
   function init() {
@@ -103,9 +102,19 @@
 
     const payload = JSON.parse(dataElement.textContent);
     const rows = payload.countries || [];
+    const treatments = payload.treatments || [];
     const byCountry = new Map(rows.map((row) => [normaliseName(row.country), row]));
+    const treatmentLookup = new Map(
+      treatments.map((row) => [`${normaliseName(row.country)}|${row.patient_group}`, row.radical_cure_policy])
+    );
+
     const metricSelect = document.getElementById("policy-map-metric");
+    const patientSelect = document.getElementById("policy-map-patient");
+    const patientControl = document.getElementById("policy-map-patient-control");
     const regionSelect = document.getElementById("policy-map-region");
+    const healthSelect = document.getElementById("policy-map-health");
+    const healthControl = document.getElementById("policy-map-health-control");
+    const reportingSelect = document.getElementById("policy-map-reporting");
     const resetButton = document.getElementById("policy-map-reset");
     const legend = document.getElementById("policy-map-legend");
     const details = document.getElementById("policy-map-details");
@@ -113,10 +122,10 @@
     const status = document.getElementById("policy-map-status");
 
     (payload.regions || []).forEach((region) => {
-      const option = document.createElement("option");
-      option.value = region;
-      option.textContent = region;
-      regionSelect.appendChild(option);
+      regionSelect.add(new Option(region, region));
+    });
+    (payload.health_levels || []).forEach((level) => {
+      healthSelect.add(new Option(level, level));
     });
 
     const svg = d3.select(svgElement);
@@ -130,6 +139,20 @@
       .on("zoom", (event) => root.attr("transform", event.transform));
     svg.call(zoom);
 
+    function categoryFor(row) {
+      const metric = metricSelect.value;
+      if (metric === "radical_cure_policy") {
+        return treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`) || NO_DATA;
+      }
+      return display(row[metric]);
+    }
+
+    function healthLevelFor(row) {
+      if (metricSelect.value === "g6pd_implementation") return display(row.g6pd_health_level);
+      if (metricSelect.value === "treatment_implementation") return display(row.treatment_health_level);
+      return "";
+    }
+
     function resize() {
       const width = Math.max(480, svgElement.clientWidth || 800);
       const height = Math.max(420, svgElement.clientHeight || 560);
@@ -138,13 +161,16 @@
         type: "FeatureCollection",
         features,
       });
-      const path = d3.geoPath(projection);
-      if (paths) paths.attr("d", path);
+      if (paths) paths.attr("d", d3.geoPath(projection));
     }
 
     function activeRows() {
-      const region = regionSelect.value;
-      return rows.filter((row) => !region || row.region === region);
+      return rows.filter((row) => {
+        if (regionSelect.value && row.region !== regionSelect.value) return false;
+        if (reportingSelect.value && row.reporting !== reportingSelect.value) return false;
+        if (healthSelect.value && healthLevelFor(row) !== healthSelect.value) return false;
+        return true;
+      });
     }
 
     function renderLegend(colors, counts) {
@@ -152,22 +178,30 @@
       legend.innerHTML = `<span class="policy-map-legend__title">${escapeHtml(metricLabels[metricSelect.value])}</span>` +
         items.map(([category, count]) => `
           <div class="policy-map-legend__item">
-            <span class="policy-map-legend__swatch" style="background:${colors.get(category)}"></span>
+            <span class="policy-map-legend__swatch" style="background:${colors.get(category) || MUTED}"></span>
             <span>${escapeHtml(category)}</span>
             <span class="policy-map-legend__count">${count}</span>
           </div>`).join("");
     }
 
+    function updateConditionalControls() {
+      const metric = metricSelect.value;
+      patientControl.hidden = metric !== "radical_cure_policy";
+      healthControl.hidden = !metric.endsWith("implementation");
+      if (healthControl.hidden) healthSelect.value = "";
+    }
+
     function updateMap() {
       if (!paths) return;
+      updateConditionalControls();
       const metric = metricSelect.value;
       const active = activeRows();
       const activeKeys = new Set(active.map((row) => normaliseName(row.country)));
-      const categories = [...new Set(active.map((row) => categoryFor(row, metric)))];
+      const categories = [...new Set(active.map(categoryFor))];
       const colors = categoryColors(categories, metric);
       const counts = new Map();
       active.forEach((row) => {
-        const category = categoryFor(row, metric);
+        const category = categoryFor(row);
         counts.set(category, (counts.get(category) || 0) + 1);
       });
 
@@ -179,40 +213,57 @@
           const row = byCountry.get(key);
           if (!row) return OUTSIDE;
           if (!activeKeys.has(key)) return MUTED;
-          return colors.get(categoryFor(row, metric)) || MUTED;
+          return colors.get(categoryFor(row)) || MUTED;
         })
         .attr("opacity", (feature) => {
           const key = normaliseName(feature.properties.name);
-          return byCountry.has(key) && !activeKeys.has(key) ? 0.35 : 1;
+          return byCountry.has(key) && !activeKeys.has(key) ? 0.28 : 1;
         });
 
       renderLegend(colors, counts);
+      if (selectedKey && byCountry.has(selectedKey)) showDetails(byCountry.get(selectedKey));
     }
 
     function showTooltip(event, row) {
       tooltip.innerHTML = `<strong>${escapeHtml(row.country)}</strong>` +
-        `${escapeHtml(metricLabels[metricSelect.value])}: ${escapeHtml(categoryFor(row, metricSelect.value))}`;
+        `${escapeHtml(metricLabels[metricSelect.value])}: ${escapeHtml(categoryFor(row))}`;
       tooltip.hidden = false;
       tooltip.style.left = `${event.clientX + 14}px`;
       tooltip.style.top = `${event.clientY + 14}px`;
     }
 
     function showDetails(row) {
+      const selectedLabel = metricLabels[metricSelect.value];
       details.innerHTML = `
+        <button class="policy-map-details__close" type="button" aria-label="Close country details">×</button>
         <span class="policy-map-details__eyebrow">${escapeHtml(row.region || "Country details")}</span>
         <h2>${escapeHtml(row.country)}</h2>
         <p>${escapeHtml(display(row.who_region))}</p>
         <dl class="policy-map-detail-list">
+          ${detailItem(selectedLabel, categoryFor(row), true)}
           ${detailItem("Reporting P. vivax cases (last 5 years)", row.reporting)}
           ${detailItem("2023 case numbers", row.cases_2023)}
           ${detailItem("First-line treatment", row.first_line)}
           ${detailItem("Second-line treatment", row.second_line)}
-          ${detailItem("G6PD testing in guidelines", row.g6pd_guidelines)}
-          ${detailItem("G6PD testing implemented", row.g6pd_implementation)}
+          ${detailItem("G6PD testing in guidelines", row.g6pd_guidelines_summary)}
+          ${detailItem("G6PD testing implemented", row.g6pd_implementation_summary)}
           ${detailItem("Type of G6PD testing", row.g6pd_type)}
           ${detailItem("Programme phase", row.program_phase)}
+          ${detailItem("Last policy update", row.last_policy_update)}
         </dl>
         <a class="policy-map-profile-link" href="profiles/${slugify(row.country)}.html">View country profile</a>`;
+      details.classList.add("is-open");
+    }
+
+    function emptyDetails() {
+      details.innerHTML = `
+        <button class="policy-map-details__close" type="button" aria-label="Close country details">×</button>
+        <div class="policy-map-details__empty">
+          <span class="policy-map-details__eyebrow">Country details</span>
+          <h2>Select a country</h2>
+          <p>Choose a coloured country on the map to keep its policy summary here.</p>
+        </div>`;
+      details.classList.remove("is-open");
     }
 
     d3.json(WORLD_URL).then((world) => {
@@ -223,11 +274,7 @@
         .attr("class", "policy-map-country")
         .attr("tabindex", (feature) => byCountry.has(normaliseName(feature.properties.name)) ? 0 : null)
         .attr("aria-label", (feature) => feature.properties.name)
-        .on("mouseenter", (event, feature) => {
-          const row = byCountry.get(normaliseName(feature.properties.name));
-          if (row) showTooltip(event, row);
-        })
-        .on("mousemove", (event, feature) => {
+        .on("mouseenter mousemove", (event, feature) => {
           const row = byCountry.get(normaliseName(feature.properties.name));
           if (row) showTooltip(event, row);
         })
@@ -253,6 +300,7 @@
         });
 
       resize();
+      updateConditionalControls();
       updateMap();
       status.hidden = true;
     }).catch((error) => {
@@ -261,19 +309,27 @@
       console.error(error);
     });
 
-    metricSelect.addEventListener("change", updateMap);
-    regionSelect.addEventListener("change", updateMap);
+    [metricSelect, patientSelect, regionSelect, healthSelect, reportingSelect].forEach((control) => {
+      control.addEventListener("change", updateMap);
+    });
+
     resetButton.addEventListener("click", () => {
+      metricSelect.value = "radical_cure_policy";
+      patientSelect.value = "G6PD normal";
       regionSelect.value = "";
+      healthSelect.value = "";
+      reportingSelect.value = "";
       selectedKey = null;
       tooltip.hidden = true;
       svg.transition().duration(300).call(zoom.transform, d3.zoomIdentity);
-      details.innerHTML = `
-        <div class="policy-map-details__empty">
-          <span class="policy-map-details__eyebrow">Country details</span>
-          <h2>Select a country</h2>
-          <p>Choose a coloured country on the map to keep its policy summary here.</p>
-        </div>`;
+      emptyDetails();
+      updateMap();
+    });
+
+    details.addEventListener("click", (event) => {
+      if (!event.target.closest(".policy-map-details__close")) return;
+      selectedKey = null;
+      emptyDetails();
       updateMap();
     });
 

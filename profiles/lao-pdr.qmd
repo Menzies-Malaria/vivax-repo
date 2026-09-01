@@ -2,7 +2,7 @@
 title: "Lao PDR"
 subtitle: "Western Pacific · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Forest-goers, MMPs, military |
-| **Programme contact** | Dr Keo Chindavongsa, CMPE |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 

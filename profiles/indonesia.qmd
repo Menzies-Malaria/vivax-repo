@@ -2,7 +2,7 @@
 title: "Indonesia"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -69,7 +69,7 @@ toc: true
 | **Next policy update** | Yes, 2026 |
 | **Treatments under consideration** | AL, Pyramax, Tafenoquine |
 | **Treatment guidelines (URL)** | _Not reported_ |
-| **National Strategic Plan (URL)** | https://apmen.org/sites/default/files/all_resources/Indonesia_Naional%20Plan%20for%20Malaria%20Elimination_2020-2024.pdf |
+| **National Strategic Plan (URL)** | <a href="https://apmen.org/sites/default/files/all_resources/Indonesia_Naional%20Plan%20for%20Malaria%20Elimination_2020-2024.pdf" target="_blank" rel="noopener noreferrer">https://apmen.org/sites/default/files/all_resources/Indonesia_Naional%20Plan%20for%20Malaria%20Elimination_2020-2024.pdf</a> |
 
 ## Primaquine regimens by G6PD status
 

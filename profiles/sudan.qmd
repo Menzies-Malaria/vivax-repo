@@ -2,7 +2,7 @@
 title: "Sudan"
 subtitle: "Eastern Mediterranean · Africa"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | No |
 | **High-risk populations** | Children under 5, IDPs, pregnant people |
-| **Programme contact** | Dr Samah Elhassan |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 
@@ -68,7 +68,7 @@ toc: true
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | N |
 | **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | https://www.scribd.com/document/756601422/Sudan-Malaria-Case-Management-Protocol-2023-1#content=query:G6PD,pageNum:43,indexOnPage:0,bestMatch:false |
+| **Treatment guidelines (URL)** | <a href="https://www.scribd.com/document/756601422/Sudan-Malaria-Case-Management-Protocol-2023-1#content=query:G6PD,pageNum:43,indexOnPage:0,bestMatch:false" target="_blank" rel="noopener noreferrer">https://www.scribd.com/document/756601422/Sudan-Malaria-Case-Management-Protocol-2023-1#content=query:G6PD,pageNum:43,indexOnPage:0,bestMatch:false</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
 ## Primaquine regimens by G6PD status

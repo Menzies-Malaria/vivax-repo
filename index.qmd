@@ -1,113 +1,277 @@
 ---
-title: "*Plasmodium vivax* Policy Repository"
-pagetitle: "P. vivax Policy Repository"
+pagetitle: "Interactive policy map | P. vivax Policy Repository"
 page-layout: full
 toc: false
+css: assets/interactive-map.css
+include-in-header:
+  - text: |
+      <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+include-after-body:
+  - text: |
+      <script src="assets/interactive-map.js"></script>
 ---
 
 ```{r}
-#| label: load-data
+#| label: map-data
 #| include: false
 
 suppressPackageStartupMessages({
   library(dplyr)
+  library(htmltools)
+  library(jsonlite)
+  library(stringr)
 })
 
 source("R/data_helpers.R")
 
 char <- load_characteristic_data()
 case <- load_case_data()
-stats <- headline_stats(char, case)
+
+not_reported <- function(x) {
+  x <- str_squish(as.character(x))
+  !nzchar(x) | str_to_upper(x) %in% c("NA", "N/A", "UNKNOWN")
+}
+
+classify_g6pd_policy <- function(x) {
+  y <- str_to_lower(str_squish(x))
+  case_when(
+    not_reported(y) ~ "Not reported",
+    str_detect(y, "not required|does not require|no g6pd|not recommend") ~ "Testing not required",
+    str_detect(y, "quantitative") & str_detect(y, "required|mandatory") ~ "Quantitative testing required",
+    str_detect(y, "quantitative") ~ "Quantitative testing recommended",
+    str_detect(y, "qualitative") ~ "Qualitative testing recommended",
+    str_detect(y, "recommend|should|testing") ~ "Testing recommended; method unspecified",
+    TRUE ~ "Other policy"
+  )
+}
+
+classify_implementation <- function(x) {
+  y <- str_to_lower(str_squish(x))
+  case_when(
+    not_reported(y) ~ "Not reported",
+    str_detect(y, "not implement|not yet|not conducted|no implementation") ~ "Not implemented",
+    str_detect(y, "pilot|partial|selected|limited|plan|feasibility") ~ "Partial / planned",
+    str_detect(y, "implement|roll.?out|routine|available|provided") ~ "Implemented",
+    TRUE ~ "Other / unclear"
+  )
+}
+
+classify_health_level <- function(x) {
+  y <- str_to_lower(str_squish(x))
+  case_when(
+    not_reported(y) ~ "Not reported",
+    str_detect(y, "community|volunteer|village|health post") ~ "Community / health post",
+    str_detect(y, "health cent|primary|district") ~ "Health centre / primary care",
+    str_detect(y, "hospital|tertiary|referral") ~ "Hospital / referral level",
+    TRUE ~ "Other / mixed level"
+  )
+}
+
+classify_patient_group <- function(x) {
+  y <- str_to_lower(str_squish(x))
+  case_when(
+    str_detect(y, "no testing|testing not available|testing unavailable|unknown g6pd") ~ "Testing unavailable",
+    str_detect(y, "intermediate|moderate|mild") ~ "Intermediate / mild deficiency",
+    str_detect(y, "severe|deficien") ~ "Severe / deficient",
+    str_detect(y, "normal") ~ "G6PD normal",
+    TRUE ~ "Other"
+  )
+}
+
+classify_radical_cure <- function(x) {
+  y <- str_to_lower(str_squish(x))
+  case_when(
+    not_reported(y) ~ "Not reported",
+    str_detect(y, "no primaquine|primaquine.*not|not recommend") ~ "No primaquine",
+    str_detect(y, "tafenoquine") & str_detect(y, "primaquine|\\bpq\\b") ~ "Primaquine or tafenoquine",
+    str_detect(y, "tafenoquine") ~ "Tafenoquine",
+    str_detect(y, "weekly|8 weeks") ~ "Weekly primaquine for 8 weeks",
+    str_detect(y, "7 day") & str_detect(y, "14 day") ~ "7- or 14-day primaquine",
+    str_detect(y, "7 day") ~ "7-day primaquine",
+    str_detect(y, "14 day") ~ "14-day primaquine",
+    str_detect(y, "primaquine|\\bpq\\b") ~ "Other primaquine regimen",
+    TRUE ~ "Other policy"
+  )
+}
+
+map_rows <- char |>
+  transmute(
+    country = trimws(.data$Country),
+    region = trimws(.data$Region),
+    who_region = trimws(.data$`WHO Region`),
+    reporting = trimws(.data$`Reporting vivax cases (<5 years)`),
+    cases_2023 = trimws(.data$`2023 Case Numbers`),
+    first_line = trimws(.data$`Pv 1st line treatment`),
+    second_line = trimws(.data$`Pv 2nd line treatment`),
+    g6pd_guidelines_summary = trimws(.data$`Guidelines G6PD testing  (Y/N)`),
+    g6pd_implementation_summary = trimws(.data$`Implementation: G6PD testing  (Y/N)`),
+    g6pd_type = trimws(.data$`Type of G6PD testing`),
+    program_phase = trimws(.data$`Program Phase`)
+  ) |>
+  filter(nzchar(.data$country))
+
+# Only explicitly approved policy fields are classified for the browser payload.
+# Raw notes, contacts, comments, links, and other free text are never embedded.
+case_main <- case |>
+  filter(.data$Country %in% map_rows$country) |>
+  group_by(.data$Country) |>
+  slice(1) |>
+  ungroup() |>
+  transmute(
+    country = trimws(.data$Country),
+    g6pd_policy = classify_g6pd_policy(.data$`Policy on G6PD Testing`),
+    g6pd_implementation = classify_implementation(.data$`Implementation of G6PD Testing`),
+    treatment_implementation = classify_implementation(.data$`Implementation of Treatment`),
+    g6pd_health_level = classify_health_level(.data$`Health System Level of G6PD Implementation`),
+    treatment_health_level = classify_health_level(.data$`Health System Level of Treatment Implementation`),
+    last_policy_update = coalesce(
+      str_extract(str_squish(.data$`Last Policy Update`), "(19|20)\\d{2}"),
+      ""
+    )
+  )
+
+map_rows <- map_rows |>
+  left_join(case_main, by = "country") |>
+  mutate(
+    across(
+      c(g6pd_policy, g6pd_implementation, treatment_implementation,
+        g6pd_health_level, treatment_health_level),
+      ~ coalesce(.x, "Not reported")
+    ),
+    last_policy_update = coalesce(.data$last_policy_update, "")
+  )
+
+country_prefixes <- map_rows$country[order(nchar(map_rows$country), decreasing = TRUE)]
+base_country_for <- function(value) {
+  if (is.na(value) || !nzchar(value)) return(NA_character_)
+  hit <- country_prefixes[str_starts(value, paste0(country_prefixes, " -"))]
+  if (length(hit)) hit[[1]] else NA_character_
+}
+
+case_sub <- case |>
+  mutate(base_country = vapply(.data$Country, base_country_for, character(1))) |>
+  filter(!is.na(.data$base_country)) |>
+  mutate(
+    status_text = str_sub(.data$Country, nchar(.data$base_country) + 4L),
+    patient_group = classify_patient_group(.data$status_text),
+    radical_cure_policy = classify_radical_cure(.data$`Policy on PQ`)
+  ) |>
+  filter(.data$patient_group != "Other") |>
+  group_by(.data$base_country, .data$patient_group) |>
+  slice(1) |>
+  ungroup() |>
+  transmute(
+    country = .data$base_country,
+    patient_group = .data$patient_group,
+    radical_cure_policy = .data$radical_cure_policy
+  )
+
+map_payload <- list(
+  countries = map_rows,
+  treatments = case_sub,
+  regions = sort(unique(map_rows$region[nzchar(map_rows$region)])),
+  health_levels = c(
+    "Community / health post",
+    "Health centre / primary care",
+    "Hospital / referral level",
+    "Other / mixed level",
+    "Not reported"
+  )
+)
+
+map_json <- jsonlite::toJSON(
+  map_payload,
+  dataframe = "rows",
+  auto_unbox = TRUE,
+  na = "null",
+  null = "null"
+)
+map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
 ```
 
-::: {.hero}
-::: {.eyebrow}
-A live policy repository
+::: {.map-intro}
+Choose the policy question that determines country colour. Secondary controls
+refine the population or countries shown. Hover for a quick answer, or select a
+country to keep its details open.
 :::
-# *Plasmodium vivax* Policy Repository
-
-::: {.lede}
-A continuously updated, country-level reference for *P. vivax* case management policies — treatment regimens, G6PD testing recommendations, implementation status, and the people behind the programmes. Built for national malaria control programmes, researchers, and partners working toward elimination.
-:::
-
-::: {.section-rule}
-:::
-:::
-
-```{r}
-#| output: asis
-
-cat(sprintf(
-  "
-::: {.stat-row}
-::: {.stat-card}
-[%d]{.num}
-[*P. vivax* endemic countries]{.label}
-:::
-::: {.stat-card}
-[%d]{.num}
-[Reporting *P. vivax* cases (last 5 yrs)]{.label}
-:::
-::: {.stat-card}
-[%d]{.num}
-[Have implemented G6PD testing]{.label}
-:::
-::: {.stat-card}
-[%d]{.num}
-[Have a documented policy date]{.label}
-:::
-:::
-",
-  stats$n_countries,
-  stats$n_reporting,
-  stats$n_implementing,
-  stats$n_with_policy
-))
-```
-
-## Why this exists
-
-The tools available to test for and treat *P. vivax* malaria have changed rapidly in the last few years. Point-of-care G6PD tests, shorter and more effective radical cure regimens (single-dose tafenoquine, high-dose 7-day primaquine), and updated WHO global recommendations in 2023 and 2024 have triggered policy revisions across endemic countries.
-
-National treatment guidelines are often published — but they are scattered, inconsistently versioned, and rarely available in a comparable form. A previous review was published in *Pathogens* in 2023. This repository is a living continuation of that effort, designed to stay current and to make every data point comparable across countries.
-
-## What you can do here
 
 ```{=html}
-<div class="country-grid">
-  <a class="country-card" href="explore.html">
-    <span class="name">Explore the data</span>
-    <span class="meta">Filter by region, treatment, G6PD policy, programme phase, and more.</span>
-  </a>
-  <a class="country-card" href="countries.html">
-    <span class="name">Country profiles</span>
-    <span class="meta">One-page summaries of policy, implementation, and contacts.</span>
-  </a>
-  <a class="country-card" href="timeline.html">
-    <span class="name">Policy timeline</span>
-    <span class="meta">When countries last updated their guidelines and what they're considering next.</span>
-  </a>
-  <a class="country-card" href="contribute.html">
-    <span class="name">Contribute an update</span>
-    <span class="meta">National Malaria Control Programmes can submit changes via a short form.</span>
-  </a>
+<div class="policy-map-shell">
+  <section class="policy-map-controls" aria-label="Map controls">
+    <div class="policy-map-control policy-map-control--primary">
+      <label for="policy-map-metric">Colour countries by</label>
+      <select id="policy-map-metric">
+        <option value="radical_cure_policy">Radical-cure treatment policy</option>
+        <option value="g6pd_policy">G6PD-testing policy</option>
+        <option value="g6pd_implementation">G6PD-testing implementation</option>
+        <option value="treatment_implementation">Treatment implementation</option>
+        <option value="first_line">First-line treatment</option>
+      </select>
+    </div>
+
+    <div id="policy-map-patient-control" class="policy-map-control">
+      <label for="policy-map-patient">Patient G6PD category</label>
+      <select id="policy-map-patient">
+        <option value="G6PD normal">G6PD normal</option>
+        <option value="Intermediate / mild deficiency">Intermediate / mild deficiency</option>
+        <option value="Severe / deficient">Severe / deficient</option>
+        <option value="Testing unavailable">Testing unavailable</option>
+      </select>
+    </div>
+
+    <div class="policy-map-control">
+      <label for="policy-map-region">Region</label>
+      <select id="policy-map-region"><option value="">All regions</option></select>
+    </div>
+
+    <div id="policy-map-health-control" class="policy-map-control" hidden>
+      <label for="policy-map-health">Health-system level</label>
+      <select id="policy-map-health"><option value="">All levels</option></select>
+    </div>
+
+    <div class="policy-map-control">
+      <label for="policy-map-reporting">Reporting status</label>
+      <select id="policy-map-reporting">
+        <option value="">All statuses</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="Yes (mixed)">Yes (mixed)</option>
+      </select>
+    </div>
+
+    <button id="policy-map-reset" class="policy-map-reset" type="button">Clear filters</button>
+  </section>
+
+  <div id="policy-map-legend" class="policy-map-legend" aria-label="Map legend"></div>
+  <p class="policy-map-note">Countries outside the repository are shown in grey.</p>
+
+  <div class="policy-map-content">
+    <div class="policy-map-stage">
+      <div id="policy-map-status" class="policy-map-status" role="status">Loading country boundaries…</div>
+      <svg id="policy-map" class="policy-map" role="img" aria-label="Interactive world map of P. vivax policies"></svg>
+      <div id="policy-map-tooltip" class="policy-map-tooltip" role="tooltip" hidden></div>
+    </div>
+
+    <aside id="policy-map-details" class="policy-map-details" aria-live="polite">
+      <button class="policy-map-details__close" type="button" aria-label="Close country details">×</button>
+      <div class="policy-map-details__empty">
+        <span class="policy-map-details__eyebrow">Country details</span>
+        <h2>Select a country</h2>
+        <p>Choose a coloured country on the map to keep its policy summary here.</p>
+      </div>
+    </aside>
+  </div>
 </div>
 ```
 
-::: {.callout-edit}
-This repository is developed in consultation with National Malaria Control Programmes (NMCPs) and partners. NMCPs may flag specific data points as visible only to other programmes; the public site shows what countries have agreed to share publicly.
-:::
+```{r}
+#| label: map-json
+#| echo: false
+#| results: asis
 
-## How it works
-
-The data on this site is read at build time from a shared Google Sheet that is maintained by the repository team and updated by NMCP focal points. New submissions through the [contribute form](contribute.qmd) flow into the same sheet. When the site rebuilds (manually or on a schedule), the latest data is pulled and rendered. See [Methods](methods.qmd) for details, including how rows are reconciled and versioned.
-
-## Cite this repository
-
-If you use these data in a publication or report, please cite:
-
-> *P. vivax* Policy Repository. Updated `r format(Sys.Date(), "%B %Y")`. Available at: https://example.org/vivax-policy-repository.
-
-And the foundational review:
-
-> Sadhewa A, Cassidy-Seyoum S, Acharya S, Devine A, Price RN, Mwaura M, et al. A Review of the Current Status of G6PD Deficiency Testing to Guide Radical Cure Treatment for Vivax Malaria. *Pathogens*. 2023;12(5):650.
+cat(as.character(tags$script(
+  id = "policy-map-data",
+  type = "application/json",
+  HTML(map_json)
+)))
+```

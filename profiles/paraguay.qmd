@@ -2,7 +2,7 @@
 title: "Paraguay"
 subtitle: "Americas · Central and South America"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -60,7 +60,7 @@ toc: true
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | https://www.mspbs.gov.py/dependencias/portal/adjunto/b4bee7-ProtocoloManejoClnicoPaludismocontapaFinal.pdf |
+| **Treatment guidelines (URL)** | <a href="https://www.mspbs.gov.py/dependencias/portal/adjunto/b4bee7-ProtocoloManejoClnicoPaludismocontapaFinal.pdf" target="_blank" rel="noopener noreferrer">https://www.mspbs.gov.py/dependencias/portal/adjunto/b4bee7-ProtocoloManejoClnicoPaludismocontapaFinal.pdf</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
 ## Primaquine regimens by G6PD status

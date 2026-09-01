@@ -2,7 +2,7 @@
 title: "North Korea (DPRK)"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)

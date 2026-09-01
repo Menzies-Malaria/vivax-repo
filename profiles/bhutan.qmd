@@ -2,7 +2,7 @@
 title: "Bhutan"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Construction workers (mobile migrant population) |
-| **Programme contact** | Dr |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 
@@ -67,7 +67,7 @@ toc: true
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | Maybe |
 | **Treatments under consideration** | Prophylaxis treatment |
-| **Treatment guidelines (URL)** | https://moh.gov.bt/wp-content/uploads/2025/01/MALARIA-TREATMENT-PROTOCOL_FINAL-PRINT-VERSION.pdf ; https://moh.gov.bt/wp-content/uploads/2025/01/Revised-National-Guideline-on-Diagnosis-and-Treatment-on-Malaria-.pdf |
+| **Treatment guidelines (URL)** | <a href="https://moh.gov.bt/wp-content/uploads/2025/01/MALARIA-TREATMENT-PROTOCOL_FINAL-PRINT-VERSION.pdf" target="_blank" rel="noopener noreferrer">https://moh.gov.bt/wp-content/uploads/2025/01/MALARIA-TREATMENT-PROTOCOL_FINAL-PRINT-VERSION.pdf</a><br><a href="https://moh.gov.bt/wp-content/uploads/2025/01/Revised-National-Guideline-on-Diagnosis-and-Treatment-on-Malaria-.pdf" target="_blank" rel="noopener noreferrer">https://moh.gov.bt/wp-content/uploads/2025/01/Revised-National-Guideline-on-Diagnosis-and-Treatment-on-Malaria-.pdf</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
 ## Primaquine regimens by G6PD status

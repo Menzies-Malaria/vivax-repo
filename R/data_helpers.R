@@ -32,6 +32,24 @@ characteristic_data_source <- function(
   )
 }
 
+case_data_source <- function(
+  local_path = "data/case_management.csv"
+) {
+  if (nzchar(Sys.getenv("CASE_DATA_URL", unset = ""))) {
+    return(require_sheet_url("CASE_DATA_URL"))
+  }
+
+  if (file.exists(local_path)) {
+    return(local_path)
+  }
+
+  stop(
+    "CASE_DATA_URL is not set and local case-management data was not found at ",
+    local_path, ".",
+    call. = FALSE
+  )
+}
+
 load_sheet <- function(path) {
   df <- readr::read_csv(
     path,
@@ -48,7 +66,7 @@ load_characteristic_data <- function(path = characteristic_data_source()) {
   load_sheet(path)
 }
 
-load_case_data <- function(path = require_sheet_url("CASE_DATA_URL")) {
+load_case_data <- function(path = case_data_source()) {
   load_sheet(path)
 }
 

@@ -2,7 +2,7 @@
 title: "Nepal"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Mobile migrant populations, specifically Nepali who go to India for seasonal work, rural communities, indigenous comminuties, and individuals in the forest-fringe |
-| **Programme contact** | Dr Shashi Kandel, NMCP |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 

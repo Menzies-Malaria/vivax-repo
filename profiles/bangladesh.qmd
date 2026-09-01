@@ -2,7 +2,7 @@
 title: "Bangladesh"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Mobile migrant populations, farmers, traders (forest product in hilly border areas), miners, fishermen, forest-goers, refugees (almost 1 million for Myanmar) |
-| **Programme contact** | Dr. Md. Mosiqure Rahaman, NMCP |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 

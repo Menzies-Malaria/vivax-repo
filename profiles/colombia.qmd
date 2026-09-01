@@ -2,7 +2,7 @@
 title: "Colombia"
 subtitle: "Americas · Central and South America"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -68,7 +68,7 @@ toc: true
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/PP/ET/Guia-atencion-clinica-malaria.pdf |
+| **Treatment guidelines (URL)** | <a href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/PP/ET/Guia-atencion-clinica-malaria.pdf" target="_blank" rel="noopener noreferrer">https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/PP/ET/Guia-atencion-clinica-malaria.pdf</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
 ## Primaquine regimens by G6PD status

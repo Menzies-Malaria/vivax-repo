@@ -2,7 +2,7 @@
 title: "Peru"
 subtitle: "Americas · Central and South America"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -69,7 +69,7 @@ toc: true
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
 | **Treatment guidelines (URL)** | _Not reported_ |
-| **National Strategic Plan (URL)** | https://mesamalaria.org/wp-content/uploads/2024/08/Peru_NMESP_2022-2030.pdf |
+| **National Strategic Plan (URL)** | <a href="https://mesamalaria.org/wp-content/uploads/2024/08/Peru_NMESP_2022-2030.pdf" target="_blank" rel="noopener noreferrer">https://mesamalaria.org/wp-content/uploads/2024/08/Peru_NMESP_2022-2030.pdf</a> |
 
 ## Primaquine regimens by G6PD status
 

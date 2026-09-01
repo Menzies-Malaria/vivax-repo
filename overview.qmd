@@ -1,0 +1,109 @@
+---
+pagetitle: "P. vivax Policy Repository"
+page-layout: full
+toc: false
+---
+
+```{r}
+#| label: load-data
+#| include: false
+
+suppressPackageStartupMessages({
+  library(dplyr)
+})
+
+source("R/data_helpers.R")
+
+char <- load_characteristic_data()
+case <- load_case_data()
+stats <- headline_stats(char, case)
+```
+
+::: {.hero}
+# *Plasmodium vivax* Policy Repository
+
+::: {.lede}
+A continuously updated, country-level reference for *P. vivax* case management policies — treatment regimens, G6PD testing recommendations, implementation status, and the people behind the programmes. Built for national malaria control programmes, researchers, and partners working toward elimination.
+:::
+
+::: {.section-rule}
+:::
+:::
+
+```{r}
+#| output: asis
+
+cat(sprintf(
+  "
+::: {.stat-row}
+::: {.stat-card}
+[%d]{.num}
+[*P. vivax* endemic countries]{.label}
+:::
+::: {.stat-card}
+[%d]{.num}
+[Reporting *P. vivax* cases (last 5 yrs)]{.label}
+:::
+::: {.stat-card}
+[%d]{.num}
+[Have implemented G6PD testing]{.label}
+:::
+::: {.stat-card}
+[%d]{.num}
+[Have a documented policy date]{.label}
+:::
+:::
+",
+  stats$n_countries,
+  stats$n_reporting,
+  stats$n_implementing,
+  stats$n_with_policy
+))
+```
+
+## Why this exists
+
+The tools available to test for and treat *P. vivax* malaria have changed rapidly in the last few years. Point-of-care G6PD tests, shorter and more effective radical cure regimens (single-dose tafenoquine, high-dose 7-day primaquine), and updated WHO global recommendations in 2023 and 2024 have triggered policy revisions across endemic countries.
+
+National treatment guidelines are often published — but they are scattered, inconsistently versioned, and rarely available in a comparable form. A previous review was published in *Pathogens* in 2023. This repository is a living continuation of that effort, designed to stay current and to make every data point comparable across countries.
+
+## What you can do here
+
+```{=html}
+<div class="country-grid">
+  <a class="country-card" href="index.html">
+    <span class="name">Open the interactive map</span>
+    <span class="meta">Compare treatment, G6PD policy, and implementation across countries.</span>
+  </a>
+  <a class="country-card" href="countries.html">
+    <span class="name">Country profiles</span>
+    <span class="meta">One-page summaries of policy, implementation, and contacts.</span>
+  </a>
+  <a class="country-card" href="timeline.html">
+    <span class="name">Policy timeline</span>
+    <span class="meta">When countries last updated their guidelines and what they're considering next.</span>
+  </a>
+  <a class="country-card" href="contribute.html">
+    <span class="name">Contribute an update</span>
+    <span class="meta">National Malaria Control Programmes can submit changes via a short form.</span>
+  </a>
+</div>
+```
+
+::: {.callout-edit}
+This repository is developed in consultation with National Malaria Control Programmes (NMCPs) and partners. NMCPs may flag specific data points as visible only to other programmes; the public site shows what countries have agreed to share publicly.
+:::
+
+## How it works
+
+The data on this site is read at build time from a shared Google Sheet that is maintained by the repository team and updated by NMCP focal points. New submissions through the [contribute form](contribute.qmd) flow into the same sheet. When the site rebuilds (manually or on a schedule), the latest data is pulled and rendered. See [Methods](methods.qmd) for details, including how rows are reconciled and versioned.
+
+## Cite this repository
+
+If you use these data in a publication or report, please cite:
+
+> *P. vivax* Policy Repository. Updated `r format(Sys.Date(), "%B %Y")`. Available at: https://example.org/vivax-policy-repository.
+
+And the foundational review:
+
+> Sadhewa A, Cassidy-Seyoum S, Acharya S, Devine A, Price RN, Mwaura M, et al. A Review of the Current Status of G6PD Deficiency Testing to Guide Radical Cure Treatment for Vivax Malaria. *Pathogens*. 2023;12(5):650.

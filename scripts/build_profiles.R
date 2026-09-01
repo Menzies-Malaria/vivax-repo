@@ -18,19 +18,31 @@ root <- if (length(file_arg)) {
   normalizePath(getwd(), mustWork = TRUE)
 }
 
-require_sheet_url <- function(name) {
+data_source <- function(name, local_path) {
   url <- Sys.getenv(name, unset = "")
-  if (!nzchar(url)) {
-    stop(name, " is not set. Export publish-to-web CSV URLs from the Google Sheet (see README).", call. = FALSE)
+  if (nzchar(url)) {
+    if (!grepl("^https?://", url)) {
+      stop(name, " must be an https URL to the Google Sheet CSV export.", call. = FALSE)
+    }
+    return(url)
   }
-  if (!grepl("^https?://", url)) {
-    stop(name, " must be an https URL to the Google Sheet CSV export.", call. = FALSE)
-  }
-  url
+
+  if (file.exists(local_path)) return(local_path)
+
+  stop(
+    name, " is not set and the local fallback was not found at ", local_path, ".",
+    call. = FALSE
+  )
 }
 
-CHAR_URL <- require_sheet_url("CHAR_DATA_URL")
-CASE_URL <- require_sheet_url("CASE_DATA_URL")
+CHAR_URL <- data_source(
+  "CHAR_DATA_URL",
+  file.path(root, "data", "characteristic_data.csv")
+)
+CASE_URL <- data_source(
+  "CASE_DATA_URL",
+  file.path(root, "data", "case_management.csv")
+)
 
 load_sheet <- function(path) {
   df <- read_csv(path, show_col_types = FALSE, na = character()) |>
@@ -57,13 +69,49 @@ md_escape <- function(s) {
     str_trim()
 }
 
+html_escape <- function(s) {
+  s |>
+    str_replace_all("&", "&amp;") |>
+    str_replace_all("<", "&lt;") |>
+    str_replace_all(">", "&gt;") |>
+    str_replace_all('"', "&quot;") |>
+    str_replace_all("'", "&#39;")
+}
+
+url_links <- function(value) {
+  urls <- str_split(value, "\\s*;\\s*")[[1]] |>
+    str_trim()
+  urls <- urls[nzchar(urls)]
+
+  valid <- str_detect(urls, "^https?://[^\\s<>\\\"']+$")
+  if (!length(urls) || !all(valid)) return(md_escape(value))
+
+  links <- vapply(urls, function(url) {
+    safe_url <- html_escape(url)
+    sprintf(
+      '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
+      safe_url,
+      safe_url
+    )
+  }, character(1))
+
+  paste(links, collapse = "<br>")
+}
+
 kv_table <- function(rows) {
   lines <- c("| | |", "|---|---|")
+  url_labels <- c("Treatment guidelines (URL)", "National Strategic Plan (URL)")
   for (i in seq_len(nrow(rows))) {
     label <- rows$label[i]
     value <- str_trim(rows$value[i])
-    if (!nzchar(value)) value <- "_Not reported_"
-    lines <- c(lines, sprintf("| **%s** | %s |", label, md_escape(value)))
+    if (!nzchar(value)) {
+      rendered_value <- "_Not reported_"
+    } else if (label %in% url_labels) {
+      rendered_value <- url_links(value)
+    } else {
+      rendered_value <- md_escape(value)
+    }
+    lines <- c(lines, sprintf("| **%s** | %s |", label, rendered_value))
   }
   paste(lines, collapse = "\n")
 }
@@ -117,7 +165,7 @@ for (i in seq_len(nrow(char))) {
       row_val(row, "Region")
     ),
     "page-layout: article",
-    "toc: true",
+    "toc: false",
     "---",
     "",
     "[← Back to all countries](../countries.qmd)",
@@ -320,7 +368,7 @@ for (i in seq_len(nrow(char))) {
 }
 
 writeLines(
-  c("page-layout: article", "toc: true", "toc-depth: 3", ""),
+  c("page-layout: article", "toc: false", ""),
   file.path(out_dir, "_metadata.yml"),
   useBytes = TRUE
 )

@@ -2,7 +2,7 @@
 title: "Philippines"
 subtitle: "Western Pacific · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | No |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Indigenous population (remote areas in Palawan), forest workers, IDPs, military) |
-| **Programme contact** | Dr. Jem Mariel Langas |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 

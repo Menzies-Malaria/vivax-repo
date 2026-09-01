@@ -11,7 +11,8 @@ The data lives in a Google Sheet. Updates flow in either directly (programme tea
 ├── _quarto.yml                # Quarto project config
 ├── theme.scss                 # SCSS theme (typography, colours)
 ├── assets/                    # Logo, extra CSS
-├── index.qmd                  # Homepage
+├── index.qmd                  # Interactive-map homepage
+├── overview.qmd               # Project overview
 ├── explore.qmd                # Interactive data explorer
 ├── countries.qmd              # Index of country profiles
 ├── timeline.qmd               # Policy update timeline
@@ -29,7 +30,9 @@ The data lives in a Google Sheet. Updates flow in either directly (programme tea
 
 ## Quickstart (local)
 
-The site reads data only from a live Google Sheet. Before building locally, set the two publish-to-web CSV URLs (see [How the Google Sheet is wired up](#how-the-google-sheet-is-wired-up) below).
+The production build reads from the live Google Sheet. For local authoring, the
+loaders fall back to `data/characteristic_data.csv` and
+`data/case_management.csv` when the two Sheet URL variables are not set.
 
 ```bash
 # 1. Install R deps (one-time)

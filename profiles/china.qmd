@@ -2,7 +2,7 @@
 title: "China"
 subtitle: "Western Pacific · Asia-Pacific"
 page-layout: article
-toc: true
+toc: false
 ---
 
 [← Back to all countries](../countries.qmd)
@@ -28,7 +28,7 @@ toc: true
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Mobile migrant populations |
-| **Programme contact** | Dr Li Mei, China CDC |
+| **Programme contact** | _Not reported_ |
 
 ## Reported case numbers
 
