@@ -1,17 +1,32 @@
 # Shared data-loading helpers for Quarto pages
 
-require_sheet_url <- function(name) {
+data_source <- function(name, local_path) {
   url <- Sys.getenv(name, unset = "")
-  if (!nzchar(url)) {
-    stop(
-      name, " is not set. Export publish-to-web CSV URLs from the Google Sheet (see README).",
-      call. = FALSE
-    )
+  if (nzchar(url)) {
+    if (!grepl("^https?://", url)) {
+      stop(name, " must be an https URL to the Google Sheet CSV export.", call. = FALSE)
+    }
+    return(url)
   }
-  if (!grepl("^https?://", url)) {
-    stop(name, " must be an https URL to the Google Sheet CSV export.", call. = FALSE)
-  }
-  url
+
+  if (file.exists(local_path)) return(local_path)
+
+  stop(
+    name, " is not set and the local fallback was not found at ", local_path, ".",
+    call. = FALSE
+  )
+}
+
+characteristic_data_source <- function(
+  local_path = file.path("data", "characteristic_data.csv")
+) {
+  data_source("CHAR_DATA_URL", local_path)
+}
+
+case_data_source <- function(
+  local_path = file.path("data", "case_management.csv")
+) {
+  data_source("CASE_DATA_URL", local_path)
 }
 
 load_sheet <- function(path) {
@@ -22,11 +37,11 @@ load_sheet <- function(path) {
   df
 }
 
-load_characteristic_data <- function(path = require_sheet_url("CHAR_DATA_URL")) {
+load_characteristic_data <- function(path = characteristic_data_source()) {
   load_sheet(path)
 }
 
-load_case_data <- function(path = require_sheet_url("CASE_DATA_URL")) {
+load_case_data <- function(path = case_data_source()) {
   load_sheet(path)
 }
 

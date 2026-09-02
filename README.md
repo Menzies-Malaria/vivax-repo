@@ -29,15 +29,23 @@ The data lives in a Google Sheet. Updates flow in either directly (programme tea
 
 ## Quickstart (local)
 
-The site reads data only from a live Google Sheet. Before building locally, set the two publish-to-web CSV URLs (see [How the Google Sheet is wired up](#how-the-google-sheet-is-wired-up) below).
+Production builds prefer the two live Google Sheet URLs. When those variables
+are not set, local builds fall back to `data/characteristic_data.csv` and
+`data/case_management.csv`.
 
 ```bash
 # 1. Install R deps (one-time)
 Rscript -e 'install.packages(c("readr", "dplyr", "stringr", "jsonlite", "crosstalk", "DT", "htmltools", "knitr", "rmarkdown"), repos = "https://cloud.r-project.org")'
 
-# 2. Install Quarto (one-time): https://quarto.org/docs/get-started/
+# 2. Install Quarto and Python 3.10/3.11 (one-time)
+#    https://quarto.org/docs/get-started/
+#    https://www.python.org/downloads/
 
-# 3. Export sheet URLs and fetch CSVs for download links on data.qmd
+# 3a. Local CSV workflow: place the two CSV files under data/
+#     data/characteristic_data.csv
+#     data/case_management.csv
+
+# 3b. Optional live-Sheet workflow: export URLs and fetch CSVs
 export CHAR_DATA_URL="https://docs.google.com/spreadsheets/d/<ID>/pub?gid=<GID_1>&single=true&output=csv"
 export CASE_DATA_URL="https://docs.google.com/spreadsheets/d/<ID>/pub?gid=<GID_2>&single=true&output=csv"
 bash scripts/fetch-sheet-data.sh
@@ -49,7 +57,41 @@ Rscript scripts/build_profiles.R
 quarto preview
 ```
 
-The site will open at <http://localhost:7676>. Local preview is **ungated** for authoring convenience.
+On the first preview after the approved translation dictionary changes, the
+pre-render hook creates an ignored `.venv`, installs the pinned Argos release,
+and downloads the English-to-Spanish, English-to-French, and
+English-to-Portuguese models into `.translation-cache/`. Later
+previews reuse the cached translation and work offline. The site will open at
+<http://localhost:7676>. Local preview is **ungated** for authoring convenience.
+
+## Local translation prototype
+
+The prototype extracts eligible static text from the seven rendered top-level
+website pages and records it in `translations/en.json`. It excludes country
+profiles, tables, plots, R/HTML-widget output, code, hyperlinks, URLs, email
+addresses, and the embedded contribution form. Before translation, the builder
+validates this generated local allowlist and reports its exact string and
+character count.
+
+```text
+rendered top-level HTML
+        -> scripts/extract_static_translations.py
+        -> translations/en.json
+        -> scripts/prepare_translations.R
+        -> local Argos English-to-Spanish/French/Portuguese models
+        -> assets/translations/es.json, fr.json, pt.json
+        -> English / Español / Français / Português selector in the Quarto navigation
+```
+
+Each generated language dictionary is marked `machine draft - human review
+required`. They are cached and committed separately from the ignored Python
+environment and model files. To regenerate after changing eligible site text:
+
+```bash
+Rscript scripts/prepare_translations.R
+```
+
+No cloud translation API, registration, subscription, or API key is used.
 
 ### Previewing the gated site locally
 

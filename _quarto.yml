@@ -1,9 +1,19 @@
 project:
   type: website
   output-dir: _site
+  pre-render:
+    - Rscript scripts/prepare_translations.R
+  post-render:
+    - Rscript scripts/prepare_translations.R
   resources:
     - assets/vivax-charts.js
     - assets/vivax-charts.css
+    - assets/translation.js
+    - assets/translation.css
+    - assets/translations/en.json
+    - assets/translations/es.json
+    - assets/translations/fr.json
+    - assets/translations/pt.json
 
 website:
   title: "P. vivax Policy Repository"
@@ -56,18 +66,24 @@ format:
     css:
       - assets/styles.css
       - assets/vivax-charts.css
+      - assets/translation.css
     include-in-header:
       - text: |
           <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
       - text: |
           <script>
           window.addEventListener('load', () => {
-            history.replaceState(null, null, "/vivax-repo/");
+            const localHosts = new Set(["localhost", "127.0.0.1", "::1"]);
+            if (!localHosts.has(window.location.hostname)) {
+              history.replaceState(null, null, "/vivax-repo/");
+            }
           });
           </script>
     include-after-body:
       - text: |
           <script src="assets/vivax-charts.js"></script>
+      - text: |
+          <script src="assets/translation.js"></script>
     toc: true
     toc-depth: 3
     toc-location: right
