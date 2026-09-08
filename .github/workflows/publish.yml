@@ -2,7 +2,7 @@ name: Publish
 
 on:
   push:
-    branches: [main]
+    branches: [main, interactive-map]
   schedule:
     # Rebuild every Monday at 06:00 UTC so the site picks up fresh sheet data.
     - cron: "0 6 * * 1"
@@ -24,7 +24,17 @@ jobs:
       RESTRICTED_PORTAL_PASS: ${{ secrets.RESTRICTED_PORTAL_PASS }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out the main website
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-source
+
+      - name: Check out the interactive-map prototype
+        uses: actions/checkout@v4
+        with:
+          ref: interactive-map
+          path: prototype-source
 
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
@@ -55,29 +65,41 @@ jobs:
             exit 1
           fi
 
-      - name: Fetch live data from Google Sheets
-        run: bash scripts/fetch-sheet-data.sh
-
-      - name: Generate country profile pages
-        run: Rscript scripts/build_profiles.R
-
-      - name: Render Quarto site
-        run: quarto render
-
-      - name: Verify portal secrets
+      - name: Verify shared portal secrets
         run: |
           if [ -z "$RESTRICTED_PORTAL_USER" ] || [ -z "$RESTRICTED_PORTAL_PASS" ]; then
             echo "Error: RESTRICTED_PORTAL_USER and RESTRICTED_PORTAL_PASS must be set as repository secrets." >&2
             exit 1
           fi
 
-      - name: Package gated site
-        run: bash scripts/package-gated-site.sh
+      - name: Build and gate the main website
+        working-directory: main-source
+        run: |
+          bash scripts/fetch-sheet-data.sh
+          Rscript scripts/build_profiles.R
+          quarto render
+          bash scripts/package-gated-site.sh
+
+      - name: Build and gate the interactive-map prototype
+        working-directory: prototype-source
+        run: |
+          bash scripts/fetch-sheet-data.sh
+          Rscript scripts/build_profiles.R
+          quarto render
+          bash scripts/package-gated-site.sh
+
+      - name: Combine main site and prototype
+        run: |
+          mv main-source/_site combined-site
+          mkdir -p combined-site/prototype
+          cp -a prototype-source/_site/. combined-site/prototype/
+          test -f combined-site/index.html
+          test -f combined-site/prototype/index.html
 
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: combined-site
 
   deploy:
     needs: build-deploy

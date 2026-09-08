@@ -3,6 +3,9 @@
 /_freeze/
 __pycache__/
 *.pyc
+.venv/
+.translation-cache/
+.vscode/
 .DS_Store
 .Rproj.user/
 .Rhistory

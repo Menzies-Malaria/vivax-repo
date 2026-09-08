@@ -60,15 +60,6 @@ format:
     include-in-header:
       - text: |
           <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-      - text: |
-          <script>
-          window.addEventListener('load', () => {
-            const localHosts = new Set(["localhost", "127.0.0.1", "::1"]);
-            if (!localHosts.has(window.location.hostname)) {
-              history.replaceState(null, null, "/vivax-repo/");
-            }
-          });
-          </script>
     include-after-body:
       - text: |
           <script src="assets/vivax-charts.js"></script>
