@@ -2,11 +2,11 @@
   "meta": {
     "language": "pt",
     "source_language": "en",
-    "source_hash": "63ae97f50a17a7f6fff99cf8f6f7a9ea3a2c3e6bdce291353698389031559e8b",
+    "source_hash": "59456012114fc87540bc4c12e80b2dfff20ed8f4aa5c711b75882b282dde1785",
     "engine": "Argos Translate",
     "review_status": "machine draft - human review required",
-    "string_count": 278,
-    "source_character_count": 14671
+    "string_count": 279,
+    "source_character_count": 14683
   },
   "strings": {
     "static.4aa9bfd2f175a94a": ", e",
@@ -149,6 +149,7 @@
     "static.adadface0166af24": "Não reportado",
     "static.b0aafad0fc701e9a": "de variação subnacional, mas não a própria variação em detalhe. O campo “Detalhes das fases subnacionais do programa” capta o que sabemos.",
     "static.c8f7f5bdd0e4ac65": "Na próxima reconstrução do site, sua atualização aparece aqui. Reconstrui acontece automaticamente em uma programação semanal, e manualmente sempre que uma mudança significativa vem.",
+    "static.b5658fc8edda24f9": "Nesta página",
     "static.1e2c79d89b3afb39": "nesta página.",
     "static.eda06f89abba4e47": "ou por e-mail, a equipe o triage no prazo de cinco dias úteis.",
     "static.f134cddc44b7cfe9": "Outro / nível misto",

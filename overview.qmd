@@ -1,7 +1,6 @@
 ---
 pagetitle: "P. vivax Policy Repository"
 page-layout: full
-toc: false
 ---
 
 ```{r}

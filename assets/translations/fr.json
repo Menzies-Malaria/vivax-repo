@@ -2,11 +2,11 @@
   "meta": {
     "language": "fr",
     "source_language": "en",
-    "source_hash": "63ae97f50a17a7f6fff99cf8f6f7a9ea3a2c3e6bdce291353698389031559e8b",
+    "source_hash": "59456012114fc87540bc4c12e80b2dfff20ed8f4aa5c711b75882b282dde1785",
     "engine": "Argos Translate",
     "review_status": "machine draft - human review required",
-    "string_count": 278,
-    "source_character_count": 14671
+    "string_count": 279,
+    "source_character_count": 14683
   },
   "strings": {
     "static.4aa9bfd2f175a94a": "et",
@@ -149,6 +149,7 @@
     "static.adadface0166af24": "Non communiqué",
     "static.b0aafad0fc701e9a": "de la variation infranationale, mais pas de la variation elle-même en détail. Le champ \"Détails des phases du programme infranational\" capture ce que nous savons.",
     "static.c8f7f5bdd0e4ac65": "Sur le site suivant, votre mise à jour apparaît ici. Les reconstructions se produisent automatiquement sur un horaire hebdomadaire, et manuellement chaque fois qu'un changement significatif arrive.",
+    "static.b5658fc8edda24f9": "Sur cette page",
     "static.1e2c79d89b3afb39": "sur cette page.",
     "static.eda06f89abba4e47": "ou par email, l'équipe le trie dans les cinq jours ouvrables.",
     "static.f134cddc44b7cfe9": "Autre niveau / mixte",

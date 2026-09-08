@@ -165,6 +165,34 @@
   width: 100%;
 }
 
+/* Keep the page contents wide while presenting the section TOC as a compact,
+   independent card in the top-right corner. The interactive-map home page has
+   toc: false, so these rules apply only where Quarto creates a TOC. */
+@media (min-width: 992px) {
+  body:has(#TOC) #quarto-margin-sidebar {
+    position: fixed;
+    top: 4.75rem;
+    right: 1rem;
+    z-index: 1010;
+    width: min(15rem, calc(100vw - 2rem));
+    max-height: calc(100vh - 5.75rem);
+    padding: 0.85rem 1rem;
+    overflow-y: auto;
+    border: 1px solid var(--vivax-rule, #e4ddd0);
+    border-radius: var(--vivax-radius-md, 12px);
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: var(--vivax-shadow-md, 0 8px 24px rgba(26, 31, 31, 0.08));
+  }
+
+  body:has(#TOC) #quarto-margin-sidebar:empty {
+    display: none;
+  }
+
+  body:has(#TOC) #TOC {
+    margin: 0;
+  }
+}
+
 #quarto-sidebar {
   border-left: 0;
   border-right: 1px solid var(--vivax-rule, #e4ddd0);

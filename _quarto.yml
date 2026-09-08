@@ -78,7 +78,7 @@ format:
           <script src="assets/sidebar-nav.js"></script>
       - text: |
           <script src="assets/translation.js"></script>
-    toc: false
+    toc: true
     toc-depth: 3
     fig-cap-location: bottom
     code-tools: false
