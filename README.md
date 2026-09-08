@@ -53,6 +53,21 @@ quarto preview
 ```
 
 The site will open at <http://localhost:7676>. Local preview is **ungated** for authoring convenience.
+The first translation build creates an ignored `.venv/` and downloads local
+Argos models into `.translation-cache/`; later builds reuse them.
+
+## Local multilingual prototype
+
+The language selector offers English, Spanish, French, and Portuguese. Argos
+translates approved text locally during the build and writes the browser-ready
+dictionaries to `assets/translations/`. Country/feed values, contacts, email
+addresses, hyperlinks, tables, plots, and R/HTML-widget output are excluded.
+Safe labels generated dynamically by the map are explicitly maintained in
+`translations/map-ui.json`.
+
+Generated translations are machine drafts and require human review before they
+are treated as authoritative medical or policy translations. No translation API,
+subscription, registration, or API key is used.
 
 ### Previewing the gated site locally
 
@@ -64,7 +79,9 @@ RESTRICTED_PORTAL_USER=youruser RESTRICTED_PORTAL_PASS=yourpass bash scripts/pac
 python3 -m http.server 8080 --directory _site
 ```
 
-Open <http://localhost:8080>, log in with the credentials you set, and confirm you reach the site. The address bar will show `/vivax-repo/` once inside (URL masking).
+Open <http://localhost:8080>, log in with the credentials you set, and confirm
+you reach the site. The credential-derived path remains in the address bar so
+relative navigation continues to work inside the gate.
 
 ## How the Google Sheet is wired up
 

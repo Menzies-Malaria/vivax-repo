@@ -1,10 +1,20 @@
 project:
   type: website
   output-dir: _site
+  pre-render:
+    - Rscript scripts/prepare_translations.R
+  post-render:
+    - Rscript scripts/prepare_translations.R
   resources:
     - assets/vivax-charts.js
     - assets/vivax-charts.css
     - assets/sidebar-nav.js
+    - assets/translation.js
+    - assets/translation.css
+    - assets/translations/en.json
+    - assets/translations/es.json
+    - assets/translations/fr.json
+    - assets/translations/pt.json
 
 website:
   title: "P. vivax Policy Repository"
@@ -57,6 +67,7 @@ format:
     css:
       - assets/styles.css
       - assets/vivax-charts.css
+      - assets/translation.css
     include-in-header:
       - text: |
           <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
@@ -65,6 +76,8 @@ format:
           <script src="assets/vivax-charts.js"></script>
       - text: |
           <script src="assets/sidebar-nav.js"></script>
+      - text: |
+          <script src="assets/translation.js"></script>
     toc: false
     toc-depth: 3
     fig-cap-location: bottom

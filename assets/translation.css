@@ -1,0 +1,19 @@
+.vivax-language-control {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: 0.75rem;
+}
+
+.vivax-language-control .form-select {
+  min-width: 8rem;
+  border-color: rgba(13, 79, 79, 0.25);
+  background-color: transparent;
+  color: inherit;
+}
+
+@media (max-width: 767.98px) {
+  .vivax-language-control .form-select {
+    min-width: 6.75rem;
+  }
+}
