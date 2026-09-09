@@ -2,11 +2,11 @@
   "meta": {
     "language": "pt",
     "source_language": "en",
-    "source_hash": "59456012114fc87540bc4c12e80b2dfff20ed8f4aa5c711b75882b282dde1785",
+    "source_hash": "e5440a7eee5a28c3f10ccf9b7056b2b87fc7aacd66614f1fc7796821b7cecaab",
     "engine": "Argos Translate",
     "review_status": "machine draft - human review required",
     "string_count": 279,
-    "source_character_count": 14683
+    "source_character_count": 14591
   },
   "strings": {
     "static.4aa9bfd2f175a94a": ", e",
@@ -47,7 +47,6 @@
     "static.76681695eeaa5193": "casos (últimos 5 anos)",
     "static.904fc9e19936aef4": "América Central e do Sul",
     "static.bf5d65f3df614218": "Escolha um país colorido no mapa para manter aqui o seu resumo da política.",
-    "static.132b299dad325129": "Escolha a questão política que determina a cor do país. Controles secundários refinar a população ou países mostrados. Hover para uma resposta rápida, ou selecione um país para manter seus detalhes abertos.",
     "static.f2c5d8cc535e46ea": "Cite este repositório",
     "static.7179ea0035fca783": "Limpar os filtros",
     "static.72455b0af28c2a27": "Fechar os detalhes do país",
@@ -111,6 +110,7 @@
     "static.ec1164da4a7f1eb5": "Nível do sistema de saúde",
     "static.c4ebc6d4a5832cd9": "Alta",
     "static.8e272bd962808e6a": "Hospital / nível de referência",
+    "static.b7731b3edad986cc": "Hover sobre um país colorido para um resumo rápido, ou selecione-o para manter os detalhes completos abertos aqui.",
     "static.9c870aa6e5e93270": "Como funciona",
     "static.79a09d89f1c59e0d": "Como fluir as observações",
     "static.a7f9be7d7e73bf2e": "Como o repositório é construído, mantido e mantido atual.",

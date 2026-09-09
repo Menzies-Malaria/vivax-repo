@@ -261,7 +261,7 @@
         <div class="policy-map-details__empty">
           <span class="policy-map-details__eyebrow">Country details</span>
           <h2>Select a country</h2>
-          <p>Choose a coloured country on the map to keep its policy summary here.</p>
+          <p>Hover over a coloured country for a quick summary, or select it to keep the full details open here.</p>
         </div>`;
       details.classList.remove("is-open");
     }

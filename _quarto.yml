@@ -73,11 +73,30 @@ format:
           <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
     include-after-body:
       - text: |
-          <script src="assets/vivax-charts.js"></script>
-      - text: |
-          <script src="assets/sidebar-nav.js"></script>
-      - text: |
-          <script src="assets/translation.js"></script>
+          <script>
+          (function () {
+            const offset = document.querySelector('meta[name="quarto:offset"]')?.content || "./";
+            const scripts = [
+              "assets/vivax-charts.js",
+              "assets/sidebar-nav.js",
+              "assets/translation.js"
+            ];
+
+            scripts.reduce(function (ready, path) {
+              return ready.then(function () {
+                return new Promise(function (resolve, reject) {
+                  const script = document.createElement("script");
+                  script.src = offset + path;
+                  script.onload = resolve;
+                  script.onerror = reject;
+                  document.body.appendChild(script);
+                });
+              });
+            }, Promise.resolve()).catch(function (error) {
+              console.error("Unable to load Vivax site scripts.", error);
+            });
+          })();
+          </script>
     toc: true
     toc-depth: 3
     fig-cap-location: bottom

@@ -189,12 +189,6 @@ map_json <- jsonlite::toJSON(
 map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
 ```
 
-::: {.map-intro}
-Choose the policy question that determines country colour. Secondary controls
-refine the population or countries shown. Hover for a quick answer, or select a
-country to keep its details open.
-:::
-
 ```{=html}
 <div class="policy-map-shell">
   <section class="policy-map-controls" aria-label="Map controls">
@@ -257,7 +251,7 @@ country to keep its details open.
       <div class="policy-map-details__empty">
         <span class="policy-map-details__eyebrow">Country details</span>
         <h2>Select a country</h2>
-        <p>Choose a coloured country on the map to keep its policy summary here.</p>
+        <p>Hover over a coloured country for a quick summary, or select it to keep the full details open here.</p>
       </div>
     </aside>
   </div>

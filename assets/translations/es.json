@@ -2,11 +2,11 @@
   "meta": {
     "language": "es",
     "source_language": "en",
-    "source_hash": "59456012114fc87540bc4c12e80b2dfff20ed8f4aa5c711b75882b282dde1785",
+    "source_hash": "e5440a7eee5a28c3f10ccf9b7056b2b87fc7aacd66614f1fc7796821b7cecaab",
     "engine": "Argos Translate",
     "review_status": "machine draft - human review required",
     "string_count": 279,
-    "source_character_count": 14683
+    "source_character_count": 14591
   },
   "strings": {
     "static.4aa9bfd2f175a94a": ", y",
@@ -47,7 +47,6 @@
     "static.76681695eeaa5193": "casos (últimos 5 años)",
     "static.904fc9e19936aef4": "Centroamérica y Sudamérica",
     "static.bf5d65f3df614218": "Elija un país de color en el mapa para mantener su resumen de políticas aquí.",
-    "static.132b299dad325129": "Elija la pregunta de política que determina el color del país. Los controles secundarios mejoran la población o los países mostrados. Para obtener una respuesta rápida, o seleccione un país para mantener sus datos abiertos.",
     "static.f2c5d8cc535e46ea": "Citar este repositorio",
     "static.7179ea0035fca783": "Filtros claros",
     "static.72455b0af28c2a27": "Datos del país cercanos",
@@ -111,6 +110,7 @@
     "static.ec1164da4a7f1eb5": "Nivel de los sistemas de salud",
     "static.c4ebc6d4a5832cd9": "Alto",
     "static.8e272bd962808e6a": "Nivel de referencia hospitalario",
+    "static.b7731b3edad986cc": "Revise un país de colores para un resumen rápido, o seleccione para mantener los detalles completos abiertos aquí.",
     "static.9c870aa6e5e93270": "Cómo funciona",
     "static.79a09d89f1c59e0d": "How submissions flow",
     "static.a7f9be7d7e73bf2e": "Cómo se construye, mantiene y mantiene el repositorio actual.",
