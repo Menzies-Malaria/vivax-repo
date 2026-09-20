@@ -25,55 +25,25 @@ collapse_first_line <- function(x) {
   ifelse(x %in% keep, x, "Other / unknown")
 }
 
-normalise_first_line <- function(x) {
-  x <- stringr::str_squish(as.character(x))
-  x[!nzchar(x) | stringr::str_to_upper(x) %in% c("NA", "N/A")] <- "Not reported"
-  x
-}
-
-explore_chart_payload <- function(char, case = NULL) {
-  case_columns <- names(char)[stringr::str_detect(names(char), "^20[0-9]{2} Case Numbers$")]
-  case_years <- sort(as.integer(stringr::str_extract(case_columns, "^20[0-9]{2}")))
-
-  policy_update <- stats::setNames(rep(NA_integer_, nrow(char)), char$Country)
-  if (!is.null(case)) {
-    case_main <- case |>
-      dplyr::filter(.data$Country %in% char$Country) |>
-      dplyr::distinct(.data$Country, .keep_all = TRUE)
-    parsed_year <- suppressWarnings(as.integer(
-      stringr::str_extract(case_main$`Last Policy Update`, "(19|20)\\d{2}")
-    ))
-    policy_update[case_main$Country] <- parsed_year
-  }
-
+explore_chart_payload <- function(char) {
   countries <- char |>
     dplyr::transmute(
       key = .data$Country,
       country = .data$Country,
       region = .data$Region,
       who_region = .data$`WHO Region`,
-      first_line = normalise_first_line(.data$`Pv 1st line treatment`),
+      first_line = .data$first_line,
       first_line_raw = .data$`Pv 1st line treatment`,
-      proportion_2023 = suppressWarnings(as.numeric(.data$`Proportion of P. vivax cases (2023) (%)`)),
+      cases_2023 = suppressWarnings(as.numeric(.data$`2023 Case Numbers`)),
       g6pd_guidelines = bucket_yn(.data$`Guidelines G6PD testing  (Y/N)`),
-      g6pd_implementation = bucket_yn(.data$`Implementation: G6PD testing  (Y/N)`),
-      policy_update_year = unname(policy_update[.data$Country])
-    )
-
-  for (year in case_years) {
-    source_column <- paste(year, "Case Numbers")
-    values <- stringr::str_squish(char[[source_column]])
-    values[stringr::str_to_upper(values) %in% c("", "NA", "N/A")] <- NA_character_
-    countries[[paste0("cases_", year)]] <- suppressWarnings(as.numeric(values))
-  }
+      g6pd_implementation = bucket_yn(.data$`Implementation: G6PD testing  (Y/N)`)
+    ) |>
+    dplyr::mutate(cases_2023 = dplyr::coalesce(.data$cases_2023, 0))
 
   list(
     countries = countries,
     meta = list(
       group = "explore",
-      caseYears = case_years,
-      latestCaseYear = if (length(case_years)) max(case_years) else NULL,
-      comparisonYears = utils::tail(case_years, 2),
       regionColors = as.list(region_colors),
       statusLevels = c("Yes", "No", "Other / unknown"),
       regionLevels = c("Africa", "Asia-Pacific", "Central and South America"),

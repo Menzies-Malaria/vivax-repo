@@ -20,7 +20,6 @@ suppressPackageStartupMessages({
 source("R/explore_helpers.R")
 
 char <- load_characteristic_data()
-case <- load_case_data(char = char)
 
 char <- char |>
   mutate(
@@ -42,7 +41,7 @@ table_cols <- c(
   "Economic status"
 )
 
-explore_payload <- explore_chart_payload(char, case)
+explore_payload <- explore_chart_payload(char)
 
 shared <- SharedData$new(char, key = ~Country, group = "explore")
 char_table <- char |> select(any_of(table_cols))
@@ -115,35 +114,21 @@ tagList(
 
 ::: {.explore-chart}
 <div id="chart-cases" class="explore-chart__plot vivax-chart__plot--cases"></div>
-<p class="explore-chart__caption">The 10 countries with the highest reported *P. vivax* case burden in the latest available year. This ranking updates with the filters above.</p>
+<p class="explore-chart__caption">Top 15 countries by reported *P. vivax* case numbers in 2023 (updates with filters above).</p>
 :::
 
-## Repository-wide and regional *P. vivax* case trends
+## G6PD testing: policy vs. implementation
 
 ::: {.explore-chart}
-<div id="chart-case-trends" class="explore-chart__plot vivax-chart__plot--case-trends"></div>
-<p class="explore-chart__caption">Regional and repository-wide totals use a comparable panel of countries with a reported value in every available year. The lower panel shows the average per country using that same panel.</p>
+<div id="chart-g6pd" class="explore-chart__plot vivax-chart__plot--g6pd"></div>
 :::
 
-## Regional *P. vivax* cases: latest comparable years
+The gap between **policy** and **implementation** is one of the most actionable findings in the repository — and the gap is widest in countries that have only recently adopted G6PD testing into their guidelines.
+
+## First-line *P. vivax* treatment by region
 
 ::: {.explore-chart}
-<div id="chart-regional-cases" class="explore-chart__plot vivax-chart__plot--regional-cases"></div>
-<p class="explore-chart__caption">Uses the two latest annual case columns available and includes only countries reporting values in both years. It will update automatically when newer annual columns are added.</p>
-:::
-
-## First-line *P. vivax* treatment policy ranking
-
-::: {.explore-chart}
-<div id="chart-treatment-ranking" class="explore-chart__plot vivax-chart__plot--treatment-ranking"></div>
-<p class="explore-chart__caption">Number of countries reporting each recommended first-line treatment. This represents national policy recommendations, not medicine consumption or patient-level use.</p>
-:::
-
-## Countries with the oldest reported policy updates
-
-::: {.explore-chart}
-<div id="chart-oldest-policy" class="explore-chart__plot vivax-chart__plot--oldest-policy"></div>
-<p class="explore-chart__caption">The 10 oldest known national policy-update years among the selected countries. Countries without a reported year are excluded rather than treated as having an old policy.</p>
+<div id="chart-heatmap" class="explore-chart__plot vivax-chart__plot--heatmap"></div>
 :::
 
 ## Full data table
