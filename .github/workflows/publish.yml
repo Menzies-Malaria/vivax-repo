@@ -17,11 +17,10 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     env:
-      # Set these as repo secrets, or paste your Google Sheet "publish to web" CSV URLs here.
-      CHAR_DATA_URL: ${{ secrets.CHAR_DATA_URL }}
-      CASE_DATA_URL: ${{ secrets.CASE_DATA_URL }}
       RESTRICTED_PORTAL_USER: ${{ secrets.RESTRICTED_PORTAL_USER }}
       RESTRICTED_PORTAL_PASS: ${{ secrets.RESTRICTED_PORTAL_PASS }}
+      # Email stays out of rendered/downloadable data unless explicitly approved.
+      INCLUDE_PUBLIC_EMAIL: ${{ vars.INCLUDE_PUBLIC_EMAIL || '0' }}
 
     steps:
       - name: Check out the main website
@@ -58,10 +57,19 @@ jobs:
             any::knitr
             any::rmarkdown
 
-      - name: Verify sheet secrets
+      - name: Verify production and prototype sheet secrets
+        env:
+          MAIN_CHAR_DATA_URL: ${{ secrets.CHAR_DATA_URL }}
+          MAIN_CASE_DATA_URL: ${{ secrets.CASE_DATA_URL }}
+          PROTOTYPE_CHAR_DATA_URL: ${{ secrets.CHAR_DATA_URL_PROT }}
+          PROTOTYPE_CASE_DATA_URL: ${{ secrets.CASE_DATA_URL_PROT }}
         run: |
-          if [ -z "$CHAR_DATA_URL" ] || [ -z "$CASE_DATA_URL" ]; then
+          if [ -z "$MAIN_CHAR_DATA_URL" ] || [ -z "$MAIN_CASE_DATA_URL" ]; then
             echo "Error: CHAR_DATA_URL and CASE_DATA_URL must be set as repository secrets." >&2
+            exit 1
+          fi
+          if [ -z "$PROTOTYPE_CHAR_DATA_URL" ] || [ -z "$PROTOTYPE_CASE_DATA_URL" ]; then
+            echo "Error: CHAR_DATA_URL_PROT and CASE_DATA_URL_PROT must be set as repository secrets." >&2
             exit 1
           fi
 
@@ -74,6 +82,9 @@ jobs:
 
       - name: Build and gate the main website
         working-directory: main-source
+        env:
+          CHAR_DATA_URL: ${{ secrets.CHAR_DATA_URL }}
+          CASE_DATA_URL: ${{ secrets.CASE_DATA_URL }}
         run: |
           bash scripts/fetch-sheet-data.sh
           Rscript scripts/build_profiles.R
@@ -82,6 +93,9 @@ jobs:
 
       - name: Build and gate the interactive-map prototype
         working-directory: prototype-source
+        env:
+          CHAR_DATA_URL: ${{ secrets.CHAR_DATA_URL_PROT }}
+          CASE_DATA_URL: ${{ secrets.CASE_DATA_URL_PROT }}
         run: |
           bash scripts/fetch-sheet-data.sh
           Rscript scripts/build_profiles.R

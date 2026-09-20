@@ -11,8 +11,7 @@ The data lives in a Google Sheet. Updates flow in either directly (programme tea
 ├── _quarto.yml                # Quarto project config
 ├── theme.scss                 # SCSS theme (typography, colours)
 ├── assets/                    # Logo, extra CSS
-├── index.qmd                  # Interactive-map homepage
-├── overview.qmd               # Project overview
+├── index.qmd                  # Homepage
 ├── explore.qmd                # Interactive data explorer
 ├── countries.qmd              # Index of country profiles
 ├── timeline.qmd               # Policy update timeline
@@ -30,9 +29,7 @@ The data lives in a Google Sheet. Updates flow in either directly (programme tea
 
 ## Quickstart (local)
 
-The production build reads from the live Google Sheet. For local authoring, the
-loaders fall back to `data/characteristic_data.csv` and
-`data/case_management.csv` when the two Sheet URL variables are not set.
+The site reads data only from a live Google Sheet. Before building locally, set the two publish-to-web CSV URLs (see [How the Google Sheet is wired up](#how-the-google-sheet-is-wired-up) below).
 
 ```bash
 # 1. Install R deps (one-time)
@@ -53,21 +50,6 @@ quarto preview
 ```
 
 The site will open at <http://localhost:7676>. Local preview is **ungated** for authoring convenience.
-The first translation build creates an ignored `.venv/` and downloads local
-Argos models into `.translation-cache/`; later builds reuse them.
-
-## Local multilingual prototype
-
-The language selector offers English, Spanish, French, and Portuguese. Argos
-translates approved text locally during the build and writes the browser-ready
-dictionaries to `assets/translations/`. Country/feed values, contacts, email
-addresses, hyperlinks, tables, plots, and R/HTML-widget output are excluded.
-Safe labels generated dynamically by the map are explicitly maintained in
-`translations/map-ui.json`.
-
-Generated translations are machine drafts and require human review before they
-are treated as authoritative medical or policy translations. No translation API,
-subscription, registration, or API key is used.
 
 ### Previewing the gated site locally
 
@@ -79,9 +61,7 @@ RESTRICTED_PORTAL_USER=youruser RESTRICTED_PORTAL_PASS=yourpass bash scripts/pac
 python3 -m http.server 8080 --directory _site
 ```
 
-Open <http://localhost:8080>, log in with the credentials you set, and confirm
-you reach the site. The credential-derived path remains in the address bar so
-relative navigation continues to work inside the gate.
+Open <http://localhost:8080>, log in with the credentials you set, and confirm you reach the site. The address bar will show `/vivax-repo/` once inside (URL masking).
 
 ## How the Google Sheet is wired up
 
