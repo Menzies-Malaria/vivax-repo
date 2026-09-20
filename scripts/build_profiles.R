@@ -220,7 +220,7 @@ for (i in seq_len(nrow(char))) {
 
     case_rows <- lapply(yr_keys, function(yr) {
       v <- yr_data[[yr]]
-      num <- suppressWarnings(as.numeric(v))
+      num <- suppressWarnings(readr::parse_number(as.character(v)))
       display <- if (!is.na(num) && is.finite(num)) {
         format(as.integer(num), big.mark = ",", scientific = FALSE, trim = TRUE)
       } else if (nzchar(str_trim(as.character(v)))) {
@@ -248,7 +248,7 @@ for (i in seq_len(nrow(char))) {
     series <- list()
     for (yr in yr_keys[order(yr_nums, na.last = TRUE)]) {
       v <- yr_data[[yr]]
-      num <- suppressWarnings(as.numeric(v))
+      num <- suppressWarnings(readr::parse_number(as.character(v)))
       yr_label <- str_extract(yr, "\\d{4}")
       if (!is.na(num) && is.finite(num) && num > 0 && !is.na(yr_label)) {
         series[[length(series) + 1]] <- list(
