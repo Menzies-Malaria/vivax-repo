@@ -67,7 +67,17 @@ format:
           </script>
     include-after-body:
       - text: |
-          <script src="assets/vivax-charts.js"></script>
+          <script>
+          (function () {
+            const offset = document.querySelector('meta[name="quarto:offset"]')?.content || "./";
+            const script = document.createElement("script");
+            script.src = offset + "assets/vivax-charts.js";
+            script.onerror = function () {
+              console.error("Unable to load Vivax chart scripts.");
+            };
+            document.body.appendChild(script);
+          })();
+          </script>
     toc: true
     toc-depth: 3
     toc-location: right
