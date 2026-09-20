@@ -21,14 +21,21 @@
   min-height: 520px;
 }
 
-#chart-g6pd.explore-chart__plot,
-.vivax-chart__plot--g6pd {
-  min-height: 420px;
+#chart-case-trends.explore-chart__plot,
+.vivax-chart__plot--case-trends {
+  min-height: 620px;
 }
 
-#chart-heatmap.explore-chart__plot,
-.vivax-chart__plot--heatmap {
-  min-height: 400px;
+#chart-regional-cases.explore-chart__plot,
+.vivax-chart__plot--regional-cases {
+  min-height: 450px;
+}
+
+#chart-treatment-ranking.explore-chart__plot,
+.vivax-chart__plot--treatment-ranking,
+#chart-oldest-policy.explore-chart__plot,
+.vivax-chart__plot--oldest-policy {
+  min-height: 380px;
 }
 
 #chart-timeline.vivax-chart__plot,

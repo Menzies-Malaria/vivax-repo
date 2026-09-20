@@ -157,21 +157,30 @@
     return 36;
   }
 
+  function caseValue(row, year) {
+    const value = row[`cases_${year}`];
+    if (value == null || value === "") return null;
+    const numeric = Number(value);
+    return Number.isFinite(numeric) ? numeric : null;
+  }
+
   function drawCasesBar(container, rows, meta) {
     clearPlot(container);
     const regionColors = meta?.regionColors || REGION_COLORS;
+    const latestYear = Number(meta?.latestCaseYear || 2023);
 
     const data = rows
-      .filter((d) => d.cases_2023 > 0)
-      .sort((a, b) => d3.descending(a.cases_2023, b.cases_2023))
-      .slice(0, 15)
+      .map((d) => ({ ...d, case_value: caseValue(d, latestYear) }))
+      .filter((d) => d.case_value > 0)
+      .sort((a, b) => d3.descending(a.case_value, b.case_value))
+      .slice(0, 10)
       .reverse();
 
     if (!data.length) {
       d3.select(container)
         .append("p")
         .attr("class", "vivax-chart__empty")
-        .text("No countries match the current filters with reported 2023 case data.");
+        .text(`No countries match the current filters with reported ${latestYear} case data.`);
       container.style.minHeight = "120px";
       return;
     }
@@ -203,7 +212,7 @@
       .attr("role", "img")
       .attr(
         "aria-label",
-        "Horizontal bar chart of countries by reported P. vivax cases in 2023"
+        `Horizontal bar chart of the ten countries with the highest reported P. vivax cases in ${latestYear}`
       );
 
     drawLegendTop(svg, legendItems, plotW, margin.left);
@@ -214,7 +223,7 @@
 
     const x = d3
       .scaleLinear()
-      .domain([0, d3.max(data, (d) => d.cases_2023)])
+      .domain([0, d3.max(data, (d) => d.case_value)])
       .nice()
       .range([0, innerW]);
 
@@ -245,7 +254,7 @@
       .attr("y", 32)
       .attr("fill", TEXT)
       .attr("text-anchor", "middle")
-      .text("Reported cases (2023)");
+      .text(`Reported cases (${latestYear})`);
 
     g.append("g")
       .attr("class", "axis")
@@ -261,7 +270,7 @@
       .attr("x", 0)
       .attr("y", (d) => y(d.country))
       .attr("height", y.bandwidth())
-      .attr("width", (d) => x(d.cases_2023))
+      .attr("width", (d) => x(d.case_value))
       .attr("fill", (d) => color(d.region));
 
     bindTooltip(bars, (d) =>
@@ -270,9 +279,386 @@
         `Region: ${d.region}`,
         `WHO region: ${d.who_region || ""}`,
         `First-line: ${d.first_line_raw || d.first_line || ""}`,
-        `Cases (2023): ${formatNumber(d.cases_2023)}`,
+        `Cases (${latestYear}): ${formatNumber(d.case_value)}`,
       ].join("<br>")
     );
+  }
+
+  function drawCaseTrends(container, rows, meta) {
+    clearPlot(container);
+    const years = (meta?.caseYears || []).map(Number).sort(d3.ascending);
+    const panel = rows.filter((row) =>
+      years.length && years.every((year) => caseValue(row, year) != null)
+    );
+
+    if (years.length < 2 || !panel.length) {
+      d3.select(container)
+        .append("p")
+        .attr("class", "vivax-chart__empty")
+        .text("Not enough comparable annual case data for the selected countries.");
+      container.style.minHeight = "120px";
+      return;
+    }
+
+    const regionColors = meta?.regionColors || REGION_COLORS;
+    const regions = (meta?.regionLevels || [])
+      .filter((region) => panel.some((row) => row.region === region));
+    const totalSeries = [
+      {
+        name: "Repository total",
+        color: "#1a1f1f",
+        values: years.map((year) => ({
+          year,
+          value: d3.sum(panel, (row) => caseValue(row, year)),
+        })),
+      },
+      ...regions.map((region) => ({
+        name: region,
+        color: regionColors[region] || REGION_COLORS.Unknown,
+        values: years.map((year) => ({
+          year,
+          value: d3.sum(
+            panel.filter((row) => row.region === region),
+            (row) => caseValue(row, year)
+          ),
+        })),
+      })),
+    ];
+    const averageSeries = years.map((year) => ({
+      year,
+      value: d3.mean(panel, (row) => caseValue(row, year)),
+    }));
+
+    const width = Math.max(760, Math.min(980, container.clientWidth || 980));
+    const legendItems = [
+      ...totalSeries.map((series) => ({ label: series.name, color: series.color })),
+      { label: "Repository average per country", color: "#8b5e83" },
+    ];
+    const legendH = Math.max(58, 12 + Math.ceil(legendItems.length / 4) * 22 + 14);
+    const margin = { top: legendH + 26, right: 28, bottom: 44, left: 84 };
+    const totalH = 250;
+    const averageH = 150;
+    const panelGap = 74;
+    const innerW = width - margin.left - margin.right;
+    const height = margin.top + totalH + panelGap + averageH + margin.bottom;
+    container.style.minHeight = `${height + 16}px`;
+
+    const svg = d3.select(container)
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("role", "img")
+      .attr("aria-label", "Repository-wide and regional P. vivax case trends with average per country");
+
+    drawLegendTop(svg, legendItems, innerW, margin.left);
+    svg.append("text")
+      .attr("x", margin.left)
+      .attr("y", legendH + 18)
+      .attr("fill", "#4a5252")
+      .attr("font-size", 11)
+      .text(`Comparable panel: ${panel.length} countries with values for ${years[0]}–${years[years.length - 1]}`);
+
+    const x = d3.scaleLinear()
+      .domain(d3.extent(years))
+      .range([0, innerW]);
+    const yTotal = d3.scaleLinear()
+      .domain([0, d3.max(totalSeries, (series) => d3.max(series.values, (d) => d.value)) || 1])
+      .nice()
+      .range([totalH, 0]);
+    const yAverage = d3.scaleLinear()
+      .domain([0, d3.max(averageSeries, (d) => d.value) || 1])
+      .nice()
+      .range([averageH, 0]);
+
+    const totals = svg.append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+    totals.append("text")
+      .attr("x", 0)
+      .attr("y", -10)
+      .attr("font-weight", 700)
+      .attr("fill", TEXT)
+      .text("Total reported cases");
+    totals.append("g")
+      .attr("class", "grid")
+      .call(d3.axisLeft(yTotal).ticks(5).tickSize(-innerW).tickFormat(""));
+    totals.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(yTotal).ticks(5).tickFormat(formatNumber));
+    totals.append("g")
+      .attr("class", "axis")
+      .attr("transform", `translate(0,${totalH})`)
+      .call(d3.axisBottom(x).tickValues(years).tickFormat(d3.format("d")));
+
+    const totalLine = d3.line()
+      .x((d) => x(d.year))
+      .y((d) => yTotal(d.value));
+    totalSeries.forEach((series) => {
+      totals.append("path")
+        .datum(series.values)
+        .attr("fill", "none")
+        .attr("stroke", series.color)
+        .attr("stroke-width", series.name === "Repository total" ? 3 : 2.2)
+        .attr("d", totalLine);
+      const points = totals.selectAll(`.trend-point-${series.name.replace(/[^a-z0-9]/gi, "-")}`)
+        .data(series.values)
+        .join("circle")
+        .attr("cx", (d) => x(d.year))
+        .attr("cy", (d) => yTotal(d.value))
+        .attr("r", 4)
+        .attr("fill", series.color)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 1.5);
+      bindTooltip(points, (d) =>
+        `<strong>${series.name}</strong><br>${d.year}: ${formatNumber(d.value)} cases`
+      );
+    });
+
+    const averages = svg.append("g")
+      .attr("transform", `translate(${margin.left},${margin.top + totalH + panelGap})`);
+    averages.append("text")
+      .attr("x", 0)
+      .attr("y", -10)
+      .attr("font-weight", 700)
+      .attr("fill", TEXT)
+      .text("Repository average per country");
+    averages.append("g")
+      .attr("class", "grid")
+      .call(d3.axisLeft(yAverage).ticks(4).tickSize(-innerW).tickFormat(""));
+    averages.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(yAverage).ticks(4).tickFormat(formatNumber));
+    averages.append("g")
+      .attr("class", "axis")
+      .attr("transform", `translate(0,${averageH})`)
+      .call(d3.axisBottom(x).tickValues(years).tickFormat(d3.format("d")));
+    const averageLine = d3.line()
+      .x((d) => x(d.year))
+      .y((d) => yAverage(d.value));
+    averages.append("path")
+      .datum(averageSeries)
+      .attr("fill", "none")
+      .attr("stroke", "#8b5e83")
+      .attr("stroke-width", 2.5)
+      .attr("stroke-dasharray", "7 4")
+      .attr("d", averageLine);
+    const averagePoints = averages.selectAll("circle")
+      .data(averageSeries)
+      .join("circle")
+      .attr("cx", (d) => x(d.year))
+      .attr("cy", (d) => yAverage(d.value))
+      .attr("r", 4.5)
+      .attr("fill", "#8b5e83")
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 1.5);
+    bindTooltip(averagePoints, (d) =>
+      `<strong>Repository average per country</strong><br>${d.year}: ${formatNumber(Math.round(d.value))} cases`
+    );
+  }
+
+  function drawRegionalCases(container, rows, meta) {
+    clearPlot(container);
+    const years = (meta?.comparisonYears || []).map(Number).sort(d3.ascending);
+    const panel = rows.filter((row) =>
+      years.length === 2 && years.every((year) => caseValue(row, year) != null)
+    );
+    if (years.length !== 2 || !panel.length) {
+      d3.select(container)
+        .append("p")
+        .attr("class", "vivax-chart__empty")
+        .text("Not enough comparable data for the two latest case years.");
+      container.style.minHeight = "120px";
+      return;
+    }
+
+    const regions = (meta?.regionLevels || []).filter((region) =>
+      panel.some((row) => row.region === region)
+    );
+    const data = regions.flatMap((region) =>
+      years.map((year) => ({
+        region,
+        year: String(year),
+        cases: d3.sum(
+          panel.filter((row) => row.region === region),
+          (row) => caseValue(row, year)
+        ),
+        countries: panel.filter((row) => row.region === region).length,
+      }))
+    );
+
+    const width = Math.max(720, Math.min(920, container.clientWidth || 920));
+    const legendColors = ["#497f8c", "#c0521b"];
+    const legendItems = years.map((year, index) => ({
+      label: String(year),
+      color: legendColors[index],
+    }));
+    const margin = { top: 64, right: 24, bottom: 76, left: 82 };
+    const height = 430;
+    const innerW = width - margin.left - margin.right;
+    const innerH = height - margin.top - margin.bottom;
+    container.style.minHeight = `${height + 16}px`;
+
+    const svg = d3.select(container)
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("role", "img")
+      .attr("aria-label", `Regional P. vivax case totals in ${years.join(" and ")}`);
+    drawLegendTop(svg, legendItems, innerW, margin.left);
+    const g = svg.append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+    const x0 = d3.scaleBand().domain(regions).range([0, innerW]).padding(0.25);
+    const x1 = d3.scaleBand().domain(years.map(String)).range([0, x0.bandwidth()]).padding(0.12);
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(data, (d) => d.cases) || 1])
+      .nice()
+      .range([innerH, 0]);
+    g.append("g").attr("class", "grid")
+      .call(d3.axisLeft(y).ticks(5).tickSize(-innerW).tickFormat(""));
+    g.append("g").attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(5).tickFormat(formatNumber));
+    g.append("g").attr("class", "axis")
+      .attr("transform", `translate(0,${innerH})`)
+      .call(d3.axisBottom(x0))
+      .selectAll("text")
+      .attr("transform", "rotate(-12)")
+      .style("text-anchor", "end");
+    const groups = g.selectAll(".regional-case-group")
+      .data(regions)
+      .join("g")
+      .attr("transform", (region) => `translate(${x0(region)},0)`);
+    const bars = groups.selectAll("rect")
+      .data((region) => data.filter((d) => d.region === region))
+      .join("rect")
+      .attr("x", (d) => x1(d.year))
+      .attr("y", (d) => y(d.cases))
+      .attr("width", x1.bandwidth())
+      .attr("height", (d) => innerH - y(d.cases))
+      .attr("fill", (d) => legendColors[years.map(String).indexOf(d.year)]);
+    bindTooltip(bars, (d) =>
+      `<strong>${d.region}</strong><br>${d.year}: ${formatNumber(d.cases)} cases<br>Comparable countries: ${d.countries}`
+    );
+  }
+
+  function drawTreatmentRanking(container, rows) {
+    clearPlot(container);
+    const counts = d3.rollups(
+      rows.filter((row) => row.first_line && row.first_line !== "Not reported"),
+      (values) => values.length,
+      (row) => row.first_line
+    )
+      .map(([treatment, countries]) => ({ treatment, countries }))
+      .sort((a, b) => d3.descending(a.countries, b.countries));
+
+    if (!counts.length) {
+      d3.select(container).append("p")
+        .attr("class", "vivax-chart__empty")
+        .text("No reported first-line treatment policies match the current filters.");
+      container.style.minHeight = "120px";
+      return;
+    }
+
+    const width = Math.max(680, Math.min(900, container.clientWidth || 900));
+    const rowH = 38;
+    const margin = { top: 20, right: 56, bottom: 48, left: 150 };
+    const innerH = counts.length * rowH;
+    const innerW = width - margin.left - margin.right;
+    const height = margin.top + innerH + margin.bottom;
+    container.style.minHeight = `${height + 16}px`;
+    const svg = d3.select(container).append("svg")
+      .attr("width", width).attr("height", height)
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("role", "img")
+      .attr("aria-label", "Ranking of recommended first-line P. vivax treatments by number of countries");
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const x = d3.scaleLinear()
+      .domain([0, d3.max(counts, (d) => d.countries) || 1]).nice()
+      .range([0, innerW]);
+    const y = d3.scaleBand()
+      .domain(counts.map((d) => d.treatment))
+      .range([0, innerH]).padding(0.22);
+    g.append("g").attr("class", "grid")
+      .call(d3.axisBottom(x).tickSize(innerH).tickFormat(""));
+    g.append("g").attr("class", "axis")
+      .attr("transform", `translate(0,${innerH})`)
+      .call(d3.axisBottom(x).ticks(6).tickFormat(d3.format("d")));
+    g.append("g").attr("class", "axis")
+      .call(d3.axisLeft(y).tickSize(0)).select(".domain").remove();
+    const bars = g.selectAll("rect").data(counts).join("rect")
+      .attr("x", 0).attr("y", (d) => y(d.treatment))
+      .attr("width", (d) => x(d.countries)).attr("height", y.bandwidth())
+      .attr("fill", "#0d4f4f");
+    g.selectAll(".treatment-count").data(counts).join("text")
+      .attr("class", "treatment-count")
+      .attr("x", (d) => x(d.countries) + 7)
+      .attr("y", (d) => y(d.treatment) + y.bandwidth() / 2)
+      .attr("dominant-baseline", "middle")
+      .attr("fill", TEXT)
+      .text((d) => d.countries);
+    bindTooltip(bars, (d) =>
+      `<strong>${d.treatment}</strong><br>Countries recommending: ${d.countries}`
+    );
+  }
+
+  function drawOldestPolicy(container, rows) {
+    clearPlot(container);
+    const data = rows
+      .map((row) => ({ ...row, year: Number(row.policy_update_year) }))
+      .filter((row) => Number.isInteger(row.year))
+      .sort((a, b) => d3.ascending(a.year, b.year) || d3.ascending(a.country, b.country))
+      .slice(0, 10);
+
+    if (!data.length) {
+      d3.select(container).append("p")
+        .attr("class", "vivax-chart__empty")
+        .text("No reported policy-update years match the current filters.");
+      container.style.minHeight = "120px";
+      return;
+    }
+
+    const width = Math.max(680, Math.min(900, container.clientWidth || 900));
+    const rowH = 36;
+    const margin = { top: 20, right: 32, bottom: 48, left: 170 };
+    const innerH = data.length * rowH;
+    const innerW = width - margin.left - margin.right;
+    const height = margin.top + innerH + margin.bottom;
+    const minYear = d3.min(data, (d) => d.year);
+    const maxYear = d3.max(data, (d) => d.year);
+    container.style.minHeight = `${height + 16}px`;
+    const svg = d3.select(container).append("svg")
+      .attr("width", width).attr("height", height)
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("role", "img")
+      .attr("aria-label", "Ten countries with the oldest reported policy update years");
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const x = d3.scaleLinear().domain([minYear - 1, maxYear + 1]).range([0, innerW]);
+    const y = d3.scaleBand().domain(data.map((d) => d.country)).range([0, innerH]).padding(0.24);
+    g.append("g").attr("class", "grid")
+      .call(d3.axisBottom(x).ticks(Math.min(8, maxYear - minYear + 3)).tickSize(innerH).tickFormat(""));
+    g.append("g").attr("class", "axis")
+      .attr("transform", `translate(0,${innerH})`)
+      .call(d3.axisBottom(x).ticks(Math.min(8, maxYear - minYear + 3)).tickFormat(d3.format("d")));
+    g.append("g").attr("class", "axis")
+      .call(d3.axisLeft(y).tickSize(0)).select(".domain").remove();
+    g.selectAll(".policy-stem").data(data).join("line")
+      .attr("class", "policy-stem")
+      .attr("x1", x(minYear - 1)).attr("x2", (d) => x(d.year))
+      .attr("y1", (d) => y(d.country) + y.bandwidth() / 2)
+      .attr("y2", (d) => y(d.country) + y.bandwidth() / 2)
+      .attr("stroke", "#c8bc9e").attr("stroke-width", 2);
+    const points = g.selectAll(".policy-point").data(data).join("circle")
+      .attr("class", "policy-point")
+      .attr("cx", (d) => x(d.year))
+      .attr("cy", (d) => y(d.country) + y.bandwidth() / 2)
+      .attr("r", 6).attr("fill", "#c0521b");
+    g.selectAll(".policy-year-label").data(data).join("text")
+      .attr("class", "policy-year-label")
+      .attr("x", (d) => x(d.year) + 10)
+      .attr("y", (d) => y(d.country) + y.bandwidth() / 2)
+      .attr("dominant-baseline", "middle")
+      .attr("fill", TEXT).text((d) => d.year);
+    bindTooltip(points, (d) => `<strong>${d.country}</strong><br>Last reported policy update: ${d.year}`);
   }
 
   function drawG6pdGrouped(container, rows, meta) {
@@ -828,11 +1214,15 @@
     function update() {
       const rows = filterRows(payload.countries, fh.filteredKeys);
       const casesEl = document.getElementById("chart-cases");
-      const g6pdEl = document.getElementById("chart-g6pd");
-      const heatEl = document.getElementById("chart-heatmap");
+      const trendsEl = document.getElementById("chart-case-trends");
+      const regionalEl = document.getElementById("chart-regional-cases");
+      const treatmentEl = document.getElementById("chart-treatment-ranking");
+      const policyEl = document.getElementById("chart-oldest-policy");
       if (casesEl) drawCasesBar(casesEl, rows, payload.meta);
-      if (g6pdEl) drawG6pdGrouped(g6pdEl, rows, payload.meta);
-      if (heatEl) drawTreatmentHeatmap(heatEl, rows, payload.meta);
+      if (trendsEl) drawCaseTrends(trendsEl, rows, payload.meta);
+      if (regionalEl) drawRegionalCases(regionalEl, rows, payload.meta);
+      if (treatmentEl) drawTreatmentRanking(treatmentEl, rows);
+      if (policyEl) drawOldestPolicy(policyEl, rows);
     }
 
     fh.on("change", function (e) {
@@ -887,6 +1277,10 @@
 
   global.VivaxCharts = {
     drawCasesBar,
+    drawCaseTrends,
+    drawRegionalCases,
+    drawTreatmentRanking,
+    drawOldestPolicy,
     drawG6pdGrouped,
     drawTreatmentHeatmap,
     drawTimeline,
