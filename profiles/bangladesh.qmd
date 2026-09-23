@@ -2,12 +2,16 @@
 title: "Bangladesh"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
+
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
 
 | | |
 |---|---|
@@ -16,6 +20,16 @@ toc: false
 | **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
 | **Programme phase** | Pre-elimination |
 | **Economic status** | LMIC |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Mobile migrant populations, farmers, traders (forest product in hilly border areas), miners, fishermen, forest-goers, refugees (almost 1 million for Myanmar) |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
 | **First-line treatment** | CQ |
 | **Second-line treatment** | AL |
 | **Rationale for ACT use** | _Not reported_ |
@@ -25,10 +39,18 @@ toc: false
 | **Community malaria care** | Yes |
 | **Community vivax care** | Yes |
 | **Follow-up of radical cure** | Yes |
-| **Cross-border transmission** | Yes |
-| **Mobile / migrant populations** | Yes |
-| **High-risk populations** | Mobile migrant populations, farmers, traders (forest product in hilly border areas), miners, fishermen, forest-goers, refugees (almost 1 million for Myanmar) |
-| **Programme contact** | _Not reported_ |
+| **Community follow-up of radical cure** | Yes |
+:::
+
+:::
+
+::: {.country-contact-card}
+### Programme contact
+
+| | |
+|---|---|
+| **Programme contact** | Dr. Md. Mosiqure Rahaman, NMCP |
+:::
 
 ## Reported case numbers
 
@@ -40,7 +62,7 @@ toc: false
 | **2020** | 1,245 |
 | **2019** | 2,126 |
 | **2018** | 1,672 |
-| ***P. vivax* share of malaria cases (2023)** | 45.3% |
+| ***P. vivax* share of malaria cases (2023)** | 45.316655% |
 
 ## Case trend
 
@@ -55,21 +77,35 @@ toc: false
 |---|---|
 | **Last policy update** | 2017 |
 | **Schizontocidal drug** | CQ |
-| **G6PD testing policy** | Not explicitly mentioned - not recommended or required |
-| **G6PD implementation** | Testing implemented in few high risk areas starting 2022 (STANDARD G6PD Test) |
+| **G6PD testing policy** | Not explicitly mentioned |
+| **G6PD implementation** | Not recommended or required and not implemented routinely. Testing implemented in few high risk areas starting 2022 (STANDARD G6PD Test) |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
-| **Policy on PQ (overall)** | PQ 0.25 mg/kg over 14 days |
-| **Additional safety recommendations** | Close medical supervision and referral for management of severe conditions |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
+| **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days |
+| **Additional safety recommendations** | Close medical supervision and referral for management of severe conditions, counselling for adverse events |
+| **Treatment implementation** | Implemented |
+| **Year of treatment implementation** | 1994 |
+| **Type of treatment follow-up** | Close medical supervision, follow-up by community health workers three times for one vivax episode |
+| **Implementation of follow-up** | Implemented |
 | **Anti-malarials approved by NRA** | _Not reported_ |
-| **Next policy update** | _Not reported_ |
-| **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | _Not reported_ |
-| **National Strategic Plan (URL)** | _Not reported_ |
+| **Next policy update** | 2026 |
+| **Treatments under consideration** | Tafenoquine as an alternative to primaquine |
+| **Treatment guidelines (URL)** | <a href="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2024/12/03a1d62917a148e4a51c9188d79cb5ae.pdf" target="_blank" rel="noopener noreferrer">https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2024/12/03a1d62917a148e4a51c9188d79cb5ae.pdf</a> |
+| **National Strategic Plan (URL)** | <a href="https://apmen.org/sites/default/files/all_resources/National%20Strategic%20Plan_Malaria%20Elimination_Bangladesh_2021-2025.pdf" target="_blank" rel="noopener noreferrer">https://apmen.org/sites/default/files/all_resources/National%20Strategic%20Plan_Malaria%20Elimination_Bangladesh_2021-2025.pdf</a> |
+
+### Country-specific policy context
+
+<div class="country-policy-context">G6PD Testing GF supported, update of guidelines 2023 but have not been able to find them online - according to Dr Mosiqure, 2017 is most recent guidelines, and they are being updated this year (2026). G6PD testing (quantitative) will be included as a recommendation in the new guidelines. There are plans to roll out the STANDARD G6PD test at the district health centre level, after a pilot in the community showed that community testing was not possible. According to the NSP, phased implementation is planned.</div>
+
+## Countries with similar reported characteristics
+
+These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
+
+<div class="similar-country-grid">
+<a class="similar-country-card" href="north-korea-dprk.html"><span class="name">North Korea (DPRK)</span><span class="meta">Shared: region, WHO region, first-line treatment, G6PD policy, G6PD implementation</span></a>
+<a class="similar-country-card" href="honduras.html"><span class="name">Honduras</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="nepal.html"><span class="name">Nepal</span><span class="meta">Shared: region, WHO region, programme phase, first-line treatment, G6PD implementation, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+</div>
 
 ---
 

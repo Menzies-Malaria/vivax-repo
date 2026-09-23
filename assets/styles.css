@@ -144,6 +144,135 @@
   background: rgba(240, 235, 227, 0.35);
 }
 
+/* Country profiles use a compact, book-like spread for the high-level facts,
+   then return to a single reading column for detailed policy notes. */
+.country-profile-spread {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.country-profile-card,
+.country-contact-card {
+  min-width: 0;
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--vivax-rule, #e4ddd0);
+  border-radius: var(--vivax-radius-md, 12px);
+  background: var(--vivax-paper-elevated, #fff);
+  box-shadow: var(--vivax-shadow-sm, 0 1px 2px rgba(26, 31, 31, 0.04));
+  break-inside: avoid;
+}
+
+.country-profile-card > :first-child,
+.country-contact-card > :first-child {
+  margin-top: 0;
+}
+
+.country-profile-card > :last-child,
+.country-contact-card > :last-child {
+  margin-bottom: 0;
+}
+
+.country-profile-card table,
+.country-contact-card table {
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  border: 1px solid var(--vivax-rule, #e4ddd0);
+  border-radius: var(--vivax-radius-sm, 8px);
+  box-shadow: none;
+}
+
+.country-profile-card table td:first-child,
+.country-contact-card table td:first-child {
+  width: 42%;
+}
+
+.country-contact-card {
+  margin: 0 0 1.5rem;
+  border-left: 0.28rem solid var(--vivax-primary, #0d4f4f);
+}
+
+.country-policy-context {
+  margin: 0.75rem 0 1.5rem;
+  padding: 1rem 1.15rem;
+  border-left: 0.28rem solid var(--vivax-accent, #c0521b);
+  border-radius: 0 var(--vivax-radius-sm, 8px) var(--vivax-radius-sm, 8px) 0;
+  background: rgba(240, 235, 227, 0.38);
+  color: var(--vivax-ink, #1a1f1f);
+  line-height: 1.65;
+}
+
+.similar-country-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.similar-country-grid > p {
+  display: contents;
+  margin: 0;
+}
+
+.similar-country-card {
+  display: block;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--vivax-rule, #e4ddd0);
+  border-radius: var(--vivax-radius-md, 12px);
+  background: var(--vivax-paper-elevated, #fff);
+  color: var(--vivax-ink, #1a1f1f);
+  text-decoration: none;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.similar-country-card:hover {
+  border-color: rgba(13, 79, 79, 0.42);
+  color: var(--vivax-ink, #1a1f1f);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.similar-country-card .name,
+.similar-country-card .meta {
+  display: block;
+}
+
+.similar-country-card .name {
+  font-family: "Fraunces", serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.similar-country-card .meta {
+  margin-top: 0.3rem;
+  color: var(--vivax-ink-soft, #4a5252);
+  font-size: 0.78rem;
+  line-height: 1.42;
+}
+
+@media (max-width: 767.98px) {
+  .country-profile-spread,
+  .similar-country-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .country-profile-spread {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .country-profile-card,
+  .country-contact-card,
+  .similar-country-card {
+    box-shadow: none;
+  }
+}
+
 /* Persistent repository navigation */
 .vivax-top-search {
   position: sticky;

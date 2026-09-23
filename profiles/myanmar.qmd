@@ -2,12 +2,16 @@
 title: "Myanmar"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
+
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
 
 | | |
 |---|---|
@@ -16,19 +20,37 @@ toc: false
 | **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
 | **Programme phase** | Burden reduction |
 | **Economic status** | _Not reported_ |
+| **Cross-border transmission** | Yes, with Thailand |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Traditional farming communities, forest goers and seasonal workers, defense services, IDPs, migrants |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
 | **First-line treatment** | CQ |
 | **Second-line treatment** | ACT |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | No |
-| **Type of G6PD testing** | _Not reported_ |
+| **Type of G6PD testing** | Qualitative or semi-quantitative |
 | **Community malaria care** | Yes |
 | **Community vivax care** | Yes |
 | **Follow-up of radical cure** | Yes |
-| **Cross-border transmission** | Yes, with Thailand |
-| **Mobile / migrant populations** | Yes |
-| **High-risk populations** | Traditional farming communities, forest goers and seasonal workers, defense services, IDPs, migrants |
-| **Programme contact** | _Not reported_ |
+| **Community follow-up of radical cure** | Yes |
+:::
+
+:::
+
+::: {.country-contact-card}
+### Programme contact
+
+| | |
+|---|---|
+| **Programme contact** | Dr. Sein Hlyan Bo |
+:::
 
 ## Reported case numbers
 
@@ -40,7 +62,7 @@ toc: false
 | **2020** | 43,578 |
 | **2019** | 32,788 |
 | **2018** | 36,502 |
-| ***P. vivax* share of malaria cases (2023)** | 82% |
+| ***P. vivax* share of malaria cases (2023)** | 81.969688% |
 
 ## Case trend
 
@@ -53,21 +75,21 @@ toc: false
 
 | | |
 |---|---|
-| **Last policy update** | 2022 |
+| **Last policy update** | 2025 |
 | **Schizontocidal drug** | CQ |
-| **G6PD testing policy** | Recommended but test type not specified |
-| **G6PD implementation** | Not routinely implemented. Testing using STANDARD G6PD is only done in areas where SMRU works. GF funded. |
-| **Year of G6PD implementation** | _Not reported_ |
-| **Health system level (G6PD)** | _Not reported_ |
+| **G6PD testing policy** | Recommended, qualitative or semi-quantitative, required for 7-day PQ and TQ |
+| **G6PD implementation** | Partially implemented |
+| **Year of G6PD implementation** | 2026 |
+| **Health system level (G6PD)** | Up to health centre level |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
-| **Additional safety recommendations** | No information |
-| **Treatment implementation** | _Not reported_ |
+| **Additional safety recommendations** | Not specified |
+| **Treatment implementation** | Partially implemented |
 | **Year of treatment implementation** | _Not reported_ |
 | **Type of treatment follow-up** | _Not reported_ |
 | **Implementation of follow-up** | _Not reported_ |
 | **Anti-malarials approved by NRA** | _Not reported_ |
-| **Next policy update** | _Not reported_ |
-| **Treatments under consideration** | _Not reported_ |
+| **Next policy update** | No |
+| **Treatments under consideration** | Tafenoquine and high-dose 7-day PQ |
 | **Treatment guidelines (URL)** | <a href="https://moh.nugmyanmar.org/wp-content/uploads/2022/07/Malaria_Clinical_Management_Guidelines__June_2022___Ver_1__MOH_NUG_of_Myanmar.pdf" target="_blank" rel="noopener noreferrer">https://moh.nugmyanmar.org/wp-content/uploads/2022/07/Malaria_Clinical_Management_Guidelines__June_2022___Ver_1__MOH_NUG_of_Myanmar.pdf</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
@@ -75,10 +97,20 @@ toc: false
 
 | G6PD status | Policy on PQ | Additional safety |
 |---|---|---|
-| **G6PD Normal** | PQ 0.25 mg/kg over 14 days | No information |
-| **G6PD Deficient - MildModerate** | PQ 0.75 mg/kg weekly for 8 weeks | No information |
-| **G6PD Deficient - Severe** | No PQ | No information |
-| **If no testing available** | Risk-benefit assessment | No information |
+| **G6PD Normal - <70% enzyme activity** | PQ 1 mg/kg/day over 7 days or TQ | N/A |
+| **G6PD Normal - <30% enzyme activity** | PQ 0.5 mg/kg/day over 7 days | Not specified |
+| **G6PD Deficient - MildModerate** | PQ 0.75 mg/kg/week weekly for 8 weeks | Close medical supervision |
+| **If no testing available** | PQ 0.25 mg/kg/day over 14 days | Not specified |
+
+## Countries with similar reported characteristics
+
+These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
+
+<div class="similar-country-grid">
+<a class="similar-country-card" href="nepal.html"><span class="name">Nepal</span><span class="meta">Shared: region, WHO region, first-line treatment, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="pakistan.html"><span class="name">Pakistan</span><span class="meta">Shared: region, programme phase, first-line treatment, G6PD policy, G6PD implementation, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="panama.html"><span class="name">Panama</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, community vivax care, radical-cure follow-up, mobile/migrant-population setting</span></a>
+</div>
 
 ---
 

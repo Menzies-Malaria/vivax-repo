@@ -2,12 +2,16 @@
 title: "Thailand"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
+
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
 
 | | |
 |---|---|
@@ -16,6 +20,16 @@ toc: false
 | **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
 | **Programme phase** | Pre-elimination |
 | **Economic status** | LMIC |
+| **Cross-border transmission** | Yes, especially from Myanmar |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Forest workers, rubber plantations/farmers, MMPs, military personnel |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
 | **First-line treatment** | CQ |
 | **Second-line treatment** | DHA-PPQ |
 | **Rationale for ACT use** | _Not reported_ |
@@ -25,10 +39,10 @@ toc: false
 | **Community malaria care** | Yes |
 | **Community vivax care** | Yes |
 | **Follow-up of radical cure** | Yes |
-| **Cross-border transmission** | Yes, especially from Myanmar |
-| **Mobile / migrant populations** | Yes |
-| **High-risk populations** | Forest workers, rubber plantations/farmers, MMPs, military personnel |
-| **Programme contact** | _Not reported_ |
+| **Community follow-up of radical cure** | No |
+:::
+
+:::
 
 ## Reported case numbers
 
@@ -40,7 +54,7 @@ toc: false
 | **2020** | 2,892 |
 | **2019** | 3,443 |
 | **2018** | 3,575 |
-| ***P. vivax* share of malaria cases (2023)** | 91.4% |
+| ***P. vivax* share of malaria cases (2023)** | 91.373105% |
 
 ## Case trend
 
@@ -55,7 +69,7 @@ toc: false
 |---|---|
 | **Last policy update** | 2025 |
 | **Schizontocidal drug** | CQ |
-| **G6PD testing policy** | Required, Quantitative |
+| **G6PD testing policy** | Required, quantitative |
 | **G6PD implementation** | Use of FST at some health facilities. Testing implemented using the STANDARD Test health facilities high endemic areas. GF Funded |
 | **Year of G6PD implementation** | 2020 |
 | **Health system level (G6PD)** | Tertiary level hospitals |
@@ -75,10 +89,20 @@ toc: false
 
 | G6PD status | Policy on PQ | Additional safety |
 |---|---|---|
-| **G6PD Normal** | TQ 300 mg, PQ 0.5 mg/kg over 7 days, PQ 0.25mg/kg over 14 days | Counselling for adverse events - acute hemolytic anemia for patients receiving tafenoquine & 7-day PQ, self-monitoring using a malaria patient card for all patients, including G6PD test results |
-| **G6PD Intermediate** | PQ 0.25 mg/kg over 14 days, PQ 0.75 mg/kg weekly for 8 weeks | Counseling for adverse events, self-monitoring using a malaria patient card for all patients, including G6PD test results |
-| **G6PD Deficient** | PQ 0.75 mg/kg weekly for 8 weeks | Counseling for adverse events, self-monitoring using a malaria patient card for all patients, including G6PD test results |
-| **If no testing available** | PQ 0.25 mg/kg over 14 days | Counseling for adverse events, self-monitoring using a malaria patient card for all patients, including G6PD test results |
+| **G6PD Normal** | TQ 300 mg, PQ 0.5 mg/kg/day over 7 days, PQ 0.25mg/kg/day over 14 days | Counselling for adverse events - acute hemolytic anemia for patients receiving tafenoquine & 7-day PQ, self-monitoring using a malaria patient card for all patients, including G6PD test results |
+| **G6PD Intermediate** | PQ 0.25 mg/kg/day over 14 days, PQ 0.75 mg/kg/week weekly for 8 weeks | Counselling for adverse events, self-monitoring using a malaria patient card for all patients, including G6PD test results |
+| **G6PD Deficient** | PQ 0.75 mg/kg/week weekly for 8 weeks | Counselling for adverse events, self-monitoring using a malaria patient card for all patients, including G6PD test results |
+| **If no testing available** | PQ 0.25 mg/kg/day over 14 days | Counselling for adverse events, self-monitoring using a malaria patient card for all patients, including G6PD test results |
+
+## Countries with similar reported characteristics
+
+These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
+
+<div class="similar-country-grid">
+<a class="similar-country-card" href="iran.html"><span class="name">Iran</span><span class="meta">Shared: region, first-line treatment, G6PD policy, G6PD implementation</span></a>
+<a class="similar-country-card" href="vietnam.html"><span class="name">Vietnam</span><span class="meta">Shared: region, programme phase, first-line treatment, G6PD policy, G6PD implementation, radical-cure follow-up, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="nepal.html"><span class="name">Nepal</span><span class="meta">Shared: region, WHO region, programme phase, first-line treatment, G6PD policy, community vivax care, radical-cure follow-up, mobile/migrant-population setting</span></a>
+</div>
 
 ---
 

@@ -96,6 +96,9 @@ jobs:
         env:
           CHAR_DATA_URL: ${{ secrets.CHAR_DATA_URL_PROT }}
           CASE_DATA_URL: ${{ secrets.CASE_DATA_URL_PROT }}
+          # Sarah confirmed that the populated prototype email fields have consent.
+          # Keep production/main controlled by the repository variable above.
+          INCLUDE_PUBLIC_EMAIL: "1"
         run: |
           bash scripts/fetch-sheet-data.sh
           Rscript scripts/build_profiles.R

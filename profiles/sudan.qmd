@@ -2,12 +2,16 @@
 title: "Sudan"
 subtitle: "Eastern Mediterranean · Africa"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
+
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
 
 | | |
 |---|---|
@@ -16,6 +20,16 @@ toc: false
 | **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
 | **Programme phase** | Burden reduction |
 | **Economic status** | LMIC |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Children under 5, IDPs, pregnant people |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
 | **First-line treatment** | AL |
 | **Second-line treatment** | DHAP |
 | **Rationale for ACT use** | Decreasing therapeutic efficacy of AS +SP (TES) |
@@ -25,10 +39,18 @@ toc: false
 | **Community malaria care** | Yes |
 | **Community vivax care** | No |
 | **Follow-up of radical cure** | Yes |
-| **Cross-border transmission** | Yes |
-| **Mobile / migrant populations** | No |
-| **High-risk populations** | Children under 5, IDPs, pregnant people |
-| **Programme contact** | _Not reported_ |
+| **Community follow-up of radical cure** | No |
+:::
+
+:::
+
+::: {.country-contact-card}
+### Programme contact
+
+| | |
+|---|---|
+| **Programme contact** | Dr Samah Elhassan |
+:::
 
 ## Reported case numbers
 
@@ -40,7 +62,7 @@ toc: false
 | **2020** | 170,202 |
 | **2019** | 194,904 |
 | **2018** | 143,314 |
-| ***P. vivax* share of malaria cases (2023)** | 11.2% |
+| ***P. vivax* share of malaria cases (2023)** | 11.177951% |
 
 ## Case trend
 
@@ -55,8 +77,8 @@ toc: false
 |---|---|
 | **Last policy update** | 2023 |
 | **Schizontocidal drug** | AL |
-| **G6PD testing policy** | Not explicitely mentioned, but testing not recommended or required |
-| **G6PD implementation** | _Not reported_ |
+| **G6PD testing policy** | Not explicitly mentioned |
+| **G6PD implementation** | Not recommended or required and not implemented |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on known G6PD status |
@@ -66,7 +88,7 @@ toc: false
 | **Type of treatment follow-up** | _Not reported_ |
 | **Implementation of follow-up** | _Not reported_ |
 | **Anti-malarials approved by NRA** | _Not reported_ |
-| **Next policy update** | N |
+| **Next policy update** | No |
 | **Treatments under consideration** | _Not reported_ |
 | **Treatment guidelines (URL)** | <a href="https://www.scribd.com/document/756601422/Sudan-Malaria-Case-Management-Protocol-2023-1#content=query:G6PD,pageNum:43,indexOnPage:0,bestMatch:false" target="_blank" rel="noopener noreferrer">https://www.scribd.com/document/756601422/Sudan-Malaria-Case-Management-Protocol-2023-1#content=query:G6PD,pageNum:43,indexOnPage:0,bestMatch:false</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
@@ -75,9 +97,19 @@ toc: false
 
 | G6PD status | Policy on PQ | Additional safety |
 |---|---|---|
-| **G6PD normal** | Adults: PQ 15 mg/day for 14 days. Children:  0.25 mg/kg over 14 days | Not specified |
-| **G6PD deficient** | PQ 0.75 mg/kg weekly for 8 weeks | With close medical supervision |
-| **If no testing available** | Adults: PQ 15 mg/day for 14 days. Children:  0.25 mg/kg over 14 days | Not specified |
+| **G6PD deficient** | PQ 0.75 mg/kg/week weekly for 8 weeks | With close medical supervision |
+| **G6PD normal** | Adults: PQ 15 mg/day over 14 days Children: PQ 0.25 mg/kg/day over 14 days | Not specified |
+| **If no testing available** | Adults: PQ 15 mg/day over 14 days Children: PQ 0.25 mg/kg /day over 14 days | Not specified |
+
+## Countries with similar reported characteristics
+
+These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
+
+<div class="similar-country-grid">
+<a class="similar-country-card" href="guyana.html"><span class="name">Guyana</span><span class="meta">Shared: programme phase, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="somalia.html"><span class="name">Somalia</span><span class="meta">Shared: region, WHO region, programme phase, first-line treatment, G6PD implementation, community vivax care, cross-border setting</span></a>
+<a class="similar-country-card" href="ethiopia.html"><span class="name">Ethiopia</span><span class="meta">Shared: region, programme phase, G6PD policy, G6PD implementation, community vivax care, cross-border setting, mobile/migrant-population setting</span></a>
+</div>
 
 ---
 

@@ -37,7 +37,7 @@ cat(sprintf(
 ::: {.stat-row}
 ::: {.stat-card}
 [%d]{.num}
-[*P. vivax* endemic countries]{.label}
+[Countries and territories represented]{.label}
 :::
 ::: {.stat-card}
 [%d]{.num}
@@ -95,13 +95,13 @@ This repository is developed in consultation with National Malaria Control Progr
 
 ## How it works
 
-The data on this site is read at build time from a shared Google Sheet that is maintained by the repository team and updated by NMCP focal points. New submissions through the [contribute form](contribute.qmd) flow into the same sheet. When the site rebuilds (manually or on a schedule), the latest data is pulled and rendered. See [Methods](methods.qmd) for details, including how rows are reconciled and versioned.
+The data on this site is read at build time from approved production tabs in a shared Google Sheet maintained by the repository team. Partners submit proposed changes through the [contribute form](contribute.qmd); the repository team reviews them before approved information is transferred into the production data. When the site rebuilds (manually or on a schedule), the latest approved data is pulled and rendered. See [Methods](methods.qmd) for details.
 
 ## Cite this repository
 
 If you use these data in a publication or report, please cite:
 
-> *P. vivax* Policy Repository. Updated `r format(Sys.Date(), "%B %Y")`. Available at: https://example.org/vivax-policy-repository.
+> *P. vivax* Policy Repository. Updated `r format(Sys.Date(), "%B %Y")`. Available at: https://menzies-malaria.github.io/vivax-repo/.
 
 And the foundational review:
 

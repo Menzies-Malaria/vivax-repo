@@ -2,12 +2,16 @@
 title: "Republic of Korea (ROK)"
 subtitle: "Western Pacific · Asia-Pacific"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
+
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
 
 | | |
 |---|---|
@@ -16,6 +20,16 @@ toc: false
 | **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
 | **Programme phase** | Pre-elimination |
 | **Economic status** | HIC |
+| **Cross-border transmission** | No |
+| **Mobile / migrant populations** | No |
+| **High-risk populations** | Active-duty soldiers, discharged veterans, and residents of Northern Gyeonggi-do, Incheon, and Gangwon-do, especially farmers and forest-goers. |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
 | **First-line treatment** | CQ |
 | **Second-line treatment** | _Not reported_ |
 | **Rationale for ACT use** | _Not reported_ |
@@ -25,10 +39,10 @@ toc: false
 | **Community malaria care** | No |
 | **Community vivax care** | No |
 | **Follow-up of radical cure** | Yes |
-| **Cross-border transmission** | No |
-| **Mobile / migrant populations** | No |
-| **High-risk populations** | Active-duty soldiers, discharged veterans, and residents of Northern Gyeonggi-do, Incheon, and Gangwon-do, especially farmers and forest-goers. |
-| **Programme contact** | _Not reported_ |
+| **Community follow-up of radical cure** | No |
+:::
+
+:::
 
 ## Reported case numbers
 
@@ -40,7 +54,7 @@ toc: false
 | **2020** | 356 |
 | **2019** | 485 |
 | **2018** | 501 |
-| ***P. vivax* share of malaria cases (2023)** | 97.3% |
+| ***P. vivax* share of malaria cases (2023)** | 97.280967% |
 
 ## Case trend
 
@@ -53,13 +67,13 @@ toc: false
 
 | | |
 |---|---|
-| **Last policy update** | 2024 |
+| **Last policy update** | 2026 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Recommended but test type not specified |
-| **G6PD implementation** | Partially implemented. Testing not implemented in public facilities except for very few vivax cases in referral hospitals |
+| **G6PD implementation** | Partially implemented |
 | **Year of G6PD implementation** | 2020 |
 | **Health system level (G6PD)** | Referral hospitals, primary care hospitals |
-| **Policy on PQ (overall)** | PQ 14-day low dose (0.25mg/kg/day) or 7-day low dose (0.5mg/kg/day) |
+| **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days |
 | **Additional safety recommendations** | Monitoring for adverse events |
 | **Treatment implementation** | Implemented |
 | **Year of treatment implementation** | _Not reported_ |
@@ -70,6 +84,24 @@ toc: false
 | **Treatments under consideration** | Tafenoquine |
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
+
+## Primaquine regimens by G6PD status
+
+| G6PD status | Policy on PQ | Additional safety |
+|---|---|---|
+| **G6PD Normal** | Adult: PQ 0.25 mg/kg/day over 14 days, Pediatric: 0.3 mg/kg/day over 14 days | Counselling for relapse if irregular administration or discontinued |
+| **G6PD Deficient** | PQ 0.75 mg/kg/week weekly for 8 weeks | Counselling for relapse if irregular administration or discontinued |
+| **If testing not available** | Not specified |  |
+
+## Countries with similar reported characteristics
+
+These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
+
+<div class="similar-country-grid">
+<a class="similar-country-card" href="afghanistan.html"><span class="name">Afghanistan</span><span class="meta">Shared: region, programme phase, first-line treatment, G6PD policy, G6PD implementation, radical-cure follow-up</span></a>
+<a class="similar-country-card" href="nepal.html"><span class="name">Nepal</span><span class="meta">Shared: region, programme phase, first-line treatment, G6PD policy, G6PD implementation, radical-cure follow-up</span></a>
+<a class="similar-country-card" href="vanuatu.html"><span class="name">Vanuatu</span><span class="meta">Shared: region, WHO region, programme phase, G6PD policy, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+</div>
 
 ---
 

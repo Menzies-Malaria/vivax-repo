@@ -2,12 +2,16 @@
 title: "Philippines"
 subtitle: "Western Pacific · Asia-Pacific"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
+
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
 
 | | |
 |---|---|
@@ -16,6 +20,16 @@ toc: false
 | **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
 | **Programme phase** | Pre-elimination |
 | **Economic status** | LMIC |
+| **Cross-border transmission** | No |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Indigenous population (remote areas in Palawan), forest workers, IDPs, military |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
 | **First-line treatment** | AL |
 | **Second-line treatment** | Quinine |
 | **Rationale for ACT use** | _Not reported_ |
@@ -25,10 +39,18 @@ toc: false
 | **Community malaria care** | Yes |
 | **Community vivax care** | Yes |
 | **Follow-up of radical cure** | Yes |
-| **Cross-border transmission** | No |
-| **Mobile / migrant populations** | Yes |
-| **High-risk populations** | Indigenous population (remote areas in Palawan), forest workers, IDPs, military) |
-| **Programme contact** | _Not reported_ |
+| **Community follow-up of radical cure** | Yes |
+:::
+
+:::
+
+::: {.country-contact-card}
+### Programme contact
+
+| | |
+|---|---|
+| **Programme contact** | Dr. Jem Mariel Langas |
+:::
 
 ## Reported case numbers
 
@@ -40,7 +62,7 @@ toc: false
 | **2020** | 736 |
 | **2019** | 537 |
 | **2018** | 116 |
-| ***P. vivax* share of malaria cases (2023)** | 14.8% |
+| ***P. vivax* share of malaria cases (2023)** | 14.790893% |
 
 ## Case trend
 
@@ -61,7 +83,7 @@ toc: false
 | **Health system level (G6PD)** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
 | **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | Implemented without  G6PD testing |
+| **Treatment implementation** | Implemented without G6PD testing |
 | **Year of treatment implementation** | 2002 |
 | **Type of treatment follow-up** | Cases are monitored by taking blood smear on Day 3, 7, 14, 21, 28, and monthly for 6 months. This is being done by medical technologists in hospitals and primary health care facilities |
 | **Implementation of follow-up** | Partially implemented |
@@ -75,9 +97,19 @@ toc: false
 
 | G6PD status | Policy on PQ | Additional safety |
 |---|---|---|
-| **G6PD Normal** | PQ 0.25mg/kg over 14 days | Close monitoring |
-| **G6PD Deficient** | Based on risk-benefit assessment, PQ 0.75 mg/kg weekly for 8 weeks | Close medical supervision |
+| **G6PD Normal** | PQ 0.25 mg/kg/day over 14 days | Close monitoring |
+| **G6PD Deficient** | Based on risk-benefit assessment, PQ 0.75 mg/kg/week weekly for 8 weeks | Close medical supervision |
 | **If no testing available** | Not specified | Not specified |
+
+## Countries with similar reported characteristics
+
+These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
+
+<div class="similar-country-grid">
+<a class="similar-country-card" href="bangladesh.html"><span class="name">Bangladesh</span><span class="meta">Shared: region, programme phase, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="timor-leste.html"><span class="name">Timor Leste</span><span class="meta">Shared: region, first-line treatment, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up</span></a>
+<a class="similar-country-card" href="honduras.html"><span class="name">Honduras</span><span class="meta">Shared: programme phase, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, mobile/migrant-population setting</span></a>
+</div>
 
 ---
 

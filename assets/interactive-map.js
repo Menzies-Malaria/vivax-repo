@@ -13,9 +13,11 @@
 
   const metricLabels = {
     radical_cure_policy: "Radical-cure treatment policy",
+    treatment_implementation: "Treatment implementation",
+    treatment_policy_implementation: "Treatment policy + implementation",
     g6pd_policy: "G6PD-testing policy",
     g6pd_implementation: "G6PD-testing implementation",
-    treatment_implementation: "Treatment implementation",
+    g6pd_policy_implementation: "G6PD policy + implementation",
     first_line: "First-line treatment",
   };
 
@@ -77,7 +79,18 @@
 
   function categoryColors(categories, metric) {
     const colors = new Map();
-    if (metric.endsWith("implementation")) {
+    if (metric.endsWith("policy_implementation")) {
+      colors.set("Policy present · implemented", "#0d4f4f");
+      colors.set("Policy present · partial / planned", "#d9a36a");
+      colors.set("Policy present · not implemented", "#c0521b");
+      colors.set("Policy present · implementation unclear", "#8b5e83");
+      colors.set("Policy and practice aligned · not adopted", "#6e8244");
+      colors.set("Implementation reported · policy unclear", "#497f8c");
+      colors.set("Implementation reported · policy does not adopt", "#b66b55");
+      colors.set("Insufficient data", MUTED);
+      return colors;
+    }
+    if (metric === "g6pd_implementation" || metric === "treatment_implementation") {
       colors.set("Implemented", "#0d4f4f");
       colors.set("Partial / planned", "#d9a36a");
       colors.set("Not implemented", "#c0521b");
@@ -89,6 +102,36 @@
       colors.set(category, category === NO_DATA ? MUTED : PALETTE[index % PALETTE.length]);
     });
     return colors;
+  }
+
+  function combinedCategory(policy, implementation, type) {
+    const policyValue = display(policy);
+    const implementationValue = display(implementation);
+    const policyNotAdopted = type === "g6pd"
+      ? policyValue === "Testing not required"
+      : policyValue === "No primaquine";
+    const policyUnclear = policyValue === NO_DATA ||
+      policyValue === "Other policy" ||
+      policyValue === "Policy unclear / not explicit";
+    const policyPresent = !policyNotAdopted && !policyUnclear;
+    const implemented = implementationValue === "Implemented";
+    const partial = implementationValue === "Partial / planned";
+    const notImplemented = implementationValue === "Not implemented";
+
+    if (policyPresent && implemented) return "Policy present · implemented";
+    if (policyPresent && partial) return "Policy present · partial / planned";
+    if (policyPresent && notImplemented) return "Policy present · not implemented";
+    if (policyPresent) return "Policy present · implementation unclear";
+    if (policyNotAdopted && (implemented || partial)) {
+      return "Implementation reported · policy does not adopt";
+    }
+    if (policyNotAdopted && (notImplemented || implementationValue === NO_DATA)) {
+      return "Policy and practice aligned · not adopted";
+    }
+    if (policyUnclear && (implemented || partial)) {
+      return "Implementation reported · policy unclear";
+    }
+    return "Insufficient data";
   }
 
   function detailItem(label, value, highlighted) {
@@ -142,14 +185,27 @@
     function categoryFor(row) {
       const metric = metricSelect.value;
       if (metric === "radical_cure_policy") {
-        return treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`) || NO_DATA;
+        return treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`) ||
+          display(row.treatment_policy_overall);
+      }
+      if (metric === "treatment_policy_implementation") {
+        const policy = treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`) ||
+          display(row.treatment_policy_overall);
+        return combinedCategory(policy, row.treatment_implementation, "treatment");
+      }
+      if (metric === "g6pd_policy_implementation") {
+        return combinedCategory(row.g6pd_policy, row.g6pd_implementation, "g6pd");
       }
       return display(row[metric]);
     }
 
     function healthLevelFor(row) {
-      if (metricSelect.value === "g6pd_implementation") return display(row.g6pd_health_level);
-      if (metricSelect.value === "treatment_implementation") return display(row.treatment_health_level);
+      if (["g6pd_implementation", "g6pd_policy_implementation"].includes(metricSelect.value)) {
+        return display(row.g6pd_health_level);
+      }
+      if (["treatment_implementation", "treatment_policy_implementation"].includes(metricSelect.value)) {
+        return display(row.treatment_health_level);
+      }
       return "";
     }
 
@@ -186,8 +242,13 @@
 
     function updateConditionalControls() {
       const metric = metricSelect.value;
-      patientControl.hidden = metric !== "radical_cure_policy";
-      healthControl.hidden = !metric.endsWith("implementation");
+      patientControl.hidden = !["radical_cure_policy", "treatment_policy_implementation"].includes(metric);
+      healthControl.hidden = ![
+        "g6pd_implementation",
+        "g6pd_policy_implementation",
+        "treatment_implementation",
+        "treatment_policy_implementation",
+      ].includes(metric);
       if (healthControl.hidden) healthSelect.value = "";
     }
 

@@ -36,6 +36,7 @@ classify_g6pd_policy <- function(x) {
   y <- str_to_lower(str_squish(x))
   case_when(
     not_reported(y) ~ "Not reported",
+    str_detect(y, "not explicitly mentioned|unclear") ~ "Policy unclear / not explicit",
     str_detect(y, "not required|does not require|no g6pd|not recommend") ~ "Testing not required",
     str_detect(y, "quantitative") & str_detect(y, "required|mandatory") ~ "Quantitative testing required",
     str_detect(y, "quantitative") ~ "Quantitative testing recommended",
@@ -83,8 +84,8 @@ classify_radical_cure <- function(x) {
   case_when(
     not_reported(y) ~ "Not reported",
     str_detect(y, "no primaquine|primaquine.*not|not recommend") ~ "No primaquine",
-    str_detect(y, "tafenoquine") & str_detect(y, "primaquine|\\bpq\\b") ~ "Primaquine or tafenoquine",
-    str_detect(y, "tafenoquine") ~ "Tafenoquine",
+    str_detect(y, "tafenoquine|\\btq\\b") & str_detect(y, "primaquine|\\bpq\\b") ~ "Primaquine or tafenoquine",
+    str_detect(y, "tafenoquine|\\btq\\b") ~ "Tafenoquine",
     str_detect(y, "weekly|8 weeks") ~ "Weekly primaquine for 8 weeks",
     str_detect(y, "7 day") & str_detect(y, "14 day") ~ "7- or 14-day primaquine",
     str_detect(y, "7 day") ~ "7-day primaquine",
@@ -121,6 +122,7 @@ case_main <- case |>
     country = trimws(.data$Country),
     g6pd_policy = classify_g6pd_policy(.data$`Policy on G6PD Testing`),
     g6pd_implementation = classify_implementation(.data$`Implementation of G6PD Testing`),
+    treatment_policy_overall = classify_radical_cure(.data$`Policy on PQ`),
     treatment_implementation = classify_implementation(.data$`Implementation of Treatment`),
     g6pd_health_level = classify_health_level(.data$`Health System Level of G6PD Implementation`),
     treatment_health_level = classify_health_level(.data$`Health System Level of Treatment Implementation`),
@@ -134,7 +136,7 @@ map_rows <- map_rows |>
   left_join(case_main, by = "country") |>
   mutate(
     across(
-      c(g6pd_policy, g6pd_implementation, treatment_implementation,
+      c(g6pd_policy, g6pd_implementation, treatment_policy_overall, treatment_implementation,
         g6pd_health_level, treatment_health_level),
       ~ coalesce(.x, "Not reported")
     ),
@@ -144,7 +146,7 @@ map_rows <- map_rows |>
 country_prefixes <- map_rows$country[order(nchar(map_rows$country), decreasing = TRUE)]
 base_country_for <- function(value) {
   if (is.na(value) || !nzchar(value)) return(NA_character_)
-  hit <- country_prefixes[str_starts(value, paste0(country_prefixes, " -"))]
+  hit <- country_prefixes[str_starts(value, fixed(paste0(country_prefixes, " -")))]
   if (length(hit)) hit[[1]] else NA_character_
 }
 
@@ -158,8 +160,13 @@ case_sub <- case |>
   ) |>
   filter(.data$patient_group != "Other") |>
   group_by(.data$base_country, .data$patient_group) |>
-  slice(1) |>
-  ungroup() |>
+  summarise(
+    radical_cure_policy = {
+      policies <- unique(.data$radical_cure_policy)
+      if (length(policies) == 1L) policies else "Varies by subgroup"
+    },
+    .groups = "drop"
+  ) |>
   transmute(
     country = .data$base_country,
     patient_group = .data$patient_group,
@@ -196,9 +203,11 @@ map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
       <label for="policy-map-metric">Colour countries by</label>
       <select id="policy-map-metric">
         <option value="radical_cure_policy">Radical-cure treatment policy</option>
+        <option value="treatment_implementation">Treatment implementation</option>
+        <option value="treatment_policy_implementation">Treatment policy + implementation</option>
         <option value="g6pd_policy">G6PD-testing policy</option>
         <option value="g6pd_implementation">G6PD-testing implementation</option>
-        <option value="treatment_implementation">Treatment implementation</option>
+        <option value="g6pd_policy_implementation">G6PD policy + implementation</option>
         <option value="first_line">First-line treatment</option>
       </select>
     </div>

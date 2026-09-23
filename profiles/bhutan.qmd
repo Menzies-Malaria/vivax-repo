@@ -2,12 +2,16 @@
 title: "Bhutan"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
+
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
 
 | | |
 |---|---|
@@ -16,6 +20,16 @@ toc: false
 | **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
 | **Programme phase** | Elimination |
 | **Economic status** | LMIC |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Construction workers (mobile migrant population) |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
 | **First-line treatment** | CQ |
 | **Second-line treatment** | ACT/AL |
 | **Rationale for ACT use** | _Not reported_ |
@@ -25,10 +39,18 @@ toc: false
 | **Community malaria care** | Partial - fever referral |
 | **Community vivax care** | Partial - fever referral |
 | **Follow-up of radical cure** | Yes |
-| **Cross-border transmission** | Yes |
-| **Mobile / migrant populations** | Yes |
-| **High-risk populations** | Construction workers (mobile migrant population) |
-| **Programme contact** | _Not reported_ |
+| **Community follow-up of radical cure** | Partial |
+:::
+
+:::
+
+::: {.country-contact-card}
+### Programme contact
+
+| | |
+|---|---|
+| **Programme contact** | Dr |
+:::
 
 ## Reported case numbers
 
@@ -55,7 +77,7 @@ toc: false
 | **Last policy update** | 2024 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Recommended but test type not specified |
-| **G6PD implementation** | Testing implemented in 13 high risk areas (STANDARD G6PD Test) |
+| **G6PD implementation** | Implemented in 13 high risk areas (STANDARD G6PD Test) |
 | **Year of G6PD implementation** | 2023 |
 | **Health system level (G6PD)** | Up to health centre level |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
@@ -70,18 +92,28 @@ toc: false
 | **Treatment guidelines (URL)** | <a href="https://moh.gov.bt/wp-content/uploads/2025/01/MALARIA-TREATMENT-PROTOCOL_FINAL-PRINT-VERSION.pdf" target="_blank" rel="noopener noreferrer">https://moh.gov.bt/wp-content/uploads/2025/01/MALARIA-TREATMENT-PROTOCOL_FINAL-PRINT-VERSION.pdf</a><br><a href="https://moh.gov.bt/wp-content/uploads/2025/01/Revised-National-Guideline-on-Diagnosis-and-Treatment-on-Malaria-.pdf" target="_blank" rel="noopener noreferrer">https://moh.gov.bt/wp-content/uploads/2025/01/Revised-National-Guideline-on-Diagnosis-and-Treatment-on-Malaria-.pdf</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
+### Country-specific policy context
+
+<div class="country-policy-context">Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan</div>
+
 ## Primaquine regimens by G6PD status
 
 | G6PD status | Policy on PQ | Additional safety |
 |---|---|---|
-| **G6PD Normal** | PQ 0.5 mg/kg over 7 days | Close medical supervision and patient counselling |
-| **G6PD Intermediate** | PQ 0.5 mg/kg over 7 days | Close medical supervision and patient counselling |
-| **G6PD Deficient** | PQ 0.75 mg/kg weekly for 8 weeks | Close medical supervision and patient counselling |
+| **G6PD Normal** | PQ 0.5 mg/kg/day over 7 days | Close medical supervision and patient counselling |
+| **G6PD Intermediate** | PQ 0.5 mg/kg/day over 7 days | Close medical supervision and patient counselling |
+| **G6PD Deficient** | PQ 0.75 mg/kg/week weekly for 8 weeks | Close medical supervision and patient counselling |
 | **If no testing availabe** | Based on risk-benefit assessment | Close medical supervision and patient counselling |
 
-## Notes
+## Countries with similar reported characteristics
 
-Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan
+These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
+
+<div class="similar-country-grid">
+<a class="similar-country-card" href="iran.html"><span class="name">Iran</span><span class="meta">Shared: region, first-line treatment, G6PD policy, G6PD implementation</span></a>
+<a class="similar-country-card" href="malaysia.html"><span class="name">Malaysia</span><span class="meta">Shared: region, programme phase, first-line treatment, G6PD policy, G6PD implementation, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="china.html"><span class="name">China</span><span class="meta">Shared: region, first-line treatment, G6PD policy, G6PD implementation, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+</div>
 
 ---
 

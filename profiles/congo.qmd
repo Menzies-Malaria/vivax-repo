@@ -2,12 +2,16 @@
 title: "Congo"
 subtitle: "African · Africa"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
+
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
 
 | | |
 |---|---|
@@ -16,7 +20,17 @@ toc: false
 | **Reporting *P. vivax* cases (last 5 yrs)** | No |
 | **Programme phase** | _Not reported_ |
 | **Economic status** | _Not reported_ |
-| **First-line treatment** | _Not reported_ |
+| **Cross-border transmission** | _Not reported_ |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
+| **First-line treatment** | N/A |
 | **Second-line treatment** | _Not reported_ |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | _Not reported_ |
@@ -25,10 +39,10 @@ toc: false
 | **Community malaria care** | _Not reported_ |
 | **Community vivax care** | _Not reported_ |
 | **Follow-up of radical cure** | _Not reported_ |
-| **Cross-border transmission** | _Not reported_ |
-| **Mobile / migrant populations** | _Not reported_ |
-| **High-risk populations** | _Not reported_ |
-| **Programme contact** | _Not reported_ |
+| **Community follow-up of radical cure** | _Not reported_ |
+:::
+
+:::
 
 ## Reported case numbers
 

@@ -17,4 +17,5 @@ fi
 mkdir -p data
 curl -sSL "$CHAR_DATA_URL" -o data/characteristic_data.csv
 curl -sSL "$CASE_DATA_URL" -o data/case_management.csv
-echo "Fetched sheet data into data/"
+Rscript scripts/normalise_downloads.R
+echo "Fetched and normalized sheet data into data/"

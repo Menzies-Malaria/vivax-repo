@@ -2,12 +2,16 @@
 title: "South Sudan"
 subtitle: "African · Africa"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
+
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
 
 | | |
 |---|---|
@@ -16,6 +20,16 @@ toc: false
 | **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
 | **Programme phase** | _Not reported_ |
 | **Economic status** | _Not reported_ |
+| **Cross-border transmission** | _Not reported_ |
+| **Mobile / migrant populations** | _Not reported_ |
+| **High-risk populations** | _Not reported_ |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
 | **First-line treatment** | AS-PY |
 | **Second-line treatment** | _Not reported_ |
 | **Rationale for ACT use** | _Not reported_ |
@@ -25,10 +39,10 @@ toc: false
 | **Community malaria care** | _Not reported_ |
 | **Community vivax care** | _Not reported_ |
 | **Follow-up of radical cure** | _Not reported_ |
-| **Cross-border transmission** | _Not reported_ |
-| **Mobile / migrant populations** | _Not reported_ |
-| **High-risk populations** | _Not reported_ |
-| **Programme contact** | _Not reported_ |
+| **Community follow-up of radical cure** | _Not reported_ |
+:::
+
+:::
 
 ## Reported case numbers
 
@@ -52,21 +66,21 @@ toc: false
 
 | | |
 |---|---|
-| **Last policy update** | _Not reported_ |
+| **Last policy update** | N/A |
 | **Schizontocidal drug** | AS-PY |
-| **G6PD testing policy** | _Not reported_ |
-| **G6PD implementation** | _Not reported_ |
-| **Year of G6PD implementation** | _Not reported_ |
-| **Health system level (G6PD)** | _Not reported_ |
-| **Policy on PQ (overall)** | _Not reported_ |
-| **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
-| **Next policy update** | _Not reported_ |
-| **Treatments under consideration** | _Not reported_ |
+| **G6PD testing policy** | N/A |
+| **G6PD implementation** | N/A |
+| **Year of G6PD implementation** | N/A |
+| **Health system level (G6PD)** | N/A |
+| **Policy on PQ (overall)** | N/A |
+| **Additional safety recommendations** | N/A |
+| **Treatment implementation** | N/A |
+| **Year of treatment implementation** | N/A |
+| **Type of treatment follow-up** | N/A |
+| **Implementation of follow-up** | N/A |
+| **Anti-malarials approved by NRA** | N/A |
+| **Next policy update** | N/A |
+| **Treatments under consideration** | N/A |
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 

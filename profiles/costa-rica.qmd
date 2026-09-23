@@ -2,33 +2,55 @@
 title: "Costa Rica"
 subtitle: "Americas · Central and South America"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
 
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
+
 | | |
 |---|---|
 | **Region** | Central and South America |
 | **WHO Region** | Americas |
 | **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
-| **Programme phase** | _Not reported_ |
-| **Economic status** | _Not reported_ |
-| **First-line treatment** | _Not reported_ |
-| **Second-line treatment** | _Not reported_ |
+| **Programme phase** | Pre-elimination |
+| **Economic status** | LMIC |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Mines, agricultural workers, mobile migrant populations |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
+| **First-line treatment** | CQ |
+| **Second-line treatment** | Not specified |
 | **Rationale for ACT use** | _Not reported_ |
-| **G6PD testing in guidelines** | No |
-| **G6PD testing implemented** | No |
-| **Type of G6PD testing** | _Not reported_ |
-| **Community malaria care** | _Not reported_ |
-| **Community vivax care** | _Not reported_ |
-| **Follow-up of radical cure** | _Not reported_ |
-| **Cross-border transmission** | _Not reported_ |
-| **Mobile / migrant populations** | _Not reported_ |
-| **High-risk populations** | _Not reported_ |
-| **Programme contact** | _Not reported_ |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | Partial |
+| **Type of G6PD testing** | Quantitative |
+| **Community malaria care** | Yes |
+| **Community vivax care** | Yes |
+| **Follow-up of radical cure** | Yes |
+| **Community follow-up of radical cure** | No |
+:::
+
+:::
+
+::: {.country-contact-card}
+### Programme contact
+
+| | |
+|---|---|
+| **Programme contact** | Alba McGirr Martin, CHAI |
+:::
 
 ## Reported case numbers
 
@@ -53,30 +75,46 @@ toc: false
 
 | | |
 |---|---|
-| **Last policy update** | 2023 |
-| **Schizontocidal drug** | _Not reported_ |
-| **G6PD testing policy** | Not explicitely mentioned [mentioned for second recurrence: G6PD testing required] |
-| **G6PD implementation** | Unable to ascertain information on |
-| **Year of G6PD implementation** | _Not reported_ |
-| **Health system level (G6PD)** | _Not reported_ |
-| **Policy on PQ (overall)** | _Not reported_ |
+| **Last policy update** | 2025 |
+| **Schizontocidal drug** | CQ |
+| **G6PD testing policy** | Required, semi-quantitative or quantitative for high-dose 7-day PQ and TQ |
+| **G6PD implementation** | Implemented in some health facilities |
+| **Year of G6PD implementation** | 2025 |
+| **Health system level (G6PD)** | Health facility level |
+| **Policy on PQ (overall)** | Dependent on G6PD status |
 | **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
+| **Treatment implementation** | Implemented |
+| **Year of treatment implementation** | 2025 for TQ and high-dose PQ |
+| **Type of treatment follow-up** | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. |
+| **Implementation of follow-up** | Implemented |
 | **Anti-malarials approved by NRA** | _Not reported_ |
-| **Next policy update** | _Not reported_ |
+| **Next policy update** | No |
 | **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | _Not reported_ |
+| **Treatment guidelines (URL)** | <a href="https://www.ministeriodesalud.go.cr/index.php/biblioteca-de-archivos-left/documentos-ministerio-de-salud/vigilancia-de-la-salud/normas-protocolos-guias-y-lineamientos/enfermedades-de-transmision-vectorial-1/malaria-1/6195-version-2-2023-protocolo-de-vigilancia-para-malaria-y-estrategia-nacional-para-la-eliminacion-y-prevencion-del-restablecimiento-de-la-transmision-de-malaria-en-costa-rica/file" target="_blank" rel="noopener noreferrer">https://www.ministeriodesalud.go.cr/index.php/biblioteca-de-archivos-left/documentos-ministerio-de-salud/vigilancia-de-la-salud/normas-protocolos-guias-y-lineamientos/enfermedades-de-transmision-vectorial-1/malaria-1/6195-version-2-2023-protocolo-de-vigilancia-para-malaria-y-estrategia-nacional-para-la-eliminacion-y-prevencion-del-restablecimiento-de-la-transmision-de-malaria-en-costa-rica/file</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
+
+### Country-specific policy context
+
+<div class="country-policy-context">Seems as though Costa Rica has implemented tafenoquine, being the first country in Central America and the Carribbean implementing tafenoquine.</div>
 
 ## Primaquine regimens by G6PD status
 
 | G6PD status | Policy on PQ | Additional safety |
 |---|---|---|
-| **G6PD normal** | _Not specified_ |  |
-| **G6PD deficient** | _Not specified_ |  |
+| **G6PD normal (>70% enzyme activity)** | TQ or high-dose 7-day PQ | Counselling for adverse events |
+| **G6PD normal** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days if adherence is expected to be low and a risk-benefit analysis is conducted | Counselling for adverse events |
+| **G6PD deficient (<30% activity)** | PQ 0.75 mg/kg/week weekly for 8 weeks | Not specified |
+| **if no testing available** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days if adherence is expected to be low and a risk-benefit analysis is conducted | Not specified |
+
+## Countries with similar reported characteristics
+
+These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
+
+<div class="similar-country-grid">
+<a class="similar-country-card" href="nepal.html"><span class="name">Nepal</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="afghanistan.html"><span class="name">Afghanistan</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="honduras.html"><span class="name">Honduras</span><span class="meta">Shared: region, WHO region, programme phase, first-line treatment, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+</div>
 
 ---
 

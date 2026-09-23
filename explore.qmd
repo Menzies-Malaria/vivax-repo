@@ -38,6 +38,8 @@ table_cols <- c(
   "Implementation: G6PD testing  (Y/N)",
   "Type of G6PD testing",
   "Program Phase",
+  "Cross-border transmission",
+  "Mobile Migrant Populations",
   "Economic status"
 )
 
@@ -103,7 +105,14 @@ tagList(
         ~`Pv 1st line treatment`,
         multiple = TRUE
       ),
-      widths = c(4, 4, 4, 4, 4, 4, 4),
+      filter_select(
+        "cross_border",
+        "Cross-border transmission",
+        shared,
+        ~`Cross-border transmission`,
+        multiple = TRUE
+      ),
+      widths = c(4, 4, 4, 4, 4, 4, 4, 4),
       device = "sm"
     )
   )

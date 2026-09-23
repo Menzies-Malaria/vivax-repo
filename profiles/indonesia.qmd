@@ -2,12 +2,16 @@
 title: "Indonesia"
 subtitle: "South-East Asia · Asia-Pacific"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
+
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
 
 | | |
 |---|---|
@@ -16,6 +20,16 @@ toc: false
 | **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
 | **Programme phase** | Burden reduction |
 | **Economic status** | LMIC |
+| **Cross-border transmission** | Yes |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Miners, plantation workers, indigenous communities |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
 | **First-line treatment** | DHA-PPQ |
 | **Second-line treatment** | Other ACT (Pyramax, AL) |
 | **Rationale for ACT use** | Resistance to CQ |
@@ -25,10 +39,10 @@ toc: false
 | **Community malaria care** | Yes |
 | **Community vivax care** | Yes |
 | **Follow-up of radical cure** | Yes |
-| **Cross-border transmission** | Yes |
-| **Mobile / migrant populations** | Yes |
-| **High-risk populations** | Miners, plantation workers, indigenous communities |
-| **Programme contact** | _Not reported_ |
+| **Community follow-up of radical cure** | Yes |
+:::
+
+:::
 
 ## Reported case numbers
 
@@ -40,7 +54,7 @@ toc: false
 | **2020** | 83,743 |
 | **2019** | 86,742 |
 | **2018** | 84,862 |
-| ***P. vivax* share of malaria cases (2023)** | 38.3% |
+| ***P. vivax* share of malaria cases (2023)** | 38.33637% |
 
 ## Case trend
 
@@ -60,7 +74,7 @@ toc: false
 | **Year of G6PD implementation** | Planned for 2027 |
 | **Health system level (G6PD)** | Planned for health centres |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
-| **Additional safety recommendations** | No information |
+| **Additional safety recommendations** | Not specified |
 | **Treatment implementation** | Implemented without G6PD testing |
 | **Year of treatment implementation** | 2014 |
 | **Type of treatment follow-up** | In patient - blood films everyday to confirm drug efficacy/parasite clearance; for primary care, patients are asked to return to the health facility on day 3, 7, 14, 21, 28 and provided with counselling while their urine color is monitored |
@@ -71,18 +85,28 @@ toc: false
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | <a href="https://apmen.org/sites/default/files/all_resources/Indonesia_Naional%20Plan%20for%20Malaria%20Elimination_2020-2024.pdf" target="_blank" rel="noopener noreferrer">https://apmen.org/sites/default/files/all_resources/Indonesia_Naional%20Plan%20for%20Malaria%20Elimination_2020-2024.pdf</a> |
 
+### Country-specific policy context
+
+<div class="country-policy-context">In the three high-burden areas, G6PD testing will be rolled out with high dose 7-day PQ. G6PD normal will receive the &quot;optimal&quot; dose, intermediates will received 0.5 mg/kg/day over 14 days, deficient provided 8 week. Follow up of patients will remain the same</div>
+
 ## Primaquine regimens by G6PD status
 
 | G6PD status | Policy on PQ | Additional safety |
 |---|---|---|
-| **G6PD Normal** | PQ 0.25 mg/kg over 14 days | No information |
-| **G6PD Normal (Relapse)** | PQ 0.5 mg/kg over 14 days | No information |
-| **G6PD Deficient** | No PQ | No information |
+| **G6PD Normal** | PQ 0.25 mg/kg/day over 14 days | Not specified |
+| **G6PD Normal (Relapse)** | PQ 0.5 mg/kg/day over 14 days | Not specified |
+| **G6PD Deficient** | No PQ | Not specified |
 | **If no testing available** | Not specified |  |
 
-## Notes
+## Countries with similar reported characteristics
 
-In the three high-burden areas, G6PD testing will be rolled out with high dose 7-day PQ. G6PD normal will receive the "optimal" dose, intermediates will received 0.5 mg/kg/day over 14 days, deficient provided 8 week. Follow up of patients will remain the same
+These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
+
+<div class="similar-country-grid">
+<a class="similar-country-card" href="india.html"><span class="name">India</span><span class="meta">Shared: region, WHO region, programme phase, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, cross-border setting</span></a>
+<a class="similar-country-card" href="bangladesh.html"><span class="name">Bangladesh</span><span class="meta">Shared: region, WHO region, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="guyana.html"><span class="name">Guyana</span><span class="meta">Shared: programme phase, G6PD policy, G6PD implementation, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+</div>
 
 ---
 

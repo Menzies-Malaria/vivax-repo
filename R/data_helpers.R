@@ -17,6 +17,14 @@ require_sheet_url <- function(name) {
 characteristic_data_source <- function(
   local_path = "data/characteristic_data.csv"
 ) {
+  explicit_path <- Sys.getenv("CHAR_DATA_PATH", unset = "")
+  if (nzchar(explicit_path)) {
+    if (!file.exists(explicit_path)) {
+      stop("CHAR_DATA_PATH does not exist: ", explicit_path, call. = FALSE)
+    }
+    return(explicit_path)
+  }
+
   if (nzchar(Sys.getenv("CHAR_DATA_URL", unset = ""))) {
     return(require_sheet_url("CHAR_DATA_URL"))
   }
@@ -35,6 +43,14 @@ characteristic_data_source <- function(
 case_data_source <- function(
   local_path = "data/case_management.csv"
 ) {
+  explicit_path <- Sys.getenv("CASE_DATA_PATH", unset = "")
+  if (nzchar(explicit_path)) {
+    if (!file.exists(explicit_path)) {
+      stop("CASE_DATA_PATH does not exist: ", explicit_path, call. = FALSE)
+    }
+    return(explicit_path)
+  }
+
   if (nzchar(Sys.getenv("CASE_DATA_URL", unset = ""))) {
     return(require_sheet_url("CASE_DATA_URL"))
   }
@@ -118,7 +134,8 @@ column_dictionary_notes <- function() {
     "Mobile Migrant Populations" = "Whether mobile or migrant populations are a significant feature.",
     "Type of high risk populations" = "Description of the populations at greatest risk.",
     "Economic status" = "World Bank economic classification at time of recording.",
-    "Contact" = "Programme focal point or other point of contact."
+    "Contact" = "Programme focal point or other point of contact.",
+    "Email" = "Approved public email address for the programme contact. Display is controlled separately from the data feed."
   )
 }
 

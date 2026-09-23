@@ -1,6 +1,6 @@
 ---
 title: "Data & downloads"
-subtitle: "The full dataset, in machine-readable form."
+subtitle: "Publication-ready extracts of the repository data, in machine-readable form."
 ---
 
 ## Live Google Sheet
@@ -13,7 +13,7 @@ This site is rebuilt regularly from this sheet. If you intend to use the data fo
 
 ## CSV downloads
 
-At each build, the site pulls both tabs directly from the Google Sheet. Download copies from the last build:
+At each build, the site pulls both tabs directly from the Google Sheet and normalizes them for publication. Download copies from the last build:
 
 - [`characteristic_data.csv`](data/characteristic_data.csv) — country-level burden, diagnostic, treatment, and implementation indicators.
 - [`case_management.csv`](data/case_management.csv) — detailed case management policy data, with sub-rows for primaquine regimen by G6PD status.

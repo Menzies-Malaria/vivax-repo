@@ -10,5 +10,7 @@ __pycache__/
 .Rproj.user/
 .Rhistory
 /data/
+/chart-options/
+/scripts/generate_chart_options.R
 
 **/*.quarto_ipynb

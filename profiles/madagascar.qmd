@@ -2,33 +2,55 @@
 title: "Madagascar"
 subtitle: "African · Africa"
 page-layout: article
-toc: false
+toc: true
 ---
 
 [← Back to all countries](../countries.qmd)
 
 ## Snapshot
 
+::: {.country-profile-spread}
+::: {.country-profile-card}
+### Country context
+
 | | |
 |---|---|
 | **Region** | Africa |
 | **WHO Region** | African |
 | **Reporting *P. vivax* cases (last 5 yrs)** | No |
-| **Programme phase** | _Not reported_ |
-| **Economic status** | _Not reported_ |
+| **Programme phase** | Burden reduction |
+| **Economic status** | LMIC |
+| **Cross-border transmission** | No |
+| **Mobile / migrant populations** | Yes |
+| **High-risk populations** | Children under 5, pregnant women, migrant populations |
+:::
+
+::: {.country-profile-card}
+### Treatment and care
+
+| | |
+|---|---|
 | **First-line treatment** | AS+AQ |
-| **Second-line treatment** | _Not reported_ |
-| **Rationale for ACT use** | _Not reported_ |
-| **G6PD testing in guidelines** | _Not reported_ |
-| **G6PD testing implemented** | _Not reported_ |
+| **Second-line treatment** | AL |
+| **Rationale for ACT use** | Chloroquine resistance to PQ; alignment of Pf and Pv treatment |
+| **G6PD testing in guidelines** | Yes |
+| **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
-| **Community malaria care** | _Not reported_ |
-| **Community vivax care** | _Not reported_ |
-| **Follow-up of radical cure** | _Not reported_ |
-| **Cross-border transmission** | _Not reported_ |
-| **Mobile / migrant populations** | _Not reported_ |
-| **High-risk populations** | _Not reported_ |
-| **Programme contact** | _Not reported_ |
+| **Community malaria care** | Partial - in children under 5 years old |
+| **Community vivax care** | No |
+| **Follow-up of radical cure** | No |
+| **Community follow-up of radical cure** | No |
+:::
+
+:::
+
+::: {.country-contact-card}
+### Programme contact
+
+| | |
+|---|---|
+| **Programme contact** | Dr. Lala Yvette Razafimaharo |
+:::
 
 ## Reported case numbers
 
@@ -48,18 +70,18 @@ toc: false
 | **Last policy update** | 2015 |
 | **Schizontocidal drug** | AS+AQ |
 | **G6PD testing policy** | Recommended |
-| **G6PD implementation** | No testing implemented |
+| **G6PD implementation** | Not implemented |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 | **Additional safety recommendations** | Not specified |
-| **Treatment implementation** | _Not reported_ |
+| **Treatment implementation** | Not implemented |
 | **Year of treatment implementation** | _Not reported_ |
 | **Type of treatment follow-up** | _Not reported_ |
 | **Implementation of follow-up** | _Not reported_ |
 | **Anti-malarials approved by NRA** | _Not reported_ |
-| **Next policy update** | _Not reported_ |
-| **Treatments under consideration** | _Not reported_ |
+| **Next policy update** | Yes, ongoing |
+| **Treatments under consideration** | Not considering anything new at the moment, sticking with primaquine. |
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
@@ -67,10 +89,20 @@ toc: false
 
 | G6PD status | Policy on PQ | Additional safety |
 |---|---|---|
-| **G6PD normal** | PQ 0.25 mg/kg over 14 days | Not specified |
-| **G6PD moderate deficient** | PQ 0.75 mg/kg weekly for 8 weeks | Not specified |
+| **G6PD moderate deficient** | PQ 0.75 mg/kg/week weekly for 8 weeks | Not specified |
+| **G6PD normal** | PQ 0.25 mg/kg/day over 14 days | Not specified |
 | **G6PD severe deficient** | No PQ | Not specified |
 | **if no testing available** | Not specified | Not specified |
+
+## Countries with similar reported characteristics
+
+These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
+
+<div class="similar-country-grid">
+<a class="similar-country-card" href="colombia.html"><span class="name">Colombia</span><span class="meta">Shared: programme phase, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="nicaragua.html"><span class="name">Nicaragua</span><span class="meta">Shared: programme phase, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="pakistan.html"><span class="name">Pakistan</span><span class="meta">Shared: programme phase, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, mobile/migrant-population setting</span></a>
+</div>
 
 ---
 
