@@ -23,7 +23,7 @@ char_path <- file.path(root, "data", "characteristic_data.csv")
 case_path <- file.path(root, "data", "case_management.csv")
 
 char <- load_characteristic_data(char_path)
-case <- load_case_data(case_path, char)
+case <- load_case_data(case_path)
 
 write_csv(char, char_path, na = "")
 write_csv(case, case_path, na = "")
