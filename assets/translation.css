@@ -12,6 +12,16 @@
   color: inherit;
 }
 
+.vivax-profile-language-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.vivax-profile-language-bar .vivax-language-control {
+  margin-left: 0;
+}
+
 @media (max-width: 767.98px) {
   .vivax-language-control .form-select {
     min-width: 6.75rem;

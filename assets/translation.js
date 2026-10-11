@@ -99,7 +99,17 @@
   }
 
   function addSelector() {
-    const host = document.querySelector(".vivax-top-search") || document.querySelector("#quarto-sidebar .sidebar-header");
+    if (document.getElementById("vivax-language-select")) return;
+
+    let host = document.querySelector(".vivax-top-search") || document.querySelector("#quarto-sidebar .sidebar-header");
+    if (!host && document.querySelector(".country-profile-locator[data-country]")) {
+      const titleBlock = document.querySelector("#title-block-header");
+      if (titleBlock) {
+        host = document.createElement("div");
+        host.className = "vivax-profile-language-bar";
+        titleBlock.prepend(host);
+      }
+    }
     if (!host) return;
     const item = document.createElement("div");
     item.className = "vivax-language-control";
