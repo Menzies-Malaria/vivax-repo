@@ -87,6 +87,7 @@ jobs:
           CASE_DATA_URL: ${{ secrets.CASE_DATA_URL }}
         run: |
           bash scripts/fetch-sheet-data.sh
+          Rscript ../prototype-source/scripts/prepare_legacy_main_build.R .
           Rscript scripts/build_profiles.R
           quarto render
           bash scripts/package-gated-site.sh
