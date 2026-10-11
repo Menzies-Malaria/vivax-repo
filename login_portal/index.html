@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>P. vivax Policy Repository — Partner access</title>
+  <title>Malaria Policy Repository — Partner access</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>P. vivax Policy Repository</h1>
+    <h1>Malaria Policy Repository</h1>
     <p class="subtitle">Partner access</p>
     <form id="login-form">
       <input type="text" id="username" placeholder="Username" autocomplete="username">
       <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+      <p class="access-request">
+        Need repository access?
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdC39i1fOXO4OPjhxVZnJ9gRVxkY0u-kOtBK3KE2jNpTd5Zng/viewform" target="_blank" rel="noopener noreferrer">Request access</a>
+      </p>
       <button id="login-btn" type="button">Log in</button>
     </form>
     <div id="alert" style="display: none;">Incorrect username or password.</div>

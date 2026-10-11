@@ -7,6 +7,8 @@ toc: true
 
 [← Back to all countries](../countries.qmd)
 
+<div class="country-profile-locator" data-country="Papua New Guinea"><div class="country-profile-locator__heading">Location</div><svg role="img" aria-label="World map showing Papua New Guinea"></svg><p>Highlighted within the global repository context.</p></div>
+
 ## Snapshot
 
 ::: {.country-profile-spread}
@@ -17,10 +19,10 @@ toc: true
 |---|---|
 | **Region** | Asia-Pacific |
 | **WHO Region** | Western Pacific |
-| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
-| **Economic status** | LMIC |
-| **Cross-border transmission** | Yes, mostly into Papua Indonesia |
+| **Economic status** | Lower-middle income |
+| **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Mobile populations traveling from low endemic (or predominantly vivax malaria endemic) and epidemic prone areas in the highlands to (and from) highly endemic lowland areas, especially urban settlements in Madang and Morobe; People of all age groups living in epidemic-prone highland provinces during epidemic years; Pregnant women and young children (particularly those who are malnourished) living in highly endemic lowland areas. |
 :::
@@ -30,21 +32,22 @@ toc: true
 
 | | |
 |---|---|
-| **First-line treatment** | AL |
-| **Second-line treatment** | DHA-PPQ |
+| **First-line schizontocidal treatment** | AL |
+| **Second-line schizontocidal treatment** | DHA-PPQ |
+| **Radical-cure regimen** | 14-day primaquine |
 | **Rationale for ACT use** | Because CQ resistance and AQ resistance, but less resistance for Pv. Maybe for easier case management to use the same first-line for both Pf and Pv? |
 | **G6PD testing in guidelines** | No |
-| **G6PD testing implemented** | No |
+| **G6PD testing implemented** | Pilot |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community vivax care** | Partial - referral? |
+| **Community vivax care** | Partial |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
 
 :::
 
-::: {.country-contact-card}
+::: {.country-contact-card data-profile-contact=true}
 ### Programme contact
 
 | | |
@@ -62,7 +65,7 @@ toc: true
 | **2020** | 186,981 |
 | **2019** | 163,237 |
 | **2018** | 138,006 |
-| ***P. vivax* share of malaria cases (2023)** | 24.97174% |
+| ***P. vivax* share of malaria cases (2023)** | 25% |
 
 ## Case trend
 
@@ -78,14 +81,25 @@ toc: true
 | **Last policy update** | 2010 |
 | **Schizontocidal drug** | AL |
 | **G6PD testing policy** | Not explicitly mentioned |
-| **G6PD implementation** | Rolled in the context of PAVE/SCOPE Implementation Study |
+| **G6PD implementation** | Pilot implementation |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
+
+### Primaquine regimens by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |
+|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days | Not implemented | No follow-up |  |
+| **G6PD severely deficient: no definition** | No PQ |  | No follow-up |  |
+| **If no testing available** | PQ 0.25 mg/kg/day over 14 days | Implemented | No follow-up |  |
+
+| | |
+|---|---|
 | **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | Implemented |
-| **Year of treatment implementation** | 2011 |
-| **Type of treatment follow-up** | No follow up |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
 | **Implementation of follow-up** | _Not reported_ |
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | Yes, 2027 |
@@ -95,24 +109,16 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">Updating treatment guidelines to include G6PD test-guided high dose primaquine with phase implementation being planned, from Mary&#39;s SCOPE Presentation</div>
-
-## Primaquine regimens by G6PD status
-
-| G6PD status | Policy on PQ | Additional safety |
-|---|---|---|
-| **G6PD Normal** | PQ 0.25 mg/kg/day over 14 days | Counselling for adverse events |
-| **G6PD Deficiency - Severe** | No PQ |  |
-| **If no testing available** | PQ 0.25 mg/kg/day over 14 days | Take first dose & check urine color |
+<div class="country-policy-context">Updating treatment guidelines to include G6PD test-guided high dose primaquine with phase implementation being planned; SP Prophylaxis is recommended for malaria during pregnancy.</div>
 
 ## Countries with similar reported characteristics
 
 These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
 
 <div class="similar-country-grid">
-<a class="similar-country-card" href="sudan.html"><span class="name">Sudan</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, G6PD implementation, mobile/migrant-population setting</span></a>
-<a class="similar-country-card" href="ethiopia.html"><span class="name">Ethiopia</span><span class="meta">Shared: programme phase, G6PD policy, G6PD implementation, radical-cure follow-up, mobile/migrant-population setting</span></a>
-<a class="similar-country-card" href="venezuela.html"><span class="name">Venezuela</span><span class="meta">Shared: programme phase, G6PD policy, G6PD implementation, radical-cure follow-up, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="yemen.html"><span class="name">Yemen</span><span class="meta">Shared: region, programme phase, first-line treatment, radical-cure follow-up, cross-border setting</span></a>
+<a class="similar-country-card" href="sudan.html"><span class="name">Sudan</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="pakistan.html"><span class="name">Pakistan</span><span class="meta">Shared: region, programme phase, G6PD implementation, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
 </div>
 
 ---

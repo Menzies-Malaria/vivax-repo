@@ -43,6 +43,36 @@ def cache_is_current(output: Path, source_hash: str, target: str) -> bool:
     return meta.get("source_hash") == source_hash and meta.get("language") == target
 
 
+def reusable_translations(
+    output: Path,
+    strings: dict[str, str],
+    source: str,
+    target: str,
+) -> dict[str, str]:
+    """Reuse translations whose content-derived keys are still in the source."""
+    if not output.exists():
+        return {}
+    try:
+        payload = json.loads(output.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+    meta = payload.get("meta", {})
+    existing = payload.get("strings", {})
+    if (
+        meta.get("language") != target
+        or meta.get("source_language") != source
+        or not isinstance(existing, dict)
+    ):
+        return {}
+
+    return {
+        key: existing[key]
+        for key in strings
+        if isinstance(existing.get(key), str) and existing[key].strip()
+    }
+
+
 def ensure_model(source: str, target: str) -> None:
     import argostranslate.package
 
@@ -120,8 +150,31 @@ def main() -> int:
         print(f"Translation cache requires regeneration: {output_path}")
         return 3
 
-    ensure_model(args.from_language, args.to_language)
-    translated = translate(strings, args.from_language, args.to_language)
+    reused = {} if args.force else reusable_translations(
+        output_path,
+        strings,
+        args.from_language,
+        args.to_language,
+    )
+    missing = {key: value for key, value in strings.items() if key not in reused}
+    print(
+        f"Incremental translation cache: reusing {len(reused)} strings; "
+        f"translating {len(missing)} new or changed strings."
+    )
+
+    newly_translated: dict[str, str] = {}
+    if missing:
+        ensure_model(args.from_language, args.to_language)
+        newly_translated = translate(
+            missing,
+            args.from_language,
+            args.to_language,
+        )
+
+    translated = {
+        key: reused[key] if key in reused else newly_translated[key]
+        for key in strings
+    }
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
@@ -133,6 +186,8 @@ def main() -> int:
             "review_status": "machine draft - human review required",
             "string_count": len(strings),
             "source_character_count": character_count,
+            "reused_string_count": len(reused),
+            "translated_string_count": len(missing),
         },
         "strings": translated,
     }

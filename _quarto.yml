@@ -9,6 +9,7 @@ project:
     - assets/vivax-charts.js
     - assets/vivax-charts.css
     - assets/sidebar-nav.js
+    - assets/profile-enhancements.js
     - assets/translation.js
     - assets/translation.css
     - assets/translations/en.json
@@ -17,8 +18,8 @@ project:
     - assets/translations/pt.json
 
 website:
-  title: "P. vivax Policy Repository"
-  description: "A live, country-level repository of Plasmodium vivax case management policies and their implementation status."
+  title: "Malaria Policy Repository"
+  description: "A live, country-level repository of malaria case-management policies and their implementation status, currently focused on Plasmodium vivax."
   site-url: "https://menzies-malaria.github.io/vivax-repo/"
   repo-url: "https://github.com/Menzies-Malaria/vivax-repo"
   page-navigation: true
@@ -29,7 +30,7 @@ website:
     style: docked
     background: light
     logo: assets/logo.svg
-    title: "P. vivax Policy Repository"
+    title: "Malaria Policy Repository"
     search: true
     contents:
       - text: "Interactive map"
@@ -54,7 +55,7 @@ website:
   page-footer:
     background: light
     left: |
-      *P. vivax* Policy Repository · Updated continuously from a live Google Sheet.
+      Malaria Policy Repository · Updated continuously from an approved data feed.
     center: |
       Built with [Quarto](https://quarto.org). Code on [GitHub](https://github.com/Menzies-Malaria/vivax-repo).
     right: |
@@ -79,6 +80,7 @@ format:
             const scripts = [
               "assets/vivax-charts.js",
               "assets/sidebar-nav.js",
+              "assets/profile-enhancements.js",
               "assets/translation.js"
             ];
 

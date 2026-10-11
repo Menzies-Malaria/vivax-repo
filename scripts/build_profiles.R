@@ -85,7 +85,7 @@ kv_table <- function(rows) {
 row_val <- function(row, col, default = "") {
   if (!col %in% names(row)) return(default)
   v <- str_trim(as.character(row[[col]]))
-  if (!nzchar(v) || toupper(v) == "NA") default else v
+  if (!nzchar(v) || v %in% c("NA", "N/A")) default else v
 }
 
 write_utf8_lines <- function(lines, path) {
@@ -96,13 +96,20 @@ write_utf8_lines <- function(lines, path) {
 
 source(file.path(root, "R", "data_helpers.R"))
 CHAR_URL <- characteristic_data_source(
-  file.path(root, "data", "characteristic_data.csv")
+  latest_local_data(
+    file.path(root, "data", "characteristics_latest_*.csv"),
+    file.path(root, "data", "characteristic_data.csv")
+  )
 )
 CASE_URL <- case_data_source(
-  file.path(root, "data", "case_management.csv")
+  latest_local_data(
+    file.path(root, "data", "case_management_latest_*.csv"),
+    file.path(root, "data", "case_management.csv")
+  )
 )
 char <- load_characteristic_data(CHAR_URL)
-case <- load_case_data(CASE_URL)
+char <- repository_rows(char)
+case <- load_case_data(CASE_URL, char)
 
 include_public_email <- tolower(Sys.getenv("INCLUDE_PUBLIC_EMAIL", unset = "0")) %in%
   c("1", "true", "yes", "on")
@@ -125,6 +132,60 @@ email_links <- function(value) {
   paste(links, collapse = "<br>")
 }
 
+extract_emails <- function(value) {
+  matches <- str_extract_all(
+    value,
+    "[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+  )[[1]]
+  unique(str_trim(matches[nzchar(matches)]))
+}
+
+contact_name_only <- function(value) {
+  emails <- extract_emails(value)
+  clean <- value
+  for (email in emails) clean <- str_replace_all(clean, fixed(email), "")
+  clean <- clean |>
+    str_replace_all("\\s*[,;]\\s*[,;]+", ", ") |>
+    str_replace_all("^[,;\\s]+|[,;\\s]+$", "") |>
+    str_squish()
+  if (str_to_lower(clean) %in% c("pending", "n/a", "not reported")) "" else clean
+}
+
+radical_cure_summary <- function(rows) {
+  if (is.null(rows) || !nrow(rows)) return("")
+  yes_or_pilot <- function(column) {
+    if (!column %in% names(rows)) return(rep(FALSE, nrow(rows)))
+    str_to_lower(str_squish(rows[[column]])) %in% c("yes", "pilot")
+  }
+  policies <- str_to_lower(str_squish(rows$`Policy on PQ`))
+  labels <- character()
+  if (any(yes_or_pilot("Tafenoquine") | str_detect(policies, "tafenoquine|\\btq\\b"))) {
+    labels <- c(labels, "tafenoquine")
+  }
+  if (any(
+    yes_or_pilot("Low-dose PQ7 (0.5mg/kg)") |
+      yes_or_pilot("High-dose PQ7 (1mg/kg)") |
+      str_detect(policies, "7 days?")
+  )) labels <- c(labels, "7-day primaquine")
+  if (any(
+    yes_or_pilot("Low-dose PQ14 (0.25mg/kg)") |
+      yes_or_pilot("High-dose PQ14 (0.5mg/kg)") |
+      str_detect(policies, "14 days?")
+  )) labels <- c(labels, "14-day primaquine")
+  if (any(str_detect(policies, "weekly|8 weeks?"))) {
+    labels <- c(labels, "weekly primaquine for 8 weeks")
+  }
+  if (!length(labels)) {
+    reported <- unique(rows$`Policy on PQ`[
+      nzchar(str_squish(rows$`Policy on PQ`)) &
+        !str_to_lower(str_squish(rows$`Policy on PQ`)) %in% c("n/a", "not specified")
+    ])
+    if (length(reported)) return(paste(reported, collapse = "; "))
+    return("")
+  }
+  paste(unique(labels), collapse = "; ")
+}
+
 profile_table <- function(title, rows) {
   c(
     "::: {.country-profile-card}",
@@ -132,6 +193,34 @@ profile_table <- function(title, rows) {
     "",
     kv_table(rows),
     ":::",
+    ""
+  )
+}
+
+primaquine_regimen_table <- function(rows) {
+  if (nrow(rows) == 0) return(character())
+
+  body <- vapply(seq_len(nrow(rows)), function(i) {
+    row <- rows[i, , drop = FALSE]
+    label <- row_val(row, "Categorization of G6PD Status Used")
+    if (!nzchar(label)) label <- str_split(row$Country, " - ", n = 2)[[1]][2]
+
+    sprintf(
+      "| **%s** | %s | %s | %s | %s |",
+      md_escape(label),
+      md_escape(row_val(row, "Policy on PQ", "_Not specified_")),
+      md_escape(row_val(row, "Implementation of Treatment")),
+      md_escape(row_val(row, "Type of treatment follow-up (by whom, how often, where)")),
+      md_escape(row_val(row, "Implementatin of follow-up"))
+    )
+  }, character(1))
+
+  c(
+    "### Primaquine regimens by G6PD status",
+    "",
+    "| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |",
+    "|---|---|---|---|---|",
+    body,
     ""
   )
 }
@@ -272,6 +361,9 @@ for (i in seq_len(nrow(char))) {
   s <- slug(country)
   cm <- case_main |> filter(str_trim(Country) == country)
   cm_row <- if (nrow(cm) > 0) cm[1, , drop = FALSE] else NULL
+  subs <- sub_rows_for(country)
+  radical_summary <- radical_cure_summary(bind_rows(cm_row, subs))
+  g6pd_regimen_table <- primaquine_regimen_table(subs)
 
   yr_cols <- names(char)[str_detect(names(char), "Case Numbers")]
   yr_data <- setNames(
@@ -293,19 +385,25 @@ for (i in seq_len(nrow(char))) {
     "",
     "[← Back to all countries](../countries.qmd)",
     "",
+    sprintf(
+      '<div class="country-profile-locator" data-country="%s"><div class="country-profile-locator__heading">Location</div><svg role="img" aria-label="World map showing %s"></svg><p>Highlighted within the global repository context.</p></div>',
+      html_escape(country),
+      html_escape(country)
+    ),
+    "",
     "## Snapshot",
     "",
     "::: {.country-profile-spread}",
     profile_table("Country context", tibble::tibble(
       label = c(
-        "Region", "WHO Region", "Reporting *P. vivax* cases (last 5 yrs)",
+        "Region", "WHO Region", "*P. vivax* endemicity",
         "Programme phase", "Economic status", "Cross-border transmission",
         "Mobile / migrant populations", "High-risk populations"
       ),
       value = c(
         row_val(row, "Region"),
         row_val(row, "WHO Region"),
-        row_val(row, "Reporting vivax cases (<5 years)"),
+        row_val(row, "Vivax endemicity"),
         row_val(row, "Program Phase"),
         row_val(row, "Economic status"),
         row_val(row, "Cross-border transmission"),
@@ -315,7 +413,8 @@ for (i in seq_len(nrow(char))) {
     )),
     profile_table("Treatment and care", tibble::tibble(
       label = c(
-        "First-line treatment", "Second-line treatment", "Rationale for ACT use",
+        "First-line schizontocidal treatment", "Second-line schizontocidal treatment",
+        "Radical-cure regimen", "Rationale for ACT use",
         "G6PD testing in guidelines", "G6PD testing implemented",
         "Type of G6PD testing", "Community malaria care", "Community vivax care",
         "Follow-up of radical cure", "Community follow-up of radical cure"
@@ -323,6 +422,7 @@ for (i in seq_len(nrow(char))) {
       value = c(
         row_val(row, "Pv 1st line treatment"),
         row_val(row, "Pv 2nd line treatment"),
+        radical_summary,
         row_val(row, "Rationale for ACT use"),
         row_val(row, "Guidelines G6PD testing  (Y/N)"),
         row_val(row, "Implementation: G6PD testing  (Y/N)"),
@@ -337,8 +437,15 @@ for (i in seq_len(nrow(char))) {
     ""
   )
 
-  contact_name <- row_val(row, "Contact")
-  contact_email <- if (include_public_email) row_val(row, "Email") else ""
+  contact_raw <- row_val(row, "Contact")
+  contact_name <- contact_name_only(contact_raw)
+  contact_candidates <- unique(c(
+    extract_emails(contact_raw),
+    extract_emails(row_val(row, "Email"))
+  ))
+  contact_email <- if (include_public_email) {
+    paste(contact_candidates[nzchar(contact_candidates)], collapse = "; ")
+  } else ""
   if (nzchar(contact_name) || nzchar(contact_email)) {
     contact_rows <- tibble::tibble(
       label = "Programme contact",
@@ -360,7 +467,7 @@ for (i in seq_len(nrow(char))) {
     }
     parts <- c(
       parts,
-      "::: {.country-contact-card}",
+      "::: {.country-contact-card data-profile-contact=true}",
       "### Programme contact",
       "",
       contact_table,
@@ -478,13 +585,20 @@ for (i in seq_len(nrow(char))) {
     )
     comments <- row_val(cm_row, "Comments")
 
-    parts <- c(
-      parts,
-      "## Case-management policy detail",
-      "",
-      kv_table(policy_rows),
-      ""
-    )
+    policy_blocks <- if (length(g6pd_regimen_table)) {
+      pq_index <- match("Policy on PQ (overall)", policy_rows$label)
+      c(
+        kv_table(policy_rows[seq_len(pq_index), , drop = FALSE]),
+        "",
+        g6pd_regimen_table,
+        kv_table(policy_rows[seq.int(pq_index + 1L, nrow(policy_rows)), , drop = FALSE]),
+        ""
+      )
+    } else {
+      c(kv_table(policy_rows), "")
+    }
+
+    parts <- c(parts, "## Case-management policy detail", "", policy_blocks)
     if (nzchar(comments)) {
       comments_html <- html_escape(comments) |>
         str_replace_all("\\r\\n?|\\n", "<br>")
@@ -496,33 +610,13 @@ for (i in seq_len(nrow(char))) {
         ""
       )
     }
-  }
-
-  subs <- sub_rows_for(country)
-  if (nrow(subs) > 0) {
+  } else if (length(g6pd_regimen_table)) {
     parts <- c(
       parts,
-      "## Primaquine regimens by G6PD status",
+      "## Case-management policy detail",
       "",
-      "| G6PD status | Policy on PQ | Additional safety |",
-      "|---|---|---|"
+      g6pd_regimen_table
     )
-    for (j in seq_len(nrow(subs))) {
-      sr <- subs[j, , drop = FALSE]
-      label <- str_split(sr$Country, " - ", n = 2)[[1]][2]
-      pq <- row_val(sr, "Policy on PQ", "_Not specified_")
-      safe <- row_val(sr, "Additional Safey Recommendations")
-      parts <- c(
-        parts,
-        sprintf(
-          "| **%s** | %s | %s |",
-          md_escape(label),
-          md_escape(pq),
-          md_escape(safe)
-        )
-      )
-    }
-    parts <- c(parts, "")
   }
 
   parts <- c(parts, similar_country_cards(row, char))

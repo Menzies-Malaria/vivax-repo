@@ -1,5 +1,5 @@
 ---
-pagetitle: "P. vivax Policy Repository"
+pagetitle: "Malaria Policy Repository"
 page-layout: full
 ---
 
@@ -13,13 +13,14 @@ suppressPackageStartupMessages({
 
 source("R/data_helpers.R")
 
-char <- load_characteristic_data()
-case <- load_case_data()
+char <- load_characteristic_data() |>
+  repository_rows()
+case <- load_case_data(characteristic = char)
 stats <- headline_stats(char, case)
 ```
 
 ::: {.hero}
-# *Plasmodium vivax* Policy Repository
+# Malaria Policy Repository
 
 ::: {.lede}
 A continuously updated, country-level reference for *P. vivax* case management policies — treatment regimens, G6PD testing recommendations, implementation status, and the people behind the programmes. Built for national malaria control programmes, researchers, and partners working toward elimination.
@@ -41,7 +42,7 @@ cat(sprintf(
 :::
 ::: {.stat-card}
 [%d]{.num}
-[Reporting *P. vivax* cases (last 5 yrs)]{.label}
+[Currently or previously *P. vivax* endemic]{.label}
 :::
 ::: {.stat-card}
 [%d]{.num}
@@ -54,7 +55,7 @@ cat(sprintf(
 :::
 ",
   stats$n_countries,
-  stats$n_reporting,
+  stats$n_current_or_previous_endemic,
   stats$n_implementing,
   stats$n_with_policy
 ))
@@ -77,6 +78,10 @@ National treatment guidelines are often published — but they are scattered, in
   <a class="country-card" href="countries.html">
     <span class="name">Country profiles</span>
     <span class="meta">One-page summaries of policy, implementation, and contacts.</span>
+  </a>
+  <a class="country-card" href="explore.html">
+    <span class="name">Explore the data</span>
+    <span class="meta">Filter country characteristics and examine policy and implementation patterns.</span>
   </a>
   <a class="country-card" href="timeline.html">
     <span class="name">Policy timeline</span>
@@ -101,7 +106,7 @@ The data on this site is read at build time from approved production tabs in a s
 
 If you use these data in a publication or report, please cite:
 
-> *P. vivax* Policy Repository. Updated `r format(Sys.Date(), "%B %Y")`. Available at: https://menzies-malaria.github.io/vivax-repo/.
+> Malaria Policy Repository. Updated `r format(Sys.Date(), "%B %Y")`. Available at: https://menzies-malaria.github.io/vivax-repo/.
 
 And the foundational review:
 

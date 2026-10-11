@@ -1,5 +1,5 @@
 ---
-pagetitle: "Interactive policy map | P. vivax Policy Repository"
+pagetitle: "Interactive policy map | Malaria Policy Repository"
 page-layout: full
 toc: false
 css: assets/interactive-map.css
@@ -24,8 +24,9 @@ suppressPackageStartupMessages({
 
 source("R/data_helpers.R")
 
-char <- load_characteristic_data()
-case <- load_case_data()
+char <- load_characteristic_data() |>
+  repository_rows()
+case <- load_case_data(characteristic = char)
 
 not_reported <- function(x) {
   x <- str_squish(as.character(x))
@@ -41,6 +42,7 @@ classify_g6pd_policy <- function(x) {
     str_detect(y, "quantitative") & str_detect(y, "required|mandatory") ~ "Quantitative testing required",
     str_detect(y, "quantitative") ~ "Quantitative testing recommended",
     str_detect(y, "qualitative") ~ "Qualitative testing recommended",
+    str_detect(y, "required|mandatory") ~ "Testing required; method unspecified",
     str_detect(y, "recommend|should|testing") ~ "Testing recommended; method unspecified",
     TRUE ~ "Other policy"
   )
@@ -100,7 +102,8 @@ map_rows <- char |>
     country = trimws(.data$Country),
     region = trimws(.data$Region),
     who_region = trimws(.data$`WHO Region`),
-    reporting = trimws(.data$`Reporting vivax cases (<5 years)`),
+    vivax_endemicity = trimws(.data$`Vivax endemicity`),
+    repository_scope = trimws(.data$`To be included in current repository`),
     cases_2023 = trimws(.data$`2023 Case Numbers`),
     first_line = trimws(.data$`Pv 1st line treatment`),
     second_line = trimws(.data$`Pv 2nd line treatment`),
@@ -146,9 +149,55 @@ map_rows <- map_rows |>
 country_prefixes <- map_rows$country[order(nchar(map_rows$country), decreasing = TRUE)]
 base_country_for <- function(value) {
   if (is.na(value) || !nzchar(value)) return(NA_character_)
+  if (value %in% map_rows$country) return(value)
   hit <- country_prefixes[str_starts(value, fixed(paste0(country_prefixes, " -")))]
   if (length(hit)) hit[[1]] else NA_character_
 }
+
+regimen_tags_for <- function(row) {
+  yes_or_pilot <- function(column) {
+    value <- str_to_lower(str_squish(row[[column]][[1]]))
+    value %in% c("yes", "pilot")
+  }
+  policy <- str_to_lower(str_squish(row[["Policy on PQ"]][[1]]))
+  tags <- character()
+  if (yes_or_pilot("Tafenoquine") || str_detect(policy, "tafenoquine|\\btq\\b")) {
+    tags <- c(tags, "Tafenoquine")
+  }
+  if (
+    yes_or_pilot("Low-dose PQ7 (0.5mg/kg)") ||
+      yes_or_pilot("High-dose PQ7 (1mg/kg)") ||
+      str_detect(policy, "7 days?")
+  ) tags <- c(tags, "7-day primaquine")
+  if (
+    yes_or_pilot("Low-dose PQ14 (0.25mg/kg)") ||
+      yes_or_pilot("High-dose PQ14 (0.5mg/kg)") ||
+      str_detect(policy, "14 days?")
+  ) tags <- c(tags, "14-day primaquine")
+  if (str_detect(policy, "weekly|8 weeks?")) tags <- c(tags, "Weekly primaquine")
+  unique(tags)
+}
+
+case$regimen_options <- vapply(seq_len(nrow(case)), function(i) {
+  paste(regimen_tags_for(case[i, , drop = FALSE]), collapse = "|")
+}, character(1))
+
+case_regimens <- case |>
+  mutate(base_country = vapply(.data$Country, base_country_for, character(1))) |>
+  filter(!is.na(.data$base_country)) |>
+  group_by(.data$base_country) |>
+  summarise(
+    regimen_options = paste(unique(unlist(str_split(
+      .data$regimen_options[nzchar(.data$regimen_options)],
+      fixed("|")
+    ))), collapse = "|"),
+    .groups = "drop"
+  ) |>
+  transmute(country = .data$base_country, regimen_options = .data$regimen_options)
+
+map_rows <- map_rows |>
+  left_join(case_regimens, by = "country") |>
+  mutate(regimen_options = coalesce(.data$regimen_options, ""))
 
 case_sub <- case |>
   mutate(base_country = vapply(.data$Country, base_country_for, character(1))) |>
@@ -183,6 +232,13 @@ map_payload <- list(
     "Hospital / referral level",
     "Other / mixed level",
     "Not reported"
+  ),
+  endemicity_levels = c("Yes", "Previously", "No"),
+  regimen_levels = c(
+    "Tafenoquine",
+    "7-day primaquine",
+    "14-day primaquine",
+    "Weekly primaquine"
   )
 )
 
@@ -208,7 +264,8 @@ map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
         <option value="g6pd_policy">G6PD-testing policy</option>
         <option value="g6pd_implementation">G6PD-testing implementation</option>
         <option value="g6pd_policy_implementation">G6PD policy + implementation</option>
-        <option value="first_line">First-line treatment</option>
+        <option value="first_line">First-line schizontocidal treatment</option>
+        <option value="second_line">Second-line schizontocidal treatment</option>
       </select>
     </div>
 
@@ -219,6 +276,7 @@ map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
         <option value="Intermediate / mild deficiency">Intermediate / mild deficiency</option>
         <option value="Severe / deficient">Severe / deficient</option>
         <option value="Testing unavailable">Testing unavailable</option>
+        <option value="Policy not differentiated by G6PD category">Policy not differentiated by G6PD category</option>
       </select>
     </div>
 
@@ -233,20 +291,20 @@ map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
     </div>
 
     <div class="policy-map-control">
-      <label for="policy-map-reporting">Reporting status</label>
-      <select id="policy-map-reporting">
-        <option value="">All statuses</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-        <option value="Yes (mixed)">Yes (mixed)</option>
-      </select>
+      <label for="policy-map-endemicity">*P. vivax* endemicity</label>
+      <select id="policy-map-endemicity"><option value="">Current and previously endemic</option></select>
+    </div>
+
+    <div id="policy-map-regimen-control" class="policy-map-control">
+      <label for="policy-map-regimen">Radical-cure regimen</label>
+      <select id="policy-map-regimen"><option value="">All regimens</option></select>
     </div>
 
     <button id="policy-map-reset" class="policy-map-reset" type="button">Clear filters</button>
   </section>
 
   <div id="policy-map-legend" class="policy-map-legend" aria-label="Map legend"></div>
-  <p class="policy-map-note">Countries outside the repository are shown in grey.</p>
+  <p class="policy-map-note">Countries outside the current repository scope are shown in grey.</p>
 
   <div class="policy-map-content">
     <div class="policy-map-stage">

@@ -7,6 +7,8 @@ toc: true
 
 [← Back to all countries](../countries.qmd)
 
+<div class="country-profile-locator" data-country="Ethiopia"><div class="country-profile-locator__heading">Location</div><svg role="img" aria-label="World map showing Ethiopia"></svg><p>Highlighted within the global repository context.</p></div>
+
 ## Snapshot
 
 ::: {.country-profile-spread}
@@ -17,9 +19,9 @@ toc: true
 |---|---|
 | **Region** | Africa |
 | **WHO Region** | African |
-| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
-| **Economic status** | LMIC |
+| **Economic status** | Low income |
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Migrant laborer, IDPs, refugees |
@@ -30,21 +32,22 @@ toc: true
 
 | | |
 |---|---|
-| **First-line treatment** | CQ |
-| **Second-line treatment** | AL |
+| **First-line schizontocidal treatment** | CQ |
+| **Second-line schizontocidal treatment** | AL |
+| **Radical-cure regimen** | 14-day primaquine |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
-| **Type of G6PD testing** | N/A |
-| **Community malaria care** | No |
-| **Community vivax care** | No |
+| **Type of G6PD testing** | _Not reported_ |
+| **Community malaria care** | Yes |
+| **Community vivax care** | Yes |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
 
 :::
 
-::: {.country-contact-card}
+::: {.country-contact-card data-profile-contact=true}
 ### Programme contact
 
 | | |
@@ -62,7 +65,7 @@ toc: true
 | **2020** | 263,877 |
 | **2019** | 166,340 |
 | **2018** | 102,412 |
-| ***P. vivax* share of malaria cases (2023)** | 28.284031% |
+| ***P. vivax* share of malaria cases (2023)** | 28.3% |
 
 ## Case trend
 
@@ -78,13 +81,13 @@ toc: true
 | **Last policy update** | 2022 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Not explicitly mentioned |
-| **G6PD implementation** | Not required or implemented |
-| **Year of G6PD implementation** | N/A |
-| **Health system level (G6PD)** | N/A |
+| **G6PD implementation** | Not implemented |
+| **Year of G6PD implementation** | _Not reported_ |
+| **Health system level (G6PD)** | _Not reported_ |
 | **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days |
-| **Additional safety recommendations** | Close monitoring, counselling on Aes, and report to health facility in case of AE |
+| **Additional safety recommendations** | Close monitoring, counselling on AEs, and report to health facility in case of AE |
 | **Treatment implementation** | Partially implemented |
-| **Year of treatment implementation** | 2018 |
+| **Year of treatment implementation** | _Not reported_ |
 | **Type of treatment follow-up** | Patients to return to health facility if experiencing any symtoms of haemolytic anemia |
 | **Implementation of follow-up** | Not implemented |
 | **Anti-malarials approved by NRA** | _Not reported_ |
@@ -98,9 +101,9 @@ toc: true
 These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
 
 <div class="similar-country-grid">
-<a class="similar-country-card" href="north-korea-dprk.html"><span class="name">North Korea (DPRK)</span><span class="meta">Shared: first-line treatment, G6PD policy, G6PD implementation</span></a>
-<a class="similar-country-card" href="guyana.html"><span class="name">Guyana</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, G6PD implementation, community vivax care, cross-border setting, mobile/migrant-population setting</span></a>
-<a class="similar-country-card" href="venezuela.html"><span class="name">Venezuela</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, G6PD implementation, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="venezuela.html"><span class="name">Venezuela</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="eritrea.html"><span class="name">Eritrea</span><span class="meta">Shared: region, WHO region, programme phase, G6PD policy, G6PD implementation, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="guatemala.html"><span class="name">Guatemala</span><span class="meta">Shared: first-line treatment, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
 </div>
 
 ---

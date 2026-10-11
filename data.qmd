@@ -23,9 +23,11 @@ At each build, the site pulls both tabs directly from the Google Sheet and norma
 
 source("R/data_helpers.R")
 char <- load_characteristic_data()
+char_dictionary <- char |>
+  dplyr::select(-dplyr::any_of("Reporting vivax cases (<5 years)"))
 ```
 
-The characteristic data file contains **`r ncol(char)`** columns across **`r nrow(char)`** countries.
+The public website dictionary contains **`r ncol(char_dictionary)`** displayed columns across **`r nrow(char_dictionary)`** countries.
 
 ## Column dictionary
 
@@ -33,7 +35,7 @@ The characteristic data file contains **`r ncol(char)`** columns across **`r nro
 #| output: asis
 
 knitr::kable(
-  column_dictionary_table(char),
+  column_dictionary_table(char_dictionary),
   col.names = c("Column", "Description"),
   format = "pipe"
 )

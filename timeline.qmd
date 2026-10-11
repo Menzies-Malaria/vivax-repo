@@ -15,10 +15,12 @@ suppressPackageStartupMessages({
 })
 
 source("R/data_helpers.R")
-case <- load_case_data()
+char <- load_characteristic_data() |>
+  repository_rows()
+case_all <- load_case_data(characteristic = char)
 
-case <- case |>
-  filter(!str_detect(Country, " - "))
+case <- case_all |>
+  filter(!str_detect(Country, " - "), Country %in% char$Country)
 
 to_year <- function(v) {
   s <- str_trim(as.character(v))

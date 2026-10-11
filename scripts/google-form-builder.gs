@@ -1,5 +1,5 @@
 /**
- * Build the P. vivax Policy Repository Google Form from FormTemplate.html
+ * Build the Malaria Policy Repository Google Form from FormTemplate.html
  *
  * Setup:
  * 1. https://script.google.com → New project

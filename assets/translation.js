@@ -10,6 +10,7 @@
   let currentLanguage = "en";
   let observer;
   let languageRequest = 0;
+  let translateProfileTables = false;
 
   function preserveWhitespace(original, replacement) {
     const leading = original.match(/^\s*/)[0];
@@ -31,9 +32,10 @@
   }
 
   function isExcluded(element) {
-    if (element.closest("script, style, code, pre, table, figure, iframe, canvas, svg, .cell, .cell-output, .html-widget, .vivax-chart, .vivax-language-control")) {
+    if (element.closest("script, style, code, pre, figure, iframe, canvas, svg, .cell, .cell-output, .html-widget, .vivax-chart, .vivax-language-control")) {
       return true;
     }
+    if (element.closest("table") && !translateProfileTables) return true;
     const link = element.closest("a");
     return Boolean(link && !link.matches(".sidebar-link, .policy-map-profile-link"));
   }
@@ -124,6 +126,9 @@
 
   async function init() {
     try {
+      translateProfileTables = Boolean(
+        document.querySelector(".country-profile-locator[data-country]")
+      );
       addSelector();
       const requested = new URLSearchParams(window.location.search).get("lang");
       await applyLanguage(requested || localStorage.getItem(STORAGE_KEY) || "en");

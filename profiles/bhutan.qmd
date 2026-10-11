@@ -7,6 +7,8 @@ toc: true
 
 [← Back to all countries](../countries.qmd)
 
+<div class="country-profile-locator" data-country="Bhutan"><div class="country-profile-locator__heading">Location</div><svg role="img" aria-label="World map showing Bhutan"></svg><p>Highlighted within the global repository context.</p></div>
+
 ## Snapshot
 
 ::: {.country-profile-spread}
@@ -17,9 +19,9 @@ toc: true
 |---|---|
 | **Region** | Asia-Pacific |
 | **WHO Region** | South-East Asia |
-| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
+| ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Elimination |
-| **Economic status** | LMIC |
+| **Economic status** | Lower-middle income |
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Construction workers (mobile migrant population) |
@@ -30,26 +32,19 @@ toc: true
 
 | | |
 |---|---|
-| **First-line treatment** | CQ |
-| **Second-line treatment** | ACT/AL |
+| **First-line schizontocidal treatment** | CQ |
+| **Second-line schizontocidal treatment** | ACT/AL |
+| **Radical-cure regimen** | 7-day primaquine; 14-day primaquine; weekly primaquine for 8 weeks |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Yes |
 | **Type of G6PD testing** | Quantitative |
-| **Community malaria care** | Partial - fever referral |
-| **Community vivax care** | Partial - fever referral |
+| **Community malaria care** | Partial |
+| **Community vivax care** | No |
 | **Follow-up of radical cure** | Yes |
-| **Community follow-up of radical cure** | Partial |
+| **Community follow-up of radical cure** | Yes (after DOT at hospital) |
 :::
 
-:::
-
-::: {.country-contact-card}
-### Programme contact
-
-| | |
-|---|---|
-| **Programme contact** | Dr |
 :::
 
 ## Reported case numbers
@@ -76,16 +71,28 @@ toc: true
 |---|---|
 | **Last policy update** | 2024 |
 | **Schizontocidal drug** | CQ |
-| **G6PD testing policy** | Recommended but test type not specified |
-| **G6PD implementation** | Implemented in 13 high risk areas (STANDARD G6PD Test) |
+| **G6PD testing policy** | Recommended |
+| **G6PD implementation** | Implemented |
 | **Year of G6PD implementation** | 2023 |
 | **Health system level (G6PD)** | Up to health centre level |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
-| **Additional safety recommendations** | Close medical supervision and patient counselling |
-| **Treatment implementation** | Implemented |
-| **Year of treatment implementation** | 2023 |
-| **Type of treatment follow-up** | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year |
-| **Implementation of follow-up** | Implemented |
+
+### Primaquine regimens by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |
+|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.5 mg/kg/day over 7 days | Implemented | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented |
+| **G6PD intermediate: no definition** | PQ 0.5 mg/kg/day over 7 days | Implemented | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented |
+| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented |
+| **If no testing available** | Based on risk-benefit assessment | Implemented | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented |
+
+| | |
+|---|---|
+| **Additional safety recommendations** | _Not reported_ |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | Maybe |
 | **Treatments under consideration** | Prophylaxis treatment |
@@ -94,25 +101,16 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan</div>
-
-## Primaquine regimens by G6PD status
-
-| G6PD status | Policy on PQ | Additional safety |
-|---|---|---|
-| **G6PD Normal** | PQ 0.5 mg/kg/day over 7 days | Close medical supervision and patient counselling |
-| **G6PD Intermediate** | PQ 0.5 mg/kg/day over 7 days | Close medical supervision and patient counselling |
-| **G6PD Deficient** | PQ 0.75 mg/kg/week weekly for 8 weeks | Close medical supervision and patient counselling |
-| **If no testing availabe** | Based on risk-benefit assessment | Close medical supervision and patient counselling |
+<div class="country-policy-context">Follow up of non-Bhutanese very difficult as they go back across the border; Prophylaxis treatment being considered for travellers and reactive treatment of index house and contacts travellers</div>
 
 ## Countries with similar reported characteristics
 
 These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.
 
 <div class="similar-country-grid">
-<a class="similar-country-card" href="iran.html"><span class="name">Iran</span><span class="meta">Shared: region, first-line treatment, G6PD policy, G6PD implementation</span></a>
-<a class="similar-country-card" href="malaysia.html"><span class="name">Malaysia</span><span class="meta">Shared: region, programme phase, first-line treatment, G6PD policy, G6PD implementation, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
-<a class="similar-country-card" href="china.html"><span class="name">China</span><span class="meta">Shared: region, first-line treatment, G6PD policy, G6PD implementation, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="malaysia.html"><span class="name">Malaysia</span><span class="meta">Shared: region, programme phase, first-line treatment, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="iran.html"><span class="name">Iran</span><span class="meta">Shared: region, programme phase, first-line treatment, G6PD policy, G6PD implementation, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="argentina.html"><span class="name">Argentina</span><span class="meta">Shared: first-line treatment, G6PD policy, G6PD implementation, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
 </div>
 
 ---

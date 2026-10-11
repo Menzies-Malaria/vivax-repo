@@ -80,13 +80,81 @@
 }
 
 /* Explore filters */
-.explore-filters {
+.explore-filter-panel {
   margin: 0 0 2rem;
-  padding: 1.25rem 1.35rem 0.5rem;
-  background: var(--vivax-paper-elevated, #fff);
   border: 1px solid var(--vivax-rule, #e4ddd0);
   border-radius: var(--vivax-radius-md, 12px);
+  background: var(--vivax-paper-elevated, #fff);
   box-shadow: var(--vivax-shadow-sm);
+  overflow: clip;
+}
+
+.explore-filter-panel > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.15rem;
+  cursor: pointer;
+  color: var(--vivax-primary, #0d4f4f);
+  list-style: none;
+}
+
+.explore-filter-panel > summary::-webkit-details-marker {
+  display: none;
+}
+
+.explore-filter-panel > summary::after {
+  content: "+";
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.explore-filter-panel[open] > summary::after {
+  content: "−";
+}
+
+.explore-filter-panel__title {
+  font-weight: 700;
+}
+
+.explore-filter-panel__hint {
+  color: var(--vivax-ink-soft, #4a5252);
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+
+.explore-static-chart {
+  margin: 0.75rem 0 2rem;
+  padding: 0.9rem;
+  border: 1px solid var(--vivax-rule, #e4ddd0);
+  border-radius: var(--vivax-radius-md, 12px);
+  background: var(--vivax-paper-elevated, #fff);
+  box-shadow: var(--vivax-shadow-sm, 0 1px 2px rgba(26, 31, 31, 0.04));
+}
+
+.explore-static-chart__status {
+  display: inline-block;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(13, 79, 79, 0.08);
+  color: var(--vivax-primary, #0d4f4f);
+  font-size: 0.76rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.explore-static-chart__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0.75rem 0 0;
+}
+
+.explore-filters {
+  margin: 0;
+  padding: 1.25rem 1.35rem 0.5rem;
+  border-top: 1px solid var(--vivax-rule, #e4ddd0);
 }
 
 .explore-filters .form-group {
@@ -195,6 +263,76 @@
   border-left: 0.28rem solid var(--vivax-primary, #0d4f4f);
 }
 
+.country-contact-card--margin {
+  margin: 1rem 0 0;
+  padding: 0.8rem;
+  box-shadow: none;
+}
+
+.country-contact-card--margin h3 {
+  font-size: 1rem;
+}
+
+.country-contact-card--margin table {
+  font-size: 0.76rem;
+}
+
+.country-contact-card--margin table td {
+  display: block;
+  width: 100% !important;
+}
+
+.country-profile-locator {
+  float: none;
+  clear: both;
+  width: 100%;
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 0.85rem 0.65rem;
+  border: 1px solid var(--vivax-rule, #e4ddd0);
+  border-radius: var(--vivax-radius-md, 12px);
+  background: var(--vivax-paper-elevated, #fff);
+  box-shadow: var(--vivax-shadow-sm);
+}
+
+.country-profile-locator__heading {
+  margin-bottom: 0.25rem;
+  color: var(--vivax-primary, #0d4f4f);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.country-profile-locator svg {
+  display: block;
+  width: 100%;
+  height: clamp(10rem, 24vw, 15rem);
+  min-height: 0;
+}
+
+.country-profile-locator path {
+  stroke: #fff;
+  stroke-width: 0.35;
+}
+
+.country-profile-locator path.is-context {
+  fill: #e8e4dc;
+}
+
+.country-profile-locator path.is-country {
+  fill: var(--vivax-accent, #c0521b);
+}
+
+.country-profile-locator p {
+  margin: 0.25rem 0 0;
+  color: var(--vivax-ink-soft, #4a5252);
+  font-size: 0.72rem;
+}
+
+.country-profile-locator.is-unavailable svg {
+  display: none;
+}
+
 .country-policy-context {
   margin: 0.75rem 0 1.5rem;
   padding: 1rem 1.15rem;
@@ -258,6 +396,16 @@
   .country-profile-spread,
   .similar-country-grid {
     grid-template-columns: 1fr;
+  }
+
+  .country-profile-locator {
+    float: none;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+
+  .explore-filter-panel__hint {
+    display: none;
   }
 }
 

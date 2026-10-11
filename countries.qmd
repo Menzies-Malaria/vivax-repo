@@ -17,6 +17,7 @@ suppressPackageStartupMessages({
 source("R/explore_helpers.R")
 
 char <- load_characteristic_data() |>
+  repository_rows() |>
   arrange(Region, Country)
 ```
 
@@ -38,7 +39,7 @@ slugify <- function(s) {
 region_card <- function(name, phase, tx) {
   meta_bits <- c()
   if (nzchar(phase)) meta_bits <- c(meta_bits, phase)
-  if (nzchar(tx)) meta_bits <- c(meta_bits, paste0("1st-line: ", tx))
+  if (nzchar(tx)) meta_bits <- c(meta_bits, paste0("1st-line schizontocidal: ", tx))
   meta <- if (length(meta_bits)) paste(meta_bits, collapse = " · ") else "No detailed policy on file yet"
 
   tags$a(

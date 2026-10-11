@@ -7,6 +7,8 @@ toc: true
 
 [← Back to all countries](../countries.qmd)
 
+<div class="country-profile-locator" data-country="Costa Rica"><div class="country-profile-locator__heading">Location</div><svg role="img" aria-label="World map showing Costa Rica"></svg><p>Highlighted within the global repository context.</p></div>
+
 ## Snapshot
 
 ::: {.country-profile-spread}
@@ -17,9 +19,9 @@ toc: true
 |---|---|
 | **Region** | Central and South America |
 | **WHO Region** | Americas |
-| **Reporting *P. vivax* cases (last 5 yrs)** | Yes |
-| **Programme phase** | Pre-elimination |
-| **Economic status** | LMIC |
+| ***P. vivax* endemicity** | Yes |
+| **Programme phase** | Elimination |
+| **Economic status** | High income |
 | **Cross-border transmission** | Yes |
 | **Mobile / migrant populations** | Yes |
 | **High-risk populations** | Mines, agricultural workers, mobile migrant populations |
@@ -30,8 +32,9 @@ toc: true
 
 | | |
 |---|---|
-| **First-line treatment** | CQ |
-| **Second-line treatment** | Not specified |
+| **First-line schizontocidal treatment** | CQ |
+| **Second-line schizontocidal treatment** | Not specified |
+| **Radical-cure regimen** | tafenoquine; 7-day primaquine; 14-day primaquine; weekly primaquine for 8 weeks |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Partial |
@@ -44,7 +47,7 @@ toc: true
 
 :::
 
-::: {.country-contact-card}
+::: {.country-contact-card data-profile-contact=true}
 ### Programme contact
 
 | | |
@@ -77,16 +80,28 @@ toc: true
 |---|---|
 | **Last policy update** | 2025 |
 | **Schizontocidal drug** | CQ |
-| **G6PD testing policy** | Required, semi-quantitative or quantitative for high-dose 7-day PQ and TQ |
-| **G6PD implementation** | Implemented in some health facilities |
+| **G6PD testing policy** | Required |
+| **G6PD implementation** | Partially implemented |
 | **Year of G6PD implementation** | 2025 |
-| **Health system level (G6PD)** | Health facility level |
+| **Health system level (G6PD)** | Hospitals |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
+
+### Primaquine regimens by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |
+|---|---|---|---|---|
+| **G6PD normal: > 70% enzyme activity** | TQ or high-dose 7-day PQ | Partially implemented | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. | Implemented |
+| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days if adherence is expected to be low and a risk-benefit analysis is conducted | Partially implemented | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. | Implemented |
+| **G6PD deficient: < 30% enzyme activity** | PQ 0.75 mg/kg/week weekly for 8 weeks | Partially implemented | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. | Implemented |
+| **If no testing available** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days if adherence is expected to be low and a risk-benefit analysis is conducted | Implemented | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. | Implemented |
+
+| | |
+|---|---|
 | **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | Implemented |
-| **Year of treatment implementation** | 2025 for TQ and high-dose PQ |
-| **Type of treatment follow-up** | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. |
-| **Implementation of follow-up** | Implemented |
+| **Treatment implementation** | _Not reported_ |
+| **Year of treatment implementation** | _Not reported_ |
+| **Type of treatment follow-up** | _Not reported_ |
+| **Implementation of follow-up** | _Not reported_ |
 | **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | No |
 | **Treatments under consideration** | _Not reported_ |
@@ -95,16 +110,7 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">Seems as though Costa Rica has implemented tafenoquine, being the first country in Central America and the Carribbean implementing tafenoquine.</div>
-
-## Primaquine regimens by G6PD status
-
-| G6PD status | Policy on PQ | Additional safety |
-|---|---|---|
-| **G6PD normal (>70% enzyme activity)** | TQ or high-dose 7-day PQ | Counselling for adverse events |
-| **G6PD normal** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days if adherence is expected to be low and a risk-benefit analysis is conducted | Counselling for adverse events |
-| **G6PD deficient (<30% activity)** | PQ 0.75 mg/kg/week weekly for 8 weeks | Not specified |
-| **if no testing available** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days if adherence is expected to be low and a risk-benefit analysis is conducted | Not specified |
+<div class="country-policy-context">Costa Rica has implemented tafenoquine, being the first country in Central America and the Carribbean implementing tafenoquine. Tafenoquine is the first choice for treatment of G6PD normal individuals. If not available use of PQ high dose If G6PD testing is not available, healthcare providers can refer the patient to a health facility that has testing as long as testing and treatment can be within 24hrs.</div>
 
 ## Countries with similar reported characteristics
 
@@ -112,8 +118,8 @@ These deterministic suggestions require agreement on at least three substantive 
 
 <div class="similar-country-grid">
 <a class="similar-country-card" href="nepal.html"><span class="name">Nepal</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
-<a class="similar-country-card" href="afghanistan.html"><span class="name">Afghanistan</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
-<a class="similar-country-card" href="honduras.html"><span class="name">Honduras</span><span class="meta">Shared: region, WHO region, programme phase, first-line treatment, community vivax care, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="iran.html"><span class="name">Iran</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, cross-border setting, mobile/migrant-population setting</span></a>
+<a class="similar-country-card" href="bhutan.html"><span class="name">Bhutan</span><span class="meta">Shared: programme phase, first-line treatment, G6PD policy, radical-cure follow-up, cross-border setting, mobile/migrant-population setting</span></a>
 </div>
 
 ---

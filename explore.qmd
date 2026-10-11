@@ -19,17 +19,20 @@ suppressPackageStartupMessages({
 
 source("R/explore_helpers.R")
 
-char <- load_characteristic_data()
+char <- load_characteristic_data() |>
+  repository_rows()
 
 char <- char |>
   mutate(
     first_line = collapse_first_line(`Pv 1st line treatment`),
-    `2023 Case Numbers` = suppressWarnings(as.numeric(`2023 Case Numbers`))
+    `2023 Case Numbers` = suppressWarnings(as.numeric(`2023 Case Numbers`)),
+    vivax_share = suppressWarnings(readr::parse_number(
+      `Proportion of P. vivax cases (2023) (%)`
+    ))
   )
 
 table_cols <- c(
-  "Country", "Region", "WHO Region",
-  "Reporting vivax cases (<5 years)",
+  "Country", "Region", "WHO Region", "Vivax endemicity",
   "2023 Case Numbers",
   "Proportion of P. vivax cases (2023) (%)",
   "Pv 1st line treatment",
@@ -46,7 +49,12 @@ table_cols <- c(
 explore_payload <- explore_chart_payload(char)
 
 shared <- SharedData$new(char, key = ~Country, group = "explore")
-char_table <- char |> select(any_of(table_cols))
+char_table <- char |>
+  select(any_of(table_cols)) |>
+  rename(
+    `First-line schizontocidal treatment` = `Pv 1st line treatment`,
+    `Second-line schizontocidal treatment` = `Pv 2nd line treatment`
+  )
 shared_table <- SharedData$new(char_table, key = ~Country, group = "explore")
 ```
 
@@ -64,56 +72,42 @@ cat(as.character(htmltools::tags$script(
 
 ## Filter the data
 
-Use any control below — selections apply to **every chart and the table** on this page.
+Choose the characteristics you need. Selections apply to the **interactive charts and full data table**. The static analytical charts further down use a fixed dataset and are labelled separately.
 
 ```{r}
 #| label: filters
 #| echo: false
 
 tagList(
-  tags$div(
-    class = "explore-filters",
-    bscols(
-      filter_select("region", "Region", shared, ~Region, multiple = TRUE),
-      filter_select("who_region", "WHO region", shared, ~`WHO Region`, multiple = TRUE),
-      filter_select(
-        "reporting",
-        "Reporting P. vivax (5 yrs)",
-        shared,
-        ~`Reporting vivax cases (<5 years)`,
-        multiple = TRUE
-      ),
-      filter_select("program_phase", "Programme phase", shared, ~`Program Phase`, multiple = TRUE),
-      filter_select(
-        "g6pd_guidelines",
-        "G6PD testing in guidelines",
-        shared,
-        ~`Guidelines G6PD testing  (Y/N)`,
-        multiple = TRUE
-      ),
-      filter_select(
-        "g6pd_implementation",
-        "G6PD testing implemented",
-        shared,
-        ~`Implementation: G6PD testing  (Y/N)`,
-        multiple = TRUE
-      ),
-      filter_select(
-        "first_line",
-        "First-line treatment",
-        shared,
-        ~`Pv 1st line treatment`,
-        multiple = TRUE
-      ),
-      filter_select(
-        "cross_border",
-        "Cross-border transmission",
-        shared,
-        ~`Cross-border transmission`,
-        multiple = TRUE
-      ),
-      widths = c(4, 4, 4, 4, 4, 4, 4, 4),
-      device = "sm"
+  tags$details(
+    class = "explore-filter-panel",
+    open = NA,
+    tags$summary(
+      tags$span(class = "explore-filter-panel__title", "Choose filters"),
+      tags$span(class = "explore-filter-panel__hint", "Open or close the filter panel")
+    ),
+    tags$div(
+      class = "explore-filters",
+      bscols(
+        filter_select("region", "Region", shared, ~Region, multiple = TRUE),
+        filter_select("who_region", "WHO region", shared, ~`WHO Region`, multiple = TRUE),
+        filter_select("endemicity", "P. vivax endemicity", shared, ~`Vivax endemicity`, multiple = TRUE),
+        filter_select("recent_reporting", "Reporting P. vivax cases (last 5 years)", shared, ~`Reporting vivax cases (<5 years)`, multiple = TRUE),
+        filter_select("program_phase", "Programme phase", shared, ~`Program Phase`, multiple = TRUE),
+        filter_select("first_line", "First-line schizontocidal treatment", shared, ~`Pv 1st line treatment`, multiple = TRUE),
+        filter_select("second_line", "Second-line schizontocidal treatment", shared, ~`Pv 2nd line treatment`, multiple = TRUE),
+        filter_slider("vivax_share", "P. vivax share of malaria cases (%)", shared, ~vivax_share),
+        filter_select("g6pd_guidelines", "G6PD testing in guidelines", shared, ~`Guidelines G6PD testing  (Y/N)`, multiple = TRUE),
+        filter_select("g6pd_implementation", "G6PD testing implemented", shared, ~`Implementation: G6PD testing  (Y/N)`, multiple = TRUE),
+        filter_select("community_malaria", "Community malaria care", shared, ~`Community malaria care`, multiple = TRUE),
+        filter_select("community_vivax", "Community vivax care", shared, ~`Community vivax care`, multiple = TRUE),
+        filter_select("radical_follow_up", "Follow-up of radical cure", shared, ~`Follow-up of radical cure`, multiple = TRUE),
+        filter_select("community_follow_up", "Community follow-up of radical cure", shared, ~`Community follow-up of radical cure`, multiple = TRUE),
+        filter_select("cross_border", "Cross-border transmission", shared, ~`Cross-border transmission`, multiple = TRUE),
+        filter_select("mobile_migrant", "Mobile / migrant populations", shared, ~`Mobile Migrant Populations`, multiple = TRUE),
+        widths = rep(4, 16),
+        device = "sm"
+      )
     )
   )
 )
@@ -134,15 +128,31 @@ tagList(
 
 The gap between **policy** and **implementation** is one of the most actionable findings in the repository — and the gap is widest in countries that have only recently adopted G6PD testing into their guidelines.
 
-## First-line *P. vivax* treatment by region
+## First-line schizontocidal *P. vivax* treatment by region
 
 ::: {.explore-chart}
 <div id="chart-heatmap" class="explore-chart__plot vivax-chart__plot--heatmap"></div>
 :::
 
+## How large is the G6PD policy-to-practice gap?
+
+::: {.explore-static-chart}
+<div class="explore-static-chart__status">Static analysis · Filters above do not affect this chart.</div>
+
+![Regional comparison of the percentage of countries with G6PD testing included in guidelines and the percentage with confirmed implementation.](assets/explore-charts/g6pd-policy-implementation-gap.png){.explore-static-chart__image}
+:::
+
+## Which countries have similar policy profiles?
+
+::: {.explore-static-chart}
+<div class="explore-static-chart__status">Static analysis · Filters above do not affect this chart.</div>
+
+![Multiple Correspondence Analysis showing countries with similar combinations of policy and implementation characteristics positioned closer together.](assets/explore-charts/mca-policy-landscape.png){.explore-static-chart__image}
+:::
+
 ## Full data table
 
-The table below uses the same filters as the charts. To download the complete dataset (all columns), see [Data & downloads](data.qmd).
+The table below uses the same filters as the interactive charts at the top of this page. The two static analytical charts above are intentionally unaffected by those filters. To download the complete dataset (all columns), see [Data & downloads](data.qmd).
 
 ```{r}
 #| label: table

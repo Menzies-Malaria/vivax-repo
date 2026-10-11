@@ -35,7 +35,7 @@ This repository is only as accurate as the data flowing into it. If you represen
     src="https://docs.google.com/forms/d/e/1FAIpQLSdC39i1fOXO4OPjhxVZnJ9gRVxkY0u-kOtBK3KE2jNpTd5Zng/viewform?embedded=true"
     width="100%" height="1200"
     frameborder="0" marginheight="0" marginwidth="0"
-    title="P. vivax Policy Repository — submit an update">
+    title="Malaria Policy Repository — submit an update">
     Loading form…
   </iframe>
 </div>

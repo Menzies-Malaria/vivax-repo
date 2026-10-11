@@ -32,7 +32,7 @@ Set `SCRIPT_CONFIG.uniqueTitleOnRerun` to `false` if you prefer a fixed form tit
 
 ## Form title
 
-**P. vivax Policy Repository — submit a country update**
+**Malaria Policy Repository — submit a country update**
 
 ## Form description
 

@@ -269,7 +269,7 @@
         `<strong>${d.country}</strong>`,
         `Region: ${d.region}`,
         `WHO region: ${d.who_region || ""}`,
-        `First-line: ${d.first_line_raw || d.first_line || ""}`,
+        `First-line schizontocidal: ${d.first_line_raw || d.first_line || ""}`,
         `Cases (2023): ${formatNumber(d.cases_2023)}`,
       ].join("<br>")
     );
@@ -449,7 +449,7 @@
       .attr("role", "img")
       .attr(
         "aria-label",
-        "Heatmap of first-line P. vivax treatment by geographic region"
+        "Heatmap of first-line schizontocidal P. vivax treatment by geographic region"
       );
 
     drawColorLegendTop(svg, plotW, margin.left, maxN, "Countries");

@@ -4,6 +4,8 @@
 
   const WORLD_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
   const NO_DATA = "Not reported";
+  const NON_ENDEMIC = "Not currently or previously P. vivax endemic";
+  const OUTSIDE_LABEL = "Outside current repository scope";
   const MUTED = "#d9d5cc";
   const OUTSIDE = "#ebe7df";
   const PALETTE = [
@@ -18,7 +20,8 @@
     g6pd_policy: "G6PD-testing policy",
     g6pd_implementation: "G6PD-testing implementation",
     g6pd_policy_implementation: "G6PD policy + implementation",
-    first_line: "First-line treatment",
+    first_line: "First-line schizontocidal treatment",
+    second_line: "Second-line schizontocidal treatment",
   };
 
   const aliases = {
@@ -79,6 +82,7 @@
 
   function categoryColors(categories, metric) {
     const colors = new Map();
+    if (categories.includes(NON_ENDEMIC)) colors.set(NON_ENDEMIC, MUTED);
     if (metric.endsWith("policy_implementation")) {
       colors.set("Policy present · implemented", "#0d4f4f");
       colors.set("Policy present · partial / planned", "#d9a36a");
@@ -99,7 +103,10 @@
       return colors;
     }
     categories.forEach((category, index) => {
-      colors.set(category, category === NO_DATA ? MUTED : PALETTE[index % PALETTE.length]);
+      colors.set(
+        category,
+        [NO_DATA, NON_ENDEMIC].includes(category) ? MUTED : PALETTE[index % PALETTE.length]
+      );
     });
     return colors;
   }
@@ -150,6 +157,11 @@
     const treatmentLookup = new Map(
       treatments.map((row) => [`${normaliseName(row.country)}|${row.patient_group}`, row.radical_cure_policy])
     );
+    const countriesWithPatientScenarios = new Set(
+      treatments.map((row) => normaliseName(row.country))
+    );
+    const NOT_DIFFERENTIATED = "Policy not differentiated by G6PD category";
+    const NO_SELECTED_POLICY = "No policy recorded for the selected G6PD category";
 
     const metricSelect = document.getElementById("policy-map-metric");
     const patientSelect = document.getElementById("policy-map-patient");
@@ -157,7 +169,9 @@
     const regionSelect = document.getElementById("policy-map-region");
     const healthSelect = document.getElementById("policy-map-health");
     const healthControl = document.getElementById("policy-map-health-control");
-    const reportingSelect = document.getElementById("policy-map-reporting");
+    const endemicitySelect = document.getElementById("policy-map-endemicity");
+    const regimenSelect = document.getElementById("policy-map-regimen");
+    const regimenControl = document.getElementById("policy-map-regimen-control");
     const resetButton = document.getElementById("policy-map-reset");
     const legend = document.getElementById("policy-map-legend");
     const details = document.getElementById("policy-map-details");
@@ -169,6 +183,12 @@
     });
     (payload.health_levels || []).forEach((level) => {
       healthSelect.add(new Option(level, level));
+    });
+    (payload.endemicity_levels || []).forEach((level) => {
+      endemicitySelect.add(new Option(level, level));
+    });
+    (payload.regimen_levels || []).forEach((regimen) => {
+      regimenSelect.add(new Option(regimen, regimen));
     });
 
     const svg = d3.select(svgElement);
@@ -182,21 +202,70 @@
       .on("zoom", (event) => root.attr("transform", event.transform));
     svg.call(zoom);
 
+    function usesPatientScenarioMetric() {
+      return ["radical_cure_policy", "treatment_policy_implementation"].includes(metricSelect.value);
+    }
+
+    function hasSelectedPatientPolicy(row) {
+      if (!usesPatientScenarioMetric()) return true;
+      const countryKey = normaliseName(row.country);
+      if (patientSelect.value === NOT_DIFFERENTIATED) {
+        return !countriesWithPatientScenarios.has(countryKey);
+      }
+      return treatmentLookup.has(`${countryKey}|${patientSelect.value}`);
+    }
+
+    function selectedPatientPolicy(row) {
+      if (!usesPatientScenarioMetric()) return "";
+      if (!hasSelectedPatientPolicy(row)) return NO_SELECTED_POLICY;
+      if (patientSelect.value === NOT_DIFFERENTIATED) {
+        return display(row.treatment_policy_overall);
+      }
+      return treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`);
+    }
+
+    function policyMatchesRegimen(policy, regimen) {
+      if (!regimen) return true;
+      if (regimen === "Tafenoquine") {
+        return ["Tafenoquine", "Primaquine or tafenoquine"].includes(policy);
+      }
+      if (regimen === "7-day primaquine") {
+        return ["7-day primaquine", "7- or 14-day primaquine"].includes(policy);
+      }
+      if (regimen === "14-day primaquine") {
+        return ["14-day primaquine", "7- or 14-day primaquine"].includes(policy);
+      }
+      if (regimen === "Weekly primaquine") {
+        return policy === "Weekly primaquine for 8 weeks";
+      }
+      return false;
+    }
+
     function categoryFor(row) {
       const metric = metricSelect.value;
+      if (usesPatientScenarioMetric() && !hasSelectedPatientPolicy(row)) {
+        return NO_SELECTED_POLICY;
+      }
+      if (row.vivax_endemicity === "No") return NON_ENDEMIC;
       if (metric === "radical_cure_policy") {
-        return treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`) ||
-          display(row.treatment_policy_overall);
+        return selectedPatientPolicy(row);
       }
       if (metric === "treatment_policy_implementation") {
-        const policy = treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`) ||
-          display(row.treatment_policy_overall);
+        const policy = selectedPatientPolicy(row);
         return combinedCategory(policy, row.treatment_implementation, "treatment");
       }
       if (metric === "g6pd_policy_implementation") {
         return combinedCategory(row.g6pd_policy, row.g6pd_implementation, "g6pd");
       }
       return display(row[metric]);
+    }
+
+    function selectedMetricLabel() {
+      const label = metricLabels[metricSelect.value];
+      if (usesPatientScenarioMetric()) {
+        return `${label} — ${patientSelect.value}`;
+      }
+      return label;
     }
 
     function healthLevelFor(row) {
@@ -223,7 +292,20 @@
     function activeRows() {
       return rows.filter((row) => {
         if (regionSelect.value && row.region !== regionSelect.value) return false;
-        if (reportingSelect.value && row.reporting !== reportingSelect.value) return false;
+        if (endemicitySelect.value) {
+          if (row.vivax_endemicity !== endemicitySelect.value) return false;
+        } else if (!["Yes", "Previously"].includes(row.vivax_endemicity)) {
+          return false;
+        }
+        if (!hasSelectedPatientPolicy(row)) return false;
+        if (regimenSelect.value) {
+          if (usesPatientScenarioMetric()) {
+            if (!policyMatchesRegimen(selectedPatientPolicy(row), regimenSelect.value)) return false;
+          } else {
+            const regimens = String(row.regimen_options || "").split("|").filter(Boolean);
+            if (!regimens.includes(regimenSelect.value)) return false;
+          }
+        }
         if (healthSelect.value && healthLevelFor(row) !== healthSelect.value) return false;
         return true;
       });
@@ -231,18 +313,23 @@
 
     function renderLegend(colors, counts) {
       const items = [...counts.entries()].sort((a, b) => b[1] - a[1]);
-      legend.innerHTML = `<span class="policy-map-legend__title">${escapeHtml(metricLabels[metricSelect.value])}</span>` +
+      legend.innerHTML = `<span class="policy-map-legend__title">${escapeHtml(selectedMetricLabel())}</span>` +
         items.map(([category, count]) => `
           <div class="policy-map-legend__item">
             <span class="policy-map-legend__swatch" style="background:${colors.get(category) || MUTED}"></span>
             <span>${escapeHtml(category)}</span>
             <span class="policy-map-legend__count">${count}</span>
-          </div>`).join("");
+          </div>`).join("") + `
+          <div class="policy-map-legend__item policy-map-legend__item--scope">
+            <span class="policy-map-legend__swatch" style="background:${OUTSIDE}"></span>
+            <span>${escapeHtml(OUTSIDE_LABEL)}</span>
+          </div>`;
     }
 
     function updateConditionalControls() {
       const metric = metricSelect.value;
       patientControl.hidden = !["radical_cure_policy", "treatment_policy_implementation"].includes(metric);
+      regimenControl.hidden = !["radical_cure_policy", "treatment_policy_implementation"].includes(metric);
       healthControl.hidden = ![
         "g6pd_implementation",
         "g6pd_policy_implementation",
@@ -286,15 +373,18 @@
     }
 
     function showTooltip(event, row) {
+      const policyValue = usesPatientScenarioMetric() && !hasSelectedPatientPolicy(row)
+        ? NO_SELECTED_POLICY
+        : categoryFor(row);
       tooltip.innerHTML = `<strong>${escapeHtml(row.country)}</strong>` +
-        `${escapeHtml(metricLabels[metricSelect.value])}: ${escapeHtml(categoryFor(row))}`;
+        `${escapeHtml(selectedMetricLabel())}: ${escapeHtml(policyValue)}`;
       tooltip.hidden = false;
       tooltip.style.left = `${event.clientX + 14}px`;
       tooltip.style.top = `${event.clientY + 14}px`;
     }
 
     function showDetails(row) {
-      const selectedLabel = metricLabels[metricSelect.value];
+      const selectedLabel = selectedMetricLabel();
       details.innerHTML = `
         <button class="policy-map-details__close" type="button" aria-label="Close country details">×</button>
         <span class="policy-map-details__eyebrow">${escapeHtml(row.region || "Country details")}</span>
@@ -302,10 +392,11 @@
         <p>${escapeHtml(display(row.who_region))}</p>
         <dl class="policy-map-detail-list">
           ${detailItem(selectedLabel, categoryFor(row), true)}
-          ${detailItem("Reporting P. vivax cases (last 5 years)", row.reporting)}
+          ${detailItem("P. vivax endemicity", row.vivax_endemicity)}
           ${detailItem("2023 case numbers", row.cases_2023)}
-          ${detailItem("First-line treatment", row.first_line)}
-          ${detailItem("Second-line treatment", row.second_line)}
+          ${detailItem("First-line schizontocidal treatment", row.first_line)}
+          ${detailItem("Second-line schizontocidal treatment", row.second_line)}
+          ${detailItem("Available radical-cure regimens", String(row.regimen_options || "").split("|").join("; "))}
           ${detailItem("G6PD testing in guidelines", row.g6pd_guidelines_summary)}
           ${detailItem("G6PD testing implemented", row.g6pd_implementation_summary)}
           ${detailItem("Type of G6PD testing", row.g6pd_type)}
@@ -370,7 +461,7 @@
       console.error(error);
     });
 
-    [metricSelect, patientSelect, regionSelect, healthSelect, reportingSelect].forEach((control) => {
+    [metricSelect, patientSelect, regionSelect, healthSelect, endemicitySelect, regimenSelect].forEach((control) => {
       control.addEventListener("change", updateMap);
     });
 
@@ -379,7 +470,8 @@
       patientSelect.value = "G6PD normal";
       regionSelect.value = "";
       healthSelect.value = "";
-      reportingSelect.value = "";
+      endemicitySelect.value = "";
+      regimenSelect.value = "";
       selectedKey = null;
       tooltip.hidden = true;
       svg.transition().duration(300).call(zoom.transform, d3.zoomIdentity);

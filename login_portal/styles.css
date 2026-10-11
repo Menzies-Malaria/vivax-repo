@@ -67,6 +67,28 @@ input:focus {
   box-shadow: 0 0 0 3px rgba(13, 79, 79, 0.12);
 }
 
+.access-request {
+  margin: 0.5rem 0 0;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #e4ddd0;
+  border-radius: 8px;
+  background-color: #faf8f4;
+  color: #4a5252;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.access-request a {
+  color: #0d4f4f;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.access-request a:hover {
+  color: #c0521b;
+}
+
 button {
   width: 100%;
   padding: 0.65rem;

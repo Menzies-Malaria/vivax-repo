@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract translatable static text from rendered, non-profile website pages."""
+"""Extract approved translatable text from rendered website pages."""
 
 from __future__ import annotations
 
@@ -30,8 +30,9 @@ def normalise(value: str) -> str:
 
 
 class StaticTextParser(HTMLParser):
-    def __init__(self) -> None:
+    def __init__(self, allow_tables: bool = False) -> None:
         super().__init__(convert_charrefs=True)
+        self.allow_tables = allow_tables
         self.skip_depth = 0
         self.tag_skips: list[bool] = []
         self.strings: set[str] = set()
@@ -39,7 +40,8 @@ class StaticTextParser(HTMLParser):
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attrs_dict = dict(attrs)
         classes = set((attrs_dict.get("class") or "").split())
-        skip = self.skip_depth > 0 or tag in SKIP_TAGS or bool(classes & SKIP_CLASSES)
+        tag_is_excluded = tag in SKIP_TAGS and not (tag == "table" and self.allow_tables)
+        skip = self.skip_depth > 0 or tag_is_excluded or bool(classes & SKIP_CLASSES)
         if tag in VOID_TAGS:
             return
         self.tag_skips.append(skip)
@@ -50,7 +52,8 @@ class StaticTextParser(HTMLParser):
             self.add(attrs_dict.get(name) or "")
 
     def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        if self.skip_depth == 0 and tag not in SKIP_TAGS:
+        tag_is_excluded = tag in SKIP_TAGS and not (tag == "table" and self.allow_tables)
+        if self.skip_depth == 0 and not tag_is_excluded:
             attrs_dict = dict(attrs)
             for name in ("aria-label", "placeholder", "title"):
                 self.add(attrs_dict.get(name) or "")
@@ -91,9 +94,17 @@ def main() -> int:
         return 0
 
     parser = StaticTextParser()
-    pages = [path for path in site.glob("*.html") if path.is_file()]
-    for path in sorted(pages):
-        parser.feed(path.read_text(encoding="utf-8", errors="replace"))
+    root_pages = sorted(path for path in site.glob("*.html") if path.is_file())
+    profile_dir = site / "profiles"
+    profile_pages = sorted(path for path in profile_dir.glob("*.html") if path.is_file())
+    pages = root_pages + profile_pages
+    for path in pages:
+        # Tables remain excluded everywhere except generated country profiles.
+        # This brings approved profile labels and values into scope without
+        # translating the Explore-data table or other computed outputs.
+        page_parser = StaticTextParser(allow_tables=path.parent == profile_dir)
+        page_parser.feed(path.read_text(encoding="utf-8", errors="replace"))
+        parser.strings.update(page_parser.strings)
 
     manual_path = root / "translations" / "map-ui.json"
     if manual_path.exists():
@@ -105,8 +116,11 @@ def main() -> int:
     payload = {
         "meta": {
             "language": "en",
-            "scope": "Static non-output text; links, emails, URLs, tables, plots and R output excluded",
-            "generated_from": [path.name for path in sorted(pages)],
+            "scope": (
+                "Static site text plus generated country-profile text; links, emails, URLs, "
+                "non-profile tables, plots and code output excluded"
+            ),
+            "generated_from": [path.relative_to(site).as_posix() for path in pages],
             "manual_source": "translations/map-ui.json",
         },
         "strings": strings,
