@@ -206,11 +206,15 @@
       return ["radical_cure_policy", "treatment_policy_implementation"].includes(metricSelect.value);
     }
 
+    function hasRecordedOverallPolicy(row) {
+      return display(row.treatment_policy_overall) !== NO_DATA;
+    }
+
     function hasSelectedPatientPolicy(row) {
       if (!usesPatientScenarioMetric()) return true;
       const countryKey = normaliseName(row.country);
       if (patientSelect.value === NOT_DIFFERENTIATED) {
-        return !countriesWithPatientScenarios.has(countryKey);
+        return !countriesWithPatientScenarios.has(countryKey) && hasRecordedOverallPolicy(row);
       }
       return treatmentLookup.has(`${countryKey}|${patientSelect.value}`);
     }
