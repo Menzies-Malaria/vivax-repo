@@ -23,7 +23,7 @@ stats <- headline_stats(char, case)
 # Malaria Policy Repository
 
 ::: {.lede}
-A continuously updated, country-level reference for *P. vivax* case management policies — treatment regimens, G6PD testing recommendations, implementation status, and the people behind the programmes. Built for national malaria control programmes, researchers, and partners working toward elimination.
+A continuously updated, country-level reference for malaria case-management policies and their implementation, currently focused on *P. vivax*. Explore treatment regimens, G6PD testing recommendations, implementation status, and programme contacts across countries. Built for national malaria control programmes, researchers, and partners working toward elimination.
 :::
 
 ::: {.section-rule}
@@ -63,9 +63,9 @@ cat(sprintf(
 
 ## Why this exists
 
-The tools available to test for and treat *P. vivax* malaria have changed rapidly in the last few years. Point-of-care G6PD tests, shorter and more effective radical cure regimens (single-dose tafenoquine, high-dose 7-day primaquine), and updated WHO global recommendations in 2023 and 2024 have triggered policy revisions across endemic countries.
+National malaria treatment guidelines are often published — but they are scattered, inconsistently versioned, and rarely available in a comparable form. The Malaria Policy Repository brings policy and implementation information together in a living resource designed to stay current and make data comparable across countries.
 
-National treatment guidelines are often published — but they are scattered, inconsistently versioned, and rarely available in a comparable form. A previous review was published in *Pathogens* in 2023. This repository is a living continuation of that effort, designed to stay current and to make every data point comparable across countries.
+The repository currently begins with *P. vivax*, for which testing and treatment options have changed rapidly in recent years. Point-of-care G6PD tests, shorter radical-cure regimens (single-dose tafenoquine and high-dose 7-day primaquine), and updated WHO global recommendations in 2023 and 2024 have triggered policy revisions across endemic countries. A review published in *Pathogens* in 2023 provides the foundation for this current module, while the repository's broader structure leaves room to incorporate additional malaria policy areas in the future.
 
 ## What you can do here
 
