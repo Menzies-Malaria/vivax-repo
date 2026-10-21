@@ -2,13 +2,13 @@
   "meta": {
     "language": "pt",
     "source_language": "en",
-    "source_hash": "0616918cd5d29c0eb7091c6f4f22410009f5c858c4fc44f30952e1ddbbf9c9fc",
+    "source_hash": "c327892b8c600eeec8602d5c9b640fc25b7f1f903f0dd4558e166bac1d378ec9",
     "engine": "Argos Translate",
     "review_status": "machine draft - human review required",
-    "string_count": 788,
-    "source_character_count": 43571,
-    "reused_string_count": 782,
-    "translated_string_count": 6
+    "string_count": 789,
+    "source_character_count": 43607,
+    "reused_string_count": 788,
+    "translated_string_count": 1
   },
   "strings": {
     "static.4aa9bfd2f175a94a": ", e",
@@ -33,8 +33,8 @@
     "static.8b49627e5314b961": "5) Gaps de acompanhamento e adesão",
     "static.f553ed783362448f": "6) Prioridade geral do programa",
     "static.5b2721452d963bb5": "primaquina de 7 ou 14 dias",
-    "static.b644526f6afddff2": "PQ de dose elevada de 7 dias e Tafenoquina",
     "static.5bfff06f958ca5de": "PQ de dose elevada de 7 dias e tafenoquina",
+    "static.b644526f6afddff2": "PQ de dose elevada de 7 dias e Tafenoquina",
     "static.9a13148710a2f95f": "7 dias de primaquina",
     "static.f568b7b68a31145a": "primaquina de 7 dias; primaquina de 14 dias",
     "static.845a4c2ff32af520": "7 dias primaquina; 14 dias primaquina; primaquina semanal durante 8 semanas",
@@ -604,6 +604,7 @@
     "static.defdae37575742a9": "A cura radical é essencial, mas muitas vezes aplicada de forma inconsistente.",
     "static.b196d1903c10ca59": "cura radical onde se conhece o estado da G6PD.",
     "static.b5be03014c9ef4f7": "Regime de cura radical",
+    "static.5baa65df2c1668db": "Regime de cura radical utilizado ou em fase piloto",
     "static.2d09b9365cdeeb89": "Tratamento de cura radical pelo estado G6PD",
     "static.d414374c7d0071ce": "Política de tratamento da cura radical",
     "static.cf22d9bee83419e6": "Razão de utilização do ACT",

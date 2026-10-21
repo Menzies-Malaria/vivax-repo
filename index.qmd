@@ -296,7 +296,7 @@ map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
     </div>
 
     <div id="policy-map-regimen-control" class="policy-map-control">
-      <label for="policy-map-regimen">Radical-cure regimen</label>
+      <label for="policy-map-regimen">Radical-cure regimen used or piloted</label>
       <select id="policy-map-regimen"><option value="">All regimens</option></select>
     </div>
 

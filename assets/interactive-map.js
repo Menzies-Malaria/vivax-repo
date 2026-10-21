@@ -228,23 +228,6 @@
       return treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`);
     }
 
-    function policyMatchesRegimen(policy, regimen) {
-      if (!regimen) return true;
-      if (regimen === "Tafenoquine") {
-        return ["Tafenoquine", "Primaquine or tafenoquine"].includes(policy);
-      }
-      if (regimen === "7-day primaquine") {
-        return ["7-day primaquine", "7- or 14-day primaquine"].includes(policy);
-      }
-      if (regimen === "14-day primaquine") {
-        return ["14-day primaquine", "7- or 14-day primaquine"].includes(policy);
-      }
-      if (regimen === "Weekly primaquine") {
-        return policy === "Weekly primaquine for 8 weeks";
-      }
-      return false;
-    }
-
     function categoryFor(row) {
       const metric = metricSelect.value;
       if (usesPatientScenarioMetric() && !hasSelectedPatientPolicy(row)) {
@@ -303,12 +286,8 @@
         }
         if (!hasSelectedPatientPolicy(row)) return false;
         if (regimenSelect.value) {
-          if (usesPatientScenarioMetric()) {
-            if (!policyMatchesRegimen(selectedPatientPolicy(row), regimenSelect.value)) return false;
-          } else {
-            const regimens = String(row.regimen_options || "").split("|").filter(Boolean);
-            if (!regimens.includes(regimenSelect.value)) return false;
-          }
+          const regimens = String(row.regimen_options || "").split("|").filter(Boolean);
+          if (!regimens.includes(regimenSelect.value)) return false;
         }
         if (healthSelect.value && healthLevelFor(row) !== healthSelect.value) return false;
         return true;

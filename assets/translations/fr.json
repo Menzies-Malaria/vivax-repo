@@ -2,13 +2,13 @@
   "meta": {
     "language": "fr",
     "source_language": "en",
-    "source_hash": "0616918cd5d29c0eb7091c6f4f22410009f5c858c4fc44f30952e1ddbbf9c9fc",
+    "source_hash": "c327892b8c600eeec8602d5c9b640fc25b7f1f903f0dd4558e166bac1d378ec9",
     "engine": "Argos Translate",
     "review_status": "machine draft - human review required",
-    "string_count": 788,
-    "source_character_count": 43571,
-    "reused_string_count": 782,
-    "translated_string_count": 6
+    "string_count": 789,
+    "source_character_count": 43607,
+    "reused_string_count": 788,
+    "translated_string_count": 1
   },
   "strings": {
     "static.4aa9bfd2f175a94a": "et",
@@ -33,8 +33,8 @@
     "static.8b49627e5314b961": "5) Lacunes en matière de suivi et de respect",
     "static.f553ed783362448f": "6) Priorité globale du programme",
     "static.5b2721452d963bb5": "Primaquine de 7 ou 14 jours",
-    "static.b644526f6afddff2": "PQ à haute dose de 7 jours et Tafénoquine",
     "static.5bfff06f958ca5de": "PQ à haute dose de 7 jours et tafénoquine",
+    "static.b644526f6afddff2": "PQ à haute dose de 7 jours et Tafénoquine",
     "static.9a13148710a2f95f": "Primaquine de 7 jours",
     "static.f568b7b68a31145a": "Primaquine de 7 jours; primaquine de 14 jours",
     "static.845a4c2ff32af520": "Primaquine de 7 jours; primaquine de 14 jours; primaquine hebdomadaire pendant 8 semaines",
@@ -604,6 +604,7 @@
     "static.defdae37575742a9": "La guérison radicale est essentielle mais souvent appliquée de façon incohérente.",
     "static.b196d1903c10ca59": "remède radical où le statut G6PD est connu.",
     "static.b5be03014c9ef4f7": "Traitement de protection radicale",
+    "static.5baa65df2c1668db": "Schéma de cure radicale utilisé ou en phase pilote",
     "static.2d09b9365cdeeb89": "Traitement radial-cure par statut G6PD",
     "static.d414374c7d0071ce": "Politique en matière de traitement de l'urine",
     "static.cf22d9bee83419e6": "Justification de l'utilisation d'ACT",
