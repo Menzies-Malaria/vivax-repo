@@ -37,7 +37,11 @@
     }
     if (element.closest("table") && !translateProfileTables) return true;
     const link = element.closest("a");
-    return Boolean(link && !link.matches(".sidebar-link, .policy-map-profile-link"));
+    const translatableLink = link && (
+      link.matches(".sidebar-link, .policy-map-profile-link") ||
+      link.closest("#TOC")
+    );
+    return Boolean(link && !translatableLink);
   }
 
   function translateRoot(root, language) {

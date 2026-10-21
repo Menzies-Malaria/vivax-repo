@@ -7,7 +7,7 @@ toc: true
 
 [← Back to all countries](../countries.qmd)
 
-<div class="country-profile-locator" data-country="Honduras"><div class="country-profile-locator__heading">Location</div><svg role="img" aria-label="World map showing Honduras"></svg><p>Highlighted within the global repository context.</p></div>
+<div class="country-profile-locator" data-country="Honduras" data-region="Central and South America" data-region-countries="Argentina|Belize|Bolivia|Brazil|Colombia|Costa Rica|Dominican Republic|Ecuador|El Salvador|French Guiana|Guatemala|Guyana|Honduras|Mexico|Nicaragua|Panama|Paraguay|Peru|Suriname|Venezuela"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Honduras"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Central and South America regional map showing Honduras"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ## Snapshot
 

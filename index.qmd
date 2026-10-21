@@ -291,7 +291,7 @@ map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
     </div>
 
     <div class="policy-map-control">
-      <label for="policy-map-endemicity">*P. vivax* endemicity</label>
+      <label for="policy-map-endemicity"><em>P. vivax</em> endemicity</label>
       <select id="policy-map-endemicity"><option value="">Current and previously endemic</option></select>
     </div>
 

@@ -67,30 +67,49 @@
   }
 
   async function drawLocator(locator) {
-    const svgElement = locator.querySelector("svg");
-    if (!svgElement || typeof d3 === "undefined") return;
+    const svgElements = locator.querySelectorAll("svg");
+    if (!svgElements.length || typeof d3 === "undefined") return;
     const country = normaliseName(locator.dataset.country);
+    const regionCountries = new Set(
+      String(locator.dataset.regionCountries || "")
+        .split("|")
+        .map(normaliseName)
+        .filter(Boolean)
+    );
     try {
       await ensureTopojson();
       const world = await d3.json(WORLD_URL);
       const features = topojson.feature(world, world.objects.countries).features;
       const width = 360;
       const height = 185;
-      const projection = d3.geoNaturalEarth1().fitExtent(
-        [[6, 6], [width - 6, height - 6]],
-        { type: "FeatureCollection", features }
+      const regionalFeatures = features.filter((feature) =>
+        regionCountries.has(normaliseName(feature.properties.name))
       );
-      const path = d3.geoPath(projection);
-      const svg = d3.select(svgElement)
-        .attr("viewBox", `0 0 ${width} ${height}`)
-        .attr("preserveAspectRatio", "xMidYMid meet");
-      svg.selectAll("path")
-        .data(features)
-        .join("path")
-        .attr("d", path)
-        .attr("class", (feature) => normaliseName(feature.properties.name) === country
-          ? "is-country"
-          : "is-context");
+
+      svgElements.forEach((svgElement) => {
+        const view = svgElement.dataset.locatorView || "global";
+        const fittedFeatures = view === "region" && regionalFeatures.length
+          ? regionalFeatures
+          : features;
+        const projection = d3.geoNaturalEarth1().fitExtent(
+          [[10, 10], [width - 10, height - 10]],
+          { type: "FeatureCollection", features: fittedFeatures }
+        );
+        const path = d3.geoPath(projection);
+        const svg = d3.select(svgElement)
+          .attr("viewBox", `0 0 ${width} ${height}`)
+          .attr("preserveAspectRatio", "xMidYMid meet");
+        svg.selectAll("path")
+          .data(features)
+          .join("path")
+          .attr("d", path)
+          .attr("class", (feature) => {
+            const featureName = normaliseName(feature.properties.name);
+            if (featureName === country) return "is-country";
+            if (view === "region" && regionCountries.has(featureName)) return "is-region";
+            return "is-context";
+          });
+      });
     } catch (error) {
       locator.classList.add("is-unavailable");
       console.error("Unable to draw the country locator map.", error);

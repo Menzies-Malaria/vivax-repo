@@ -7,7 +7,7 @@ toc: true
 
 [← Back to all countries](../countries.qmd)
 
-<div class="country-profile-locator" data-country="Sri Lanka"><div class="country-profile-locator__heading">Location</div><svg role="img" aria-label="World map showing Sri Lanka"></svg><p>Highlighted within the global repository context.</p></div>
+<div class="country-profile-locator" data-country="Sri Lanka" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Sri Lanka"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Sri Lanka"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ## Snapshot
 

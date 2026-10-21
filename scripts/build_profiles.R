@@ -364,6 +364,13 @@ for (i in seq_len(nrow(char))) {
   subs <- sub_rows_for(country)
   radical_summary <- radical_cure_summary(bind_rows(cm_row, subs))
   g6pd_regimen_table <- primaquine_regimen_table(subs)
+  profile_region <- row_val(row, "Region")
+  region_countries <- char$Country[
+    str_trim(as.character(char$Region)) == profile_region
+  ] |>
+    as.character() |>
+    str_trim()
+  region_countries <- region_countries[nzchar(region_countries)]
 
   yr_cols <- names(char)[str_detect(names(char), "Case Numbers")]
   yr_data <- setNames(
@@ -386,8 +393,21 @@ for (i in seq_len(nrow(char))) {
     "[← Back to all countries](../countries.qmd)",
     "",
     sprintf(
-      '<div class="country-profile-locator" data-country="%s"><div class="country-profile-locator__heading">Location</div><svg role="img" aria-label="World map showing %s"></svg><p>Highlighted within the global repository context.</p></div>',
+      paste0(
+        '<div class="country-profile-locator" data-country="%s" data-region="%s" data-region-countries="%s">',
+        '<div class="country-profile-locator__heading">Location</div>',
+        '<div class="country-profile-locator__maps">',
+        '<div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing %s"></svg></div>',
+        '<div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="%s regional map showing %s"></svg></div>',
+        '</div>',
+        '<p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p>',
+        '</div>'
+      ),
       html_escape(country),
+      html_escape(profile_region),
+      html_escape(paste(region_countries, collapse = "|")),
+      html_escape(country),
+      html_escape(profile_region),
       html_escape(country)
     ),
     "",

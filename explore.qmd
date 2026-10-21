@@ -96,7 +96,6 @@ tagList(
         filter_select("program_phase", "Programme phase", shared, ~`Program Phase`, multiple = TRUE),
         filter_select("first_line", "First-line schizontocidal treatment", shared, ~`Pv 1st line treatment`, multiple = TRUE),
         filter_select("second_line", "Second-line schizontocidal treatment", shared, ~`Pv 2nd line treatment`, multiple = TRUE),
-        filter_slider("vivax_share", "P. vivax share of malaria cases (%)", shared, ~vivax_share),
         filter_select("g6pd_guidelines", "G6PD testing in guidelines", shared, ~`Guidelines G6PD testing  (Y/N)`, multiple = TRUE),
         filter_select("g6pd_implementation", "G6PD testing implemented", shared, ~`Implementation: G6PD testing  (Y/N)`, multiple = TRUE),
         filter_select("community_malaria", "Community malaria care", shared, ~`Community malaria care`, multiple = TRUE),
@@ -105,6 +104,7 @@ tagList(
         filter_select("community_follow_up", "Community follow-up of radical cure", shared, ~`Community follow-up of radical cure`, multiple = TRUE),
         filter_select("cross_border", "Cross-border transmission", shared, ~`Cross-border transmission`, multiple = TRUE),
         filter_select("mobile_migrant", "Mobile / migrant populations", shared, ~`Mobile Migrant Populations`, multiple = TRUE),
+        filter_slider("vivax_share", "P. vivax share of malaria cases (%)", shared, ~vivax_share),
         widths = rep(4, 16),
         device = "sm"
       )
