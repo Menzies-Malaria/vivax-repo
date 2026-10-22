@@ -33,20 +33,20 @@ website:
     title: "Malaria Policy Repository"
     search: true
     contents:
-      - text: "Interactive map"
-        href: index.qmd
       - text: "Overview"
         href: overview.qmd
+      - text: "Interactive map"
+        href: index.qmd
       - text: "Explore the data"
         href: explore.qmd
       - text: "Country profiles"
         href: countries.qmd
       - text: "Policy timeline"
         href: timeline.qmd
-      - text: "Methods"
-        href: methods.qmd
       - text: "Contribute / Update"
         href: contribute.qmd
+      - text: "Methods"
+        href: methods.qmd
       - text: "Data & downloads"
         href: data.qmd
       - text: "GitHub repository"

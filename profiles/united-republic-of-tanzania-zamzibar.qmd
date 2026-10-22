@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="United Republic of Tanzania (Zamzibar)" data-region="Africa" data-region-countries="Djibouti|Eritrea|Ethiopia|Madagascar|Somalia|South Sudan|Sudan|United Republic of Tanzania (Zamzibar)"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing United Republic of Tanzania (Zamzibar)"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Africa regional map showing United Republic of Tanzania (Zamzibar)"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | African |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
-| **Economic status** | Low income |
 | **Cross-border transmission** | No |
+| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | No |
+| **Mobile / migrant populations — details** | _Not reported_ |
 | **High-risk populations** | _Not reported_ |
+| **Economic status** | Low income |
 :::
+
+<div class="country-profile-locator" data-country="United Republic of Tanzania (Zamzibar)" data-region="Africa" data-region-countries="Djibouti|Eritrea|Ethiopia|Madagascar|Somalia|South Sudan|Sudan|United Republic of Tanzania (Zamzibar)"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing United Republic of Tanzania (Zamzibar)"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Africa regional map showing United Republic of Tanzania (Zamzibar)"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -40,12 +41,13 @@ toc: true
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | No |
+| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | _Not reported_ |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | _Not reported_ |
 | **Community follow-up of radical cure** | _Not reported_ |
 :::
 
-:::
 
 ## Reported case numbers
 
@@ -72,16 +74,32 @@ toc: true
 | **Last policy update** | _Not reported_ |
 | **Schizontocidal drug** | _Not reported_ |
 | **G6PD testing policy** | _Not reported_ |
+| **G6PD testing policy — details** | _Not reported_ |
 | **G6PD implementation** | _Not reported_ |
+| **G6PD implementation — details** | _Not reported_ |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
+| **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | _Not reported_ |
-| **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
+
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **Overall policy** | _Not specified_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **Overall policy** | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
+
+| | |
+|---|---|
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
 | **Treatment guidelines (URL)** | _Not reported_ |

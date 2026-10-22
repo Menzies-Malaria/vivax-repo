@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="Belize" data-region="Central and South America" data-region-countries="Argentina|Belize|Bolivia|Brazil|Colombia|Costa Rica|Dominican Republic|Ecuador|El Salvador|French Guiana|Guatemala|Guyana|Honduras|Mexico|Nicaragua|Panama|Paraguay|Peru|Suriname|Venezuela"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Belize"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Central and South America regional map showing Belize"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | Americas |
 | ***P. vivax* endemicity** | Previously |
 | **Programme phase** | Eliminated/certified malaria-free |
-| **Economic status** | Upper-middle income |
 | **Cross-border transmission** | Yes |
+| **Cross-border transmission — details** | With Guatemala and Mexico |
 | **Mobile / migrant populations** | Yes |
+| **Mobile / migrant populations — details** | Agricultural workers |
 | **High-risk populations** | populationsMigrant workers; agricultural workers; border/mobile populations; travellers to/from malaria-endemic neighbouring areas; historically construction and tourism workers |
+| **Economic status** | Upper-middle income |
 :::
+
+<div class="country-profile-locator" data-country="Belize" data-region="Central and South America" data-region-countries="Argentina|Belize|Bolivia|Brazil|Colombia|Costa Rica|Dominican Republic|Ecuador|El Salvador|French Guiana|Guatemala|Guyana|Honduras|Mexico|Nicaragua|Panama|Paraguay|Peru|Suriname|Venezuela"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Belize"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Central and South America regional map showing Belize"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -34,18 +35,19 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | _Not reported_ |
-| **Radical-cure regimen** | 7-day primaquine; 14-day primaquine |
+| **Radical-cure regimen** | 7- or 14-day primaquine (dose not specified) |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | _Not reported_ |
+| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | _Not reported_ |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | _Not reported_ |
 :::
 
-:::
 
 ## Reported case numbers
 
@@ -65,16 +67,32 @@ toc: true
 | **Last policy update** | _Not reported_ |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Not required |
+| **G6PD testing policy — details** | _Not reported_ |
 | **G6PD implementation** | _Not reported_ |
+| **G6PD implementation — details** | _Not reported_ |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
+| **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days or 0.5 mg/kg/day over 7 days |
-| **Additional safety recommendations** | Semi-supervised treatment |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
+
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **Overall policy** | PQ 0.25 mg/kg/day over 14 days or 0.5 mg/kg/day over 7 days | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Semi-supervised treatment |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **Overall policy** | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
+
+| | |
+|---|---|
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
 | **Treatment guidelines (URL)** | _Not reported_ |

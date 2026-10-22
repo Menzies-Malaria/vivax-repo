@@ -151,7 +151,7 @@ normalise_case_schema <- function(df) {
     "Comments",
     c("Comments [for repository country profile]")
   )
-  ensure_columns(df, c(
+  df <- ensure_columns(df, c(
     "Comments",
     "Tafenoquine",
     "Low-dose PQ14 (0.25mg/kg)",
@@ -159,8 +159,140 @@ normalise_case_schema <- function(df) {
     "Low-dose PQ7 (0.5mg/kg)",
     "High-dose PQ7 (1mg/kg)",
     "Implementation of Treatment",
-    "Implementatin of follow-up"
+    "Implementation of Treatment - details",
+    "Health System Level of Treatment Implementation",
+    "Health System Level of Treatment Implementation - details",
+    "Year of Treatment Policy Implementation",
+    "Implementatin of follow-up",
+    "Year of Follow-Up Implementation"
   ))
+
+  # Some spreadsheet-to-CSV exports replace Unicode comparison signs and
+  # Windows punctuation with placeholders. Repair only the known affected
+  # fields so genuine question marks elsewhere remain untouched.
+  df[] <- lapply(df, function(column) {
+    column |>
+      stringr::str_replace_all(stringr::fixed("<96>"), "–") |>
+      stringr::str_replace_all(stringr::fixed("<97>"), "—")
+  })
+
+  category_col <- "Categorization of G6PD Status Used"
+  if (category_col %in% names(df)) {
+    deficient <- stringr::str_detect(
+      stringr::str_to_lower(df[[category_col]]),
+      "deficient"
+    ) & !stringr::str_detect(
+      stringr::str_to_lower(df[[category_col]]),
+      "intermediate"
+    )
+    df[[category_col]][deficient] <- stringr::str_replace_all(
+      df[[category_col]][deficient],
+      "\\?(?=\\s*\\d)",
+      "≤"
+    )
+    df[[category_col]][!deficient] <- stringr::str_replace_all(
+      df[[category_col]][!deficient],
+      "\\?(?=\\s*\\d)",
+      "≥"
+    )
+  }
+
+  banding_cols <- intersect(
+    c("PQ Weight-based banding", "Schizontocidal weight-based banding"),
+    names(df)
+  )
+  for (column in banding_cols) {
+    df[[column]] <- stringr::str_replace_all(
+      df[[column]],
+      "\\?(?=\\s*\\d)",
+      "≥"
+    )
+  }
+
+  df
+}
+
+positive_policy_flag <- function(value) {
+  stringr::str_to_lower(stringr::str_squish(as.character(value))) %in%
+    c("yes", "pilot")
+}
+
+radical_cure_policy_label <- function(value) {
+  policy <- stringr::str_to_lower(stringr::str_squish(as.character(value)))
+  missing <- !nzchar(policy) | policy %in% c("na", "n/a", "unknown", "not reported")
+  has_pq <- stringr::str_detect(policy, "primaquine|\\bpq\\b")
+  has_tq <- stringr::str_detect(policy, "tafenoquine|\\btq\\b")
+  day_7 <- stringr::str_detect(policy, "7\\s*[- ]?days?|over\\s+7")
+  day_14 <- stringr::str_detect(policy, "14\\s*[- ]?days?|over\\s+14")
+  dose_025 <- stringr::str_detect(policy, "0\\s*\\.\\s*25\\s*mg\\s*/\\s*kg")
+  dose_05 <- stringr::str_detect(policy, "0\\s*\\.\\s*5\\s*mg\\s*/\\s*kg")
+  dose_1 <- stringr::str_detect(policy, "(?:^|[^0-9])1(?:\\.0)?\\s*mg\\s*/\\s*kg")
+  low_dose <- stringr::str_detect(policy, "low[- ]dose")
+  high_dose <- stringr::str_detect(policy, "high[- ]dose")
+
+  dplyr::case_when(
+    missing ~ "Not reported",
+    stringr::str_detect(policy, "no primaquine|primaquine.*not|not recommend") ~ "No primaquine",
+    has_tq & has_pq ~ "Primaquine or tafenoquine",
+    has_tq ~ "Tafenoquine",
+    stringr::str_detect(policy, "weekly|8\\s*weeks?") ~ "Weekly primaquine for 8 weeks",
+    day_7 & day_14 ~ "7- or 14-day primaquine (dose not specified)",
+    day_7 & (high_dose | dose_1) ~ "High-dose 7-day primaquine",
+    day_7 & (low_dose | dose_05) ~ "Low-dose 7-day primaquine",
+    day_14 & (high_dose | dose_05) ~ "High-dose 14-day primaquine",
+    day_14 & (low_dose | dose_025) ~ "Low-dose 14-day primaquine",
+    day_7 ~ "7-day primaquine (dose not specified)",
+    day_14 ~ "14-day primaquine (dose not specified)",
+    has_pq ~ "Other primaquine regimen",
+    TRUE ~ "Other policy"
+  )
+}
+
+radical_cure_regimen_tags <- function(row) {
+  value <- function(column) {
+    if (!column %in% names(row)) return("")
+    as.character(row[[column]][[1]])
+  }
+  policy <- value("Policy on PQ")
+  label <- radical_cure_policy_label(policy)
+  tags <- character()
+
+  if (positive_policy_flag(value("Tafenoquine")) ||
+      stringr::str_detect(stringr::str_to_lower(policy), "tafenoquine|\\btq\\b")) {
+    tags <- c(tags, "Tafenoquine")
+  }
+  if (identical(label, "Weekly primaquine for 8 weeks") ||
+      positive_policy_flag(value("8-week PQ"))) {
+    tags <- c(tags, "Weekly primaquine for 8 weeks")
+  }
+
+  duration_label <- label %in% c(
+    "High-dose 7-day primaquine",
+    "Low-dose 7-day primaquine",
+    "High-dose 14-day primaquine",
+    "Low-dose 14-day primaquine",
+    "7-day primaquine (dose not specified)",
+    "14-day primaquine (dose not specified)",
+    "7- or 14-day primaquine (dose not specified)"
+  )
+  if (duration_label) {
+    tags <- c(tags, label)
+  } else {
+    if (positive_policy_flag(value("Low-dose PQ7 (0.5mg/kg)"))) {
+      tags <- c(tags, "Low-dose 7-day primaquine")
+    }
+    if (positive_policy_flag(value("High-dose PQ7 (1mg/kg)"))) {
+      tags <- c(tags, "High-dose 7-day primaquine")
+    }
+    if (positive_policy_flag(value("Low-dose PQ14 (0.25mg/kg)"))) {
+      tags <- c(tags, "Low-dose 14-day primaquine")
+    }
+    if (positive_policy_flag(value("High-dose PQ14 (0.5mg/kg)"))) {
+      tags <- c(tags, "High-dose 14-day primaquine")
+    }
+  }
+
+  unique(tags)
 }
 
 normalise_country_key <- function(value) {
@@ -271,18 +403,18 @@ column_dictionary_notes <- function() {
     "Country" = "Country or territory name.",
     "Region" = "Project-defined region: Africa, Asia-Pacific, or Central and South America.",
     "WHO Region" = "WHO region: African, Americas, Eastern Mediterranean, South-East Asia, Western Pacific.",
-    "Vivax endemicity" = "Whether P. vivax malaria is currently endemic, previously endemic, or not endemic.",
+    "Vivax endemicity" = "Whether vivax malaria is currently endemic, previously endemic, or not endemic.",
     "To be included in current repository" = "Whether the country is currently within the repository's agreed scope.",
-    "Reporting vivax cases (<5 years)" = "Whether the country has reported any P. vivax cases in the last five years.",
-    "2023 Case Numbers" = "Reported P. vivax cases in 2023.",
-    "2022 Case Numbers" = "Reported P. vivax cases in 2022.",
-    "2021 Case Numbers" = "Reported P. vivax cases in 2021.",
-    "2020 Case Numbers" = "Reported P. vivax cases in 2020.",
-    "2019 Case Numbers" = "Reported P. vivax cases in 2019.",
-    "2018 Case Numbers" = "Reported P. vivax cases in 2018.",
-    "Proportion of P. vivax cases (2023) (%)" = "P. vivax as a percentage of all reported malaria cases in 2023.",
+    "Reporting vivax cases (<5 years)" = "Whether the country has reported any vivax cases in the last five years.",
+    "2023 Case Numbers" = "Reported vivax cases in 2023.",
+    "2022 Case Numbers" = "Reported vivax cases in 2022.",
+    "2021 Case Numbers" = "Reported vivax cases in 2021.",
+    "2020 Case Numbers" = "Reported vivax cases in 2020.",
+    "2019 Case Numbers" = "Reported vivax cases in 2019.",
+    "2018 Case Numbers" = "Reported vivax cases in 2018.",
+    "Proportion of P. vivax cases (2023) (%)" = "Vivax as a percentage of all reported malaria cases in 2023.",
     "Type of malaria diagnostic (e.g., RDT, lab result, serology)" = "Diagnostics used routinely for malaria case detection.",
-    "Pv 1st line treatment" = "Recommended first-line treatment for uncomplicated P. vivax malaria.",
+    "Pv 1st line treatment" = "Recommended first-line treatment for uncomplicated vivax malaria.",
     "Rationale for ACT use" = "Where an ACT is used first-line, the stated rationale.",
     "Pv 2nd line treatment" = "Recommended second-line treatment.",
     "G6PD deficiency prevalence" = "Estimated prevalence of G6PD deficiency, where reported.",

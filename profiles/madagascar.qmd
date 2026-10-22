@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="Madagascar" data-region="Africa" data-region-countries="Djibouti|Eritrea|Ethiopia|Madagascar|Somalia|South Sudan|Sudan|United Republic of Tanzania (Zamzibar)"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Madagascar"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Africa regional map showing Madagascar"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | African |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
-| **Economic status** | Low income |
 | **Cross-border transmission** | No |
+| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
+| **Mobile / migrant populations — details** | _Not reported_ |
 | **High-risk populations** | Children under 5, pregnant women, migrant populations |
+| **Economic status** | Low income |
 :::
+
+<div class="country-profile-locator" data-country="Madagascar" data-region="Africa" data-region-countries="Djibouti|Eritrea|Ethiopia|Madagascar|Somalia|South Sudan|Sudan|United Republic of Tanzania (Zamzibar)"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Madagascar"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Africa regional map showing Madagascar"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -34,18 +35,19 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | AS+AQ |
 | **Second-line schizontocidal treatment** | AL |
-| **Radical-cure regimen** | 14-day primaquine; weekly primaquine for 8 weeks |
+| **Radical-cure regimen** | Weekly primaquine for 8 weeks; Low-dose 14-day primaquine |
 | **Rationale for ACT use** | Chloroquine resistance to PQ; alignment of Pf and Pv treatment |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Partial |
+| **Community malaria care — details** | Only for children under 5 years old |
 | **Community vivax care** | No |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
 
-:::
 
 ::: {.country-contact-card data-profile-contact=true}
 ### Programme contact
@@ -73,28 +75,38 @@ toc: true
 | **Last policy update** | 2015 |
 | **Schizontocidal drug** | AS+AQ |
 | **G6PD testing policy** | Recommended |
+| **G6PD testing policy — details** | Recommended but testing type not specified |
 | **G6PD implementation** | Not implemented |
+| **G6PD implementation — details** | No available G6PD testing |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
+| **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 
-### Primaquine regimens by G6PD status
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
 
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |
-|---|---|---|---|---|
-| **G6PD moderate deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Not implemented |  |  |
-| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days | Not implemented |  |  |
-| **G6PD severely deficient: no definition** | No PQ |  |  |  |
-| **If no testing available** | Not specified | Not implemented |  |  |
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **G6PD moderate deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Not implemented | No G6PD testing available to facilitate treatment administration; vivax not a priority compared to falciparum | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
+| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days | Not implemented | No G6PD testing available to facilitate treatment administration; vivax not a priority compared to falciparum | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
+| **G6PD severely deficient: no definition** | No PQ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+| **If no testing available** | Not specified | Not implemented | No G6PD testing available to facilitate treatment administration; vivax not a priority compared to falciparum | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **G6PD moderate deficient: no definition** | _Not reported_ | _Not reported_ | _Not reported_ |
+| **G6PD normal: no definition** | _Not reported_ | _Not reported_ | _Not reported_ |
+| **G6PD severely deficient: no definition** | _Not reported_ | _Not reported_ | _Not reported_ |
+| **If no testing available** | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
 
 | | |
 |---|---|
-| **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | Yes, ongoing |
 | **Treatments under consideration** | Not considering anything new at the moment, sticking with primaquine. |
 | **Treatment guidelines (URL)** | _Not reported_ |

@@ -82,19 +82,7 @@ classify_patient_group <- function(x) {
 }
 
 classify_radical_cure <- function(x) {
-  y <- str_to_lower(str_squish(x))
-  case_when(
-    not_reported(y) ~ "Not reported",
-    str_detect(y, "no primaquine|primaquine.*not|not recommend") ~ "No primaquine",
-    str_detect(y, "tafenoquine|\\btq\\b") & str_detect(y, "primaquine|\\bpq\\b") ~ "Primaquine or tafenoquine",
-    str_detect(y, "tafenoquine|\\btq\\b") ~ "Tafenoquine",
-    str_detect(y, "weekly|8 weeks") ~ "Weekly primaquine for 8 weeks",
-    str_detect(y, "7 day") & str_detect(y, "14 day") ~ "7- or 14-day primaquine",
-    str_detect(y, "7 day") ~ "7-day primaquine",
-    str_detect(y, "14 day") ~ "14-day primaquine",
-    str_detect(y, "primaquine|\\bpq\\b") ~ "Other primaquine regimen",
-    TRUE ~ "Other policy"
-  )
+  radical_cure_policy_label(x)
 }
 
 map_rows <- char |>
@@ -155,27 +143,7 @@ base_country_for <- function(value) {
 }
 
 regimen_tags_for <- function(row) {
-  yes_or_pilot <- function(column) {
-    value <- str_to_lower(str_squish(row[[column]][[1]]))
-    value %in% c("yes", "pilot")
-  }
-  policy <- str_to_lower(str_squish(row[["Policy on PQ"]][[1]]))
-  tags <- character()
-  if (yes_or_pilot("Tafenoquine") || str_detect(policy, "tafenoquine|\\btq\\b")) {
-    tags <- c(tags, "Tafenoquine")
-  }
-  if (
-    yes_or_pilot("Low-dose PQ7 (0.5mg/kg)") ||
-      yes_or_pilot("High-dose PQ7 (1mg/kg)") ||
-      str_detect(policy, "7 days?")
-  ) tags <- c(tags, "7-day primaquine")
-  if (
-    yes_or_pilot("Low-dose PQ14 (0.25mg/kg)") ||
-      yes_or_pilot("High-dose PQ14 (0.5mg/kg)") ||
-      str_detect(policy, "14 days?")
-  ) tags <- c(tags, "14-day primaquine")
-  if (str_detect(policy, "weekly|8 weeks?")) tags <- c(tags, "Weekly primaquine")
-  unique(tags)
+  radical_cure_regimen_tags(row)
 }
 
 case$regimen_options <- vapply(seq_len(nrow(case)), function(i) {
@@ -236,9 +204,14 @@ map_payload <- list(
   endemicity_levels = c("Yes", "Previously", "No"),
   regimen_levels = c(
     "Tafenoquine",
-    "7-day primaquine",
-    "14-day primaquine",
-    "Weekly primaquine"
+    "High-dose 7-day primaquine",
+    "Low-dose 7-day primaquine",
+    "High-dose 14-day primaquine",
+    "Low-dose 14-day primaquine",
+    "7-day primaquine (dose not specified)",
+    "14-day primaquine (dose not specified)",
+    "7- or 14-day primaquine (dose not specified)",
+    "Weekly primaquine for 8 weeks"
   )
 )
 
@@ -309,7 +282,7 @@ map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
   <div class="policy-map-content">
     <div class="policy-map-stage">
       <div id="policy-map-status" class="policy-map-status" role="status">Loading country boundaries…</div>
-      <svg id="policy-map" class="policy-map" role="img" aria-label="Interactive world map of P. vivax policies"></svg>
+      <svg id="policy-map" class="policy-map" role="img" aria-label="Interactive world map of vivax policies"></svg>
       <div id="policy-map-tooltip" class="policy-map-tooltip" role="tooltip" hidden></div>
     </div>
 

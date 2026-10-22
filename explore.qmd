@@ -52,6 +52,7 @@ shared <- SharedData$new(char, key = ~Country, group = "explore")
 char_table <- char |>
   select(any_of(table_cols)) |>
   rename(
+    `Vivax share of malaria cases (2023) (%)` = `Proportion of P. vivax cases (2023) (%)`,
     `First-line schizontocidal treatment` = `Pv 1st line treatment`,
     `Second-line schizontocidal treatment` = `Pv 2nd line treatment`
   )
@@ -91,8 +92,8 @@ tagList(
       bscols(
         filter_select("region", "Region", shared, ~Region, multiple = TRUE),
         filter_select("who_region", "WHO region", shared, ~`WHO Region`, multiple = TRUE),
-        filter_select("endemicity", "P. vivax endemicity", shared, ~`Vivax endemicity`, multiple = TRUE),
-        filter_select("recent_reporting", "Reporting P. vivax cases (last 5 years)", shared, ~`Reporting vivax cases (<5 years)`, multiple = TRUE),
+        filter_select("endemicity", "Vivax endemicity", shared, ~`Vivax endemicity`, multiple = TRUE),
+        filter_select("recent_reporting", "Reporting vivax cases (last 5 years)", shared, ~`Reporting vivax cases (<5 years)`, multiple = TRUE),
         filter_select("program_phase", "Programme phase", shared, ~`Program Phase`, multiple = TRUE),
         filter_select("first_line", "First-line schizontocidal treatment", shared, ~`Pv 1st line treatment`, multiple = TRUE),
         filter_select("second_line", "Second-line schizontocidal treatment", shared, ~`Pv 2nd line treatment`, multiple = TRUE),
@@ -104,7 +105,7 @@ tagList(
         filter_select("community_follow_up", "Community follow-up of radical cure", shared, ~`Community follow-up of radical cure`, multiple = TRUE),
         filter_select("cross_border", "Cross-border transmission", shared, ~`Cross-border transmission`, multiple = TRUE),
         filter_select("mobile_migrant", "Mobile / migrant populations", shared, ~`Mobile Migrant Populations`, multiple = TRUE),
-        filter_slider("vivax_share", "P. vivax share of malaria cases (%)", shared, ~vivax_share),
+        filter_slider("vivax_share", "Vivax share of malaria cases (%)", shared, ~vivax_share),
         widths = rep(4, 16),
         device = "sm"
       )

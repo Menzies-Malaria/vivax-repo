@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="Bhutan" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Bhutan"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Bhutan"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | South-East Asia |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Elimination |
-| **Economic status** | Lower-middle income |
 | **Cross-border transmission** | Yes |
+| **Cross-border transmission — details** | Mostly from India |
 | **Mobile / migrant populations** | Yes |
+| **Mobile / migrant populations — details** | Construction workers |
 | **High-risk populations** | Construction workers (mobile migrant population) |
+| **Economic status** | Lower-middle income |
 :::
+
+<div class="country-profile-locator" data-country="Bhutan" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Bhutan"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Bhutan"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -34,18 +35,19 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | ACT/AL |
-| **Radical-cure regimen** | 7-day primaquine; 14-day primaquine; weekly primaquine for 8 weeks |
+| **Radical-cure regimen** | Low-dose 7-day primaquine; Weekly primaquine for 8 weeks |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Yes |
 | **Type of G6PD testing** | Quantitative |
 | **Community malaria care** | Partial |
+| **Community malaria care — details** | Refer febrile patients for testing and treatment |
 | **Community vivax care** | No |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | Yes (after DOT at hospital) |
 :::
 
-:::
 
 ## Reported case numbers
 
@@ -72,28 +74,38 @@ toc: true
 | **Last policy update** | 2024 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Recommended |
+| **G6PD testing policy — details** | Recommended but test type not specified |
 | **G6PD implementation** | Implemented |
+| **G6PD implementation — details** | Implemented in 13 high risk areas (STANDARD G6PD Test) |
 | **Year of G6PD implementation** | 2023 |
 | **Health system level (G6PD)** | Up to health centre level |
+| **Health system level (G6PD) — details** | Up to health centre level |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 
-### Primaquine regimens by G6PD status
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
 
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |
-|---|---|---|---|---|
-| **G6PD normal: no definition** | PQ 0.5 mg/kg/day over 7 days | Implemented | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented |
-| **G6PD intermediate: no definition** | PQ 0.5 mg/kg/day over 7 days | Implemented | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented |
-| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented |
-| **If no testing available** | Based on risk-benefit assessment | Implemented | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented |
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.5 mg/kg/day over 7 days | Implemented | Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan | Up to the health centre level | Up to the health centre level | 2023 | Close medical supervision and patient counselling |
+| **G6PD intermediate: no definition** | PQ 0.5 mg/kg/day over 7 days | Implemented | Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan | Up to the health centre level | Up to the health centre level | 2023 | Close medical supervision and patient counselling |
+| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan | Up to the health centre level | Up to the health centre level | 2023 | Close medical supervision and patient counselling |
+| **If no testing available** | Based on risk-benefit assessment | Implemented | Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan | Up to the health centre level | Up to the health centre level | 2023 | Close medical supervision and patient counselling |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **G6PD normal: no definition** | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented | 2013 |
+| **G6PD intermediate: no definition** | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented | 2013 |
+| **G6PD deficient: no definition** | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented | 2013 |
+| **If no testing available** | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented | 2013 |
+:::
 
 | | |
 |---|---|
-| **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | Maybe |
 | **Treatments under consideration** | Prophylaxis treatment |
 | **Treatment guidelines (URL)** | <a href="https://moh.gov.bt/wp-content/uploads/2025/01/MALARIA-TREATMENT-PROTOCOL_FINAL-PRINT-VERSION.pdf" target="_blank" rel="noopener noreferrer">https://moh.gov.bt/wp-content/uploads/2025/01/MALARIA-TREATMENT-PROTOCOL_FINAL-PRINT-VERSION.pdf</a><br><a href="https://moh.gov.bt/wp-content/uploads/2025/01/Revised-National-Guideline-on-Diagnosis-and-Treatment-on-Malaria-.pdf" target="_blank" rel="noopener noreferrer">https://moh.gov.bt/wp-content/uploads/2025/01/Revised-National-Guideline-on-Diagnosis-and-Treatment-on-Malaria-.pdf</a> |

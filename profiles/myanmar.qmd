@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="Myanmar" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Myanmar"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Myanmar"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | South-East Asia |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction/pre-elimination |
-| **Economic status** | Lower-middle income |
 | **Cross-border transmission** | Yes |
+| **Cross-border transmission — details** | With Thailand |
 | **Mobile / migrant populations** | Yes |
+| **Mobile / migrant populations — details** | _Not reported_ |
 | **High-risk populations** | Traditional farming communities, forest goers and seasonal workers, defense services, IDPs, migrants |
+| **Economic status** | Lower-middle income |
 :::
+
+<div class="country-profile-locator" data-country="Myanmar" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Myanmar"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Myanmar"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -34,18 +35,19 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | ACT |
-| **Radical-cure regimen** | tafenoquine; 7-day primaquine; 14-day primaquine; weekly primaquine for 8 weeks |
+| **Radical-cure regimen** | Tafenoquine; High-dose 7-day primaquine; Low-dose 7-day primaquine; Weekly primaquine for 8 weeks; Low-dose 14-day primaquine |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Pilot |
 | **Type of G6PD testing** | Qualitative or semi-quantitative |
 | **Community malaria care** | Yes |
+| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | Yes |
 :::
 
-:::
 
 ::: {.country-contact-card data-profile-contact=true}
 ### Programme contact
@@ -81,28 +83,38 @@ toc: true
 | **Last policy update** | 2025 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Recommended and required |
+| **G6PD testing policy — details** | Recommended, qualitative or semi-quantitative, required for 7-day PQ and TQ |
 | **G6PD implementation** | Partially implemented |
+| **G6PD implementation — details** | _Not reported_ |
 | **Year of G6PD implementation** | 2026 |
 | **Health system level (G6PD)** | Up to health centre level |
+| **Health system level (G6PD) — details** | Up to health centre level |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 
-### Primaquine regimens by G6PD status
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
 
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |
-|---|---|---|---|---|
-| **G6PD normal: > 70% enzyme activity** | PQ 1 mg/kg/day over 7 days or TQ | Partially implemented | Monitor side effects by basic health staff in coverage area of health facility recheck Day1,3,5, & 7 |  |
-| **G6PD normal: > 30% enzyme activity** | PQ 0.5 mg/kg/day over 7 days | Partially implemented | Monitor side effects by basic health staff in coverage area of health facility recheck Day1,3,5, & 7 | Implemented |
-| **G6PD deficient: < 30% enzyme activity** | PQ 0.75 mg/kg/week weekly for 8 weeks | Partially implemented |  |  |
-| **If no testing available** | PQ 0.25 mg/kg/day over 14 days | Partially implemented | Monitor side effects by basic health staff in coverage area of health facility recheck Day1,3,5,7 & 10 |  |
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: > 70% enzyme activity** | PQ 1 mg/kg/day over 7 days or TQ | Partially implemented | Low-dose 14 day primaquine still being implemented in some areas where G6PD testing is not rolled out | Up to the health centre level | Up to the health centre level | Pending | _Not reported_ |
+| **G6PD normal: > 30% enzyme activity** | PQ 0.5 mg/kg/day over 7 days | Partially implemented | Low-dose 14 day primaquine still being implemented in some areas where G6PD testing is not rolled out | Up to the health centre level | Up to the health centre level | 2026 | Not specified |
+| **G6PD deficient: < 30% enzyme activity** | PQ 0.75 mg/kg/week weekly for 8 weeks | Partially implemented | Low-dose 14 day primaquine still being implemented in some areas where G6PD testing is not rolled out | Up to the health centre level | Up to the health centre level | 2011 | Close medical supervision |
+| **If no testing available** | PQ 0.25 mg/kg/day over 14 days | Partially implemented | Low-dose 14 day primaquine still being implemented in some areas where G6PD testing is not rolled out | Up to community level | Village Malaria Worker | 2026 | Not specified |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **G6PD normal: > 70% enzyme activity** | Monitor side effects by basic health staff in coverage area of health facility recheck Day1,3,5, & 7 | _Not reported_ | _Not reported_ |
+| **G6PD normal: > 30% enzyme activity** | Monitor side effects by basic health staff in coverage area of health facility recheck Day1,3,5, & 7 | Implemented | 2026 |
+| **G6PD deficient: < 30% enzyme activity** | _Not reported_ | _Not reported_ | 2011 |
+| **If no testing available** | Monitor side effects by basic health staff in coverage area of health facility recheck Day1,3,5,7 & 10 | _Not reported_ | _Not reported_ |
+:::
 
 | | |
 |---|---|
-| **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | No |
 | **Treatments under consideration** | Tafenoquine and high-dose 7-day PQ |
 | **Treatment guidelines (URL)** | <a href="https://moh.nugmyanmar.org/wp-content/uploads/2022/07/Malaria_Clinical_Management_Guidelines__June_2022___Ver_1__MOH_NUG_of_Myanmar.pdf" target="_blank" rel="noopener noreferrer">https://moh.nugmyanmar.org/wp-content/uploads/2022/07/Malaria_Clinical_Management_Guidelines__June_2022___Ver_1__MOH_NUG_of_Myanmar.pdf</a> |

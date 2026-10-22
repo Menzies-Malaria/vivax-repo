@@ -355,6 +355,24 @@
   display: none;
 }
 
+.country-policy-matrix {
+  max-width: 100%;
+  margin: 0.75rem 0 1.5rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.country-policy-matrix table {
+  min-width: 58rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.82rem;
+}
+
+.country-policy-matrix th,
+.country-policy-matrix td {
+  vertical-align: top;
+}
+
 .country-policy-context {
   margin: 0.75rem 0 1.5rem;
   padding: 1rem 1.15rem;

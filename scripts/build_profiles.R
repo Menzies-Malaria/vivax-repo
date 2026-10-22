@@ -153,28 +153,9 @@ contact_name_only <- function(value) {
 
 radical_cure_summary <- function(rows) {
   if (is.null(rows) || !nrow(rows)) return("")
-  yes_or_pilot <- function(column) {
-    if (!column %in% names(rows)) return(rep(FALSE, nrow(rows)))
-    str_to_lower(str_squish(rows[[column]])) %in% c("yes", "pilot")
-  }
-  policies <- str_to_lower(str_squish(rows$`Policy on PQ`))
-  labels <- character()
-  if (any(yes_or_pilot("Tafenoquine") | str_detect(policies, "tafenoquine|\\btq\\b"))) {
-    labels <- c(labels, "tafenoquine")
-  }
-  if (any(
-    yes_or_pilot("Low-dose PQ7 (0.5mg/kg)") |
-      yes_or_pilot("High-dose PQ7 (1mg/kg)") |
-      str_detect(policies, "7 days?")
-  )) labels <- c(labels, "7-day primaquine")
-  if (any(
-    yes_or_pilot("Low-dose PQ14 (0.25mg/kg)") |
-      yes_or_pilot("High-dose PQ14 (0.5mg/kg)") |
-      str_detect(policies, "14 days?")
-  )) labels <- c(labels, "14-day primaquine")
-  if (any(str_detect(policies, "weekly|8 weeks?"))) {
-    labels <- c(labels, "weekly primaquine for 8 weeks")
-  }
+  labels <- unique(unlist(lapply(seq_len(nrow(rows)), function(i) {
+    radical_cure_regimen_tags(rows[i, , drop = FALSE])
+  })))
   if (!length(labels)) {
     reported <- unique(rows$`Policy on PQ`[
       nzchar(str_squish(rows$`Policy on PQ`)) &
@@ -197,30 +178,67 @@ profile_table <- function(title, rows) {
   )
 }
 
-primaquine_regimen_table <- function(rows) {
+g6pd_category_label <- function(row) {
+  label <- row_val(row, "Categorization of G6PD Status Used")
+  if (!nzchar(label)) {
+    pieces <- str_split(row_val(row, "Country"), " - ", n = 2)[[1]]
+    if (length(pieces) > 1) label <- pieces[[2]]
+  }
+  if (nzchar(label)) label else "Overall policy"
+}
+
+primaquine_treatment_table <- function(rows) {
   if (nrow(rows) == 0) return(character())
 
   body <- vapply(seq_len(nrow(rows)), function(i) {
     row <- rows[i, , drop = FALSE]
-    label <- row_val(row, "Categorization of G6PD Status Used")
-    if (!nzchar(label)) label <- str_split(row$Country, " - ", n = 2)[[1]][2]
-
     sprintf(
-      "| **%s** | %s | %s | %s | %s |",
-      md_escape(label),
+      "| **%s** | %s | %s | %s | %s | %s | %s | %s |",
+      md_escape(g6pd_category_label(row)),
       md_escape(row_val(row, "Policy on PQ", "_Not specified_")),
-      md_escape(row_val(row, "Implementation of Treatment")),
-      md_escape(row_val(row, "Type of treatment follow-up (by whom, how often, where)")),
-      md_escape(row_val(row, "Implementatin of follow-up"))
+      md_escape(row_val(row, "Implementation of Treatment", "_Not reported_")),
+      md_escape(row_val(row, "Implementation of Treatment - details", "_Not reported_")),
+      md_escape(row_val(row, "Health System Level of Treatment Implementation", "_Not reported_")),
+      md_escape(row_val(row, "Health System Level of Treatment Implementation - details", "_Not reported_")),
+      md_escape(row_val(row, "Year of Treatment Policy Implementation", "_Not reported_")),
+      md_escape(row_val(row, "Additional Safey Recommendations", "_Not reported_"))
     )
   }, character(1))
 
   c(
-    "### Primaquine regimens by G6PD status",
+    "::: {.country-policy-matrix}",
+    "### Radical-cure treatment by G6PD status",
     "",
-    "| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |",
-    "|---|---|---|---|---|",
+    "| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |",
+    "|---|---|---|---|---|---|---|---|",
     body,
+    ":::",
+    ""
+  )
+}
+
+primaquine_followup_table <- function(rows) {
+  if (nrow(rows) == 0) return(character())
+
+  body <- vapply(seq_len(nrow(rows)), function(i) {
+    row <- rows[i, , drop = FALSE]
+    sprintf(
+      "| **%s** | %s | %s | %s |",
+      md_escape(g6pd_category_label(row)),
+      md_escape(row_val(row, "Type of treatment follow-up (by whom, how often, where)", "_Not reported_")),
+      md_escape(row_val(row, "Implementatin of follow-up", "_Not reported_")),
+      md_escape(row_val(row, "Year of Follow-Up Implementation", "_Not reported_"))
+    )
+  }, character(1))
+
+  c(
+    "::: {.country-policy-matrix}",
+    "### Radical-cure follow-up by G6PD status",
+    "",
+    "| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |",
+    "|---|---|---|---|",
+    body,
+    ":::",
     ""
   )
 }
@@ -363,7 +381,13 @@ for (i in seq_len(nrow(char))) {
   cm_row <- if (nrow(cm) > 0) cm[1, , drop = FALSE] else NULL
   subs <- sub_rows_for(country)
   radical_summary <- radical_cure_summary(bind_rows(cm_row, subs))
-  g6pd_regimen_table <- primaquine_regimen_table(subs)
+  regimen_rows <- if (nrow(subs)) subs else cm_row
+  g6pd_treatment_table <- if (!is.null(regimen_rows)) {
+    primaquine_treatment_table(regimen_rows)
+  } else character()
+  g6pd_followup_table <- if (!is.null(regimen_rows)) {
+    primaquine_followup_table(regimen_rows)
+  } else character()
   profile_region <- row_val(row, "Region")
   region_countries <- char$Country[
     str_trim(as.character(char$Region)) == profile_region
@@ -378,6 +402,25 @@ for (i in seq_len(nrow(char))) {
     str_trim(str_remove(yr_cols, " Case Numbers"))
   )
 
+  locator_block <- sprintf(
+    paste0(
+      '<div class="country-profile-locator" data-country="%s" data-region="%s" data-region-countries="%s">',
+      '<div class="country-profile-locator__heading">Location</div>',
+      '<div class="country-profile-locator__maps">',
+      '<div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing %s"></svg></div>',
+      '<div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="%s regional map showing %s"></svg></div>',
+      '</div>',
+      '<p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p>',
+      '</div>'
+    ),
+    html_escape(country),
+    html_escape(profile_region),
+    html_escape(paste(region_countries, collapse = "|")),
+    html_escape(country),
+    html_escape(profile_region),
+    html_escape(country)
+  )
+
   parts <- c(
     "---",
     sprintf('title: "%s"', country),
@@ -390,53 +433,41 @@ for (i in seq_len(nrow(char))) {
     "toc: true",
     "---",
     "",
-    "[← Back to all countries](../countries.qmd)",
-    "",
-    sprintf(
-      paste0(
-        '<div class="country-profile-locator" data-country="%s" data-region="%s" data-region-countries="%s">',
-        '<div class="country-profile-locator__heading">Location</div>',
-        '<div class="country-profile-locator__maps">',
-        '<div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing %s"></svg></div>',
-        '<div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="%s regional map showing %s"></svg></div>',
-        '</div>',
-        '<p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p>',
-        '</div>'
-      ),
-      html_escape(country),
-      html_escape(profile_region),
-      html_escape(paste(region_countries, collapse = "|")),
-      html_escape(country),
-      html_escape(profile_region),
-      html_escape(country)
-    ),
+    "[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}",
     "",
     "## Snapshot",
     "",
-    "::: {.country-profile-spread}",
     profile_table("Country context", tibble::tibble(
       label = c(
         "Region", "WHO Region", "*P. vivax* endemicity",
-        "Programme phase", "Economic status", "Cross-border transmission",
-        "Mobile / migrant populations", "High-risk populations"
+        "Programme phase", "Cross-border transmission",
+        "Cross-border transmission — details", "Mobile / migrant populations",
+        "Mobile / migrant populations — details", "High-risk populations",
+        "Economic status"
       ),
       value = c(
         row_val(row, "Region"),
         row_val(row, "WHO Region"),
         row_val(row, "Vivax endemicity"),
         row_val(row, "Program Phase"),
-        row_val(row, "Economic status"),
         row_val(row, "Cross-border transmission"),
+        row_val(row, "Cross-border transmission - details"),
         row_val(row, "Mobile Migrant Populations"),
-        row_val(row, "Type of high risk populations")
+        row_val(row, "Mobile Migrant Populations - details"),
+        row_val(row, "Type of high risk populations"),
+        row_val(row, "Economic status")
       )
     )),
+    locator_block,
+    "",
     profile_table("Treatment and care", tibble::tibble(
       label = c(
         "First-line schizontocidal treatment", "Second-line schizontocidal treatment",
         "Radical-cure regimen", "Rationale for ACT use",
         "G6PD testing in guidelines", "G6PD testing implemented",
-        "Type of G6PD testing", "Community malaria care", "Community vivax care",
+        "Type of G6PD testing", "Community malaria care",
+        "Community malaria care — details", "Community vivax care",
+        "Community vivax care — details",
         "Follow-up of radical cure", "Community follow-up of radical cure"
       ),
       value = c(
@@ -448,12 +479,13 @@ for (i in seq_len(nrow(char))) {
         row_val(row, "Implementation: G6PD testing  (Y/N)"),
         row_val(row, "Type of G6PD testing"),
         row_val(row, "Community malaria care"),
+        row_val(row, "Community malaria care - details"),
         row_val(row, "Community vivax care"),
+        row_val(row, "Community vivax care - details"),
         row_val(row, "Follow-up of radical cure"),
         row_val(row, "Community follow-up of radical cure")
       )
     )),
-    ":::",
     ""
   )
 
@@ -467,24 +499,24 @@ for (i in seq_len(nrow(char))) {
     paste(contact_candidates[nzchar(contact_candidates)], collapse = "; ")
   } else ""
   if (nzchar(contact_name) || nzchar(contact_email)) {
+    contact_display <- contact_name
+    if (nzchar(contact_email)) {
+      primary_email <- str_split(contact_email, "\\s*;\\s*")[[1]][[1]]
+      if (nzchar(contact_name)) {
+        contact_display <- sprintf(
+          '<a href="mailto:%s">%s</a>',
+          html_escape(primary_email),
+          html_escape(contact_name)
+        )
+      } else {
+        contact_display <- email_links(contact_email)
+      }
+    }
     contact_rows <- tibble::tibble(
       label = "Programme contact",
-      value = contact_name
+      value = contact_display
     )
-    if (nzchar(contact_email)) {
-      contact_rows <- bind_rows(
-        contact_rows,
-        tibble::tibble(label = "Approved contact email", value = contact_email)
-      )
-    }
     contact_table <- kv_table(contact_rows)
-    if (nzchar(contact_email)) {
-      contact_table <- str_replace(
-        contact_table,
-        fixed(md_escape(contact_email)),
-        email_links(contact_email)
-      )
-    }
     parts <- c(
       parts,
       "::: {.country-contact-card data-profile-contact=true}",
@@ -574,12 +606,11 @@ for (i in seq_len(nrow(char))) {
   if (!is.null(cm_row)) {
     policy_rows <- tibble::tibble(
       label = c(
-        "Last policy update", "Schizontocidal drug", "G6PD testing policy",
-        "G6PD implementation", "Year of G6PD implementation",
-        "Health system level (G6PD)", "Policy on PQ (overall)",
-        "Additional safety recommendations", "Treatment implementation",
-        "Year of treatment implementation", "Type of treatment follow-up",
-        "Implementation of follow-up", "Anti-malarials approved by NRA",
+        "Last policy update", "Schizontocidal drug",
+        "G6PD testing policy", "G6PD testing policy — details",
+        "G6PD implementation", "G6PD implementation — details",
+        "Year of G6PD implementation", "Health system level (G6PD)",
+        "Health system level (G6PD) — details", "Policy on PQ (overall)",
         "Next policy update", "Treatments under consideration",
         "Treatment guidelines (URL)", "National Strategic Plan (URL)"
       ),
@@ -587,16 +618,13 @@ for (i in seq_len(nrow(char))) {
         row_val(cm_row, "Last Policy Update"),
         row_val(cm_row, "Schizontocidal Drug"),
         row_val(cm_row, "Policy on G6PD Testing"),
+        row_val(cm_row, "Policy on G6PD Testing - details"),
         row_val(cm_row, "Implementation of G6PD Testing"),
+        row_val(cm_row, "Implementation of G6PD Testing - details"),
         row_val(cm_row, "Year of G6PD Implementation"),
         row_val(cm_row, "Health System Level of G6PD Implementation"),
+        row_val(cm_row, "Health System Level of G6PD Implementation - details"),
         row_val(cm_row, "Policy on PQ"),
-        row_val(cm_row, "Additional Safey Recommendations"),
-        row_val(cm_row, "Implementation of Treatment"),
-        row_val(cm_row, "Year of Treatment Implementation"),
-        row_val(cm_row, "Type of treatment follow-up (by whom, how often, where)"),
-        row_val(cm_row, "Implementatin of follow-up"),
-        row_val(cm_row, "Anti-malarials approved by NRAs"),
         row_val(cm_row, "Next policy update (Y/N, Year)"),
         row_val(cm_row, "Treatments Under Consideration"),
         row_val(cm_row, "Treatment Guidelines"),
@@ -605,12 +633,13 @@ for (i in seq_len(nrow(char))) {
     )
     comments <- row_val(cm_row, "Comments")
 
-    policy_blocks <- if (length(g6pd_regimen_table)) {
+    policy_blocks <- if (length(g6pd_treatment_table)) {
       pq_index <- match("Policy on PQ (overall)", policy_rows$label)
       c(
         kv_table(policy_rows[seq_len(pq_index), , drop = FALSE]),
         "",
-        g6pd_regimen_table,
+        g6pd_treatment_table,
+        g6pd_followup_table,
         kv_table(policy_rows[seq.int(pq_index + 1L, nrow(policy_rows)), , drop = FALSE]),
         ""
       )
@@ -630,12 +659,13 @@ for (i in seq_len(nrow(char))) {
         ""
       )
     }
-  } else if (length(g6pd_regimen_table)) {
+  } else if (length(g6pd_treatment_table)) {
     parts <- c(
       parts,
       "## Case-management policy detail",
       "",
-      g6pd_regimen_table
+      g6pd_treatment_table,
+      g6pd_followup_table
     )
   }
 

@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="Republic of Korea (ROK)" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Republic of Korea (ROK)"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Republic of Korea (ROK)"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | Western Pacific |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
-| **Economic status** | High income |
 | **Cross-border transmission** | No |
+| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | No |
+| **Mobile / migrant populations — details** | _Not reported_ |
 | **High-risk populations** | Active-duty soldiers, discharged veterans, and residents of Northern Gyeonggi-do, Incheon, and Gangwon-do, especially farmers and forest-goers. |
+| **Economic status** | High income |
 :::
+
+<div class="country-profile-locator" data-country="Republic of Korea (ROK)" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Republic of Korea (ROK)"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Republic of Korea (ROK)"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -34,18 +35,19 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | _Not reported_ |
-| **Radical-cure regimen** | 7-day primaquine; 14-day primaquine; weekly primaquine for 8 weeks |
+| **Radical-cure regimen** | 7- or 14-day primaquine (dose not specified); Weekly primaquine for 8 weeks |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Partial |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | No |
+| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | No |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | No |
 :::
 
-:::
 
 ## Reported case numbers
 
@@ -73,27 +75,36 @@ toc: true
 | **Last policy update** | 2026 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Recommended |
+| **G6PD testing policy — details** | Recommended but test type not specified |
 | **G6PD implementation** | Partially implemented |
+| **G6PD implementation — details** | Testing not implemented in public facilities except for very few vivax cases in referral hospitals |
 | **Year of G6PD implementation** | 2020 |
 | **Health system level (G6PD)** | Hospitals |
+| **Health system level (G6PD) — details** | Referral hospitals, primary care hospitals |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
 
-### Primaquine regimens by G6PD status
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
 
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |
-|---|---|---|---|---|
-| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days | Partially implemented | Health workers monitor patients for hemolytic anemia and other adverse events for a period of 42 days. | Implemented |
-| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks |  |  |  |
-| **If no testing available** | PQ | Implemented |  |  |
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days | Partially implemented | Implemented where health facilities have G6PD testing | Up to the health centre level | Up to the health centre level | _Not reported_ | Monitoring for adverse events, counselling for relapse if irregular administration or discontinued |
+| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Counselling for relapse if irregular administration or discontinued |
+| **If no testing available** | PQ | Implemented | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Closely monitor for haemolysis�particularly falling haemoglobin, dark/pigmented urine (???), and jaundice |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **G6PD normal: no definition** | Health workers monitor patients for hemolytic anemia and other adverse events for a period of 42 days. | Implemented | 2023 |
+| **G6PD deficient: no definition** | _Not reported_ | _Not reported_ | _Not reported_ |
+| **If no testing available** | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
 
 | | |
 |---|---|
-| **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | Yes, 2027 |
 | **Treatments under consideration** | Tafenoquine |
 | **Treatment guidelines (URL)** | _Not reported_ |

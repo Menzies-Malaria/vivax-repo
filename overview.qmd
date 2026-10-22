@@ -23,7 +23,7 @@ stats <- headline_stats(char, case)
 # Malaria Policy Repository
 
 ::: {.lede}
-A continuously updated, country-level reference for malaria case-management policies and their implementation, currently focused on *P. vivax*. Explore treatment regimens, G6PD testing recommendations, implementation status, and programme contacts across countries. Built for national malaria control programmes, researchers, and partners working toward elimination.
+A continuously updated, country-level reference for malaria case management policies — starting with *Plasmodium vivax* malaria with the potential for expansion going forward. Find information on *P. vivax* treatment regimens, G6PD testing recommendations, implementation status, and connect with malaria programmes. Built for national malaria control programmes (NMCPs), researchers, and partners working toward elimination.
 :::
 
 ::: {.section-rule}
@@ -63,16 +63,18 @@ cat(sprintf(
 
 ## Why this exists
 
-National malaria treatment guidelines are often published — but they are scattered, inconsistently versioned, and rarely available in a comparable form. The Malaria Policy Repository brings policy and implementation information together in a living resource designed to stay current and make data comparable across countries.
+National treatment guidelines are often published — but they are scattered, inconsistently versioned, and rarely available in a comparable form. A previous review was published in *Pathogens* in 2023. This repository is a living continuation of that effort, designed to stay current and to make every data point comparable across countries.
 
-The repository currently begins with *P. vivax*, for which testing and treatment options have changed rapidly in recent years. Point-of-care G6PD tests, shorter radical-cure regimens (single-dose tafenoquine and high-dose 7-day primaquine), and updated WHO global recommendations in 2023 and 2024 have triggered policy revisions across endemic countries. A review published in *Pathogens* in 2023 provides the foundation for this current module, while the repository's broader structure leaves room to incorporate additional malaria policy areas in the future.
+The tools available to test for and treat *P. vivax* malaria have changed rapidly in the last few years. Point-of-care G6PD tests, shorter and more effective radical cure regimens (single-dose tafenoquine, high-dose 7-day primaquine), and updated WHO global recommendations in 2022, 2023, and 2024 have triggered policy revisions across endemic countries.
+
+The repository offers access to key *P. vivax* case management policy and implementation information for national policymakers, researchers, and other partners to help inform decision-making, foster collaboration and networking, and guide research planning and design.
 
 ## What you can do here
 
 ```{=html}
 <div class="country-grid">
   <a class="country-card" href="index.html">
-    <span class="name">Open the interactive map</span>
+    <span class="name">Traverse the interactive map</span>
     <span class="meta">Compare treatment, G6PD policy, and implementation across countries.</span>
   </a>
   <a class="country-card" href="countries.html">
@@ -84,8 +86,8 @@ The repository currently begins with *P. vivax*, for which testing and treatment
     <span class="meta">Filter country characteristics and examine policy and implementation patterns.</span>
   </a>
   <a class="country-card" href="timeline.html">
-    <span class="name">Policy timeline</span>
-    <span class="meta">When countries last updated their guidelines and what they're considering next.</span>
+    <span class="name">Discover policy changes</span>
+    <span class="meta">A policy timeline of when countries last updated their guidelines and what they're considering next.</span>
   </a>
   <a class="country-card" href="contribute.html">
     <span class="name">Contribute an update</span>
@@ -95,12 +97,12 @@ The repository currently begins with *P. vivax*, for which testing and treatment
 ```
 
 ::: {.callout-edit}
-This repository is developed in consultation with National Malaria Control Programmes (NMCPs) and partners. NMCPs may flag specific data points as visible only to other programmes; the public site shows what countries have agreed to share publicly.
+This repository is developed in consultation with NMCPs and partners. In its initial phase the repository is only accessible to NMCPs. In its next phase, NMCPs will be able to flag specific data points as visible only to other programmes and partners; the public site will show what countries have agreed to share publicly or what is already publicly available.
 :::
 
 ## How it works
 
-The data on this site is read at build time from approved production tabs in a shared Google Sheet maintained by the repository team. Partners submit proposed changes through the [contribute form](contribute.qmd); the repository team reviews them before approved information is transferred into the production data. When the site rebuilds (manually or on a schedule), the latest approved data is pulled and rendered. See [Methods](methods.qmd) for details.
+The information displayed on this website is sourced from approved data in a Google Sheet maintained by the repository team. Partners can submit proposed changes through the [contribute form](contribute.qmd); the repository team reviews them before approved information is transferred into the production data. When the site rebuilds (manually or on a schedule), the latest approved data is pulled and rendered. See [Methods](methods.qmd) for details.
 
 ## Cite this repository
 

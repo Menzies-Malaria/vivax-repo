@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="China" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing China"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing China"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | Western Pacific |
 | ***P. vivax* endemicity** | Previously |
 | **Programme phase** | Eliminated/certified malaria-free |
-| **Economic status** | Upper-middle income |
 | **Cross-border transmission** | Yes |
+| **Cross-border transmission — details** | Mostly from Myanmar |
 | **Mobile / migrant populations** | Yes |
+| **Mobile / migrant populations — details** | Yes, many African working migrants |
 | **High-risk populations** | Mobile migrant populations, many from the African continent |
+| **Economic status** | Upper-middle income |
 :::
+
+<div class="country-profile-locator" data-country="China" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing China"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing China"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -40,12 +41,13 @@ toc: true
 | **G6PD testing implemented** | Partial |
 | **Type of G6PD testing** | SNP or ELISA |
 | **Community malaria care** | Yes |
+| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | No |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | Yes (after DOT at hospital) |
 :::
 
-:::
 
 ::: {.country-contact-card data-profile-contact=true}
 ### Programme contact
@@ -73,27 +75,36 @@ toc: true
 | **Last policy update** | _Not reported_ |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Not required |
+| **G6PD testing policy — details** | _Not reported_ |
 | **G6PD implementation** | Partially implemented |
+| **G6PD implementation — details** | SNP or ELISA implemented in hospitals |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | Hospitals |
+| **Health system level (G6PD) — details** | Hospitals |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 
-### Primaquine regimens by G6PD status
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
 
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |
-|---|---|---|---|---|
-| **G6PD normal: no definition** | PQ 22.5mg/day over 8 days (180mg total dose) | Implemented | DOT in hospital, then after discharge follow up by community or village doctors organized by public health unit staff | Implemented |
-| **G6PD deficient: no definition** | PQ 22.5mg/day over 8 days (180mg total dose) | Implemented | DOT in hospital, then after discharge follow up by community or village doctors organized by public health unit staff | Implemented |
-| **If no testing available** | PQ 22.5mg/day over 8 days (180mg total dose) | Implemented | DOT in hospital, then after discharge follow up by community or village doctors organized by public health unit staff | Implemented |
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 22.5mg/day over 8 days (180mg total dose) | Implemented | _Not reported_ | Hospitals | Hospitals | 2004 | Not specified |
+| **G6PD deficient: no definition** | PQ 22.5mg/day over 8 days (180mg total dose) | Implemented | _Not reported_ | Hospitals | Hospitals | 2004 | Take under the close supervision of medical personnel |
+| **If no testing available** | PQ 22.5mg/day over 8 days (180mg total dose) | Implemented | _Not reported_ | Hospitals | Hospitals | 2004 | Take under the close supervision of medical personnel |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **G6PD normal: no definition** | DOT in hospital, then after discharge follow up by community or village doctors organized by public health unit staff | Implemented | 2004 |
+| **G6PD deficient: no definition** | DOT in hospital, then after discharge follow up by community or village doctors organized by public health unit staff | Implemented | 2004 |
+| **If no testing available** | DOT in hospital, then after discharge follow up by community or village doctors organized by public health unit staff | Implemented | 2004 |
+:::
 
 | | |
 |---|---|
-| **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | No |
 | **Treatments under consideration** | None |
 | **Treatment guidelines (URL)** | _Not reported_ |

@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="Yemen" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Yemen"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Yemen"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | Eastern Mediterranean |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
-| **Economic status** | Low income |
 | **Cross-border transmission** | Yes |
+| **Cross-border transmission — details** | Especially along the border with Saudi. Imported cases from Yemen found in Saudi. |
 | **Mobile / migrant populations** | No |
+| **Mobile / migrant populations — details** | _Not reported_ |
 | **High-risk populations** | Refugees, IDPs, fisherman, rural communities, pregnant women, and children under five |
+| **Economic status** | Low income |
 :::
+
+<div class="country-profile-locator" data-country="Yemen" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Yemen"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Yemen"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -34,18 +35,19 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | AL |
 | **Second-line schizontocidal treatment** | Not specified |
-| **Radical-cure regimen** | 14-day primaquine; weekly primaquine for 8 weeks |
+| **Radical-cure regimen** | High-dose 14-day primaquine; Weekly primaquine for 8 weeks |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | _Not reported_ |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
+| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | _Not reported_ |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
 
-:::
 
 ## Reported case numbers
 
@@ -73,27 +75,36 @@ toc: true
 | **Last policy update** | 2024 |
 | **Schizontocidal drug** | AL |
 | **G6PD testing policy** | Recommended |
+| **G6PD testing policy — details** | Recommended but test type not specified |
 | **G6PD implementation** | _Not reported_ |
+| **G6PD implementation — details** | _Not reported_ |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
+| **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
 
-### Primaquine regimens by G6PD status
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
 
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |
-|---|---|---|---|---|
-| **G6PD normal: no definition** | PQ 0.25-0.5 mg/kg/day over 14 days |  |  |  |
-| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks |  |  |  |
-| **If no testing available** | Based on risk-benefit assessment |  |  |  |
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.25-0.5 mg/kg/day over 14 days | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
+| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Under close medical supervision |
+| **If no testing available** | Based on risk-benefit assessment | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **G6PD normal: no definition** | _Not reported_ | _Not reported_ | _Not reported_ |
+| **G6PD deficient: no definition** | _Not reported_ | _Not reported_ | _Not reported_ |
+| **If no testing available** | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
 
 | | |
 |---|---|
-| **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
 | **Treatment guidelines (URL)** | _Not reported_ |

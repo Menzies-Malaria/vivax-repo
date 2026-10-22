@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="India" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing India"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing India"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | South-East Asia |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction/pre-elimination |
-| **Economic status** | Lower-middle income |
 | **Cross-border transmission** | Yes |
+| **Cross-border transmission — details** | Especially from Pakistan, Nepal, Myanmar and Bangladesh |
 | **Mobile / migrant populations** | Yes |
+| **Mobile / migrant populations — details** | Continuous influx of mobile and migrant populations from high transmission states and bordering countries |
 | **High-risk populations** | Widespread transmission; tribal communities, low-income households, pregnant women and young children |
+| **Economic status** | Lower-middle income |
 :::
+
+<div class="country-profile-locator" data-country="India" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing India"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing India"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -34,18 +35,19 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | Not specified |
-| **Radical-cure regimen** | 14-day primaquine |
+| **Radical-cure regimen** | Low-dose 14-day primaquine |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
+| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | Yes |
 :::
 
-:::
 
 ## Reported case numbers
 
@@ -73,16 +75,32 @@ toc: true
 | **Last policy update** | 2013 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Not explicitly mentioned |
+| **G6PD testing policy — details** | G6PD testing not recommended or required |
 | **G6PD implementation** | Not implemented |
+| **G6PD implementation — details** | Not implemented at public health facilities |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
+| **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days |
-| **Additional safety recommendations** | Under supervsion |
-| **Treatment implementation** | Implemented |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | Community health workers visit patients at home ideally every day for DOT, otherwise on days 1, 2, 3, 7, and 14. |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
+
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **Not specified** | PQ 0.25 mg/kg/day over 14 days | Implemented | Implemented without G6PD testing | Up to community level | Community health workers (ASHAs) | 2008 | Under supervsion |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **Not specified** | Community health workers visit patients at home ideally every day for DOT, otherwise on days 1, 2, 3, 7, and 14. | _Not reported_ | _Not reported_ |
+:::
+
+| | |
+|---|---|
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
 | **Treatment guidelines (URL)** | <a href="https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf" target="_blank" rel="noopener noreferrer">https://ncvbdc.mohfw.gov.in/WriteReadData/l892s/National-Drug-Policy-2013.pdf</a> |

@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="Pakistan" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Pakistan"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Pakistan"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | Eastern Mediterranean |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
-| **Economic status** | Lower-middle income |
 | **Cross-border transmission** | Yes |
+| **Cross-border transmission — details** | Porous borders with Afghanistan and Iran |
 | **Mobile / migrant populations** | Yes |
+| **Mobile / migrant populations — details** | _Not reported_ |
 | **High-risk populations** | Widespread transmission, but MMPs, ethnic minorities,national security forces |
+| **Economic status** | Lower-middle income |
 :::
+
+<div class="country-profile-locator" data-country="Pakistan" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Pakistan"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Pakistan"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -34,18 +35,19 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | DHA-PPQ |
-| **Radical-cure regimen** | 7-day primaquine; 14-day primaquine; weekly primaquine for 8 weeks |
+| **Radical-cure regimen** | Low-dose 7-day primaquine; Weekly primaquine for 8 weeks; Low-dose 14-day primaquine |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Pilot |
 | **Type of G6PD testing** | Quantitative |
 | **Community malaria care** | Partial |
+| **Community malaria care — details** | Piloted |
 | **Community vivax care** | No |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | Piloted |
 :::
 
-:::
 
 ::: {.country-contact-card data-profile-contact=true}
 ### Programme contact
@@ -81,28 +83,38 @@ toc: true
 | **Last policy update** | 2024 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Recommended |
+| **G6PD testing policy — details** | Recommended, quantitative |
 | **G6PD implementation** | Pilot implementation |
+| **G6PD implementation — details** | Not implemented routinely, G6PD testing available at tertiary care hospital and in private labs. STANDARD G6PD test is being piloted. |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
+| **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
 
-### Primaquine regimens by G6PD status
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
 
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Follow-up approach | Follow-up implementation |
-|---|---|---|---|---|
-| **G6PD normal: no definition** | PQ 0.5 mg/kg/day over 7 days | Not implemented | Close medical supervision when testing is not possible | Targeted implementation; G6PD testing not conducted and follow-up not implemented except for highland populations with G6PD defiency is known to be a problem. |
-| **G6PD mild to moderate deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Not implemented | Close medical supervision when testing is not possible | Targeted implementation; G6PD testing not conducted and follow-up not implemented except for highland populations with G6PD defiency is known to be a problem. |
-| **G6PD severely  deficient: no definition** | No PQ |  | Close medical supervision when testing is not possible | Targeted implementation; G6PD testing not conducted and follow-up not implemented except for highland populations with G6PD defiency is known to be a problem. |
-| **If no testing available** | PQ 0.25mg/kg/day over 14 days (maximum 15 mg) | Implemented | Close medical supervision when testing is not possible | Targeted implementation; G6PD testing not conducted and follow-up not implemented except for highland populations with G6PD defiency is known to be a problem. |
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.5 mg/kg/day over 7 days | Not implemented | _Not reported_ | Up to the health centre level | Up to the health centre level | 2024 | Counselling for adverse events |
+| **G6PD mild to moderate deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Not implemented | _Not reported_ | Up to the health centre level | Up to the health centre level | 2024 | Counselling for adverse events |
+| **G6PD severely  deficient: no definition** | No PQ | _Not reported_ | _Not reported_ | Up to the health centre level | Up to the health centre level | _Not reported_ | _Not reported_ |
+| **If no testing available** | PQ 0.25mg/kg/day over 14 days (maximum 15 mg) | Implemented | _Not reported_ | Up to the health centre level | Up to the health centre level | _Not reported_ | Close medical supervision, counselling for adverse events |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **G6PD normal: no definition** | Close medical supervision when testing is not possible | Targeted implementation; G6PD testing not conducted and follow-up not implemented except for highland populations with G6PD defiency is known to be a problem. | _Not reported_ |
+| **G6PD mild to moderate deficient: no definition** | Close medical supervision when testing is not possible | Targeted implementation; G6PD testing not conducted and follow-up not implemented except for highland populations with G6PD defiency is known to be a problem. | _Not reported_ |
+| **G6PD severely  deficient: no definition** | Close medical supervision when testing is not possible | Targeted implementation; G6PD testing not conducted and follow-up not implemented except for highland populations with G6PD defiency is known to be a problem. | _Not reported_ |
+| **If no testing available** | Close medical supervision when testing is not possible | Targeted implementation; G6PD testing not conducted and follow-up not implemented except for highland populations with G6PD defiency is known to be a problem. | _Not reported_ |
+:::
 
 | | |
 |---|---|
-| **Additional safety recommendations** | _Not reported_ |
-| **Treatment implementation** | _Not reported_ |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | _Not reported_ |
-| **Implementation of follow-up** | _Not reported_ |
-| **Anti-malarials approved by NRA** | _Not reported_ |
 | **Next policy update** | Yes, 2026 |
 | **Treatments under consideration** | Tafenoquine |
 | **Treatment guidelines (URL)** | _Not reported_ |

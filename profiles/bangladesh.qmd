@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="Bangladesh" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Bangladesh"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Bangladesh"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | South-East Asia |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
-| **Economic status** | Lower-middle income |
 | **Cross-border transmission** | Yes |
+| **Cross-border transmission — details** | Two border districts - borders with Myanmar and India. Significant challenge |
 | **Mobile / migrant populations** | Yes |
+| **Mobile / migrant populations — details** | Forest product traders in hilly border areas |
 | **High-risk populations** | Mobile migrant populations, farmers, traders (forest product in hilly border areas), miners, fishermen, forest-goers, refugees (almost 1 million for Myanmar) |
+| **Economic status** | Lower-middle income |
 :::
+
+<div class="country-profile-locator" data-country="Bangladesh" data-region="Asia-Pacific" data-region-countries="Afghanistan|Bangladesh|Bhutan|Cambodia|China|India|Indonesia|Iran|Lao PDR|Malaysia|Myanmar|Nepal|North Korea (DPRK)|Pakistan|Papua New Guinea|Philippines|Republic of Korea (ROK)|Saudi Arabia|Solomon Islands|Sri Lanka|Thailand|Timor Leste|Vanuatu|Vietnam|Yemen"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Bangladesh"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Asia-Pacific regional map showing Bangladesh"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -34,18 +35,19 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | AL |
-| **Radical-cure regimen** | 14-day primaquine |
+| **Radical-cure regimen** | Low-dose 14-day primaquine |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | Partial |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
+| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | Yes |
 :::
 
-:::
 
 ::: {.country-contact-card data-profile-contact=true}
 ### Programme contact
@@ -81,16 +83,32 @@ toc: true
 | **Last policy update** | 2017 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Not explicitly mentioned |
+| **G6PD testing policy — details** | G6PD testing not recommended or required |
 | **G6PD implementation** | Partially implemented |
+| **G6PD implementation — details** | Not recommended or required and not implemented routinely. Testing implemented in few high risk areas starting 2022 (STANDARD G6PD Test) |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
+| **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days |
-| **Additional safety recommendations** | Close medical supervision and referral for management of severe conditions, counselling for adverse events |
-| **Treatment implementation** | Implemented |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | Close medical supervision, follow-up by community health workers three times for one vivax episode |
-| **Implementation of follow-up** | Implemented |
-| **Anti-malarials approved by NRA** | _Not reported_ |
+
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **Not specified** | PQ 0.25 mg/kg/day over 14 days | Implemented | G6PD testing used in some at areas to guide treatment | Up to community level | Community health workers | 1994 | Close medical supervision and referral for management of severe conditions, counselling for adverse events |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **Not specified** | Close medical supervision, follow-up by community health workers three times for one vivax episode | Implemented | 2018 |
+:::
+
+| | |
+|---|---|
 | **Next policy update** | 2026 |
 | **Treatments under consideration** | Tafenoquine as an alternative to primaquine |
 | **Treatment guidelines (URL)** | <a href="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2024/12/03a1d62917a148e4a51c9188d79cb5ae.pdf" target="_blank" rel="noopener noreferrer">https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2024/12/03a1d62917a148e4a51c9188d79cb5ae.pdf</a> |

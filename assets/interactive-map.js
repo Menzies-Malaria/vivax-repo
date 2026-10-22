@@ -4,7 +4,7 @@
 
   const WORLD_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
   const NO_DATA = "Not reported";
-  const NON_ENDEMIC = "Not currently or previously P. vivax endemic";
+  const NON_ENDEMIC = "Not currently or previously vivax endemic";
   const OUTSIDE_LABEL = "Outside current repository scope";
   const MUTED = "#d9d5cc";
   const OUTSIDE = "#ebe7df";
@@ -375,7 +375,7 @@
         <p>${escapeHtml(display(row.who_region))}</p>
         <dl class="policy-map-detail-list">
           ${detailItem(selectedLabel, categoryFor(row), true)}
-          ${detailItem("P. vivax endemicity", row.vivax_endemicity)}
+          ${detailItem("Vivax endemicity", row.vivax_endemicity)}
           ${detailItem("2023 case numbers", row.cases_2023)}
           ${detailItem("First-line schizontocidal treatment", row.first_line)}
           ${detailItem("Second-line schizontocidal treatment", row.second_line)}
@@ -386,7 +386,7 @@
           ${detailItem("Programme phase", row.program_phase)}
           ${detailItem("Last policy update", row.last_policy_update)}
         </dl>
-        <a class="policy-map-profile-link" href="profiles/${slugify(row.country)}.html">View country profile</a>`;
+        <a class="policy-map-profile-link" href="profiles/${slugify(row.country)}.html?from=map">View country profile</a>`;
       details.classList.add("is-open");
     }
 

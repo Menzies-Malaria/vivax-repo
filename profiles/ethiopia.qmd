@@ -5,13 +5,10 @@ page-layout: article
 toc: true
 ---
 
-[← Back to all countries](../countries.qmd)
-
-<div class="country-profile-locator" data-country="Ethiopia" data-region="Africa" data-region-countries="Djibouti|Eritrea|Ethiopia|Madagascar|Somalia|South Sudan|Sudan|United Republic of Tanzania (Zamzibar)"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Ethiopia"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Africa regional map showing Ethiopia"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
+[← Back to all countries](../countries.qmd){.profile-back-link data-profile-back=true}
 
 ## Snapshot
 
-::: {.country-profile-spread}
 ::: {.country-profile-card}
 ### Country context
 
@@ -21,11 +18,15 @@ toc: true
 | **WHO Region** | African |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
-| **Economic status** | Low income |
 | **Cross-border transmission** | Yes |
+| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
+| **Mobile / migrant populations — details** | _Not reported_ |
 | **High-risk populations** | Migrant laborer, IDPs, refugees |
+| **Economic status** | Low income |
 :::
+
+<div class="country-profile-locator" data-country="Ethiopia" data-region="Africa" data-region-countries="Djibouti|Eritrea|Ethiopia|Madagascar|Somalia|South Sudan|Sudan|United Republic of Tanzania (Zamzibar)"><div class="country-profile-locator__heading">Location</div><div class="country-profile-locator__maps"><div class="country-profile-locator__map"><span>Global context</span><svg data-locator-view="global" role="img" aria-label="World map showing Ethiopia"></svg></div><div class="country-profile-locator__map"><span>Regional context</span><svg data-locator-view="region" role="img" aria-label="Africa regional map showing Ethiopia"></svg></div></div><p>The selected country is highlighted in orange; other repository countries in the same region are shown in teal.</p></div>
 
 ::: {.country-profile-card}
 ### Treatment and care
@@ -34,18 +35,19 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | AL |
-| **Radical-cure regimen** | 14-day primaquine |
+| **Radical-cure regimen** | Low-dose 14-day primaquine |
 | **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
+| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
+| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
 
-:::
 
 ::: {.country-contact-card data-profile-contact=true}
 ### Programme contact
@@ -81,16 +83,32 @@ toc: true
 | **Last policy update** | 2022 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Not explicitly mentioned |
+| **G6PD testing policy — details** | G6PD testing not recommended or required |
 | **G6PD implementation** | Not implemented |
+| **G6PD implementation — details** | Not required per guidelines so not implemented |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
+| **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days |
-| **Additional safety recommendations** | Close monitoring, counselling on AEs, and report to health facility in case of AE |
-| **Treatment implementation** | Partially implemented |
-| **Year of treatment implementation** | _Not reported_ |
-| **Type of treatment follow-up** | Patients to return to health facility if experiencing any symtoms of haemolytic anemia |
-| **Implementation of follow-up** | Not implemented |
-| **Anti-malarials approved by NRA** | _Not reported_ |
+
+::: {.country-policy-matrix}
+### Radical-cure treatment by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
+|---|---|---|---|---|---|---|---|
+| **Overall policy** | PQ 0.25 mg/kg/day over 14 days | Partially implemented | Primaquine not consistently provided at the health post level, challenges with drug stock outs at the facility level, as well as some hesitency in perscribing primaquine among health providers. | Up to community level | Up to the health post level | 2018 | Close monitoring, counselling on AEs, and report to health facility in case of AE |
+:::
+
+::: {.country-policy-matrix}
+### Radical-cure follow-up by G6PD status
+
+| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|
+| **Overall policy** | Patients to return to health facility if experiencing any symtoms of haemolytic anemia | Not implemented | _Not reported_ |
+:::
+
+| | |
+|---|---|
 | **Next policy update** | Yes, ongoing |
 | **Treatments under consideration** | 7-day high dose PQ and tafenoquine |
 | **Treatment guidelines (URL)** | _Not reported_ |

@@ -203,7 +203,7 @@
       .attr("role", "img")
       .attr(
         "aria-label",
-        "Horizontal bar chart of countries by reported P. vivax cases in 2023"
+        "Horizontal bar chart of countries by reported vivax cases in 2023"
       );
 
     drawLegendTop(svg, legendItems, plotW, margin.left);
@@ -449,7 +449,7 @@
       .attr("role", "img")
       .attr(
         "aria-label",
-        "Heatmap of first-line schizontocidal P. vivax treatment by geographic region"
+        "Heatmap of first-line schizontocidal vivax treatment by geographic region"
       );
 
     drawColorLegendTop(svg, plotW, margin.left, maxN, "Countries");
@@ -740,7 +740,7 @@
       .attr("height", height)
       .attr("viewBox", `0 0 ${width} ${height}`)
       .attr("role", "img")
-      .attr("aria-label", `Reported P. vivax cases in ${payload.country}`);
+      .attr("aria-label", `Reported vivax cases in ${payload.country}`);
 
     const g = svg
       .append("g")
