@@ -40,7 +40,9 @@ class StaticTextParser(HTMLParser):
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attrs_dict = dict(attrs)
         classes = set((attrs_dict.get("class") or "").split())
-        approved_link = tag == "a" and "country-card" in classes
+        approved_link = tag == "a" and bool(
+            {"country-card", "country-contact-request__link"} & classes
+        )
         tag_is_excluded = (
             tag in SKIP_TAGS
             and not (tag == "table" and self.allow_tables)

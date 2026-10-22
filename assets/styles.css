@@ -263,6 +263,23 @@
   border-left: 0.28rem solid var(--vivax-primary, #0d4f4f);
 }
 
+.country-contact-request {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--vivax-rule, #e4ddd0);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.country-contact-request p {
+  margin: 0 0 0.45rem;
+  color: var(--vivax-ink-soft, #4a5252);
+}
+
+.country-contact-request__link {
+  font-weight: 700;
+}
+
 .country-contact-card--margin {
   margin: 1rem 0 0;
   padding: 0.8rem;

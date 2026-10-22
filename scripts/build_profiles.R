@@ -113,6 +113,7 @@ case <- load_case_data(CASE_URL, char)
 
 include_public_email <- tolower(Sys.getenv("INCLUDE_PUBLIC_EMAIL", unset = "0")) %in%
   c("1", "true", "yes", "on")
+repository_contact_email <- "malariapolicyrepository@gmail.com"
 
 email_links <- function(value) {
   emails <- str_split(value, "\\s*[;,]\\s*")[[1]] |>
@@ -149,6 +150,36 @@ contact_name_only <- function(value) {
     str_replace_all("^[,;\\s]+|[,;\\s]+$", "") |>
     str_squish()
   if (str_to_lower(clean) %in% c("pending", "n/a", "not reported")) "" else clean
+}
+
+contact_request_link <- function(country) {
+  subject <- paste("Programme contact request -", country)
+  body <- paste(
+    "Hello Malaria Policy Repository team,",
+    "",
+    paste0("I would like to request contact with the malaria programme in ", country, "."),
+    "",
+    "Name:",
+    "Organisation:",
+    "Reason for the request:",
+    sep = "\n"
+  )
+  href <- paste0(
+    "mailto:", repository_contact_email,
+    "?subject=", utils::URLencode(subject, reserved = TRUE),
+    "&body=", utils::URLencode(body, reserved = TRUE)
+  )
+  sprintf(
+    paste0(
+      '<div class="country-contact-request">',
+      '<p>Direct contact details are not publicly available.</p>',
+      '<a class="country-contact-request__link" href="%s">',
+      'Request contact through the repository team',
+      '</a>',
+      '</div>'
+    ),
+    html_escape(href)
+  )
 }
 
 radical_cure_summary <- function(rows) {
@@ -495,8 +526,10 @@ for (i in seq_len(nrow(char))) {
     extract_emails(contact_raw),
     extract_emails(row_val(row, "Email"))
   ))
+  contact_candidates <- contact_candidates[nzchar(contact_candidates)]
+  has_approved_contact_email <- length(contact_candidates) > 0
   contact_email <- if (include_public_email) {
-    paste(contact_candidates[nzchar(contact_candidates)], collapse = "; ")
+    paste(contact_candidates, collapse = "; ")
   } else ""
   if (nzchar(contact_name) || nzchar(contact_email)) {
     contact_display <- contact_name
@@ -517,12 +550,16 @@ for (i in seq_len(nrow(char))) {
       value = contact_display
     )
     contact_table <- kv_table(contact_rows)
+    request_contact <- if (nzchar(contact_name) && !has_approved_contact_email) {
+      contact_request_link(country)
+    } else character()
     parts <- c(
       parts,
       "::: {.country-contact-card data-profile-contact=true}",
       "### Programme contact",
       "",
       contact_table,
+      request_contact,
       ":::",
       ""
     )

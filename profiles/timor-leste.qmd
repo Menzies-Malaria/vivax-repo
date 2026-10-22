@@ -55,6 +55,7 @@ toc: true
 | | |
 |---|---|
 | **Programme contact** | Raul Sarmento, NMCP |
+<div class="country-contact-request"><p>Direct contact details are not publicly available.</p><a class="country-contact-request__link" href="mailto:malariapolicyrepository@gmail.com?subject=Programme%20contact%20request%20-%20Timor%20Leste&amp;body=Hello%20Malaria%20Policy%20Repository%20team%2C%0A%0AI%20would%20like%20to%20request%20contact%20with%20the%20malaria%20programme%20in%20Timor%20Leste.%0A%0AName%3A%0AOrganisation%3A%0AReason%20for%20the%20request%3A">Request contact through the repository team</a></div>
 :::
 
 ## Reported case numbers
