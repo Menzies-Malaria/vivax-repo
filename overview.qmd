@@ -78,7 +78,7 @@ The repository offers access to key *P. vivax* case management policy and implem
     <span class="meta">Compare treatment, G6PD policy, and implementation across countries.</span>
   </a>
   <a class="country-card" href="countries.html">
-    <span class="name">Country profiles</span>
+    <span class="name">Delve into country profiles</span>
     <span class="meta">One-page summaries of policy, implementation, and contacts.</span>
   </a>
   <a class="country-card" href="explore.html">

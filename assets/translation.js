@@ -18,6 +18,54 @@
     return `${leading}${replacement}${trailing}`;
   }
 
+  function unwrapSpeciesNames(root) {
+    const scope = root.nodeType === Node.ELEMENT_NODE ? root : root.parentElement;
+    if (!scope) return;
+    const names = [];
+    if (scope.matches && scope.matches("em[data-vivax-species]")) names.push(scope);
+    names.push(...scope.querySelectorAll("em[data-vivax-species]"));
+    names.forEach((name) => {
+      const parent = name.parentNode;
+      if (!parent) return;
+      name.replaceWith(document.createTextNode(name.textContent || ""));
+      parent.normalize();
+    });
+  }
+
+  function italiciseSpeciesNames(root) {
+    const scope = root.nodeType === Node.ELEMENT_NODE ? root : root.parentElement;
+    if (!scope) return;
+    const pattern = /\b(?:Plasmodium\s+vivax|P\.?\s+vivax)\b/gi;
+    const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent || parent.closest("script, style, code, pre, textarea, em, i")) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        pattern.lastIndex = 0;
+        return pattern.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      },
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      const text = node.nodeValue;
+      const fragment = document.createDocumentFragment();
+      let cursor = 0;
+      pattern.lastIndex = 0;
+      for (const match of text.matchAll(pattern)) {
+        fragment.append(document.createTextNode(text.slice(cursor, match.index)));
+        const emphasis = document.createElement("em");
+        emphasis.dataset.vivaxSpecies = "true";
+        emphasis.textContent = match[0];
+        fragment.append(emphasis);
+        cursor = match.index + match[0].length;
+      }
+      fragment.append(document.createTextNode(text.slice(cursor)));
+      node.replaceWith(fragment);
+    });
+  }
+
   function dictionary(language) {
     const values = language === "en" ? sourceStrings : translations[language];
     const map = new Map();
@@ -93,7 +141,9 @@
     if (request !== languageRequest) return;
     currentLanguage = requestedLanguage;
     document.documentElement.lang = currentLanguage;
+    unwrapSpeciesNames(document.body);
     translateRoot(document.body, currentLanguage);
+    italiciseSpeciesNames(document.body);
     localStorage.setItem(STORAGE_KEY, currentLanguage);
     const select = document.getElementById("vivax-language-select");
     if (select) select.value = currentLanguage;
@@ -147,14 +197,15 @@
       const requested = new URLSearchParams(window.location.search).get("lang");
       await applyLanguage(requested || localStorage.getItem(STORAGE_KEY) || "en");
       observer = new MutationObserver((mutations) => {
-        if (currentLanguage === "en") return;
         mutations.forEach((mutation) => {
-          if (mutation.type === "attributes") {
+          if (mutation.type === "attributes" && currentLanguage !== "en") {
             translateRoot(mutation.target, currentLanguage);
           }
           mutation.addedNodes.forEach((node) => {
-            if (node.nodeType === Node.ELEMENT_NODE) translateRoot(node, currentLanguage);
-            if (node.nodeType === Node.TEXT_NODE && node.parentElement) translateRoot(node.parentElement, currentLanguage);
+            const root = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+            if (!root) return;
+            if (currentLanguage !== "en") translateRoot(root, currentLanguage);
+            italiciseSpeciesNames(root);
           });
         });
       });
