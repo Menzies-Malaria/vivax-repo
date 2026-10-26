@@ -102,13 +102,13 @@ This repository is developed in consultation with NMCPs and partners. In its ini
 
 ## How it works
 
-The information displayed on this website is sourced from approved data in a Google Sheet maintained by the repository team. Partners can submit proposed changes through the [contribute form](contribute.qmd); the repository team reviews them before approved information is transferred into the production data. When the site rebuilds (manually or on a schedule), the latest approved data is pulled and rendered. See [Methods](methods.qmd) for details.
+The information displayed on this website is sourced from approved data in a Google Sheet maintained by the repository team. NMCPs and partners can submit proposed changes through the [contribute form](contribute.qmd); the repository team reviews them before approved information is transferred into the production data. When the site rebuilds (manually or on a schedule), the latest approved data is pulled and rendered. See [Methods](methods.qmd) for details.
 
 ## Cite this repository
 
 If you use these data in a publication or report, please cite:
 
-> Malaria Policy Repository. Updated `r format(Sys.Date(), "%B %Y")`. Available at: https://menzies-malaria.github.io/vivax-repo/.
+> Malaria Policy Repository. Updated October 2026. Available at: https://menzies-malaria.github.io/vivax-repo/.
 
 And the foundational review:
 

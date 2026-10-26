@@ -7,9 +7,9 @@ subtitle: "How the repository is built, maintained, and kept current."
 
 The repository draws on three streams of evidence, in this order of preference:
 
-1. **Direct communication with NMCPs.** Whenever possible, data is confirmed (or contributed) by a named focal point at the National Malaria Control Programme. The "Contact" field in each country profile records who provided or validated the information.
+1. **Direct communication with National Malaria Control Programs (NMCPs).** Whenever possible, data is confirmed (or contributed) by a named focal point at the National Malaria Control Programme. The "Contact" field in each country profile records who provided or validated the information.
 2. **Publicly available national treatment guidelines.** When a focal point is not yet engaged, the policy is read from the most recent published guideline (linked in the country profile where available).
-3. **Published reviews and grey literature.** Where neither of the above is available, we draw on the 2023 *Pathogens* review of G6PD testing policy [@sadhewa2023] and on WHO World Malaria Reports [@whowmr2024], with that source clearly noted.
+3. **Published reviews and grey literature.** Where neither of the above is available, we draw on other available literature including WHO Country Profiles and WHO World Malaria Reports, with that source clearly noted.
 
 ## What is in the repository
 
@@ -17,7 +17,7 @@ For each country, the repository captures:
 
 - **Burden indicators** — case numbers for the last five years, *P. vivax* share of total malaria cases, programme phase, populations at greatest risk.
 - **Diagnostic policy** — the type of malaria diagnostic in routine use; whether G6PD testing is recommended; whether it is implemented; the type and level of the health system where it is performed.
-- **Treatment policy** — first-line and second-line treatment; primaquine (PQ) or tafenoquine (TQ) regimens by G6PD status; additional safety recommendations; weight-based banding and dosage charts where present.
+- **Radical cure treatment policy** — first-line and second-line blood and liver stage treatment; primaquine (PQ) or tafenoquine (TQ) regimens by G6PD status; additional safety recommendations;
 - **Implementation status** — whether the policy is implemented, at which level of the health system, and when implementation began.
 - **Follow-up** — type of treatment follow-up, who conducts it, where it happens, whether it is implemented.
 - **Forward-looking detail** — planned next policy updates, treatments under active consideration, ongoing operational research, links to the National Strategic Plan.
@@ -25,7 +25,7 @@ For each country, the repository captures:
 
 ## The data pipeline
 
-The site is built with [Quarto](https://quarto.org). Data is stored in a single shared Google Sheet with the tabs `Characteristic Data`, `Case Mgmt Data Points`, `Submissions`, and `Restricted`. The build reads from the first two tabs; the `Restricted` tab holds partner-only data points that are not yet rendered on the site.
+The site is built with [Quarto](https://quarto.org). Data is stored in a single shared Google Sheet with the tabs `Characteristic Data`, `Case Mgmt Data Points`, `Submissions`, and `Restricted`. The build reads from the first two tabs; once Phase II of the repository—a publicly available repository—is launched, the `Restricted` tab will hold NMCP and partner-only data points that programs prefer to only share with other programs, partners, and researchers.
 
 ```
                             ┌──────────────────────────────┐
@@ -62,7 +62,7 @@ Where information from a focal point conflicts with what is in the published gui
 
 Each country record carries an implicit confidence level based on its source:
 
-- **High** — confirmed in writing by an NMCP focal point within the last 12 months, with a public guideline that matches.
+- **High** — confirmed in writing by an NMCP focal point or implementation/research partner within the last 12 months, with a public guideline that matches.
 - **Medium** — drawn from a current published guideline, not yet confirmed by an NMCP focal point.
 - **Low** — drawn from a published review or grey literature; the most recent guideline could not be located.
 
@@ -70,7 +70,7 @@ Confidence is shown explicitly on each country profile.
 
 ## Restricted information
 
-By design, NMCPs may flag specific data points as visible only to other malaria programmes, partners, and researchers. These are stored in the `Restricted` tab of the Google Sheet and do not currently render on the site. The entire repository is partner-gated via a login portal at deploy time — accredited users receive credentials to access the site. Rendering of `Restricted` tab data is planned as a future enhancement.
+By design, NMCPs may flag specific data points as visible only to other malaria programmes, partners, and researchers. These will be stored in the `Restricted` tab of the Google Sheet and do not currently render on the site. The entire repository is partner-gated via a login portal at deploy time — accredited users receive credentials to access the site. Rendering of `Restricted` tab data is planned as a future enhancement.
 
 ## Reproducibility
 

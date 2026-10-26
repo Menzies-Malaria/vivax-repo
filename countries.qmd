@@ -1,6 +1,6 @@
 ---
 title: "Country profiles"
-subtitle: "A one-page summary of policy and implementation status for every *P. vivax* endemic country in the repository."
+subtitle: "A summary of policy and implementation status for every current and past *P. vivax* endemic country in the repository."
 page-layout: full
 ---
 
@@ -22,7 +22,7 @@ char <- load_characteristic_data() |>
 ```
 
 ::: {.lede}
-Browse by region. Each country card links to a fuller profile with the latest first-line treatment, G6PD testing status, programme phase, and contact information where available.
+Browse by region. Each country card links to a fuller profile with country context, the latest blood and liver stage *P. vivax* malaria first-line treatment, G6PD testing status, among other key data points, while also providing the contact information of a national malaria control programme point of contact where available.
 :::
 
 ```{r}

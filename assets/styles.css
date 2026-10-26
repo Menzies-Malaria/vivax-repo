@@ -214,6 +214,24 @@
 
 /* Country profiles use a compact, book-like spread for the high-level facts,
    then return to a single reading column for detailed policy notes. */
+.profile-map-return[hidden] {
+  display: none;
+}
+
+.profile-map-return,
+.profile-all-countries-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.profile-map-return-row {
+  margin-bottom: 0.8rem;
+}
+
+.profile-all-countries-link {
+  margin-bottom: 1rem;
+}
+
 .country-profile-spread {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

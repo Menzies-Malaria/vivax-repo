@@ -64,7 +64,7 @@ timeline_payload <- list(
 ```
 
 ::: {.lede}
-The last decade has seen rapid change in *P. vivax* policy. WHO global recommendations were updated in 2023 and 2024, triggering revisions in many countries. This page tracks when each country last formally revised its national treatment guidelines.
+The last decade has seen rapid change in *P. vivax* policy. WHO global recommendations were updated in 2022, 2023, and 2024, triggering revisions in many countries. This page tracks when each country last formally revised its national treatment guidelines.
 :::
 
 ## Last policy update by country

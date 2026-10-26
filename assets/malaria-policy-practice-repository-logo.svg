@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Malaria Policy and Practice Repository logo</title>
+  <desc id="desc">The MP&amp;PR globe mark above the words Malaria Policy and Practice Repository.</desc>
+
+  <rect width="2000" height="2000" fill="#ffffff"/>
+
+  <g fill="none" stroke="#4c8080" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="570" cy="480" r="330"/>
+    <circle cx="570" cy="480" r="200"/>
+    <path d="M570 280 C470 356 470 604 570 680"/>
+    <path d="M570 280 C670 356 670 604 570 680"/>
+    <path d="M426 348 C506 412 634 412 714 348"/>
+    <path d="M426 612 C506 548 634 548 714 612"/>
+    <path d="M370 480 H770"/>
+    <path d="M570 280 V680"/>
+  </g>
+
+  <g fill="#07595a" stroke="#07595a" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="523" cy="416" rx="6" ry="23" transform="rotate(43 523 416)" stroke="none"/>
+    <ellipse cx="544" cy="411" rx="6" ry="22" transform="rotate(66 544 411)" stroke="none"/>
+    <path d="M527 430 L509 450 M531 432 L525 456 M535 430 L553 449 M529 426 L508 419 M535 424 L554 418" fill="none" stroke-width="3.2"/>
+    <path d="M517 435 L497 440 L485 449 M539 434 L560 441 L572 454 M520 439 L504 456 M539 439 L555 456" fill="none" stroke-width="2.8"/>
+    <circle cx="531" cy="430" r="5.5" stroke="none"/>
+    <path d="M525 429 L508 426" fill="none" stroke-width="4.8"/>
+  </g>
+
+  <rect x="375" y="430" width="390" height="100" rx="23" fill="#07595a"/>
+  <text x="570" y="503"
+        text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="62"
+        font-weight="700"
+        letter-spacing="8"
+        fill="#ffffff">MP&amp;PR</text>
+
+  <g fill="#07595a"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="150"
+     font-weight="750"
+     letter-spacing="-4">
+    <text x="235" y="1080">Malaria</text>
+    <text x="235" y="1415">Policy &amp; Practice</text>
+    <text x="235" y="1750">Repository</text>
+  </g>
+</svg>

@@ -66,14 +66,23 @@
     }
   }
 
-  function configureBackLink() {
-    const link = document.querySelector("[data-profile-back]");
+  function configureMapReturn() {
+    const link = document.querySelector("[data-profile-map-return]");
     if (!link) return;
+    const row = link.closest("p");
+    if (row) {
+      row.classList.add("profile-map-return-row");
+      row.hidden = true;
+    }
     const params = new URLSearchParams(window.location.search);
     if (params.get("from") !== "map") return;
 
+    link.hidden = false;
+    if (row) row.hidden = false;
     link.href = "../index.html";
-    link.textContent = "← Back to interactive map";
+    const titleBlock = document.getElementById("title-block-header");
+    if (titleBlock) titleBlock.before(row || link);
+
     link.addEventListener("click", (event) => {
       let referrer;
       try {
@@ -145,7 +154,7 @@
   function init() {
     const locators = document.querySelectorAll(".country-profile-locator[data-country]");
     locators.forEach(drawLocator);
-    configureBackLink();
+    configureMapReturn();
     positionContactCard();
     window.addEventListener("resize", positionContactCard);
   }

@@ -113,8 +113,7 @@ tagList(
   )
 )
 ```
-
-## At a glance
+## Vivax global burden at a glance
 
 ::: {.explore-chart}
 <div id="chart-cases" class="explore-chart__plot vivax-chart__plot--cases"></div>
@@ -126,8 +125,6 @@ tagList(
 ::: {.explore-chart}
 <div id="chart-g6pd" class="explore-chart__plot vivax-chart__plot--g6pd"></div>
 :::
-
-The gap between **policy** and **implementation** is one of the most actionable findings in the repository — and the gap is widest in countries that have only recently adopted G6PD testing into their guidelines.
 
 ## First-line schizontocidal *P. vivax* treatment by region
 
@@ -172,7 +169,3 @@ datatable(
   )
 )
 ```
-
-::: {.callout-edit}
-Spot an inaccuracy or have a more recent guideline? Use the [contribute form](contribute.qmd) — submissions sync directly to the Google Sheet that this site reads from.
-:::

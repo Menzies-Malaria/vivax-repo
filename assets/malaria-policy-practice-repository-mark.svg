@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Malaria Policy and Practice Repository mark</title>
+  <desc id="desc">A globe inside a circular border, crossed by an MP&amp;PR banner with a mosquito above it.</desc>
+
+  <rect width="1000" height="1000" fill="#ffffff"/>
+
+  <g fill="none" stroke="#4c8080" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="500" cy="500" r="420"/>
+    <circle cx="500" cy="500" r="250"/>
+    <path d="M500 250 C375 345 375 655 500 750"/>
+    <path d="M500 250 C625 345 625 655 500 750"/>
+    <path d="M320 335 C420 415 580 415 680 335"/>
+    <path d="M320 665 C420 585 580 585 680 665"/>
+    <path d="M250 500 H750"/>
+    <path d="M500 250 V750"/>
+  </g>
+
+  <g fill="#07595a" stroke="#07595a" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="442" cy="420" rx="8" ry="29" transform="rotate(43 442 420)" stroke="none"/>
+    <ellipse cx="468" cy="414" rx="8" ry="28" transform="rotate(66 468 414)" stroke="none"/>
+    <path d="M447 438 L425 463 M451 440 L443 470 M456 438 L478 461 M449 433 L423 425 M456 431 L480 423" fill="none" stroke-width="4"/>
+    <path d="M435 444 L410 449 L395 461 M462 442 L488 451 L503 467 M438 449 L418 470 M461 448 L481 470" fill="none" stroke-width="3.5"/>
+    <circle cx="452" cy="438" r="7" stroke="none"/>
+    <path d="M445 436 L423 433" fill="none" stroke-width="6"/>
+  </g>
+
+  <rect x="255" y="438" width="490" height="126" rx="28" fill="#07595a"/>
+  <text x="500" y="528"
+        text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="78"
+        font-weight="700"
+        letter-spacing="10"
+        fill="#ffffff">MP&amp;PR</text>
+</svg>
