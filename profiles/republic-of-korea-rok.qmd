@@ -92,7 +92,7 @@ toc: true
 |---|---|---|---|---|---|---|---|
 | **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days | Partially implemented | Implemented where health facilities have G6PD testing | Up to the health centre level | Up to the health centre level | _Not reported_ | Monitoring for adverse events, counselling for relapse if irregular administration or discontinued |
 | **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Counselling for relapse if irregular administration or discontinued |
-| **If no testing available** | PQ | Implemented | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Closely monitor for haemolysis�particularly falling haemoglobin, dark/pigmented urine (???), and jaundice |
+| **If no testing available** | PQ | Implemented | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Closely monitor for haemolysis—particularly falling haemoglobin, dark/pigmented urine (색소뇨), and jaundice |
 :::
 
 ::: {.country-policy-matrix}
@@ -114,7 +114,7 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">Guidelines indicate that sometimes primaquine can be provided without G6PD testing given the low G6PDd prevalence and the delay that could occur for treatment if testing is not available at PoC. The dosage is not specified. In situation where PQ is administered with G6PD testing, the guidance says to closely monitor for haemolysis�particularly falling haemoglobin, dark/pigmented urine (???), and jaundice; 2019 guidelines: Adult: PQ 0.25 mg/kg/day over 14 days, Paediatric: 0.3 mg/kg/day over 14 days - this distinction removed in following guidelines.</div>
+<div class="country-policy-context"><p>Guidelines indicate that sometimes primaquine can be provided without G6PD testing given the low G6PDd prevalence and the delay that could occur for treatment if testing is not available at PoC. The dosage is not specified. In situation where PQ is administered with G6PD testing, the guidance says to closely monitor for haemolysis—particularly falling haemoglobin, dark/pigmented urine (색소뇨), and jaundice; 2019 guidelines: Adult: PQ 0.25 mg/kg/day over 14 days, Paediatric: 0.3 mg/kg/day over 14 days - this distinction removed in following guidelines.</p></div>
 
 ## Countries with similar reported characteristics
 

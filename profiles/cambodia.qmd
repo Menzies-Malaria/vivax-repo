@@ -56,7 +56,7 @@ toc: true
 
 | | |
 |---|---|
-| **Programme contact** | Dr Soley Lek, National Malaria Program |
+| **Programme contact** | <a href="mailto:soleycnm@gmail.com">Dr Soley Lek, National Malaria Program</a> |
 :::
 
 ## Reported case numbers
@@ -98,7 +98,7 @@ toc: true
 
 | G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
 |---|---|---|---|---|---|---|---|
-| **G6PD normal male: ≥ 4 IU/g Hb, G6PD normal female: ≥ 6 U/g Hb** | PQ 1.0 mg/kg/day over 7 days | Not implemented | Implemented (low dose 7-day, 8 week PQ), pending implementation (high-dose 7-day) | Up to the health centre level | Up to the health centre level | 2021 | Patient couselling, DOT by HC or VMW |
+| **G6PD normal male: ≥ 4 IU/g Hb, G6PD normal female: ≥ 6 U/g Hb** | PQ 1.0 mg/kg/day over 7 days | Not implemented | Implemented (low dose 7-day, 8 week PQ) with G6PD testing, pending implementation (high-dose 7-day) | Up to the health centre level | Up to the health centre level | 2021 | Patient couselling, DOT by HC or VMW |
 | **G6PD intermediate females: 4.1-6.0 IU/g Hb** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | Implemented (low dose 7-day, 8 week PQ) with G6PD testing, pending implementation (high-dose 7-day) | Up to the health centre level | Up to the health centre level | 2021 | Patient couselling, DOT by HC or VMW |
 | **G6PD deficient: ≤ 4 IU/g Hb** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | Implemented (low dose 7-day, 8 week PQ) with G6PD testing, pending implementation (high-dose 7-day) | Up to the health centre level | Up to the health centre level | 2021 | Patient couselling, DOT by HC or VMW |
 :::
@@ -122,7 +122,7 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">Changed to 7-day PQ in 2023; Follow-up days changed 2023 when there was a switch from 14 day PQ to low dose 7-day PQ.  Before the switch to high-dose 7 day, VMW follow up was conducted at patients home checking for adherence and side effects, and partially implemented due to feasibility considerations. It also included DOT according to guidelines was not implemented as DOT; Tafenoquine is included  the 2025 update but needs country regulatory approval; Quinine can be used as second line if AL is not available for malaria in first trimester of pregnancy.</div>
+<div class="country-policy-context"><p>Changed to 7-day PQ in 2023; Follow-up days changed 2023 when there was a switch from 14 day PQ to low dose 7-day PQ.  Before the switch to high-dose 7 day, VMW follow up was conducted at patients home checking for adherence and side effects, and partially implemented due to feasibility considerations. It also included DOT according to guidelines was not implemented as DOT; Tafenoquine is included  the 2025 update but needs country regulatory approval; Quinine can be used as second line if AL is not available for malaria in first trimester of pregnancy.</p></div>
 
 ## Countries with similar reported characteristics
 

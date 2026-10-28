@@ -56,7 +56,7 @@ toc: true
 
 | | |
 |---|---|
-| **Programme contact** | Dr. Tam Jenn Zhueng, Disease Control Division MoH |
+| **Programme contact** | <a href="mailto:tjz@moh.gov.my">Dr. Tam Jenn Zhueng, Disease Control Division MoH</a> |
 :::
 
 ## Reported case numbers
@@ -116,7 +116,7 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">Program is not considering Point-of-Care G6PD testing since there are so few vivax cases - too much investment for little impact. In the new guidelines being approved this year, the guideline are updated to 7-day low dose PQ (0.5mg/kg/day).</div>
+<div class="country-policy-context"><p>Program is not considering Point-of-Care G6PD testing since there are so few vivax cases - too much investment for little impact. In the new guidelines being approved this year, the guideline are updated to 7-day low dose PQ (0.5mg/kg/day).</p></div>
 
 ## Countries with similar reported characteristics
 

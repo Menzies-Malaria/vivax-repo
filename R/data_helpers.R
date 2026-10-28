@@ -106,6 +106,59 @@ ensure_columns <- function(df, columns) {
   df
 }
 
+contact_email_pattern <- paste0(
+  "[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@",
+  "[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+)
+
+# Sarah confirmed that these 14 addresses have consent for publication in the
+# repository (28 October 2026). Matching the address, rather than only the
+# country, prevents a future replacement contact from inheriting consent.
+approved_public_contact_emails <- function() {
+  tolower(c(
+    "drnaeem.09@gmail.com",
+    "mdmosiqure@gmail.com",
+    "dtobgyel@gmail.com",
+    "soleycnm@gmail.com",
+    "chinda07@gmail.com",
+    "tjz@moh.gov.my",
+    "malaria@doh.gov.ph",
+    "lyndes.wini@gmail.com",
+    "kayadsamatar9@gmail.com",
+    "hizikiyas@gmail.com",
+    "oraobela@gmail.com",
+    "yvrazafy@yahoo.fr",
+    "malaria@moh.gov.so",
+    "sam.isam97@hotmail.com"
+  ))
+}
+
+extract_contact_emails <- function(value) {
+  matches <- stringr::str_extract_all(
+    as.character(value),
+    contact_email_pattern
+  )[[1]]
+  unique(stringr::str_trim(matches[nzchar(matches)]))
+}
+
+redact_unapproved_contact_emails <- function(values) {
+  approved <- approved_public_contact_emails()
+
+  vapply(as.character(values), function(value) {
+    emails <- extract_contact_emails(value)
+    unapproved <- emails[!tolower(emails) %in% approved]
+    for (email in unapproved) {
+      value <- stringr::str_replace_all(value, stringr::fixed(email), "")
+    }
+
+    value |>
+      stringr::str_replace_all("\\s*,\\s*(?=;|$)", "") |>
+      stringr::str_replace_all("\\s*;\\s*", "; ") |>
+      stringr::str_replace_all("^[,;\\s]+|[,;\\s]+$", "") |>
+      stringr::str_squish()
+  }, character(1))
+}
+
 normalise_characteristic_schema <- function(df) {
   aliases <- list(
     "Proportion of P. vivax cases (2023) (%)" = c(
@@ -124,6 +177,8 @@ normalise_characteristic_schema <- function(df) {
   for (canonical in names(aliases)) {
     df <- rename_alias(df, canonical, aliases[[canonical]])
   }
+  df <- ensure_columns(df, "Contact")
+  df$Contact <- redact_unapproved_contact_emails(df$Contact)
   proportion_col <- "Proportion of P. vivax cases (2023) (%)"
   if (proportion_col %in% names(df)) {
     raw <- stringr::str_squish(df[[proportion_col]])
@@ -153,6 +208,7 @@ normalise_case_schema <- function(df) {
   )
   df <- ensure_columns(df, c(
     "Comments",
+    "Other Comments",
     "Tafenoquine",
     "Low-dose PQ14 (0.25mg/kg)",
     "High-dose PQ14 (0.5mg/kg)",

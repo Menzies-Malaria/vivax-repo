@@ -56,7 +56,7 @@ toc: true
 
 | | |
 |---|---|
-| **Programme contact** | Elisa Vidal |
+| **Programme contact** | Lina Zuluaga Idarraga. Universidad de Antioquia (UdeA) |
 <div class="country-contact-request"><p>Direct contact details are not publicly available.</p><a class="country-contact-request__link" href="mailto:malariapolicyrepository@gmail.com?subject=Programme%20contact%20request%20-%20Colombia&amp;body=Hello%20Malaria%20Policy%20Repository%20team%2C%0A%0AI%20would%20like%20to%20request%20contact%20with%20the%20malaria%20programme%20in%20Colombia.%0A%0AName%3A%0AOrganisation%3A%0AReason%20for%20the%20request%3A">Request contact through the repository team</a></div>
 :::
 
@@ -120,7 +120,7 @@ toc: true
 |---|---|
 | **Next policy update** | _Not reported_ |
 | **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | <a href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/PP/ET/Guia-atencion-clinica-malaria.pdf" target="_blank" rel="noopener noreferrer">https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/PP/ET/Guia-atencion-clinica-malaria.pdf</a> |
+| **Treatment guidelines (URL)** | <a href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/PP/ET/Guia-atencion-clinica-malaria.pdf" target="_blank" rel="noopener noreferrer">https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/PP/ET/Guia-atencion-clinica-malaria.pdf</a><br><a href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/Pp/ET/lineamiento-introduccion-g6pd.pdf" target="_blank" rel="noopener noreferrer">https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/Pp/ET/lineamiento-introduccion-g6pd.pdf</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
 ## Countries with similar reported characteristics

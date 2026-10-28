@@ -56,8 +56,7 @@ toc: true
 
 | | |
 |---|---|
-| **Programme contact** | Hassan M Abukar, National Malaria Control Program Manager |
-<div class="country-contact-request"><p>Direct contact details are not publicly available.</p><a class="country-contact-request__link" href="mailto:malariapolicyrepository@gmail.com?subject=Programme%20contact%20request%20-%20Somalia&amp;body=Hello%20Malaria%20Policy%20Repository%20team%2C%0A%0AI%20would%20like%20to%20request%20contact%20with%20the%20malaria%20programme%20in%20Somalia.%0A%0AName%3A%0AOrganisation%3A%0AReason%20for%20the%20request%3A">Request contact through the repository team</a></div>
+| **Programme contact** | <a href="mailto:malaria@moh.gov.so">Dr Hassan M Abukar</a> |
 :::
 
 ## Reported case numbers
@@ -88,7 +87,7 @@ toc: true
 | **G6PD testing policy** | Required |
 | **G6PD testing policy — details** | Required but testing type not specified |
 | **G6PD implementation** | Not implemented |
-| **G6PD implementation — details** | Not implemented but plans for: Pilot implementation in selected districts or facilities Training of health workers on use of G6PD tests and interpretation Integration into malaria case management services Strengthening supply chains and quality assurance systems Collaboration with partners and global initiatives to support scale-up. |
+| **G6PD implementation — details** | Not implemented but plans for: Pilot implementation in selected districts or facilities Training of health workers on use of G6PD tests and interpretation Integration into malaria case management services Strengthening supply chains and quality assurance systems Collaboration with partners and global initiatives to support scale-up. |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
 | **Health system level (G6PD) — details** | _Not reported_ |
@@ -117,13 +116,13 @@ toc: true
 | | |
 |---|---|
 | **Next policy update** | Yes, when not known |
-| **Treatments under consideration** | Somalia�s malaria program is not only relying on current drugs, but is also considering new or alternative treatments, mainly guided by WHO recommendations and emerging evidence. Right now focused on P. falcirum so alternative radical cure policy is not being considered. |
+| **Treatments under consideration** | Somalia’s malaria program is not only relying on current drugs, but is also considering new or alternative treatments, mainly guided by WHO recommendations and emerging evidence. Right now focused on P. falcirum so alternative radical cure policy is not being considered. |
 | **Treatment guidelines (URL)** | <a href="https://reliefweb.int/report/somalia/guidelines-diagnosis-and-treatment-malaria-somalia-2016" target="_blank" rel="noopener noreferrer">https://reliefweb.int/report/somalia/guidelines-diagnosis-and-treatment-malaria-somalia-2016</a> |
 | **National Strategic Plan (URL)** | <a href="https://moh.pl.so/wp-content/uploads/2022/08/Somalia-National-Malaria-Strategic-Plan-Draft2_29Mar2020.pdf" target="_blank" rel="noopener noreferrer">https://moh.pl.so/wp-content/uploads/2022/08/Somalia-National-Malaria-Strategic-Plan-Draft2_29Mar2020.pdf</a> |
 
 ### Country-specific policy context
 
-<div class="country-policy-context">A few important additional points about P. vivax case management in Somalia help complete the picture:<br><br>1) Mixed approach for treatment<br>All uncomplicated malaria cases are generally treated as ACT-treated malaria (Artemether�lumefantrine) regardless of species in most settings<br>This simplifies case management where microscopy/speciation is limited<br><br>2) Relapse is a key challenge<br>Plasmodium vivax malaria can relapse from dormant liver stages (hypnozoites)<br>This means:<br>Treating only blood stages is not enough<br>Radical cure is essential but often inconsistently applied.<br><br>3) Limited radical cure implementation<br>Use of Primaquine is recommended for radical cure<br>However:<br>G6PD testing is not widely available<br>Therefore radical cure is incomplete or inconsistently given in practice.<br><br>4) Diagnosis limitations affect management<br>Many facilities rely on rapid diagnostic tests (RDTs)<br>RDTs often:<br>Do not clearly differentiate P. vivax from P. falciparum<br>This leads to uniform treatment with ACTs.<br><br>5) Follow-up and adherence gaps<br>Follow-up visits (especially Day 3 and Day 14) are often:<br>Not consistently done<br>This makes it harder to:<br>Confirm cure<br>Detect relapse or treatment failure early.<br><br>6) Overall program priority<br>National focus is mainly on:<br>Reducing overall malaria burden<br>Strengthening case management<br>P. vivax is increasingly recognized but still less prioritized than falciparum in practice</div>
+<div class="country-policy-context"><p>A few important additional points about P. vivax case management in Somalia help complete the picture:<br><br>1) Mixed approach for treatment<br>All uncomplicated malaria cases are generally treated as ACT-treated malaria (Artemether–lumefantrine) regardless of species in most settings<br>This simplifies case management where microscopy/speciation is limited<br><br>2) Relapse is a key challenge<br>Plasmodium vivax malaria can relapse from dormant liver stages (hypnozoites)<br>This means:<br>Treating only blood stages is not enough<br>Radical cure is essential but often inconsistently applied.<br><br>3) Limited radical cure implementation<br>Use of Primaquine is recommended for radical cure<br>However:<br>G6PD testing is not widely available<br>Therefore radical cure is incomplete or inconsistently given in practice.<br><br>4) Diagnosis limitations affect management<br>Many facilities rely on rapid diagnostic tests (RDTs)<br>RDTs often:<br>Do not clearly differentiate P. vivax from P. falciparum<br>This leads to uniform treatment with ACTs.<br><br>5) Follow-up and adherence gaps<br>Follow-up visits (especially Day 3 and Day 14) are often:<br>Not consistently done<br>This makes it harder to:<br>Confirm cure<br>Detect relapse or treatment failure early.<br><br>6) Overall program priority<br>National focus is mainly on:<br>Reducing overall malaria burden<br>Strengthening case management<br>P. vivax is increasingly recognized but still less prioritized than falciparum in practice</p></div>
 
 ## Countries with similar reported characteristics
 

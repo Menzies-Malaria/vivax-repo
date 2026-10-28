@@ -111,38 +111,10 @@ char <- load_characteristic_data(CHAR_URL)
 char <- repository_rows(char)
 case <- load_case_data(CASE_URL, char)
 
-include_public_email <- tolower(Sys.getenv("INCLUDE_PUBLIC_EMAIL", unset = "0")) %in%
-  c("1", "true", "yes", "on")
 repository_contact_email <- "malariapolicyrepository@gmail.com"
 
-email_links <- function(value) {
-  emails <- str_split(value, "\\s*[;,]\\s*")[[1]] |>
-    str_trim()
-  emails <- emails[nzchar(emails)]
-  valid <- str_detect(
-    emails,
-    "^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
-  )
-  if (!length(emails) || !all(valid)) return(md_escape(value))
-
-  links <- vapply(emails, function(email) {
-    safe <- html_escape(email)
-    sprintf('<a href="mailto:%s">%s</a>', safe, safe)
-  }, character(1))
-
-  paste(links, collapse = "<br>")
-}
-
-extract_emails <- function(value) {
-  matches <- str_extract_all(
-    value,
-    "[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-  )[[1]]
-  unique(str_trim(matches[nzchar(matches)]))
-}
-
 contact_name_only <- function(value) {
-  emails <- extract_emails(value)
+  emails <- extract_contact_emails(value)
   clean <- value
   for (email in emails) clean <- str_replace_all(clean, fixed(email), "")
   clean <- clean |>
@@ -150,6 +122,32 @@ contact_name_only <- function(value) {
     str_replace_all("^[,;\\s]+|[,;\\s]+$", "") |>
     str_squish()
   if (str_to_lower(clean) %in% c("pending", "n/a", "not reported")) "" else clean
+}
+
+contact_display <- function(value) {
+  approved <- approved_public_contact_emails()
+  entries <- str_split(value, "\\s*;\\s*")[[1]] |>
+    str_trim()
+  entries <- entries[nzchar(entries)]
+
+  rendered <- vapply(entries, function(entry) {
+    emails <- extract_contact_emails(entry)
+    emails <- emails[tolower(emails) %in% approved]
+    name <- contact_name_only(entry)
+
+    if (length(emails)) {
+      label <- if (nzchar(name)) name else emails[[1]]
+      return(sprintf(
+        '<a href="mailto:%s">%s</a>',
+        html_escape(emails[[1]]),
+        html_escape(label)
+      ))
+    }
+
+    md_escape(name)
+  }, character(1))
+
+  paste(rendered[nzchar(rendered)], collapse = "<br>")
 }
 
 contact_request_link <- function(country) {
@@ -524,32 +522,16 @@ for (i in seq_len(nrow(char))) {
 
   contact_raw <- row_val(row, "Contact")
   contact_name <- contact_name_only(contact_raw)
-  contact_candidates <- unique(c(
-    extract_emails(contact_raw),
-    extract_emails(row_val(row, "Email"))
-  ))
-  contact_candidates <- contact_candidates[nzchar(contact_candidates)]
+  contact_candidates <- extract_contact_emails(contact_raw)
+  contact_candidates <- contact_candidates[
+    tolower(contact_candidates) %in% approved_public_contact_emails()
+  ]
   has_approved_contact_email <- length(contact_candidates) > 0
-  contact_email <- if (include_public_email) {
-    paste(contact_candidates, collapse = "; ")
-  } else ""
-  if (nzchar(contact_name) || nzchar(contact_email)) {
-    contact_display <- contact_name
-    if (nzchar(contact_email)) {
-      primary_email <- str_split(contact_email, "\\s*;\\s*")[[1]][[1]]
-      if (nzchar(contact_name)) {
-        contact_display <- sprintf(
-          '<a href="mailto:%s">%s</a>',
-          html_escape(primary_email),
-          html_escape(contact_name)
-        )
-      } else {
-        contact_display <- email_links(contact_email)
-      }
-    }
+  rendered_contact <- contact_display(contact_raw)
+  if (nzchar(rendered_contact)) {
     contact_rows <- tibble::tibble(
       label = "Programme contact",
-      value = contact_display
+      value = rendered_contact
     )
     contact_table <- kv_table(contact_rows)
     request_contact <- if (nzchar(contact_name) && !has_approved_contact_email) {
@@ -670,7 +652,15 @@ for (i in seq_len(nrow(char))) {
         row_val(cm_row, "National Strategic Plan")
       )
     )
-    comments <- row_val(cm_row, "Comments")
+    comment_rows <- bind_rows(cm_row, subs)
+    profile_comments <- unique(str_trim(as.character(comment_rows$Comments)))
+    profile_comments <- profile_comments[
+      nzchar(profile_comments) & !toupper(profile_comments) %in% c("NA", "N/A")
+    ]
+    other_comments <- unique(str_trim(as.character(comment_rows$`Other Comments`)))
+    other_comments <- other_comments[
+      nzchar(other_comments) & !toupper(other_comments) %in% c("NA", "N/A")
+    ]
 
     policy_blocks <- if (length(g6pd_treatment_table)) {
       pq_index <- match("Policy on PQ (overall)", policy_rows$label)
@@ -687,14 +677,37 @@ for (i in seq_len(nrow(char))) {
     }
 
     parts <- c(parts, "## Case-management policy detail", "", policy_blocks)
-    if (nzchar(comments)) {
-      comments_html <- html_escape(comments) |>
-        str_replace_all("\\r\\n?|\\n", "<br>")
+    if (length(profile_comments)) {
+      comments_html <- vapply(profile_comments, function(comment) {
+        comment <- html_escape(comment) |>
+          str_replace_all("\\r\\n?|\\n", "<br>")
+        sprintf("<p>%s</p>", comment)
+      }, character(1))
       parts <- c(
         parts,
         "### Country-specific policy context",
         "",
-        sprintf('<div class="country-policy-context">%s</div>', comments_html),
+        sprintf(
+          '<div class="country-policy-context">%s</div>',
+          paste(comments_html, collapse = "")
+        ),
+        ""
+      )
+    }
+    if (length(other_comments)) {
+      comments_html <- vapply(other_comments, function(comment) {
+        comment <- html_escape(comment) |>
+          str_replace_all("\\r\\n?|\\n", "<br>")
+        sprintf("<p>%s</p>", comment)
+      }, character(1))
+      parts <- c(
+        parts,
+        "### Additional policy notes",
+        "",
+        sprintf(
+          '<div class="country-policy-context">%s</div>',
+          paste(comments_html, collapse = "")
+        ),
         ""
       )
     }

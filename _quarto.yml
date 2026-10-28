@@ -29,7 +29,7 @@ website:
   sidebar:
     style: docked
     background: light
-    logo: assets/logo.svg
+    logo: "assets/malaria repo logo.png"
     title: "Malaria Policy Repository"
     search: true
     contents:

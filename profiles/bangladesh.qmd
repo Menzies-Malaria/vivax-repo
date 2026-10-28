@@ -56,7 +56,7 @@ toc: true
 
 | | |
 |---|---|
-| **Programme contact** | Dr. Md. Mosiqure Rahaman, NMCP |
+| **Programme contact** | <a href="mailto:mdmosiqure@gmail.com">Dr. Md. Mosiqure Rahaman, NMCP</a> |
 :::
 
 ## Reported case numbers
@@ -118,7 +118,11 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">2017 is most recent guidelines, and they are being updated this year (2026). G6PD testing (quantitative) will be included as a recommendation in the new guidelines. There are plans to roll out the STANDARD G6PD test at the district health centre level, after a pilot in the community showed that community testing was not possible. According to the NSP, phased implementation is planned.</div>
+<div class="country-policy-context"><p>2017 is most recent guidelines, and they are being updated this year (2026). G6PD testing (quantitative) will be included as a recommendation in the new guidelines. There are plans to roll out the STANDARD G6PD test at the district health centre level, after a pilot in the community showed that community testing was not possible. According to the NSP, phased implementation is planned.</p></div>
+
+### Additional policy notes
+
+<div class="country-policy-context"><p>G6PD Testing GF supported, update of guidelines 2023 but have not been able to find them online - according to Dr Mosiqure, 2017 is most recent guidelines, and they are being updated this year (2026). G6PD testing (quantitative) will be included as a recommendation in the new guidelines. There are plans to roll out the STANDARD G6PD test at the district health centre level, after a pilot in the community showed that community testing was not possible. According to the NSP, phased implementation is planned.</p></div>
 
 ## Countries with similar reported characteristics
 

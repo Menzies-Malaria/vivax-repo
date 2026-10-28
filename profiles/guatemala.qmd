@@ -110,7 +110,11 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">G6PD testing policy from 2024 World Malaria Report</div>
+<div class="country-policy-context"><p>G6PD testing policy from 2024 World Malaria Report</p></div>
+
+### Additional policy notes
+
+<div class="country-policy-context"><p>Working on malaria elimination</p></div>
 
 ## Countries with similar reported characteristics
 

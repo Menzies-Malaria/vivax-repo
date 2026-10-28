@@ -77,7 +77,7 @@ toc: true
 | **Last policy update** | 2015 |
 | **Schizontocidal drug** | CQ |
 | **G6PD testing policy** | Required |
-| **G6PD testing policy — details** | Required,  central laboratory  diagnosis |
+| **G6PD testing policy — details** | Required,  central laboratory  diagnosis |
 | **G6PD implementation** | _Not reported_ |
 | **G6PD implementation — details** | _Not reported_ |
 | **Year of G6PD implementation** | _Not reported_ |
@@ -111,6 +111,10 @@ toc: true
 | **Treatments under consideration** | _Not reported_ |
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
+
+### Additional policy notes
+
+<div class="country-policy-context"><p>We do not have the actual traetment guidelines. We have the 2015 national strategic plan</p></div>
 
 ## Countries with similar reported characteristics
 

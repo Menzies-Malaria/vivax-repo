@@ -114,7 +114,7 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">Follow-up implementation status from the 2024 World Malaria Report</div>
+<div class="country-policy-context"><p>Follow-up implementation status from the 2024 World Malaria Report</p></div>
 
 ## Countries with similar reported characteristics
 

@@ -56,7 +56,7 @@ toc: true
 
 | | |
 |---|---|
-| **Programme contact** | Dr Samah Elhassan |
+| **Programme contact** | <a href="mailto:sam.isam97@hotmail.com">Dr Samah Elhassan</a> |
 :::
 
 ## Reported case numbers

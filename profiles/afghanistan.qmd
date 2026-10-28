@@ -56,7 +56,7 @@ toc: true
 
 | | |
 |---|---|
-| **Programme contact** | Dr. Naeem, NMCP |
+| **Programme contact** | <a href="mailto:drnaeem.09@gmail.com">Dr. Naeem, NMCP</a> |
 :::
 
 ## Reported case numbers
@@ -99,7 +99,7 @@ toc: true
 | G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
 |---|---|---|---|---|---|---|---|
 | **G6PD Normal: > 70%  enzyme activity** | PQ 0.5 mg/kg/day over 7 days or PQ 0.25 mg/kg/day over 14 days or TQ (pilot) | Partially implemented | Implementated where G6PD testing is available in pilot stage. The limited number of G6PD analyzers, control kit sand test kits procured in 2025 has limited implementation; the program is planning to procure more analyzers with the support GF to expand the use of G6PD testing in other provinces with higher burden of malaria for safe radical treatment as per NTG. | Up to the health centre level | Up to the comprehensive health centre level | 2026 | Not specified |
-| **Intermediate: 30�70% enzyme activity** | PQ 0.5 mg/kg/day over 7 days or PQ 0.25 mg/kg/day over 14 days | Partially implemented | Implementated where G6PD testing is available in pilot stage. The limited number of G6PD analyzers, control kit sand test kits procured in 2025 has limited implementation; the program is planning to procure more analyzers with the support GF to expand the use of G6PD testing in other provinces with higher burden of malaria for safe radical treatment as per NTG. | Up to the health centre level | Up to the comprehensive health centre level | 2026 | Close medical supervision |
+| **Intermediate: 30–70% enzyme activity** | PQ 0.5 mg/kg/day over 7 days or PQ 0.25 mg/kg/day over 14 days | Partially implemented | Implementated where G6PD testing is available in pilot stage. The limited number of G6PD analyzers, control kit sand test kits procured in 2025 has limited implementation; the program is planning to procure more analyzers with the support GF to expand the use of G6PD testing in other provinces with higher burden of malaria for safe radical treatment as per NTG. | Up to the health centre level | Up to the comprehensive health centre level | 2026 | Close medical supervision |
 | **G6PD deficient: < 30% enzyme activity** | PQ 0.75 mg/kg/week weekly for 8 weeks | Partially implemented | Implementated where G6PD testing is available in pilot stage. The limited number of G6PD analyzers, control kit sand test kits procured in 2025 has limited implementation; the program is planning to procure more analyzers with the support GF to expand the use of G6PD testing in other provinces with higher burden of malaria for safe radical treatment as per NTG. | Up to the health centre level | Up to the comprehensive health centre level | 2010 | Strict medical supervision |
 | **If no testing available** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | The limited number of G6PD analyzers, control kit sand test kits procured in 2025 has limited implementation; the program is planning to procure more analyzers with the support GF to expand the use of G6PD testing in other provinces with higher burden of malaria for safe radical treatment as per NTG. | Up to the health centre level | Up to the comprehensive health centre level | 2010 | Close medical supervision |
 :::
@@ -110,7 +110,7 @@ toc: true
 | G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
 |---|---|---|---|
 | **G6PD Normal: > 70%  enzyme activity** | No follow-up | _Not reported_ | _Not reported_ |
-| **Intermediate: 30�70% enzyme activity** | No follow-up | _Not reported_ | _Not reported_ |
+| **Intermediate: 30–70% enzyme activity** | No follow-up | _Not reported_ | _Not reported_ |
 | **G6PD deficient: < 30% enzyme activity** | No follow-up | _Not reported_ | _Not reported_ |
 | **If no testing available** | No follow-up | _Not reported_ | _Not reported_ |
 :::
@@ -124,7 +124,11 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">Currently the majority of patient are perscribed the 8 weekly dose of Primaquine, due to unavailiblity of G6PD testing facility. The program has plan to conduct study for the use of Tafenoquine based on  financial support from donor agencies.The program revised the National Treatment Guidelines (NTG) in 2025 and introduced a short course of primaquine for the radical treatment of P. vivax cases. Additionally, there are plans to pilot the use of tafenoquine in one of the malaria high-burden provinces.<br>The program has procured G6PD testing analyzers and test kits with financial support from the government budget to ensure proper assessment of malaria patients� G6PD status. Before in 2018 the G6PD FST test was implemented in selected province, due to maintenance of cold chain and storage in HF and limitation of fund, this activity was stopped and did not continue. Primaquine used since 2010. But new guideline piloted in 2026: G6PD testing with low dose-7day PQ. 8 week primaquine provided where G6PD testing is not available since 2010.</div>
+<div class="country-policy-context"><p>Currently the majority of patient are perscribed the 8 weekly dose of Primaquine, due to unavailiblity of G6PD testing facility. The program has plan to conduct study for the use of Tafenoquine based on  financial support from donor agencies.The program revised the National Treatment Guidelines (NTG) in 2025 and introduced a short course of primaquine for the radical treatment of P. vivax cases. Additionally, there are plans to pilot the use of tafenoquine in one of the malaria high-burden provinces.<br>The program has procured G6PD testing analyzers and test kits with financial support from the government budget to ensure proper assessment of malaria patients’ G6PD status. Before in 2018 the G6PD FST test was implemented in selected province, due to maintenance of cold chain and storage in HF and limitation of fund, this activity was stopped and did not continue. Primaquine used since 2010. But new guideline piloted in 2026: G6PD testing with low dose-7day PQ. 8 week primaquine provided where G6PD testing is not available since 2010.</p></div>
+
+### Additional policy notes
+
+<div class="country-policy-context"><p>The program revised the National Treatment Guidelines (NTG) in 2025 and introduced a short course of primaquine for the radical treatment of P. vivax cases. Additionally, there are plans to pilot the use of tafenoquine in one of the malaria high-burden provinces.<br>The program has procured G6PD testing analyzers and test kits with financial support from the government budget to ensure proper assessment of malaria patients’ G6PD status. All of these actions have been taken with support from OAT in the country.</p></div>
 
 ## Countries with similar reported characteristics
 

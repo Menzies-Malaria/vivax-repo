@@ -56,7 +56,7 @@ toc: true
 
 | | |
 |---|---|
-| **Programme contact** | Dr. Lala Yvette Razafimaharo, Dr. Omega Raobela |
+| **Programme contact** | <a href="mailto:yvrazafy@yahoo.fr">Dr. Lala Yvette Razafimaharo</a><br><a href="mailto:oraobela@gmail.com">Dr. Omega Raobela</a> |
 :::
 
 ## Reported case numbers

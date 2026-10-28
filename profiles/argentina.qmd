@@ -102,6 +102,10 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
+### Additional policy notes
+
+<div class="country-policy-context"><p>Eliminated Malaria</p></div>
+
 ## Countries with similar reported characteristics
 
 These deterministic suggestions require agreement on at least three substantive reported characteristics and at least half of the comparable weighted fields. Missing values never count as matches. They are comparison aids, not formal epidemiological peer groups.

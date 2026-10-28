@@ -116,7 +116,7 @@ toc: true
 
 ### Country-specific policy context
 
-<div class="country-policy-context">The 0.5mg/kg/day regimen for G6PD normal individuals is used in high endemicity areas. The implementation status of follow-up is from the 2024 World Malaria Report.</div>
+<div class="country-policy-context"><p>The 0.5mg/kg/day regimen for G6PD normal individuals is used in high endemicity areas. The implementation status of follow-up is from the 2024 World Malaria Report.</p></div>
 
 ## Countries with similar reported characteristics
 
