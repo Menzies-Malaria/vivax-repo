@@ -37,6 +37,23 @@
       main.prepend(topSearch);
     }
 
+    const sidebarLogo = header.querySelector(".sidebar-logo");
+    const mobileNav = document.querySelector("#quarto-header .quarto-secondary-nav .container-fluid");
+    const breadcrumbs = mobileNav && mobileNav.querySelector(".quarto-page-breadcrumbs");
+    if (sidebarLogo && mobileNav && breadcrumbs && !mobileNav.querySelector(".vivax-mobile-logo")) {
+      const mobileLogo = document.createElement("a");
+      mobileLogo.className = "vivax-mobile-logo";
+      mobileLogo.href = header.querySelector(".sidebar-logo-link")?.getAttribute("href") || "./index.html";
+      mobileLogo.setAttribute("aria-label", "Malaria Policy Repository home");
+
+      const mobileLogoImage = document.createElement("img");
+      mobileLogoImage.className = "vivax-mobile-logo-image";
+      mobileLogoImage.src = sidebarLogo.getAttribute("src");
+      mobileLogoImage.alt = "";
+      mobileLogo.append(mobileLogoImage);
+      mobileNav.insertBefore(mobileLogo, breadcrumbs);
+    }
+
     sidebar.querySelectorAll(".sidebar-link").forEach((link) => {
       const label = link.querySelector(".menu-text");
       const text = label ? label.textContent.trim() : "Navigation";
