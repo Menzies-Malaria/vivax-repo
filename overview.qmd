@@ -15,8 +15,7 @@ source("R/data_helpers.R")
 
 char <- load_characteristic_data() |>
   repository_rows()
-case <- load_case_data(characteristic = char)
-stats <- headline_stats(char, case)
+stats <- headline_stats(char)
 ```
 
 ::: {.hero}
@@ -42,22 +41,22 @@ cat(sprintf(
 :::
 ::: {.stat-card}
 [%d]{.num}
-[Currently or previously *P. vivax* endemic]{.label}
+[Countries with a policy document]{.label}
 :::
 ::: {.stat-card}
 [%d]{.num}
-[Have implemented G6PD testing]{.label}
+[Countries with a confirmed policy document]{.label}
 :::
 ::: {.stat-card}
 [%d]{.num}
-[Have a documented policy date]{.label}
+[Countries with implementation data]{.label}
 :::
 :::
 ",
   stats$n_countries,
-  stats$n_current_or_previous_endemic,
-  stats$n_implementing,
-  stats$n_with_policy
+  stats$n_policy_documents,
+  stats$n_validated_policy_documents,
+  stats$n_implementation_data
 ))
 ```
 

@@ -86,7 +86,7 @@
     if (element.closest("table") && !translateProfileTables) return true;
     const link = element.closest("a");
     const translatableLink = link && (
-      link.matches(".sidebar-link, .policy-map-profile-link, .profile-back-link, .country-card, .country-contact-request__link") ||
+      link.matches(".sidebar-link, .policy-map-profile-link, .profile-back-link, .country-card, .country-contact-request__link, .country-change-log__source") ||
       link.closest("#TOC")
     );
     return Boolean(link && !translatableLink);

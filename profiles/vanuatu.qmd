@@ -137,6 +137,14 @@ These deterministic suggestions require agreement on at least three substantive 
 <a class="similar-country-card" href="philippines.html"><span class="name">Philippines</span><span class="meta">Shared: region, WHO region, programme phase, first-line treatment, G6PD implementation, radical-cure follow-up, cross-border setting</span></a>
 </div>
 
+## Version history
+
+Approved updates published for this country.
+
+<div class="country-change-log country-change-log--empty">
+No published changes have been recorded for this country yet.
+</div>
+
 ---
 
 _Data on this page is read from the live Google Sheet at build time. To submit a correction or update, please use the [contribute form](../contribute.qmd)._

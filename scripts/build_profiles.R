@@ -110,6 +110,9 @@ CASE_URL <- case_data_source(
 char <- load_characteristic_data(CHAR_URL)
 char <- repository_rows(char)
 case <- load_case_data(CASE_URL, char)
+change_log <- load_change_log_data(change_log_data_source(
+  file.path(root, "data", "change_log.csv")
+))
 
 repository_contact_email <- "malariapolicyrepository@gmail.com"
 
@@ -379,6 +382,124 @@ similar_country_cards <- function(current_row, all_rows) {
     "",
     '<div class="similar-country-grid">',
     cards,
+    "</div>",
+    ""
+  )
+}
+
+change_date_key <- function(value) {
+  value <- str_squish(as.character(value))
+  formats <- c("%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%d %B %Y", "%d %b %Y")
+  parsed <- rep(as.Date(NA), length(value))
+  for (format in formats) {
+    missing <- is.na(parsed) & nzchar(value)
+    parsed[missing] <- as.Date(value[missing], format = format)
+  }
+  as.numeric(parsed)
+}
+
+change_log_section <- function(country, all_changes) {
+  country_key <- normalise_country_key(country)
+  changes <- all_changes[
+    normalise_country_key(all_changes$Country) == country_key,
+    ,
+    drop = FALSE
+  ]
+
+  intro <- "Approved updates published for this country."
+
+  if (!nrow(changes)) {
+    return(c(
+      "## Version history",
+      "",
+      intro,
+      "",
+      '<div class="country-change-log country-change-log--empty">',
+      "No published changes have been recorded for this country yet.",
+      "</div>",
+      ""
+    ))
+  }
+
+  date_key <- change_date_key(changes$`Published date`)
+  changes <- changes[order(-date_key, na.last = TRUE), , drop = FALSE]
+
+  entries <- unlist(lapply(seq_len(nrow(changes)), function(i) {
+    change <- changes[i, , drop = FALSE]
+    published <- row_val(change, "Published date", "Date not reported")
+    summary <- row_val(change, "Public summary", "Repository record updated")
+    effective <- row_val(change, "Effective date")
+    fields <- row_val(change, "Fields changed")
+    source_type <- row_val(change, "Source type")
+    source_url <- row_val(change, "Public source link")
+    change_id <- row_val(change, "Change ID")
+
+    meta <- character()
+    if (nzchar(effective)) {
+      meta <- c(meta, sprintf(
+        '<div><dt>Effective date</dt><dd>%s</dd></div>',
+        html_escape(effective)
+      ))
+    }
+    if (nzchar(source_type)) {
+      meta <- c(meta, sprintf(
+        '<div><dt>Source</dt><dd>%s</dd></div>',
+        html_escape(source_type)
+      ))
+    }
+    if (nzchar(change_id)) {
+      meta <- c(meta, sprintf(
+        '<div><dt>Change ID</dt><dd>%s</dd></div>',
+        html_escape(change_id)
+      ))
+    }
+
+    field_tags <- character()
+    if (nzchar(fields)) {
+      field_values <- str_split(fields, "\\s*[;,|]\\s*")[[1]] |>
+        str_trim()
+      field_values <- field_values[nzchar(field_values)]
+      field_tags <- c(
+        '<div class="country-change-log__fields" aria-label="Fields changed">',
+        vapply(field_values, function(field) {
+          sprintf('<span>%s</span>', html_escape(field))
+        }, character(1)),
+        "</div>"
+      )
+    }
+
+    source_link <- character()
+    if (nzchar(source_url) && str_detect(source_url, "^https?://[^\\s<>\\\"']+$")) {
+      source_link <- sprintf(
+        paste0(
+          '<a class="country-change-log__source" href="%s" ',
+          'target="_blank" rel="noopener noreferrer">View public source</a>'
+        ),
+        html_escape(source_url)
+      )
+    }
+
+    c(
+      '<article class="country-change-log__entry">',
+      '<div class="country-change-log__marker" aria-hidden="true"></div>',
+      '<div class="country-change-log__content">',
+      sprintf('<div class="country-change-log__date">%s</div>', html_escape(published)),
+      sprintf('<h3>%s</h3>', html_escape(summary)),
+      field_tags,
+      if (length(meta)) c('<dl class="country-change-log__meta">', meta, '</dl>') else character(),
+      source_link,
+      "</div>",
+      "</article>"
+    )
+  }), use.names = FALSE)
+
+  c(
+    "## Version history",
+    "",
+    intro,
+    "",
+    '<div class="country-change-log">',
+    entries,
     "</div>",
     ""
   )
@@ -722,6 +843,7 @@ for (i in seq_len(nrow(char))) {
   }
 
   parts <- c(parts, similar_country_cards(row, char))
+  parts <- c(parts, change_log_section(country, change_log))
 
   parts <- c(
     parts,

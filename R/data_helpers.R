@@ -78,6 +78,41 @@ case_data_source <- function(
   )
 }
 
+empty_change_log <- function() {
+  tibble::tibble(
+    `Change ID` = character(),
+    Country = character(),
+    `Effective date` = character(),
+    `Published date` = character(),
+    `Public summary` = character(),
+    `Fields changed` = character(),
+    `Source type` = character(),
+    `Public source link` = character()
+  )
+}
+
+change_log_data_source <- function(
+  local_path = file.path("data", "change_log.csv")
+) {
+  explicit_path <- Sys.getenv("CHANGE_LOG_PATH", unset = "")
+  if (nzchar(explicit_path)) {
+    if (!file.exists(explicit_path)) {
+      stop("CHANGE_LOG_PATH does not exist: ", explicit_path, call. = FALSE)
+    }
+    return(explicit_path)
+  }
+
+  if (nzchar(Sys.getenv("CHANGE_LOG_URL", unset = ""))) {
+    return(require_sheet_url("CHANGE_LOG_URL"))
+  }
+
+  if (file.exists(local_path)) return(local_path)
+
+  # The Change Log is optional during local development and remains empty
+  # until its public feed is connected in the prototype build.
+  ""
+}
+
 load_sheet <- function(path) {
   df <- readr::read_csv(
     path,
@@ -193,6 +228,9 @@ normalise_characteristic_schema <- function(df) {
   ensure_columns(df, c(
     "Vivax endemicity",
     "To be included in current repository",
+    "Policy Document",
+    "Validated Policy Document",
+    "Implementation data",
     "Community malaria care - details",
     "Community vivax care - details",
     "Cross-border transmission - details",
@@ -266,6 +304,16 @@ normalise_case_schema <- function(df) {
   }
 
   df
+}
+
+normalise_change_log_schema <- function(df) {
+  if (!nrow(df)) return(empty_change_log())
+  columns <- names(empty_change_log())
+  df <- ensure_columns(df, columns)
+  df <- df[, columns, drop = FALSE]
+  df[] <- lapply(df, function(column) stringr::str_squish(as.character(column)))
+  df |>
+    dplyr::filter(nzchar(.data$Country), nzchar(.data$`Change ID`))
 }
 
 positive_policy_flag <- function(value) {
@@ -423,6 +471,24 @@ load_case_data <- function(path = case_data_source(), characteristic = NULL) {
   case
 }
 
+load_change_log_data <- function(path = change_log_data_source()) {
+  if (!nzchar(path)) return(empty_change_log())
+
+  if (file.exists(path) && isTRUE(file.info(path)$size == 0)) {
+    return(empty_change_log())
+  }
+
+  change_log <- tryCatch(
+    load_sheet(path),
+    error = function(error) {
+      message("Change Log feed is empty; generating profiles without history entries.")
+      empty_change_log()
+    }
+  )
+
+  normalise_change_log_schema(change_log)
+}
+
 repository_rows <- function(char, include_historical = TRUE) {
   scope <- stringr::str_to_lower(stringr::str_squish(
     char$`To be included in current repository`
@@ -436,21 +502,19 @@ repository_rows <- function(char, include_historical = TRUE) {
   char
 }
 
-headline_stats <- function(char, case) {
-  case_main <- case |>
-    dplyr::filter(
-      !stringr::str_detect(.data$Country, " - "),
-      .data$Country %in% char$Country
+headline_stats <- function(char) {
+  count_yes <- function(column) {
+    sum(
+      stringr::str_to_lower(stringr::str_squish(column)) == "yes",
+      na.rm = TRUE
     )
+  }
 
   list(
     n_countries = dplyr::n_distinct(char$Country),
-    n_current_or_previous_endemic = sum(
-      stringr::str_to_lower(stringr::str_squish(char$`Vivax endemicity`)) %in%
-        c("yes", "previously")
-    ),
-    n_implementing = sum(trimws(char$`Implementation: G6PD testing  (Y/N)`) == "Yes"),
-    n_with_policy = sum(nzchar(trimws(case_main$`Last Policy Update`)))
+    n_policy_documents = count_yes(char$`Policy Document`),
+    n_validated_policy_documents = count_yes(char$`Validated Policy Document`),
+    n_implementation_data = count_yes(char$`Implementation data`)
   )
 }
 

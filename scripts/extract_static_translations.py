@@ -41,7 +41,13 @@ class StaticTextParser(HTMLParser):
         attrs_dict = dict(attrs)
         classes = set((attrs_dict.get("class") or "").split())
         approved_link = tag == "a" and bool(
-            {"country-card", "country-contact-request__link", "profile-back-link"} & classes
+            {
+                "country-card",
+                "country-contact-request__link",
+                "country-change-log__source",
+                "profile-back-link",
+            }
+            & classes
         )
         tag_is_excluded = (
             tag in SKIP_TAGS

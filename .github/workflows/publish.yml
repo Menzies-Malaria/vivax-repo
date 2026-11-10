@@ -63,6 +63,7 @@ jobs:
           MAIN_CASE_DATA_URL: ${{ secrets.CASE_DATA_URL }}
           PROTOTYPE_CHAR_DATA_URL: ${{ secrets.CHAR_DATA_URL_PROT }}
           PROTOTYPE_CASE_DATA_URL: ${{ secrets.CASE_DATA_URL_PROT }}
+          PROTOTYPE_CHANGE_LOG_URL: ${{ secrets.SUBMISSIONS_CHANGE_LOG_PROT }}
         run: |
           if [ -z "$MAIN_CHAR_DATA_URL" ] || [ -z "$MAIN_CASE_DATA_URL" ]; then
             echo "Error: CHAR_DATA_URL and CASE_DATA_URL must be set as repository secrets." >&2
@@ -70,6 +71,10 @@ jobs:
           fi
           if [ -z "$PROTOTYPE_CHAR_DATA_URL" ] || [ -z "$PROTOTYPE_CASE_DATA_URL" ]; then
             echo "Error: CHAR_DATA_URL_PROT and CASE_DATA_URL_PROT must be set as repository secrets." >&2
+            exit 1
+          fi
+          if [ -z "$PROTOTYPE_CHANGE_LOG_URL" ]; then
+            echo "Error: SUBMISSIONS_CHANGE_LOG_PROT must be set as a repository secret." >&2
             exit 1
           fi
 
@@ -96,6 +101,8 @@ jobs:
         env:
           CHAR_DATA_URL: ${{ secrets.CHAR_DATA_URL_PROT }}
           CASE_DATA_URL: ${{ secrets.CASE_DATA_URL_PROT }}
+          CHANGE_LOG_URL: ${{ secrets.SUBMISSIONS_CHANGE_LOG_PROT }}
+          CHANGE_LOG_PATH: data/change_log.csv
           # Sarah confirmed that the populated prototype email fields have consent.
           # Keep production/main controlled by the repository variable above.
           INCLUDE_PUBLIC_EMAIL: "1"

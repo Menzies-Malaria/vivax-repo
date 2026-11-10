@@ -15,6 +15,7 @@ workbook <- if (length(args)) args[[1]] else file.path(
   "data",
   "Vivax Policy and Implementation Data - latest per 28-10-2026.xlsx"
 )
+contact_source <- if (length(args) >= 2) args[[2]] else ""
 
 if (!file.exists(workbook)) {
   stop("Workbook not found: ", workbook, call. = FALSE)
@@ -61,6 +62,56 @@ for (column in required_case) {
   if (!column %in% names(case_management)) {
     stop("Case Mgmt Data Points is missing `", column, "`.", call. = FALSE)
   }
+}
+
+if (nzchar(contact_source)) {
+  if (!file.exists(contact_source)) {
+    stop("Contact source not found: ", contact_source, call. = FALSE)
+  }
+
+  previous_characteristic <- read_csv(
+    contact_source,
+    col_types = cols(.default = col_character()),
+    na = character(),
+    show_col_types = FALSE
+  )
+  names(previous_characteristic) <- str_trim(names(previous_characteristic))
+  previous_characteristic[is.na(previous_characteristic)] <- ""
+
+  missing_contact_columns <- setdiff(
+    required_characteristic,
+    names(previous_characteristic)
+  )
+  if (length(missing_contact_columns)) {
+    stop(
+      "Contact source is missing column(s): ",
+      paste(missing_contact_columns, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  current_country <- str_squish(characteristic$Country)
+  previous_country <- str_squish(previous_characteristic$Country)
+  if (anyDuplicated(previous_country[nzchar(previous_country)])) {
+    stop("Contact source contains duplicate country names.", call. = FALSE)
+  }
+
+  contact_match <- match(current_country, previous_country)
+  country_rows <- nzchar(str_squish(characteristic$Region))
+  unmatched_countries <- characteristic$Country[country_rows & is.na(contact_match)]
+  if (length(unmatched_countries)) {
+    stop(
+      "Contact source has no match for: ",
+      paste(unmatched_countries, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  matched <- !is.na(contact_match)
+  characteristic$Contact[matched] <- previous_characteristic$Contact[
+    contact_match[matched]
+  ]
+  cat("Retained Contact values from: ", contact_source, "\n", sep = "")
 }
 
 date_match <- str_match(basename(workbook), "(\\d{1,2}-\\d{1,2}-\\d{4})")[, 2]
