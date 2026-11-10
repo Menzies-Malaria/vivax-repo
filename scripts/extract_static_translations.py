@@ -18,6 +18,7 @@ SKIP_TAGS = {
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 SKIP_CLASSES = {
     "cell", "cell-output", "cell-output-display", "cell-output-stdout",
+    "country-change-log",
     "datatables", "figure", "form-embed", "html-widget", "plotly",
     "sourceCode", "vivax-chart", "vivax-chart-payload",
 }
@@ -44,7 +45,6 @@ class StaticTextParser(HTMLParser):
             {
                 "country-card",
                 "country-contact-request__link",
-                "country-change-log__source",
                 "profile-back-link",
             }
             & classes

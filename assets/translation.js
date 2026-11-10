@@ -80,13 +80,13 @@
   }
 
   function isExcluded(element) {
-    if (element.closest("script, style, code, pre, figure, iframe, canvas, svg, .cell, .cell-output, .html-widget, .vivax-chart, .vivax-language-control")) {
+    if (element.closest("script, style, code, pre, figure, iframe, canvas, svg, .cell, .cell-output, .html-widget, .vivax-chart, .vivax-language-control, .country-change-log")) {
       return true;
     }
     if (element.closest("table") && !translateProfileTables) return true;
     const link = element.closest("a");
     const translatableLink = link && (
-      link.matches(".sidebar-link, .policy-map-profile-link, .profile-back-link, .country-card, .country-contact-request__link, .country-change-log__source") ||
+      link.matches(".sidebar-link, .policy-map-profile-link, .profile-back-link, .country-card, .country-contact-request__link") ||
       link.closest("#TOC")
     );
     return Boolean(link && !translatableLink);

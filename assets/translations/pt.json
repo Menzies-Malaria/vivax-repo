@@ -2,13 +2,13 @@
   "meta": {
     "language": "pt",
     "source_language": "en",
-    "source_hash": "ec14a34ae36f6150bbdfe7ed018aeb3c77c3da41e75edc858083b474ecab477b",
+    "source_hash": "2c199b4b4ce3e599a5351fb3ac73b1a7883c647e79c5e3682dd7e675e52ccdb6",
     "engine": "Argos Translate",
     "review_status": "machine draft - human review required",
-    "string_count": 1009,
-    "source_character_count": 59999,
+    "string_count": 1008,
+    "source_character_count": 59938,
     "reused_string_count": 1008,
-    "translated_string_count": 1
+    "translated_string_count": 0
   },
   "strings": {
     "static.4aa9bfd2f175a94a": ", e",
@@ -594,7 +594,6 @@
     "static.5f71246899ecf82b": "Sem PQ ou TQ",
     "static.0b50d5bccb2fd1ce": "Sem primaquina",
     "static.0b4705333a61a8fc": "Sem primaquina ou tafenoquina sem ensaios G6PD",
-    "static.3ddaf62f1fdde602": "Ainda não foram registadas alterações publicadas neste país.",
     "static.61fee17f3ec68bb6": "Comunidades nómadas",
     "static.19e2efb825d2ddd1": "Pastorais nômades",
     "static.dc937b59892604f5": "Nenhum",
@@ -702,8 +701,8 @@
     "static.d63f95d464c74f26": "Pré-eliminação <U+00B7> 1a linha esquizontocida: CQ",
     "static.fdad2bad0f8bee78": "Pré-eliminação/Intenção de eliminação",
     "static.10ffacfab81f6420": "Pré-eliminação/intenção de eliminação",
-    "static.e43a8a08cfdf75be": "Pré-eliminação/Intenção de eliminação <U+00B7> 1a linha esquizontocida: AL",
     "static.1a3d8d6737e7d140": "Pré-eliminação/intenção de eliminação <U+00B7> 1a linha esquizontocida: AL",
+    "static.e43a8a08cfdf75be": "Pré-eliminação/Intenção de eliminação <U+00B7> 1a linha esquizontocida: AL",
     "static.4086a31b00dda870": "Pré-eliminação/intenção de eliminação <U+00B7> 1a linha esquizontocida: CQ",
     "static.0888c6af33bb5bb7": "Pré-eliminação/intenção de eliminação <U+00B7> 1a linha esquizontocida: N/A",
     "static.1ebdca66c1347d91": "Pré-eliminação/intenção de eliminação <U+00B7> 1a linha esquizontocida: PY-AS",

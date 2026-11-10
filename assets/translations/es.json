@@ -2,13 +2,13 @@
   "meta": {
     "language": "es",
     "source_language": "en",
-    "source_hash": "ec14a34ae36f6150bbdfe7ed018aeb3c77c3da41e75edc858083b474ecab477b",
+    "source_hash": "2c199b4b4ce3e599a5351fb3ac73b1a7883c647e79c5e3682dd7e675e52ccdb6",
     "engine": "Argos Translate",
     "review_status": "machine draft - human review required",
-    "string_count": 1009,
-    "source_character_count": 59999,
+    "string_count": 1008,
+    "source_character_count": 59938,
     "reused_string_count": 1008,
-    "translated_string_count": 1
+    "translated_string_count": 0
   },
   "strings": {
     "static.4aa9bfd2f175a94a": ", y",
@@ -594,7 +594,6 @@
     "static.5f71246899ecf82b": "No PQ o TQ",
     "static.0b50d5bccb2fd1ce": "No primaquine",
     "static.0b4705333a61a8fc": "Sin pruebas de G6PD",
-    "static.3ddaf62f1fdde602": "Todavía no se han registrado cambios publicados para este país.",
     "static.61fee17f3ec68bb6": "Comunidades nómadas",
     "static.19e2efb825d2ddd1": "Pastoristas nómadas",
     "static.dc937b59892604f5": "Ninguno",
@@ -702,8 +701,8 @@
     "static.d63f95d464c74f26": "Pre-elimination ■U+00B7 título 1st-line schizontocidal: CQ",
     "static.fdad2bad0f8bee78": "Pre-elimination/Elimination-intent",
     "static.10ffacfab81f6420": "Pre-elimination/elimination-intent",
-    "static.e43a8a08cfdf75be": "Pre-elimination/Elimination-intent",
     "static.1a3d8d6737e7d140": "Pre-elimination/elimination-intent",
+    "static.e43a8a08cfdf75be": "Pre-elimination/Elimination-intent",
     "static.4086a31b00dda870": "Pre-elimination/elimination-intent",
     "static.0888c6af33bb5bb7": "Pre-elimination/elimination-intent",
     "static.1ebdca66c1347d91": "Pre-elimination/elimination-intent = 1st-line schizontocidal: PY-AS",
