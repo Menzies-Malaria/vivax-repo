@@ -295,9 +295,20 @@ similarity_fields <- tibble::tribble(
   "Mobile Migrant Populations", "mobile/migrant-population setting", 1, TRUE
 )
 
+missing_similarity_fields <- setdiff(similarity_fields$column, names(char))
+if (length(missing_similarity_fields)) {
+  message(
+    "Country similarity matching will ignore missing characteristic column(s): ",
+    paste(missing_similarity_fields, collapse = ", ")
+  )
+}
+
 similarity_index <- as.data.frame(
   setNames(
-    lapply(similarity_fields$column, function(col) normalise_match(char[[col]])),
+    lapply(similarity_fields$column, function(col) {
+      values <- if (col %in% names(char)) char[[col]] else rep(NA_character_, nrow(char))
+      normalise_match(values)
+    }),
     similarity_fields$column
   ),
   check.names = FALSE,
