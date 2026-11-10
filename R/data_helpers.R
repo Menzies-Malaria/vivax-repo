@@ -128,10 +128,24 @@ load_sheet <- function(path) {
   df
 }
 
+column_name_key <- function(value) {
+  value |>
+    stringr::str_to_lower() |>
+    stringr::str_replace_all("[^a-z0-9]+", " ") |>
+    stringr::str_squish()
+}
+
 rename_alias <- function(df, canonical, aliases) {
   if (canonical %in% names(df)) return(df)
-  hit <- aliases[aliases %in% names(df)]
-  if (length(hit)) names(df)[names(df) == hit[[1]]] <- canonical
+
+  candidates <- c(canonical, aliases)
+  match_index <- match(
+    column_name_key(candidates),
+    column_name_key(names(df)),
+    nomatch = 0L
+  )
+  match_index <- match_index[match_index > 0L]
+  if (length(match_index)) names(df)[match_index[[1]]] <- canonical
   df
 }
 
@@ -205,8 +219,12 @@ normalise_characteristic_schema <- function(df) {
     "Pv 2nd line treatment" = c(
       "Schizontocidal Pv 2nd line treatment"
     ),
+    "Guidelines G6PD testing  (Y/N)" = c(
+      "Guidelines G6PD testing (Y/N)"
+    ),
     "Implementation: G6PD testing  (Y/N)" = c(
-      "Implementation: G6PD testing  (Y/N,partial)"
+      "Implementation: G6PD testing  (Y/N,partial)",
+      "Implementation: G6PD testing (Y/N,partial)"
     )
   )
   for (canonical in names(aliases)) {
@@ -231,6 +249,8 @@ normalise_characteristic_schema <- function(df) {
     "Policy Document",
     "Validated Policy Document",
     "Implementation data",
+    "Guidelines G6PD testing  (Y/N)",
+    "Implementation: G6PD testing  (Y/N)",
     "Community malaria care - details",
     "Community vivax care - details",
     "Cross-border transmission - details",
