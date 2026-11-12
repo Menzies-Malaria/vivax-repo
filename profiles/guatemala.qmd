@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Americas |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Rural and indegineous communities, migrant agricultural workers |
 | **Economic status** | Upper-middle income |
 :::
 
@@ -38,17 +36,49 @@ toc: true
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | _Not reported_ |
 | **Radical-cure regimen** | _Not reported_ |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Locality level; 4 categories; Receptivity; transmission history; mobility/importation; altitude proxy; Stratum 1: non-receptive; Stratum 2: receptive/no importation risk; Stratum 3: receptive + importation risk/no current indigenous transmission; Stratum 4: active/residual transmission; High transmission: 14%; low transmission: 62%; malaria-free areas: 25%</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Rural and indegineous communities, migrant agricultural workers</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy and RDT (P.f + P.v combo)</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ## Reported case numbers
@@ -69,52 +99,6 @@ toc: true
 <div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
 <script type="application/json" class="vivax-chart-payload">{"country":"Guatemala","series":[{"year":"2018","value":3018},{"year":"2019","value":2069},{"year":"2020","value":1058},{"year":"2021","value":1273},{"year":"2022","value":1824},{"year":"2023","value":3046}]}</script>
 </div>
-
-## Case-management policy detail
-
-| | |
-|---|---|
-| **Last policy update** | _Not reported_ |
-| **Schizontocidal drug** | CQ |
-| **G6PD testing policy** | _Not reported_ |
-| **G6PD testing policy — details** | Not required |
-| **G6PD implementation** | _Not reported_ |
-| **G6PD implementation — details** | _Not reported_ |
-| **Year of G6PD implementation** | _Not reported_ |
-| **Health system level (G6PD)** | _Not reported_ |
-| **Health system level (G6PD) — details** | _Not reported_ |
-| **Policy on PQ (overall)** | _Not reported_ |
-
-::: {.country-policy-matrix}
-### Radical-cure treatment by G6PD status
-
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
-|---|---|---|---|---|---|---|---|
-| **Overall policy** | _Not specified_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
-:::
-
-::: {.country-policy-matrix}
-### Radical-cure follow-up by G6PD status
-
-| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
-|---|---|---|---|
-| **Overall policy** | DOT | _Not reported_ | _Not reported_ |
-:::
-
-| | |
-|---|---|
-| **Next policy update** | _Not reported_ |
-| **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | _Not reported_ |
-| **National Strategic Plan (URL)** | _Not reported_ |
-
-### Country-specific policy context
-
-<div class="country-policy-context"><p>G6PD testing policy from 2024 World Malaria Report</p></div>
-
-### Additional policy notes
-
-<div class="country-policy-context"><p>Working on malaria elimination</p></div>
 
 ## Countries with similar reported characteristics
 

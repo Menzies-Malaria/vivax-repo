@@ -155,7 +155,7 @@
     const treatments = payload.treatments || [];
     const byCountry = new Map(rows.map((row) => [normaliseName(row.country), row]));
     const treatmentLookup = new Map(
-      treatments.map((row) => [`${normaliseName(row.country)}|${row.patient_group}`, row.radical_cure_policy])
+      treatments.map((row) => [`${normaliseName(row.country)}|${row.patient_group}`, row])
     );
     const countriesWithPatientScenarios = new Set(
       treatments.map((row) => normaliseName(row.country))
@@ -172,6 +172,8 @@
     const endemicitySelect = document.getElementById("policy-map-endemicity");
     const regimenSelect = document.getElementById("policy-map-regimen");
     const regimenControl = document.getElementById("policy-map-regimen-control");
+    const regimenScopeSelect = document.getElementById("policy-map-regimen-scope");
+    const regimenScopeControl = document.getElementById("policy-map-regimen-scope-control");
     const resetButton = document.getElementById("policy-map-reset");
     const legend = document.getElementById("policy-map-legend");
     const details = document.getElementById("policy-map-details");
@@ -225,7 +227,18 @@
       if (patientSelect.value === NOT_DIFFERENTIATED) {
         return display(row.treatment_policy_overall);
       }
-      return treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`);
+      return treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`)?.radical_cure_policy;
+    }
+
+    function selectedPatientRegimens(row) {
+      if (!usesPatientScenarioMetric()) return "";
+      if (!hasSelectedPatientPolicy(row)) return "";
+      if (patientSelect.value === NOT_DIFFERENTIATED) {
+        return String(row.regimen_options || "");
+      }
+      return String(
+        treatmentLookup.get(`${normaliseName(row.country)}|${patientSelect.value}`)?.regimen_options || ""
+      );
     }
 
     function categoryFor(row) {
@@ -286,7 +299,10 @@
         }
         if (!hasSelectedPatientPolicy(row)) return false;
         if (regimenSelect.value) {
-          const regimens = String(row.regimen_options || "").split("|").filter(Boolean);
+          const regimenSource = regimenScopeSelect.value === "patient"
+            ? selectedPatientRegimens(row)
+            : String(row.regimen_options || "");
+          const regimens = regimenSource.split("|").filter(Boolean);
           if (!regimens.includes(regimenSelect.value)) return false;
         }
         if (healthSelect.value && healthLevelFor(row) !== healthSelect.value) return false;
@@ -313,6 +329,7 @@
       const metric = metricSelect.value;
       patientControl.hidden = !["radical_cure_policy", "treatment_policy_implementation"].includes(metric);
       regimenControl.hidden = !["radical_cure_policy", "treatment_policy_implementation"].includes(metric);
+      regimenScopeControl.hidden = regimenControl.hidden;
       healthControl.hidden = ![
         "g6pd_implementation",
         "g6pd_policy_implementation",
@@ -380,6 +397,7 @@
           ${detailItem("First-line schizontocidal treatment", row.first_line)}
           ${detailItem("Second-line schizontocidal treatment", row.second_line)}
           ${detailItem("Available radical-cure regimens", String(row.regimen_options || "").split("|").join("; "))}
+          ${usesPatientScenarioMetric() ? detailItem("Regimens for selected G6PD group (NEW)", selectedPatientRegimens(row).split("|").filter(Boolean).join("; ")) : ""}
           ${detailItem("G6PD testing in guidelines", row.g6pd_guidelines_summary)}
           ${detailItem("G6PD testing implemented", row.g6pd_implementation_summary)}
           ${detailItem("Type of G6PD testing", row.g6pd_type)}
@@ -444,7 +462,7 @@
       console.error(error);
     });
 
-    [metricSelect, patientSelect, regionSelect, healthSelect, endemicitySelect, regimenSelect].forEach((control) => {
+    [metricSelect, patientSelect, regionSelect, healthSelect, endemicitySelect, regimenSelect, regimenScopeSelect].forEach((control) => {
       control.addEventListener("change", updateMap);
     });
 
@@ -455,6 +473,7 @@
       healthSelect.value = "";
       endemicitySelect.value = "";
       regimenSelect.value = "";
+      regimenScopeSelect.value = "country";
       selectedKey = null;
       tooltip.hidden = true;
       svg.transition().duration(300).call(zoom.transform, d3.zoomIdentity);

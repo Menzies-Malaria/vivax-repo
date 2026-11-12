@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Americas |
 | ***P. vivax* endemicity** | Previously |
 | **Programme phase** | Eliminated/certified malaria-free |
+| **Subnational programme phases** | No |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Imported cases |
 | **Economic status** | Upper-middle income |
 :::
 
@@ -37,18 +35,50 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | Not specified |
-| **Radical-cure regimen** | Low-dose 14-day primaquine; Weekly primaquine for 8 weeks |
-| **Rationale for ACT use** | _Not reported_ |
+| **Radical-cure regimen** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | No |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | No |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>WHO certification: 2018</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Imported cases</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy, RDT where microscopy not possible but needs to be confirmed by microscopy</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ## Reported case numbers
@@ -61,48 +91,6 @@ toc: true
 | **2020** | _Not reported_ |
 | **2019** | _Not reported_ |
 | **2018** | _Not reported_ |
-
-## Case-management policy detail
-
-| | |
-|---|---|
-| **Last policy update** | 2017 |
-| **Schizontocidal drug** | CQ |
-| **G6PD testing policy** | Not required |
-| **G6PD testing policy — details** | _Not reported_ |
-| **G6PD implementation** | _Not reported_ |
-| **G6PD implementation — details** | _Not reported_ |
-| **Year of G6PD implementation** | _Not reported_ |
-| **Health system level (G6PD)** | _Not reported_ |
-| **Health system level (G6PD) — details** | _Not reported_ |
-| **Policy on PQ (overall)** | Dependent on G6PD status |
-
-::: {.country-policy-matrix}
-### Radical-cure treatment by G6PD status
-
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
-|---|---|---|---|---|---|---|---|
-| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
-| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Medical supervision with easy access to transfusion services |
-| **If no testing available** | PQ 0.25 mg/kg/day over 14 days | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
-:::
-
-::: {.country-policy-matrix}
-### Radical-cure follow-up by G6PD status
-
-| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
-|---|---|---|---|
-| **G6PD normal: no definition** | _Not reported_ | _Not reported_ | _Not reported_ |
-| **G6PD deficient: no definition** | _Not reported_ | _Not reported_ | _Not reported_ |
-| **If no testing available** | _Not reported_ | _Not reported_ | _Not reported_ |
-:::
-
-| | |
-|---|---|
-| **Next policy update** | No |
-| **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | <a href="https://www.mspbs.gov.py/dependencias/portal/adjunto/b4bee7-ProtocoloManejoClnicoPaludismocontapaFinal.pdf" target="_blank" rel="noopener noreferrer">https://www.mspbs.gov.py/dependencias/portal/adjunto/b4bee7-ProtocoloManejoClnicoPaludismocontapaFinal.pdf</a> |
-| **National Strategic Plan (URL)** | _Not reported_ |
 
 ## Countries with similar reported characteristics
 

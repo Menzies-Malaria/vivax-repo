@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Western Pacific |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | No |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | No |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Remote communities, children under 5, travelers |
 | **Economic status** | Lower-middle income |
 :::
 
@@ -38,17 +36,39 @@ toc: true
 | **First-line schizontocidal treatment** | AL |
 | **Second-line schizontocidal treatment** | DHA-PPQ |
 | **Radical-cure regimen** | High-dose 14-day primaquine; Low-dose 14-day primaquine; Weekly primaquine for 8 weeks |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Yes |
 | **Type of G6PD testing** | Qualitative |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | No |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<section class="country-note-group country-note-group--visible">
+<h3>Programme and transmission context</h3>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Remote communities, children under 5, travelers</p>
+</div>
+</div>
+</section>
+<section class="country-note-group country-note-group--visible">
+<h3>Diagnosis and G6PD context</h3>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>RDT, microscopy</p>
+</div>
+</div>
+</section>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -94,6 +114,18 @@ toc: true
 | **Health system level (G6PD) — details** | Up to health centre level |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal male: no definition** | PQ 0.5 mg/kg/day over 14 days | Partially implemented | Implemented with G6PD testing where available | 2024 | DOT | Not implemented, but patient clinical monitoring is conducted by care giver at home, as advised by the nurse | 2024 |
+| **G6PD normal female: no definition** | PQ 0.25 mg/kg/day over 14 days | Partially implemented | Implemented with G6PD testing where available | 2024 | DOT | Not implemented, but patient clinical monitoring is conducted by care giver at home, as advised by the nurse | 2024 |
+| **G6PD deficient: no definition** | No PQ or PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | Implemented with G6PD testing where available | 2024 | DOT | Not implemented, but patient clinical monitoring is conducted by care giver at home, as advised by the nurse | 2024 |
+| **If no testing available** | PQ 0.25 mg/kg/day over 14 days | Implemented | Implemented with G6PD testing where available | 2024 | DOT | Not implemented, but patient clinical monitoring is conducted by care giver at home, as advised by the nurse | 2024 |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -123,9 +155,79 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>High dose short course PQ will soon piloted in active foci areas, followed by National roll out. Also, thinking of Tafenoquine after approval for use from WHO, with support from research outcomes.</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>5 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD normal male: no definition</h4>
+<p>0.30-0.75 vs 0.5</p>
+</div>
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD normal female: no definition, If no testing available</h4>
+<p>0.15-0.36 vs 0.25</p>
+</div>
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD deficient: no definition</h4>
+<p>0.45-1.13 vs 0.75</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>2 adult weight bands: 41-60 kgs, &gt; 60 kgs</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>1 adult weight band : &gt; 35 kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Quinine</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>AL</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>Yes</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>None</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>High dose short course PQ will soon piloted in active foci areas, followed by National roll out. Also, thinking of Tafenoquine after approval for use from WHO, with support from research outcomes.</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

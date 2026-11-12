@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Eastern Mediterranean |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | Nomadic pastoralists |
-| **High-risk populations** | Children under 5, IDPs, pregnant people |
 | **Economic status** | Low income |
 :::
 
@@ -38,17 +36,69 @@ toc: true
 | **First-line schizontocidal treatment** | AL |
 | **Second-line schizontocidal treatment** | DHA-PPQ |
 | **Radical-cure regimen** | Low-dose 14-day primaquine; Weekly primaquine for 8 weeks |
-| **Rationale for ACT use** | Decreasing therapeutic efficacy of AS +SP (TES) |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | No |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>State level</p>
+</div>
+<div class="country-note-item">
+<h4>Mobile and migrant population context</h4>
+<p>Nomadic pastoralists</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Children under 5, IDPs, pregnant people</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy, RDTs (program preference for RDTs, but health practioner preference for microscopy)</p>
+</div>
+<div class="country-note-item">
+<h4>G6PD prevalence research</h4>
+<p>None</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Treatment and community-care context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Rationale for ACT use</h4>
+<p>Decreasing therapeutic efficacy of AS +SP (TES)</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -93,6 +143,17 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on known G6PD status |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | Adults: PQ 15 mg/day over 14 days Children: PQ 0.25 mg/kg/day over 14 days | Not implemented | Not implemented because G6PD testing is not implemented | 2000 | _Not reported_ | _Not reported_ | _Not reported_ |
+| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Not implemented | Not implemented because G6PD testing is not implemented | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+| **If no testing available** | Not specified but in adults: PQ 15 mg/day over 14 days and children: PQ 0.25 mg/kg /day over 14 days in practice | Implemented | Implemented | 2000 | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -119,6 +180,57 @@ toc: true
 | **Treatments under consideration** | Tafenoquine |
 | **Treatment guidelines (URL)** | <a href="https://www.scribd.com/document/756601422/Sudan-Malaria-Case-Management-Protocol-2023-1#content=query:G6PD,pageNum:43,indexOnPage:0,bestMatch:false" target="_blank" rel="noopener noreferrer">https://www.scribd.com/document/756601422/Sudan-Malaria-Case-Management-Protocol-2023-1#content=query:G6PD,pageNum:43,indexOnPage:0,bestMatch:false</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
+
+### Dosing and special populations
+
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage</h4>
+<p>No dosage table, fixed dose PQ</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>No dosage table, fixed dose PQ</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>1 adult weight band: &gt; 34 kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>AL</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>AL</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>No</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>Provision of PQ after delivery and end of breastfeeding</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

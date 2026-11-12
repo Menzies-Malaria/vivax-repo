@@ -4,7 +4,7 @@
 
   const WORLD_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
   const TOPOJSON_URL = "https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js";
-  const DESKTOP = "(min-width: 992px)";
+  const DESKTOP = "(min-width: 1280px)";
   const aliases = {
     "cabo verde": "cape verde",
     "central african republic": "central african rep",
@@ -56,7 +56,8 @@
       card.before(marker);
     }
     const margin = document.getElementById("quarto-margin-sidebar");
-    const desktop = window.matchMedia(DESKTOP).matches;
+    const desktop = window.matchMedia(DESKTOP).matches &&
+      !document.body.classList.contains("vivax-mobile-device");
     if (desktop && margin) {
       margin.append(card);
       card.classList.add("country-contact-card--margin");

@@ -2,8 +2,8 @@
   "use strict";
 
   const STORAGE_KEY = "vivax-sidebar-collapsed";
-  const DESKTOP_QUERY = "(min-width: 992px)";
-  const COMPACT_DESKTOP_QUERY = "(min-width: 992px) and (max-width: 1279.98px)";
+  const DESKTOP_QUERY = "(min-width: 1280px)";
+  const COMPACT_DESKTOP_QUERY = "(min-width: 1280px) and (max-width: 1599.98px)";
   const icons = [
     ["index.html", "bi-geo-alt"],
     ["overview.html", "bi-house"],
@@ -22,6 +22,12 @@
   }
 
   function init() {
+    // Chrome's mobile/tablet user agent remains present in its normal mode and
+    // is replaced when the user explicitly requests the desktop site. This
+    // gives large tablets the compact interface without blocking that choice.
+    const mobileSiteRequested = /Android|iPad|iPhone|iPod/i.test(navigator.userAgent);
+    document.body.classList.toggle("vivax-mobile-device", mobileSiteRequested);
+
     const sidebar = document.getElementById("quarto-sidebar");
     const header = sidebar && sidebar.querySelector(".sidebar-header");
     if (!sidebar || !header) return;
@@ -75,10 +81,19 @@
       return document.body.classList.contains("vivax-sidebar-collapsed");
     }
 
+    function isDesktopLayout() {
+      return !mobileSiteRequested && window.matchMedia(DESKTOP_QUERY).matches;
+    }
+
+    function isCompactDesktop() {
+      return isDesktopLayout() && window.matchMedia(COMPACT_DESKTOP_QUERY).matches;
+    }
+
     let hasSavedPreference = localStorage.getItem(STORAGE_KEY) !== null;
+    let compactOverride = false;
 
     function syncButton() {
-      const desktop = window.matchMedia(DESKTOP_QUERY).matches;
+      const desktop = isDesktopLayout();
       const collapsed = desktop && isCollapsed();
       button.setAttribute("aria-expanded", String(!collapsed));
       button.setAttribute("aria-label", collapsed ? "Expand sidebar" : "Collapse sidebar");
@@ -86,7 +101,7 @@
     }
 
     function apply(collapsed, persist) {
-      const desktop = window.matchMedia(DESKTOP_QUERY).matches;
+      const desktop = isDesktopLayout();
       document.body.classList.toggle("vivax-sidebar-collapsed", desktop && collapsed);
       syncButton();
       if (persist) {
@@ -97,21 +112,30 @@
     }
 
     const saved = localStorage.getItem(STORAGE_KEY);
-    const initialCollapsed = hasSavedPreference
-      ? saved === "true"
-      : window.matchMedia(COMPACT_DESKTOP_QUERY).matches;
+    const initialCollapsed = isCompactDesktop()
+      ? true
+      : hasSavedPreference && saved === "true";
     apply(initialCollapsed, false);
 
-    button.addEventListener("click", () => apply(!isCollapsed(), true));
+    button.addEventListener("click", () => {
+      const compact = isCompactDesktop();
+      compactOverride = compact;
+      apply(!isCollapsed(), !compact);
+    });
     window.addEventListener("resize", () => {
-      const desktop = window.matchMedia(DESKTOP_QUERY).matches;
+      const desktop = isDesktopLayout();
+      const compact = isCompactDesktop();
       if (!desktop) {
         document.body.classList.remove("vivax-sidebar-collapsed");
-      } else if (!hasSavedPreference) {
+        compactOverride = false;
+      } else if (compact && !compactOverride) {
+        document.body.classList.add("vivax-sidebar-collapsed");
+      } else if (!compact) {
         document.body.classList.toggle(
           "vivax-sidebar-collapsed",
-          window.matchMedia(COMPACT_DESKTOP_QUERY).matches
+          hasSavedPreference && localStorage.getItem(STORAGE_KEY) === "true"
         );
+        compactOverride = false;
       }
       syncButton();
     });

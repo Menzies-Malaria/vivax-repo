@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Western Pacific |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | Mostly into Papua Indonesia |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | Mining and petroleum sector workers |
-| **High-risk populations** | Mobile populations traveling from low endemic (or predominantly vivax malaria endemic) and epidemic prone areas in the highlands to (and from) highly endemic lowland areas, especially urban settlements in Madang and Morobe; People of all age groups living in epidemic-prone highland provinces during epidemic years; Pregnant women and young children (particularly those who are malnourished) living in highly endemic lowland areas. |
 | **Economic status** | Lower-middle income |
 :::
 
@@ -38,17 +36,77 @@ toc: true
 | **First-line schizontocidal treatment** | AL |
 | **Second-line schizontocidal treatment** | DHA-PPQ |
 | **Radical-cure regimen** | Low-dose 14-day primaquine |
-| **Rationale for ACT use** | Because CQ resistance and AQ resistance, but less resistance for Pv. Maybe for easier case management to use the same first-line for both Pf and Pv? |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | Pilot |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Partial |
-| **Community vivax care — details** | Referral after malaria testing and provision of ACT |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Ecological stratification; 4 categories; altitute; Malaria is endemic and stable up to 1,200 metres; Malaria is epidemic prone between 1,200 and 1,600 metres; Only P. vivax is transmitted above 1,600 metres; There is no malaria transmission above 2,000 metres.</p>
+</div>
+<div class="country-note-item">
+<h4>Cross-border context</h4>
+<p>Mostly into Papua Indonesia</p>
+</div>
+<div class="country-note-item">
+<h4>Mobile and migrant population context</h4>
+<p>Mining and petroleum sector workers</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Mobile populations traveling from low endemic (or predominantly vivax malaria endemic) and epidemic prone areas in the highlands to (and from) highly endemic lowland areas, especially urban settlements in Madang and Morobe; People of all age groups living in epidemic-prone highland provinces during epidemic years; Pregnant women and young children (particularly those who are malnourished) living in highly endemic lowland areas.</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy or RDT</p>
+</div>
+<div class="country-note-item">
+<h4>G6PD prevalence research</h4>
+<p>Scope</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Treatment and community-care context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Rationale for ACT use</h4>
+<p>Because CQ resistance and AQ resistance, but less resistance for Pv. Maybe for easier case management to use the same first-line for both Pf and Pv?</p>
+</div>
+<div class="country-note-item">
+<h4>Community vivax-care context</h4>
+<p>Referral after malaria testing and provision of ACT</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -94,6 +152,17 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days | Not implemented | _Not reported_ | 2011 | No follow-up | _Not reported_ | _Not reported_ |
+| **G6PD severely deficient: no definition** | No PQ | _Not reported_ | _Not reported_ | 2011 | No follow-up | _Not reported_ | _Not reported_ |
+| **If no testing available** | PQ 0.25 mg/kg/day over 14 days | Implemented | _Not reported_ | 2011 | No follow-up | _Not reported_ | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -121,13 +190,86 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>Updating treatment guidelines to include G6PD test-guided high dose primaquine with phase implementation being planned; SP Prophylaxis is recommended for malaria during pregnancy.</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
 
-### Additional policy notes
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage</h4>
+<p>0.15-0.38 vs 0.25</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>1 adult weight band: ≥ 50 kgs</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>1 adult weight band : &gt; 35 kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Quinine + SP</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>AL</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>No</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>None</p>
+</div>
+</div>
+</details>
+</div>
 
-<div class="country-policy-context"><p>Updating treatment guidelines to include G6PD test-guided high dose primaquine with phase implementation being planned, from Mary&#39;s SCOPE Presentation</p></div>
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>Updating treatment guidelines to include G6PD test-guided high dose primaquine with phase implementation being planned; SP Prophylaxis is recommended for malaria during pregnancy.</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Additional policy notes</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>Updating treatment guidelines to include G6PD test-guided high dose primaquine with phase implementation being planned, from Mary&#39;s SCOPE Presentation</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

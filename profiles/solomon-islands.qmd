@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Western Pacific |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction/pre-elimination |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | No |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Pregnant women, children under 5 |
 | **Economic status** | Lower-middle income |
 :::
 
@@ -38,17 +36,65 @@ toc: true
 | **First-line schizontocidal treatment** | AL |
 | **Second-line schizontocidal treatment** | Quinine |
 | **Radical-cure regimen** | Low-dose 14-day primaquine |
-| **Rationale for ACT use** | P.v Resistance to CQ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Pilot |
 | **Type of G6PD testing** | Qualitative/Semi-quantitative |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Health zone level; 4 categories; API; High, medium, low burden, and malaria free</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Pregnant women, children under 5</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>RDTs and microscopy (RDT at all health facilities and microscopy at hospitals and health centres)</p>
+</div>
+<div class="country-note-item">
+<h4>G6PD prevalence research</h4>
+<p>Yes</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Treatment and community-care context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Rationale for ACT use</h4>
+<p>P.v Resistance to CQ</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -93,6 +139,17 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days | Partially implemented | Implemented with G6PD testing where possible otherwise implemented without, but lack of G6PD testing, limited supplies for G6PD reagents limits the implementation with testing so despite the policy they provide PQ14 without G6PD testing where diagnsosis and treatment supplies allow | 2018 | No follow-up | _Not reported_ | _Not reported_ |
+| **G6PD deficient: no definition** | No PQ | Partially implemented | Implemented with G6PD testing where possible otherwise implemented without, but lack of G6PD testing, limited supplies for G6PD reagents limits the implementation with testing so despite the policy they provide PQ14 without G6PD testing where diagnsosis and treatment supplies allow | 2018 | _Not reported_ | _Not reported_ | _Not reported_ |
+| **If no testing available** | Not specified but PQ 0.25 mg/kg/day over 14 days in practice | Implemented | Implemented with G6PD testing where possible otherwise implemented without, but lack of G6PD testing, limited supplies for G6PD reagents limits the implementation with testing so despite the policy they provide PQ14 without G6PD testing where diagnsosis and treatment supplies allow | 2018 | Advise patient to look out for the signs of hemolysis | Implemented | 2018 |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -120,9 +177,75 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>In practice, PQ14 is provided without G6PD testing with counselling emphasized and heightened pharmacovigilance. Advise patient to look out for the signs of hemolysis. All patients with 14 days prescribed Primaquine (PQ) must be advised that if their urine becomes dark (reddish brown), they must stop taking PQ and return to the clinic as soon as possible.<br>Ongoing guidelines update will include use of the STANDARD test which will guide whether patients can receive 7-day high dose PQ (1mg/kg/day). This will be the main recommendation; however, if G6PD testing is not possible the current plan is to have the 14-day low dose PQ as a fall back. For the G6PDd individuals thinking of using 8-week PQ but ongoing discussion with PNG-IMR. Referral to rural health clinic from nurse aid - reviewed on day 3. There are ongoing challenges with limited supplies for G6PD reagents and RDTs. Adherence to the 14-day regimen is also a main issue.</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage — Overall policy</h4>
+<p>0.15 - 0.29 vs 0.25</p>
+</div>
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD normal: no definition</h4>
+<p>0.15 - 0.38 vs 0.25</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>1 adult weight band: &gt;50 kgs</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>1 adult weight band : &gt; 35 kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Quinine</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>AL</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>Yes</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>None</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>In practice, PQ14 is provided without G6PD testing with counselling emphasized and heightened pharmacovigilance. Advise patient to look out for the signs of hemolysis. All patients with 14 days prescribed Primaquine (PQ) must be advised that if their urine becomes dark (reddish brown), they must stop taking PQ and return to the clinic as soon as possible.<br>Ongoing guidelines update will include use of the STANDARD test which will guide whether patients can receive 7-day high dose PQ (1mg/kg/day). This will be the main recommendation; however, if G6PD testing is not possible the current plan is to have the 14-day low dose PQ as a fall back. For the G6PDd individuals thinking of using 8-week PQ but ongoing discussion with PNG-IMR. Referral to rural health clinic from nurse aid - reviewed on day 3. There are ongoing challenges with limited supplies for G6PD reagents and RDTs. Adherence to the 14-day regimen is also a main issue.</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

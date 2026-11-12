@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | South-East Asia |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | _Not reported_ |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | _Not reported_ |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | _Not reported_ |
 | **Economic status** | Low income |
 :::
 
@@ -38,17 +36,39 @@ toc: true
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | _Not reported_ |
 | **Radical-cure regimen** | _Not reported_ |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | _Not reported_ |
 | **Community follow-up of radical cure** | _Not reported_ |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<section class="country-note-group country-note-group--visible">
+<h3>Programme and transmission context</h3>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>83.3% malaria-free; 11.4% low transmission (0–1 case/1,000); 5.4% high transmission (&gt;1/1,000).</p>
+</div>
+</div>
+</section>
+<section class="country-note-group country-note-group--visible">
+<h3>Diagnosis and G6PD context</h3>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy, RDT</p>
+</div>
+</div>
+</section>
+</div>
 
 
 ## Reported case numbers
@@ -85,6 +105,15 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | _Not reported_ |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **Overall policy** | _Not specified_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -108,9 +137,20 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
-
-<div class="country-policy-context"><p>G6PD testing policy from 2024 World Malaria Report</p></div>
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>G6PD testing policy from 2024 World Malaria Report</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

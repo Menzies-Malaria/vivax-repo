@@ -12,6 +12,14 @@
   --policy-map-panel-height: clamp(460px, 36cqw, 570px);
 }
 
+/* Quarto marks full-width blocks as page grids. This component manages its
+   own internal grid and must not inherit those minimum-content tracks. */
+.policy-map-shell.page-columns {
+  display: block !important;
+  min-width: 0;
+  max-width: 100%;
+}
+
 .policy-map-controls,
 .policy-map-stage,
 .policy-map-details,
@@ -23,11 +31,11 @@
 }
 
 .policy-map-controls {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
   align-items: end;
-  justify-content: center;
+  justify-content: stretch;
   padding: 0.85rem;
   margin-bottom: 0.75rem;
 }
@@ -44,13 +52,12 @@
 }
 
 .policy-map-control {
-  flex: 1 1 150px;
-  max-width: 230px;
+  min-width: 0;
+  max-width: none;
 }
 
 .policy-map-control--primary {
-  flex-basis: 230px;
-  max-width: 290px;
+  max-width: none;
 }
 
 .policy-map-control[hidden] {
@@ -73,6 +80,8 @@
 
 .policy-map-control select {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   min-height: 2.45rem;
   padding: 0.45rem 2rem 0.45rem 0.65rem;
   border: 1px solid var(--vivax-rule, #e4ddd0);
@@ -95,6 +104,7 @@
 }
 
 .policy-map-reset {
+  width: 100%;
   min-height: 2.45rem;
   padding: 0.5rem 0.8rem;
   border: 1px solid var(--vivax-primary, #0d4f4f);
@@ -156,6 +166,8 @@
 
 .policy-map-content {
   display: grid;
+  width: 100%;
+  min-width: 0;
   grid-template-columns: minmax(0, 1fr) clamp(232px, 22cqw, 310px);
   gap: 0.85rem;
   align-items: stretch;
@@ -340,7 +352,7 @@
 
 /* Respond to the space actually available to the map, not the physical screen.
    This also handles split-screen windows and browser side panels reliably. */
-@container policy-map-shell (max-width: 46rem) {
+@container policy-map-shell (max-width: 90rem) {
   .policy-map-content,
   .policy-map-content.page-columns {
     grid-template-columns: 1fr !important;
@@ -367,13 +379,10 @@
   }
 }
 
-@container policy-map-shell (max-width: 62rem) {
+@container policy-map-shell (max-width: 90rem) {
   .policy-map-controls {
     display: grid;
-    grid-template-columns:
-      minmax(205px, 1.5fr)
-      repeat(3, minmax(105px, 1fr))
-      auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-content: stretch;
   }
 
@@ -390,9 +399,13 @@
   .policy-map-controls:has(#policy-map-health-control:not([hidden])) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .policy-map-reset {
+    width: 100%;
+  }
 }
 
-@container policy-map-shell (max-width: 38.75rem) {
+@container policy-map-shell (max-width: 55rem) {
   .policy-map-controls {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -409,9 +422,42 @@
     grid-column: 1 / -1;
   }
 
+  .policy-map-controls:has(#policy-map-health-control:not([hidden])) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@container policy-map-shell (max-width: 40rem) {
+  .policy-map-controls,
+  .policy-map-controls:has(#policy-map-health-control:not([hidden])) {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-map-control,
+  .policy-map-control--primary,
+  .policy-map-reset {
+    grid-column: auto;
+  }
+
   .policy-map-stage,
   .policy-map {
     height: 430px;
     min-height: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .policy-map-shell.page-columns.page-full {
+    width: calc(100vw - 1.5rem) !important;
+    max-width: calc(100vw - 1.5rem) !important;
+    margin-inline: auto !important;
+  }
+
+  .policy-map-controls,
+  .policy-map-legend,
+  .policy-map-note,
+  .policy-map-content {
+    width: 100%;
+    max-width: 100%;
   }
 }

@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Western Pacific |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
+| **Subnational programme phases** | _Not reported_ |
 | **Cross-border transmission** | No |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | No |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Active-duty soldiers, discharged veterans, and residents of Northern Gyeonggi-do, Incheon, and Gangwon-do, especially farmers and forest-goers. |
 | **Economic status** | High income |
 :::
 
@@ -38,17 +36,39 @@ toc: true
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | _Not reported_ |
 | **Radical-cure regimen** | 7- or 14-day primaquine (dose not specified); Weekly primaquine for 8 weeks |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Partial |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | No |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | No |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<section class="country-note-group country-note-group--visible">
+<h3>Programme and transmission context</h3>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Active-duty soldiers, discharged veterans, and residents of Northern Gyeonggi-do, Incheon, and Gangwon-do, especially farmers and forest-goers.</p>
+</div>
+</div>
+</section>
+<section class="country-note-group country-note-group--visible">
+<h3>Diagnosis and G6PD context</h3>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>RDT for screening followed by confirmatory microscopy or NAAT</p>
+</div>
+</div>
+</section>
+</div>
 
 
 ## Reported case numbers
@@ -85,6 +105,17 @@ toc: true
 | **Health system level (G6PD) — details** | Referral hospitals, primary care hospitals |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days | Partially implemented | Implemented where health facilities have G6PD testing | _Not reported_ | Health workers monitor patients for hemolytic anemia and other adverse events for a period of 42 days. | Implemented | 2023 |
+| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+| **If no testing available** | PQ | Implemented | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -92,7 +123,7 @@ toc: true
 |---|---|---|---|---|---|---|---|
 | **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days | Partially implemented | Implemented where health facilities have G6PD testing | Up to the health centre level | Up to the health centre level | _Not reported_ | Monitoring for adverse events, counselling for relapse if irregular administration or discontinued |
 | **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Counselling for relapse if irregular administration or discontinued |
-| **If no testing available** | PQ | Implemented | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Closely monitor for haemolysis—particularly falling haemoglobin, dark/pigmented urine (색소뇨), and jaundice |
+| **If no testing available** | PQ | Implemented | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Closely monitor for haemolysis�particularly falling haemoglobin, dark/pigmented urine (???), and jaundice |
 :::
 
 ::: {.country-policy-matrix}
@@ -112,9 +143,71 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>Guidelines indicate that sometimes primaquine can be provided without G6PD testing given the low G6PDd prevalence and the delay that could occur for treatment if testing is not available at PoC. The dosage is not specified. In situation where PQ is administered with G6PD testing, the guidance says to closely monitor for haemolysis—particularly falling haemoglobin, dark/pigmented urine (색소뇨), and jaundice; 2019 guidelines: Adult: PQ 0.25 mg/kg/day over 14 days, Paediatric: 0.3 mg/kg/day over 14 days - this distinction removed in following guidelines.</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage</h4>
+<p>No weight bands - weight dose calculation</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>No weight bands - weight dose calculation</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>No weight bands - weight dose calculation</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>Yes</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>Provision of PQ after delivery and end of breastfeeding</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>Guidelines indicate that sometimes primaquine can be provided without G6PD testing given the low G6PDd prevalence and the delay that could occur for treatment if testing is not available at PoC. The dosage is not specified. In situation where PQ is administered with G6PD testing, the guidance says to closely monitor for haemolysis�particularly falling haemoglobin, dark/pigmented urine (???), and jaundice; 2019 guidelines: Adult: PQ 0.25 mg/kg/day over 14 days, Paediatric: 0.3 mg/kg/day over 14 days - this distinction removed in following guidelines.</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

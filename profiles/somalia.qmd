@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Eastern Mediterranean |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | Nomadic communities |
-| **High-risk populations** | Widespread transmission, but especially in Somaliland and Puntland, and other central and sourthern areas. Children under 5, pregnant women, IDPs, people in nomadic communities |
 | **Economic status** | Low income |
 :::
 
@@ -38,17 +36,65 @@ toc: true
 | **First-line schizontocidal treatment** | AL |
 | **Second-line schizontocidal treatment** | DHA-PPQ |
 | **Radical-cure regimen** | Low-dose 7-day primaquine |
-| **Rationale for ACT use** | High efficacy |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | Not specified |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | No |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | _Not reported_ |
 | **Community follow-up of radical cure** | _Not reported_ |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Level unknown; 5 categories;API</p>
+</div>
+<div class="country-note-item">
+<h4>Mobile and migrant population context</h4>
+<p>Nomadic communities</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Widespread transmission, but especially in Somaliland and Puntland, and other central and sourthern areas. Children under 5, pregnant women, IDPs, people in nomadic communities</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy, but reliance on RDTs in many facilities</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Treatment and community-care context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Rationale for ACT use</h4>
+<p>High efficacy</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -87,11 +133,22 @@ toc: true
 | **G6PD testing policy** | Required |
 | **G6PD testing policy — details** | Required but testing type not specified |
 | **G6PD implementation** | Not implemented |
-| **G6PD implementation — details** | Not implemented but plans for: Pilot implementation in selected districts or facilities Training of health workers on use of G6PD tests and interpretation Integration into malaria case management services Strengthening supply chains and quality assurance systems Collaboration with partners and global initiatives to support scale-up. |
+| **G6PD implementation — details** | Not implemented but plans for: Pilot implementation in selected districts or facilities Training of health workers on use of G6PD tests and interpretation Integration into malaria case management services Strengthening supply chains and quality assurance systems Collaboration with partners and global initiatives to support scale-up. |
 | **Year of G6PD implementation** | _Not reported_ |
 | **Health system level (G6PD)** | _Not reported_ |
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
+
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.5 mg/kg/day over 7 days | Not implemented | No G6PD testing available to facilitate treatment administration; vivax not a priority compared to falciparum | _Not reported_ | Trained health workers (nurses, clinicians or doctors at health facilities) conduct clinical monitoring for side effects and check adherence at the health facility on days 1,2, 3, and 7 (if needed). In parallel, CHWs conduct home visits for adherence monitoring and early detection of complications | Partial implementation of follow-up of ACT | _Not reported_ |
+| **G6PD deficient: no definition** | No PQ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+| **If no testing available** | Not specified | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
 
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
@@ -116,13 +173,75 @@ toc: true
 | | |
 |---|---|
 | **Next policy update** | Yes, when not known |
-| **Treatments under consideration** | Somalia’s malaria program is not only relying on current drugs, but is also considering new or alternative treatments, mainly guided by WHO recommendations and emerging evidence. Right now focused on P. falcirum so alternative radical cure policy is not being considered. |
+| **Treatments under consideration** | Somalia�s malaria program is not only relying on current drugs, but is also considering new or alternative treatments, mainly guided by WHO recommendations and emerging evidence. Right now focused on P. falcirum so alternative radical cure policy is not being considered. |
 | **Treatment guidelines (URL)** | <a href="https://reliefweb.int/report/somalia/guidelines-diagnosis-and-treatment-malaria-somalia-2016" target="_blank" rel="noopener noreferrer">https://reliefweb.int/report/somalia/guidelines-diagnosis-and-treatment-malaria-somalia-2016</a> |
 | **National Strategic Plan (URL)** | <a href="https://moh.pl.so/wp-content/uploads/2022/08/Somalia-National-Malaria-Strategic-Plan-Draft2_29Mar2020.pdf" target="_blank" rel="noopener noreferrer">https://moh.pl.so/wp-content/uploads/2022/08/Somalia-National-Malaria-Strategic-Plan-Draft2_29Mar2020.pdf</a> |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>A few important additional points about P. vivax case management in Somalia help complete the picture:<br><br>1) Mixed approach for treatment<br>All uncomplicated malaria cases are generally treated as ACT-treated malaria (Artemether–lumefantrine) regardless of species in most settings<br>This simplifies case management where microscopy/speciation is limited<br><br>2) Relapse is a key challenge<br>Plasmodium vivax malaria can relapse from dormant liver stages (hypnozoites)<br>This means:<br>Treating only blood stages is not enough<br>Radical cure is essential but often inconsistently applied.<br><br>3) Limited radical cure implementation<br>Use of Primaquine is recommended for radical cure<br>However:<br>G6PD testing is not widely available<br>Therefore radical cure is incomplete or inconsistently given in practice.<br><br>4) Diagnosis limitations affect management<br>Many facilities rely on rapid diagnostic tests (RDTs)<br>RDTs often:<br>Do not clearly differentiate P. vivax from P. falciparum<br>This leads to uniform treatment with ACTs.<br><br>5) Follow-up and adherence gaps<br>Follow-up visits (especially Day 3 and Day 14) are often:<br>Not consistently done<br>This makes it harder to:<br>Confirm cure<br>Detect relapse or treatment failure early.<br><br>6) Overall program priority<br>National focus is mainly on:<br>Reducing overall malaria burden<br>Strengthening case management<br>P. vivax is increasingly recognized but still less prioritized than falciparum in practice</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>1 adult weight-band: ≥ 35 kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>AL</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>AL</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>No</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>None</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>A few important additional points about P. vivax case management in Somalia help complete the picture:<br><br>1) Mixed approach for treatment<br>All uncomplicated malaria cases are generally treated as ACT-treated malaria (Artemether�lumefantrine) regardless of species in most settings<br>This simplifies case management where microscopy/speciation is limited<br><br>2) Relapse is a key challenge<br>Plasmodium vivax malaria can relapse from dormant liver stages (hypnozoites)<br>This means:<br>Treating only blood stages is not enough<br>Radical cure is essential but often inconsistently applied.<br><br>3) Limited radical cure implementation<br>Use of Primaquine is recommended for radical cure<br>However:<br>G6PD testing is not widely available<br>Therefore radical cure is incomplete or inconsistently given in practice.<br><br>4) Diagnosis limitations affect management<br>Many facilities rely on rapid diagnostic tests (RDTs)<br>RDTs often:<br>Do not clearly differentiate P. vivax from P. falciparum<br>This leads to uniform treatment with ACTs.<br><br>5) Follow-up and adherence gaps<br>Follow-up visits (especially Day 3 and Day 14) are often:<br>Not consistently done<br>This makes it harder to:<br>Confirm cure<br>Detect relapse or treatment failure early.<br><br>6) Overall program priority<br>National focus is mainly on:<br>Reducing overall malaria burden<br>Strengthening case management<br>P. vivax is increasingly recognized but still less prioritized than falciparum in practice</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

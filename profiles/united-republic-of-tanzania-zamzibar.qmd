@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | African |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
+| **Subnational programme phases** | _Not reported_ |
 | **Cross-border transmission** | No |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | No |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | _Not reported_ |
 | **Economic status** | Low income |
 :::
 
@@ -38,17 +36,30 @@ toc: true
 | **First-line schizontocidal treatment** | _Not reported_ |
 | **Second-line schizontocidal treatment** | _Not reported_ |
 | **Radical-cure regimen** | _Not reported_ |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | No |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | _Not reported_ |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | _Not reported_ |
 | **Community follow-up of radical cure** | _Not reported_ |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<section class="country-note-group country-note-group--visible">
+<h3>Diagnosis and G6PD context</h3>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy + RDT; current public-sector RDT is Pf + all-species combination RDT</p>
+</div>
+</div>
+</section>
+</div>
 
 
 ## Reported case numbers
@@ -83,6 +94,15 @@ toc: true
 | **Health system level (G6PD)** | _Not reported_ |
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | _Not reported_ |
+
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **Overall policy** | _Not specified_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
 
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status

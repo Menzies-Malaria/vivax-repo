@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | African |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | No |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Children under 5, pregnant women, migrant populations |
 | **Economic status** | Low income |
 :::
 
@@ -38,17 +36,65 @@ toc: true
 | **First-line schizontocidal treatment** | AS+AQ |
 | **Second-line schizontocidal treatment** | AL |
 | **Radical-cure regimen** | Weekly primaquine for 8 weeks; Low-dose 14-day primaquine |
-| **Rationale for ACT use** | Chloroquine resistance to PQ; alignment of Pf and Pv treatment |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Partial |
-| **Community malaria care — details** | Only for children under 5 years old |
 | **Community vivax care** | No |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>District level; 3 categories; Ecological/epidemiology; DNRS1: Districts with Very Low Risk Level / Weekly Surveillance; DNRS2: Districts with Moderate Risk Level / Weekly Surveillance; DNRS3: Districts with High Risk Level / Monthly Surveillance</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Children under 5, pregnant women, migrant populations</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy in hospitals, if RDT to be confirmed by microscopy; RDTs at primaty care level</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Treatment and community-care context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Rationale for ACT use</h4>
+<p>Chloroquine resistance to PQ; alignment of Pf and Pv treatment</p>
+</div>
+<div class="country-note-item">
+<h4>Community malaria-care context</h4>
+<p>Only for children under 5 years old</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -85,6 +131,18 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD moderate deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Not implemented | No G6PD testing available to facilitate treatment administration; vivax not a priority compared to falciparum | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days | Not implemented | No G6PD testing available to facilitate treatment administration; vivax not a priority compared to falciparum | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+| **G6PD severely deficient: no definition** | No PQ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+| **If no testing available** | Not specified | Not implemented | No G6PD testing available to facilitate treatment administration; vivax not a priority compared to falciparum | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -113,6 +171,57 @@ toc: true
 | **Treatments under consideration** | Not considering anything new at the moment, sticking with primaquine. |
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
+
+### Dosing and special populations
+
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>1 adult weight band: ≥ 36 kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Quinine</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>AS+AQ</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>No</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>None</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

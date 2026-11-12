@@ -182,12 +182,17 @@ case_sub <- case |>
       policies <- unique(.data$radical_cure_policy)
       if (length(policies) == 1L) policies else "Varies by subgroup"
     },
+    regimen_options = paste(unique(unlist(str_split(
+      .data$regimen_options[nzchar(.data$regimen_options)],
+      fixed("|")
+    ))), collapse = "|"),
     .groups = "drop"
   ) |>
   transmute(
     country = .data$base_country,
     patient_group = .data$patient_group,
-    radical_cure_policy = .data$radical_cure_policy
+    radical_cure_policy = .data$radical_cure_policy,
+    regimen_options = .data$regimen_options
   )
 
 map_payload <- list(
@@ -271,6 +276,14 @@ map_json <- gsub("</", "<\\/", map_json, fixed = TRUE)
     <div id="policy-map-regimen-control" class="policy-map-control">
       <label for="policy-map-regimen">Radical-cure regimen used or piloted</label>
       <select id="policy-map-regimen"><option value="">All regimens</option></select>
+    </div>
+
+    <div id="policy-map-regimen-scope-control" class="policy-map-control">
+      <label for="policy-map-regimen-scope">Regimen matching</label>
+      <select id="policy-map-regimen-scope">
+        <option value="country">Any reported G6PD group</option>
+        <option value="patient">Selected G6PD group (NEW)</option>
+      </select>
     </div>
 
     <button id="policy-map-reset" class="policy-map-reset" type="button">Clear filters</button>

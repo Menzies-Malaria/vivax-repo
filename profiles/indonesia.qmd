@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | South-East Asia |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction/pre-elimination |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | With PNG |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Miners, plantation workers, indigenous communities |
 | **Economic status** | Upper-middle income |
 :::
 
@@ -38,17 +36,65 @@ toc: true
 | **First-line schizontocidal treatment** | DHA-PPQ |
 | **Second-line schizontocidal treatment** | Pyramax/AL |
 | **Radical-cure regimen** | Low-dose 14-day primaquine; High-dose 14-day primaquine |
-| **Rationale for ACT use** | Resistance to CQ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | Pilot |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | Yes |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>District/city level; 3 categories; API; SPR; indigenous transmission; High: API&gt;5; moderate: API 1–5; low: API&lt;1 - tailored strategies; acceleration, intensification, and elimination</p>
+</div>
+<div class="country-note-item">
+<h4>Cross-border context</h4>
+<p>With PNG</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Miners, plantation workers, indigenous communities</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy, RDT</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Treatment and community-care context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Rationale for ACT use</h4>
+<p>Resistance to CQ</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ## Reported case numbers
@@ -85,6 +131,18 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days | Not implemented | _Not reported_ | 2014 | In patient - blood films everyday to confirm drug efficacy/parasite clearance; for primary care, patients are asked to return to the health facility on day 3, 7, 14, 21, 28 and provided with counselling while their urine color is monitored | Partially implemented | 2006 |
+| **G6PD normal: no definition - relapse** | PQ 0.5 mg/kg/day over 14 days | Not implemented | _Not reported_ | 2014 | In patient - blood films everyday to confirm drug efficacy/parasite clearance; for primary care, patients are asked to return to the health facility on day 3, 7, 14, 21, 28 and provided with counselling while their urine color is monitored | Partially implemented | 2006 |
+| **G6PD deficient: no definition** | No PQ | _Not reported_ | _Not reported_ | 2014 | In patient - blood films everyday to confirm drug efficacy/parasite clearance; for primary care, patients are asked to return to the health facility on day 3, 7, 14, 21, 28 and provided with counselling while their urine color is monitored | Partially implemented | 2006 |
+| **If no testing available** | Not specified but PQ 0.25 mg/kg/day over 14 days in practice | Implemented | Not specified in the guidelines but PQ 0.25 mg/kg/day over 14 days in practice without G6PD testing | 2014 | In patient - blood films everyday to confirm drug efficacy/parasite clearance; for primary care, patients are asked to return to the health facility on day 3, 7, 14, 21, 28 and provided with counselling while their urine color is monitored | Partially implemented | 2006 |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -114,9 +172,79 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | <a href="https://apmen.org/sites/default/files/all_resources/Indonesia_Naional%20Plan%20for%20Malaria%20Elimination_2020-2024.pdf" target="_blank" rel="noopener noreferrer">https://apmen.org/sites/default/files/all_resources/Indonesia_Naional%20Plan%20for%20Malaria%20Elimination_2020-2024.pdf</a> |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>In the three high-burden areas, G6PD testing will be rolled out with high dose 7-day PQ. The plan is for rollout of G6PD testing in 2027 up to the health centre level. G6PD normal will receive the &quot;optimal&quot; dose, intermediates will received 0.5 mg/kg/day over 14 days, deficient provided 8 week. Follow up of patients will remain the same. In 2006, higher dosage for relapse cases was added to the guidelines. Certain areas of Indonesia with higher relapse rates e.g. used the higher dosage of 0.5 mg/kg/day over 14 days as a stantard.</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>5 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD normal: no definition</h4>
+<p>0.15-0.63 vs 0.25</p>
+</div>
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD normal: no definition - relapse</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding — G6PD normal: no definition</h4>
+<p>1 adult weight band : ≥ 40 kgs</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding — G6PD normal: no definition - relapse</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>3 adult weight bands: 40-60 kgs, 60-80 kgs, ≥ 80 kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>DHA-PPQ</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>DHA-PPQ</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>No</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>None</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>In the three high-burden areas, G6PD testing will be rolled out with high dose 7-day PQ. The plan is for rollout of G6PD testing in 2027 up to the health centre level. G6PD normal will receive the &quot;optimal&quot; dose, intermediates will received 0.5 mg/kg/day over 14 days, deficient provided 8 week. Follow up of patients will remain the same. In 2006, higher dosage for relapse cases was added to the guidelines. Certain areas of Indonesia with higher relapse rates e.g. used the higher dosage of 0.5 mg/kg/day over 14 days as a stantard.</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | African |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Migrant laborer, IDPs, refugees |
 | **Economic status** | Low income |
 :::
 
@@ -38,17 +36,49 @@ toc: true
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | AL |
 | **Radical-cure regimen** | Low-dose 14-day primaquine |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>District level; 4 categories; Epidemiology; altitude; temperature; rainfall; ecology; High endemicity (API &gt;= 50), Moderate endemicity (API &gt;=10 and &lt; 50), low endimicity (AP&gt;5 and &lt;10), very low endemicity (API &gt; 0 and &lt;=5), free (API = 0)</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Migrant laborer, IDPs, refugees</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy, RDTs</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -93,6 +123,15 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **Overall policy** | PQ 0.25 mg/kg/day over 14 days | Partially implemented | Primaquine not consistently provided at the health post level, challenges with drug stock outs at the facility level, as well as some hesitency in perscribing primaquine among health providers. | 2018 | Patients to return to health facility if experiencing any symtoms of haemolytic anemia | Not implemented | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -115,6 +154,57 @@ toc: true
 | **Treatments under consideration** | 7-day high dose PQ and tafenoquine |
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | <a href="https://share.google/pQYBhrcApKRZehTfS" target="_blank" rel="noopener noreferrer">https://share.google/pQYBhrcApKRZehTfS</a> |
+
+### Dosing and special populations
+
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage</h4>
+<p>0.3 - 0.2 vs 0.25 mg</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>1 adult weight band: ≥ 50 kgs</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>1 adult weight band: ≥ 50 kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>Yes</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>Provision of PQ after delivery and end of breastfeeding</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

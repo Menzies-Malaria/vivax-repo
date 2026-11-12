@@ -32,11 +32,24 @@ $navbar-bg:          rgba(250, 248, 244, 0.92);
 $navbar-fg:          $ink;
 $navbar-hl:          $primary;
 
+// Keep tablets in Quarto's compact navigation by default. A browser that
+// explicitly requests the desktop site presents a desktop viewport/user agent
+// and can therefore opt back into the desktop layout.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1280px,
+  xl: 1440px,
+  xxl: 1680px
+);
+
 /*-- scss:rules --*/
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
+  font-size: clamp(15.5px, calc(0.25vw + 13px), 17px);
   --vivax-primary: #{$primary};
   --vivax-accent: #{$accent};
   --vivax-ink: #{$ink};
@@ -53,6 +66,8 @@ $navbar-hl:          $primary;
 }
 
 body {
+  max-width: 100%;
+  overflow-x: clip;
   font-feature-settings: "ss01", "ss02", "kern";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -67,9 +82,9 @@ h1, h2, h3, h4, h5 {
   line-height: 1.2;
 }
 
-h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 500; }
+h1 { font-size: clamp(2rem, calc(2.5vw + 0.5rem), 3.2rem); font-weight: 500; }
 h2 {
-  font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+  font-size: clamp(1.45rem, calc(1vw + 1rem), 1.9rem);
   margin-top: 2.75rem;
   padding-bottom: 0.35rem;
 }

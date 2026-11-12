@@ -210,6 +210,234 @@ profile_table <- function(title, rows) {
   )
 }
 
+reported_profile_value <- function(value) {
+  value <- str_trim(as.character(value))
+  nzchar(value) & !str_to_upper(str_squish(value)) %in% c(
+    "NA", "N/A", "UNKNOWN", "NOT REPORTED", "NOT SPECIFIED"
+  )
+}
+
+profile_note_rows <- function(labels, values) {
+  rows <- tibble::tibble(
+    label = as.character(labels),
+    value = str_trim(as.character(values))
+  )
+  rows[reported_profile_value(rows$value), , drop = FALSE]
+}
+
+profile_note_item <- function(label, value) {
+  value <- html_escape(value) |>
+    str_replace_all("\\r\\n?|\\n", "<br>")
+  c(
+    '<div class="country-note-item">',
+    sprintf('<h4>%s</h4>', html_escape(label)),
+    sprintf('<p>%s</p>', value),
+    "</div>"
+  )
+}
+
+profile_note_group <- function(title, rows, collapsible = TRUE) {
+  if (!nrow(rows)) return(character())
+  items <- unlist(lapply(seq_len(nrow(rows)), function(i) {
+    profile_note_item(rows$label[[i]], rows$value[[i]])
+  }), use.names = FALSE)
+  note_label <- if (nrow(rows) == 1L) "1 note" else paste(nrow(rows), "notes")
+
+  if (!collapsible) {
+    return(c(
+      '<section class="country-note-group country-note-group--visible">',
+      sprintf('<h3>%s</h3>', html_escape(title)),
+      '<div class="country-note-group__body">',
+      items,
+      "</div>",
+      "</section>"
+    ))
+  }
+
+  c(
+    '<details class="country-note-group">',
+    "<summary>",
+    sprintf('<span>%s</span>', html_escape(title)),
+    sprintf('<small>%s</small>', note_label),
+    "</summary>",
+    '<div class="country-note-group__body">',
+    items,
+    "</div>",
+    "</details>"
+  )
+}
+
+detailed_country_context <- function(row) {
+  groups <- list(
+    list(
+      title = "Programme and transmission context",
+      rows = profile_note_rows(
+        c(
+          "Subnational programme context",
+          "Cross-border context",
+          "Mobile and migrant population context",
+          "High-risk populations"
+        ),
+        c(
+          row_val(row, "Details of subnational program phases"),
+          row_val(row, "Cross-border transmission - details"),
+          row_val(row, "Mobile Migrant Populations - details"),
+          row_val(row, "Type of high risk populations")
+        )
+      )
+    ),
+    list(
+      title = "Diagnosis and G6PD context",
+      rows = profile_note_rows(
+        c(
+          "Diagnostic approach",
+          "G6PD deficiency prevalence",
+          "G6PD prevalence research"
+        ),
+        c(
+          row_val(row, "Type of malaria diagnostic (e.g., RDT, lab result, serology)"),
+          row_val(row, "G6PD deficiency prevalence"),
+          row_val(row, "Projects/Research determining G6PDd prevalence")
+        )
+      )
+    ),
+    list(
+      title = "Treatment and community-care context",
+      rows = profile_note_rows(
+        c(
+          "Rationale for ACT use",
+          "Community malaria-care context",
+          "Community vivax-care context"
+        ),
+        c(
+          row_val(row, "Rationale for ACT use"),
+          row_val(row, "Community malaria care - details"),
+          row_val(row, "Community vivax care - details")
+        )
+      )
+    )
+  )
+
+  groups <- groups[vapply(groups, function(group) nrow(group$rows) > 0, logical(1))]
+  if (!length(groups)) return(character())
+
+  all_rows <- bind_rows(lapply(groups, `[[`, "rows"))
+  show_directly <- nrow(all_rows) <= 2L && sum(nchar(all_rows$value)) <= 500L
+  rendered <- unlist(lapply(groups, function(group) {
+    profile_note_group(group$title, group$rows, collapsible = !show_directly)
+  }), use.names = FALSE)
+
+  c(
+    "## Detailed country context",
+    "",
+    "Country-specific information that adds context to the summary indicators above.",
+    "",
+    '<div class="country-note-groups">',
+    rendered,
+    "</div>",
+    ""
+  )
+}
+
+case_note_rows <- function(rows, columns, labels) {
+  if (is.null(rows) || !nrow(rows)) return(tibble::tibble(label = character(), value = character()))
+  output <- list()
+
+  for (field_index in seq_along(columns)) {
+    column <- columns[[field_index]]
+    if (!column %in% names(rows)) next
+    values <- str_trim(as.character(rows[[column]]))
+    keep <- reported_profile_value(values)
+    if (!any(keep)) next
+
+    pairs <- tibble::tibble(
+      category = vapply(seq_len(nrow(rows)), function(i) {
+        g6pd_category_label(rows[i, , drop = FALSE])
+      }, character(1)),
+      value = values,
+      reported = keep
+    ) |>
+      filter(.data$reported) |>
+      select(-"reported") |>
+      distinct(.data$category, .data$value)
+
+    distinct_values <- unique(pairs$value)
+    for (value in distinct_values) {
+      categories <- unique(pairs$category[pairs$value == value])
+      entry_label <- labels[[field_index]]
+      if (length(distinct_values) > 1L) {
+        entry_label <- paste0(entry_label, " — ", paste(categories, collapse = ", "))
+      }
+      output[[length(output) + 1L]] <- tibble::tibble(
+        label = entry_label,
+        value = value
+      )
+    }
+  }
+
+  if (!length(output)) return(tibble::tibble(label = character(), value = character()))
+  bind_rows(output) |> distinct(.data$label, .data$value)
+}
+
+dosing_and_special_populations <- function(rows) {
+  dosing <- case_note_rows(
+    rows,
+    c(
+      "Dosage chart PQ vs total dose (adult)",
+      "PQ Weight-based banding",
+      "Schizontocidal weight-based banding"
+    ),
+    c(
+      "Adult primaquine dosage",
+      "Primaquine weight-based banding",
+      "Schizontocidal weight-based banding"
+    )
+  )
+  pregnancy <- case_note_rows(
+    rows,
+    c(
+      "Pregnant - treatment 1st trimester",
+      "Pregnant - treatment 2-3rd trimester",
+      "Pregnant - CQ Prophylaxis (Y/N)",
+      "Pregnant PQ recommedation"
+    ),
+    c(
+      "Treatment in the first trimester",
+      "Treatment in the second and third trimesters",
+      "Chloroquine prophylaxis",
+      "Primaquine recommendation"
+    )
+  )
+  if (!nrow(dosing) && !nrow(pregnancy)) return(character())
+
+  groups <- c(
+    if (nrow(dosing)) profile_note_group("Dosing and weight banding", dosing, TRUE),
+    if (nrow(pregnancy)) profile_note_group("Pregnancy and treatment policy", pregnancy, TRUE)
+  )
+
+  c(
+    "### Dosing and special populations",
+    "",
+    "Reported dosing structures and treatment recommendations for specific populations.",
+    "",
+    '<div class="country-note-groups country-note-groups--case-management">',
+    groups,
+    "</div>",
+    ""
+  )
+}
+
+profile_prose_notes <- function(title, values) {
+  values <- str_trim(as.character(values))
+  values <- unique(values[reported_profile_value(values)])
+  if (!length(values)) return(character())
+  rows <- tibble::tibble(
+    label = if (length(values) == 1L) "Policy note" else paste("Policy note", seq_along(values)),
+    value = values
+  )
+  profile_note_group(title, rows, collapsible = TRUE)
+}
+
 g6pd_category_label <- function(row) {
   label <- row_val(row, "Categorization of G6PD Status Used")
   if (!nzchar(label)) {
@@ -269,6 +497,37 @@ primaquine_followup_table <- function(rows) {
     "",
     "| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |",
     "|---|---|---|---|",
+    body,
+    ":::",
+    ""
+  )
+}
+
+combined_treatment_followup_table <- function(rows) {
+  if (nrow(rows) == 0) return(character())
+
+  body <- vapply(seq_len(nrow(rows)), function(i) {
+    row <- rows[i, , drop = FALSE]
+    sprintf(
+      "| **%s** | %s | %s | %s | %s | %s | %s | %s |",
+      md_escape(g6pd_category_label(row)),
+      md_escape(row_val(row, "Policy on PQ", "_Not specified_")),
+      md_escape(row_val(row, "Implementation of Treatment", "_Not reported_")),
+      md_escape(row_val(row, "Implementation of Treatment - details", "_Not reported_")),
+      md_escape(row_val(row, "Year of Treatment Policy Implementation", "_Not reported_")),
+      md_escape(row_val(row, "Type of treatment follow-up (by whom, how often, where)", "_Not reported_")),
+      md_escape(row_val(row, "Implementatin of follow-up", "_Not reported_")),
+      md_escape(row_val(row, "Year of Follow-Up Implementation", "_Not reported_"))
+    )
+  }, character(1))
+
+  c(
+    "::: {.country-policy-matrix .country-policy-matrix--new}",
+    '<div class="country-feature-new">NEW</div>',
+    "### Combined treatment and follow-up by G6PD status",
+    "",
+    "| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |",
+    "|---|---|---|---|---|---|---|---|",
     body,
     ":::",
     ""
@@ -549,6 +808,9 @@ for (i in seq_len(nrow(char))) {
   g6pd_followup_table <- if (!is.null(regimen_rows)) {
     primaquine_followup_table(regimen_rows)
   } else character()
+  combined_policy_table <- if (!is.null(regimen_rows)) {
+    combined_treatment_followup_table(regimen_rows)
+  } else character()
   profile_region <- row_val(row, "Region")
   region_countries <- char$Country[
     str_trim(as.character(char$Region)) == profile_region
@@ -603,9 +865,8 @@ for (i in seq_len(nrow(char))) {
     profile_table("Country context", tibble::tibble(
       label = c(
         "Region", "WHO Region", "*P. vivax* endemicity",
-        "Programme phase", "Cross-border transmission",
-        "Cross-border transmission — details", "Mobile / migrant populations",
-        "Mobile / migrant populations — details", "High-risk populations",
+        "Programme phase", "Subnational programme phases",
+        "Cross-border transmission", "Mobile / migrant populations",
         "Economic status"
       ),
       value = c(
@@ -613,11 +874,9 @@ for (i in seq_len(nrow(char))) {
         row_val(row, "WHO Region"),
         row_val(row, "Vivax endemicity"),
         row_val(row, "Program Phase"),
+        row_val(row, "Sub-national program phases (Y/N)"),
         row_val(row, "Cross-border transmission"),
-        row_val(row, "Cross-border transmission - details"),
         row_val(row, "Mobile Migrant Populations"),
-        row_val(row, "Mobile Migrant Populations - details"),
-        row_val(row, "Type of high risk populations"),
         row_val(row, "Economic status")
       )
     )),
@@ -626,29 +885,25 @@ for (i in seq_len(nrow(char))) {
     profile_table("Treatment and care", tibble::tibble(
       label = c(
         "First-line schizontocidal treatment", "Second-line schizontocidal treatment",
-        "Radical-cure regimen", "Rationale for ACT use",
-        "G6PD testing in guidelines", "G6PD testing implemented",
+        "Radical-cure regimen", "G6PD testing in guidelines", "G6PD testing implemented",
         "Type of G6PD testing", "Community malaria care",
-        "Community malaria care — details", "Community vivax care",
-        "Community vivax care — details",
+        "Community vivax care",
         "Follow-up of radical cure", "Community follow-up of radical cure"
       ),
       value = c(
         row_val(row, "Pv 1st line treatment"),
         row_val(row, "Pv 2nd line treatment"),
         radical_summary,
-        row_val(row, "Rationale for ACT use"),
         row_val(row, "Guidelines G6PD testing  (Y/N)"),
         row_val(row, "Implementation: G6PD testing  (Y/N)"),
         row_val(row, "Type of G6PD testing"),
         row_val(row, "Community malaria care"),
-        row_val(row, "Community malaria care - details"),
         row_val(row, "Community vivax care"),
-        row_val(row, "Community vivax care - details"),
         row_val(row, "Follow-up of radical cure"),
         row_val(row, "Community follow-up of radical cure")
       )
     )),
+    detailed_country_context(row),
     ""
   )
 
@@ -799,6 +1054,7 @@ for (i in seq_len(nrow(char))) {
       c(
         kv_table(policy_rows[seq_len(pq_index), , drop = FALSE]),
         "",
+        combined_policy_table,
         g6pd_treatment_table,
         g6pd_followup_table,
         kv_table(policy_rows[seq.int(pq_index + 1L, nrow(policy_rows)), , drop = FALSE]),
@@ -808,38 +1064,28 @@ for (i in seq_len(nrow(char))) {
       c(kv_table(policy_rows), "")
     }
 
-    parts <- c(parts, "## Case-management policy detail", "", policy_blocks)
+    parts <- c(
+      parts,
+      "## Case-management policy detail",
+      "",
+      policy_blocks,
+      dosing_and_special_populations(bind_rows(cm_row, subs))
+    )
     if (length(profile_comments)) {
-      comments_html <- vapply(profile_comments, function(comment) {
-        comment <- html_escape(comment) |>
-          str_replace_all("\\r\\n?|\\n", "<br>")
-        sprintf("<p>%s</p>", comment)
-      }, character(1))
       parts <- c(
         parts,
-        "### Country-specific policy context",
-        "",
-        sprintf(
-          '<div class="country-policy-context">%s</div>',
-          paste(comments_html, collapse = "")
-        ),
+        '<div class="country-note-groups country-note-groups--case-management">',
+        profile_prose_notes("Country-specific policy context", profile_comments),
+        "</div>",
         ""
       )
     }
     if (length(other_comments)) {
-      comments_html <- vapply(other_comments, function(comment) {
-        comment <- html_escape(comment) |>
-          str_replace_all("\\r\\n?|\\n", "<br>")
-        sprintf("<p>%s</p>", comment)
-      }, character(1))
       parts <- c(
         parts,
-        "### Additional policy notes",
-        "",
-        sprintf(
-          '<div class="country-policy-context">%s</div>',
-          paste(comments_html, collapse = "")
-        ),
+        '<div class="country-note-groups country-note-groups--case-management">',
+        profile_prose_notes("Additional policy notes", other_comments),
+        "</div>",
         ""
       )
     }
@@ -848,8 +1094,10 @@ for (i in seq_len(nrow(char))) {
       parts,
       "## Case-management policy detail",
       "",
+      combined_policy_table,
       g6pd_treatment_table,
-      g6pd_followup_table
+      g6pd_followup_table,
+      dosing_and_special_populations(subs)
     )
   }
 

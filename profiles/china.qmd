@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Western Pacific |
 | ***P. vivax* endemicity** | Previously |
 | **Programme phase** | Eliminated/certified malaria-free |
+| **Subnational programme phases** | _Not reported_ |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | Mostly from Myanmar |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | Yes, many African working migrants |
-| **High-risk populations** | Mobile migrant populations, many from the African continent |
 | **Economic status** | Upper-middle income |
 :::
 
@@ -38,17 +36,61 @@ toc: true
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | DHA-PPQ |
 | **Radical-cure regimen** | Dependent on G6PD test result; PQ 22.5mg/day over 8 days (180mg total dose) |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | Partial |
 | **Type of G6PD testing** | SNP or ELISA |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | No |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | Yes (after DOT at hospital) |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Cross-border context</h4>
+<p>Mostly from Myanmar</p>
+</div>
+<div class="country-note-item">
+<h4>Mobile and migrant population context</h4>
+<p>Yes, many African working migrants</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Mobile migrant populations, many from the African continent</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy, nucleic acid amplficiation test (NAAT), RDT</p>
+</div>
+<div class="country-note-item">
+<h4>G6PD deficiency prevalence</h4>
+<p>2.10E-02</p>
+</div>
+<div class="country-note-item">
+<h4>G6PD prevalence research</h4>
+<p>Ongoing research carried out in 1-2 southern provinces</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -86,6 +128,17 @@ toc: true
 | **Health system level (G6PD) — details** | Hospitals |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 22.5mg/day over 8 days (180mg total dose) | Implemented | _Not reported_ | 2004 | DOT in hospital, then after discharge follow up by community or village doctors organized by public health unit staff | Implemented | 2004 |
+| **G6PD deficient: no definition** | PQ 22.5mg/day over 8 days (180mg total dose) | Implemented | _Not reported_ | 2004 | DOT in hospital, then after discharge follow up by community or village doctors organized by public health unit staff | Implemented | 2004 |
+| **If no testing available** | PQ 22.5mg/day over 8 days (180mg total dose) | Implemented | _Not reported_ | 2004 | DOT in hospital, then after discharge follow up by community or village doctors organized by public health unit staff | Implemented | 2004 |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -113,13 +166,35 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>Exclusion of Pv (or Po) patients who have a personal or family of hemolysis, pregnant women, children under 1 years old from treatment with primaquine</p>
+</div>
+</div>
+</details>
+</div>
 
-<div class="country-policy-context"><p>Exclusion of Pv (or Po) patients who have a personal or family of hemolysis,  pregnant women, children under 1 years old from treatment with primaquine</p></div>
-
-### Additional policy notes
-
-<div class="country-policy-context"><p>https://www.who.int/news-room/feature-stories/detail/q-a-on-malaria-elimination-in-china</p></div>
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Additional policy notes</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>https://www.who.int/news-room/feature-stories/detail/q-a-on-malaria-elimination-in-china</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

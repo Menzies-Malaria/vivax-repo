@@ -1,5 +1,36 @@
 /* Site components — uses tokens from theme.scss :root */
 
+/* Shared responsive guardrails for every Quarto page. */
+#quarto-content,
+#quarto-document-content,
+.page-columns,
+.content,
+.cell,
+.cell-output,
+.dataTables_wrapper {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.content img,
+.content svg,
+.content video,
+.content canvas,
+.content iframe {
+  max-width: 100%;
+}
+
+.form-embed iframe {
+  width: 100%;
+}
+
+.cell-output-display,
+.table-responsive,
+.dataTables_wrapper {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
 .lede + p {
   margin-top: 1rem;
 }
@@ -408,6 +439,27 @@
   vertical-align: top;
 }
 
+.country-policy-matrix--new {
+  padding: 0.9rem;
+  border: 2px solid rgba(192, 82, 27, 0.72);
+  border-radius: var(--vivax-radius-md, 12px);
+  background: rgba(192, 82, 27, 0.035);
+}
+
+.country-feature-new {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0.55rem;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  background: var(--vivax-accent, #c0521b);
+  color: #fff;
+  font-family: var(--bs-body-font-family, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
 .country-policy-context {
   margin: 0.75rem 0 1.5rem;
   padding: 1rem 1.15rem;
@@ -416,6 +468,105 @@
   background: rgba(240, 235, 227, 0.38);
   color: var(--vivax-ink, #1a1f1f);
   line-height: 1.65;
+}
+
+.country-note-groups {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.country-note-group {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--vivax-rule, #e4ddd0);
+  border-radius: var(--vivax-radius-md, 12px);
+  background: var(--vivax-paper-elevated, #fff);
+  box-shadow: var(--vivax-shadow-sm, 0 1px 2px rgba(26, 31, 31, 0.04));
+}
+
+.country-note-group > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.85rem 1rem;
+  color: var(--vivax-primary, #0d4f4f);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.country-note-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.country-note-group > summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  width: 1.35rem;
+  color: var(--vivax-primary, #0d4f4f);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+}
+
+.country-note-group[open] > summary::after {
+  content: "−";
+}
+
+.country-note-group > summary small {
+  margin-left: auto;
+  color: var(--vivax-ink-soft, #4a5252);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.country-note-group__body {
+  padding: 0.1rem 1rem 1rem;
+}
+
+.country-note-item {
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--vivax-rule, #e4ddd0);
+}
+
+.country-note-item:first-child {
+  border-top: 0;
+}
+
+.country-note-item h4 {
+  margin: 0 0 0.3rem;
+  color: var(--vivax-primary, #0d4f4f);
+  font-family: var(--bs-body-font-family, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.country-note-item p {
+  margin: 0;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.country-note-group--visible {
+  padding: 1rem;
+}
+
+.country-note-group--visible > h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+.country-note-group--visible .country-note-group__body {
+  padding: 0;
+}
+
+.country-note-groups--case-management {
+  margin-top: 0.75rem;
 }
 
 .similar-country-grid {
@@ -584,6 +735,28 @@
 }
 
 @media (max-width: 767.98px) {
+  body.nav-sidebar #quarto-content.page-columns,
+  body.nav-sidebar #quarto-document-content {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .vivax-top-search {
+    width: 100%;
+    gap: 0.5rem;
+    justify-content: space-between;
+    padding-inline: 0;
+  }
+
+  .vivax-top-search .sidebar-search {
+    flex: 1 1 8rem;
+    min-width: 0;
+  }
+
+  .vivax-top-search .vivax-language-control {
+    margin-left: 0;
+  }
+
   .country-profile-spread,
   .similar-country-grid {
     grid-template-columns: 1fr;
@@ -604,6 +777,16 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .similar-country-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .country-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
 @media print {
   .country-profile-spread {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -614,6 +797,14 @@
   .similar-country-card,
   .country-change-log__content {
     box-shadow: none;
+  }
+
+  .country-note-group > summary::after {
+    display: none;
+  }
+
+  .country-note-group > *:not(summary) {
+    display: block !important;
   }
 }
 
@@ -641,8 +832,8 @@
 /* Keep the page contents wide while presenting the section TOC as a compact,
    independent card in the top-right corner. The interactive-map home page has
    toc: false, so these rules apply only where Quarto creates a TOC. */
-@media (min-width: 992px) {
-  body:has(#TOC) #quarto-margin-sidebar {
+@media (min-width: 1280px) {
+  body:not(.vivax-mobile-device):has(#TOC) #quarto-margin-sidebar {
     position: fixed;
     top: 4.75rem;
     right: 1rem;
@@ -656,11 +847,11 @@
     box-shadow: none;
   }
 
-  body:has(#TOC) #quarto-margin-sidebar:empty {
+  body:not(.vivax-mobile-device):has(#TOC) #quarto-margin-sidebar:empty {
     display: none;
   }
 
-  body:has(#TOC) #TOC {
+  body:not(.vivax-mobile-device):has(#TOC) #TOC {
     margin: 0;
     padding: 0.85rem 1rem;
     border: 1px solid var(--vivax-rule, #e4ddd0);
@@ -696,6 +887,14 @@
   padding: 0;
   margin-bottom: 0.25rem;
   object-fit: contain;
+}
+
+@media (min-width: 1280px) {
+  body:not(.vivax-mobile-device) #quarto-sidebar .sidebar-logo {
+    width: 83px;
+    height: 83px;
+    max-width: 83px;
+  }
 }
 
 .vivax-mobile-logo {
@@ -754,7 +953,7 @@
   color: inherit;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1280px) {
   body.vivax-sidebar-collapsed #quarto-content.page-columns {
     grid-template-columns:
       [screen-start] 4.75rem
@@ -803,7 +1002,62 @@
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1279.98px) {
+  body:not(.nav-sidebar) #quarto-content.page-layout-article {
+    display: block;
+    width: 100%;
+    padding-inline: clamp(1rem, 3vw, 2rem);
+  }
+
+  body:not(.nav-sidebar) #quarto-document-content,
+  body:not(.nav-sidebar) #quarto-margin-sidebar {
+    width: min(100%, 64rem);
+    margin-inline: auto;
+  }
+
+  body:not(.nav-sidebar) #quarto-margin-sidebar {
+    position: static;
+    padding: 0;
+  }
+
+  body:not(.nav-sidebar) #TOC {
+    margin: 0.75rem 0 1rem;
+    padding: 0.65rem 0.8rem;
+    overflow: hidden;
+    border: 1px solid var(--vivax-rule, #e4ddd0);
+    border-radius: var(--vivax-radius-sm, 8px);
+    background: var(--vivax-paper-elevated, #fff);
+  }
+
+  body:not(.nav-sidebar) #TOC #toc-title {
+    margin: 0 0 0.4rem;
+    font-size: 0.78rem;
+  }
+
+  body:not(.nav-sidebar) #TOC > ul {
+    display: flex;
+    gap: 0.35rem 0.9rem;
+    margin: 0;
+    padding: 0 0 0.2rem;
+    overflow-x: auto;
+    list-style: none;
+    white-space: nowrap;
+  }
+
+  body:not(.nav-sidebar) #TOC > ul > li {
+    flex: 0 0 auto;
+  }
+
+  body:not(.nav-sidebar) #TOC ul ul {
+    display: none;
+  }
+
+  #quarto-content.page-layout-full #quarto-document-content {
+    width: 100%;
+    min-width: 0;
+    padding-inline: clamp(0.75rem, 2vw, 1.5rem);
+  }
+
   .vivax-sidebar-toggle {
     display: none;
   }
@@ -825,4 +1079,78 @@
     height: 36px;
     object-fit: contain;
   }
+}
+
+/* Large tablets normally carry a mobile/tablet user agent. Keep Quarto's
+   compact header and slide-out navigation even when their viewport is wider
+   than the CSS desktop breakpoint. Chrome's "Desktop site" mode replaces that
+   user agent, so the user can still explicitly opt into desktop navigation. */
+body.vivax-mobile-device #quarto-header {
+  display: block !important;
+}
+
+body.vivax-mobile-device #quarto-content.page-columns {
+  display: block !important;
+  width: 100%;
+  padding-top: 3.25rem;
+}
+
+body.vivax-mobile-device #quarto-document-content {
+  grid-column: auto !important;
+  width: 100%;
+  max-width: 100%;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+body.vivax-mobile-device #quarto-sidebar {
+  position: fixed !important;
+  top: 3.25rem !important;
+  right: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 1040 !important;
+  width: min(20rem, 88vw) !important;
+  max-width: none !important;
+  height: auto !important;
+  padding: 0.75rem !important;
+  background: var(--vivax-paper, #faf8f4);
+  box-shadow: 0 1rem 2.5rem rgba(26, 31, 31, 0.22);
+}
+
+body.vivax-mobile-device #quarto-sidebar.collapse:not(.show),
+body.vivax-mobile-device #quarto-sidebar-glass.collapse:not(.show) {
+  display: none !important;
+}
+
+body.vivax-mobile-device #quarto-sidebar.collapse.show {
+  display: block !important;
+}
+
+body.vivax-mobile-device #quarto-sidebar-glass.show {
+  position: fixed;
+  inset: 0;
+  z-index: 1035;
+  display: block !important;
+  background: rgba(26, 31, 31, 0.34);
+}
+
+body.vivax-mobile-device #quarto-sidebar .sidebar-logo,
+body.vivax-mobile-device .vivax-sidebar-toggle {
+  display: none !important;
+}
+
+body.vivax-mobile-device .vivax-mobile-logo {
+  display: inline-flex !important;
+}
+
+body.vivax-mobile-device #quarto-margin-sidebar {
+  position: static !important;
+  width: auto !important;
+  max-height: none !important;
+  padding: 0 1rem !important;
+  overflow: visible !important;
+}
+
+body.vivax-mobile-device #TOC {
+  margin: 0.75rem 0;
 }

@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Americas |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Elimination |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Mines, agricultural workers, mobile migrant populations |
 | **Economic status** | High income |
 :::
 
@@ -37,18 +35,50 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | Not specified |
-| **Radical-cure regimen** | Tafenoquine; High-dose 7-day primaquine; 7- or 14-day primaquine (dose not specified); Weekly primaquine for 8 weeks |
-| **Rationale for ACT use** | _Not reported_ |
+| **Radical-cure regimen** | Tafenoquine; High-dose 7-day primaquine |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Partial |
 | **Type of G6PD testing** | Quantitative |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Locality/district level where necessary; 4 categories; Receptivity, vulnerability/importation, indigenous transmission; Stratum 1: non-receptive; Stratum 2: receptive with no autochthonous cases and low/no importation risk; Stratum 3: receptive with importation risk; Stratum 4: receptive with autochthonous transmissionHigh transmission: 1%; low transmission: 34%; malaria-free areas: 65%</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Mines, agricultural workers, mobile migrant populations</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy and RDT (P.f + P.v combo)</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -94,15 +124,21 @@ toc: true
 | **Health system level (G6PD) — details** | Health facility level |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: > 70% enzyme activity** | TQ or high-dose 7-day PQ | Partially implemented | Implemented where G6PD testing is available | 2025 | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. | Implemented | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
 | G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
 |---|---|---|---|---|---|---|---|
 | **G6PD normal: > 70% enzyme activity** | TQ or high-dose 7-day PQ | Partially implemented | Implemented where G6PD testing is available | _Not reported_ | _Not reported_ | 2025 | Counselling for adverse events |
-| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days if adherence is expected to be low and a risk-benefit analysis is conducted | Partially implemented | Implemented where G6PD testing is available | _Not reported_ | _Not reported_ | 2006 | Counselling for adverse events |
-| **G6PD deficient: < 30% enzyme activity** | PQ 0.75 mg/kg/week weekly for 8 weeks | Partially implemented | Implemented where G6PD testing is available | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
-| **If no testing available** | PQ 0.25 mg/kg/day over 14 days or PQ 0.5 mg/kg/day over 7 days if adherence is expected to be low and a risk-benefit analysis is conducted | Implemented | _Not reported_ | _Not reported_ | _Not reported_ | 2006 | Not specified |
 :::
 
 ::: {.country-policy-matrix}
@@ -111,9 +147,6 @@ toc: true
 | G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
 |---|---|---|---|
 | **G6PD normal: > 70% enzyme activity** | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. | Implemented | _Not reported_ |
-| **G6PD normal: no definition** | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. | Implemented | _Not reported_ |
-| **G6PD deficient: < 30% enzyme activity** | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. | Implemented | _Not reported_ |
-| **If no testing available** | Conduct follow-up visits on days 0, 3, 7, and 28, then monthly for 3 months, and once at 6 months after completion of the radical treatment to monitor for relapses. | Implemented | _Not reported_ |
 :::
 
 | | |
@@ -123,9 +156,71 @@ toc: true
 | **Treatment guidelines (URL)** | <a href="https://www.ministeriodesalud.go.cr/index.php/biblioteca-de-archivos-left/documentos-ministerio-de-salud/vigilancia-de-la-salud/normas-protocolos-guias-y-lineamientos/enfermedades-de-transmision-vectorial-1/malaria-1/6195-version-2-2023-protocolo-de-vigilancia-para-malaria-y-estrategia-nacional-para-la-eliminacion-y-prevencion-del-restablecimiento-de-la-transmision-de-malaria-en-costa-rica/file" target="_blank" rel="noopener noreferrer">https://www.ministeriodesalud.go.cr/index.php/biblioteca-de-archivos-left/documentos-ministerio-de-salud/vigilancia-de-la-salud/normas-protocolos-guias-y-lineamientos/enfermedades-de-transmision-vectorial-1/malaria-1/6195-version-2-2023-protocolo-de-vigilancia-para-malaria-y-estrategia-nacional-para-la-eliminacion-y-prevencion-del-restablecimiento-de-la-transmision-de-malaria-en-costa-rica/file</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>Costa Rica has implemented tafenoquine, being the first country in Central America and the Carribbean implementing tafenoquine. Tafenoquine is the first choice for treatment of G6PD normal individuals. If not available use of PQ high dose If G6PD testing is not available, healthcare providers can refer the patient to a health facility that has testing as long as testing and treatment can be within 24hrs.</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>2 adult weight bands:, 56-61kgs, 62-70kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>Yes</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>Provision of PQ after delivery and end of breastfeeding</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>Costa Rica has implemented tafenoquine, being the first country in Central America and the Carribbean implementing tafenoquine. Tafenoquine is the first choice for treatment of G6PD normal individuals. If not available use of PQ high dose If G6PD testing is not available, healthcare providers can refer the patient to a health facility that has testing as long as testing and treatment can be within 24hrs.</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

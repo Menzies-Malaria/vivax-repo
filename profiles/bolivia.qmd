@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Americas |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Young men (15-19), pregant women, indigenous populations |
 | **Economic status** | Lower-middle income |
 :::
 
@@ -38,17 +36,49 @@ toc: true
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | ASMQ |
 | **Radical-cure regimen** | Low-dose 7-day primaquine |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | _Not reported_ |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | _Not reported_ |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | _Not reported_ |
 | **Community follow-up of radical cure** | _Not reported_ |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Locality/municipacility level; 4 categories; Receptivity, vulnerability/importation, local transmission; Stratum 1: non-receptive; Stratum 2: receptive, not vulnerable; Stratum 3: receptive + vulnerable; Stratum 4: local transmission; High transmission: 2%; low transmission: 43%; malaria-free areas: 55%, elimination activities are being implemented in selected areas/subnational settings</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Young men (15-19), pregant women, indigenous populations</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy and RDT (P.f + P.v combo)</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ## Reported case numbers
@@ -85,6 +115,15 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | PQ 0.5 mg/kg/day over 7 days |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **Not specified** | PQ 0.5 mg/kg/day over 7 days | _Not reported_ | _Not reported_ | _Not reported_ | Directly observed treatment | Not implemented as of 2023 | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -108,13 +147,62 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>G6PD testing implementation status from WHO WMR 2024 (2023 data)</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
 
-### Additional policy notes
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage</h4>
+<p>No adult dosing table</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>No adult dosing table</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>No adult dosing table</p>
+</div>
+</div>
+</details>
+</div>
 
-<div class="country-policy-context"><p>Looked for an updated policy online but could not find one</p></div>
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>G6PD testing implementation status from WHO WMR 2024 (2023 data)</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Additional policy notes</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>Looked for an updated policy online but could not find one</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

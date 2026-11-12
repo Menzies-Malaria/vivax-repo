@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Americas |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Elimination |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Indigenous communities, rural laborers, mobile migrant populations, children |
 | **Economic status** | Upper-middle income |
 :::
 
@@ -37,18 +35,50 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | Not specified |
-| **Radical-cure regimen** | Low-dose 7-day primaquine; Low-dose 14-day primaquine; Weekly primaquine for 8 weeks |
-| **Rationale for ACT use** | _Not reported_ |
+| **Radical-cure regimen** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | _Not reported_ |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Locality level; Receptivity/vulnerability; High transmission: &lt;1%; low transmission: 2%; malaria-free areas: 98%</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Indigenous communities, rural laborers, mobile migrant populations, children</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy and RDT (P.f + P.v combo) for vulnerable groups (under 5, pregnant women, migrants) and inaccesible areas</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ## Reported case numbers
@@ -69,54 +99,6 @@ toc: true
 <div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
 <script type="application/json" class="vivax-chart-payload">{"country":"Mexico","series":[{"year":"2018","value":803},{"year":"2019","value":618},{"year":"2020","value":356},{"year":"2021","value":242},{"year":"2022","value":162},{"year":"2023","value":42}]}</script>
 </div>
-
-## Case-management policy detail
-
-| | |
-|---|---|
-| **Last policy update** | 2022 |
-| **Schizontocidal drug** | CQ |
-| **G6PD testing policy** | Not explicitly mentioned |
-| **G6PD testing policy — details** | G6PD testing not required |
-| **G6PD implementation** | _Not reported_ |
-| **G6PD implementation — details** | _Not reported_ |
-| **Year of G6PD implementation** | _Not reported_ |
-| **Health system level (G6PD)** | _Not reported_ |
-| **Health system level (G6PD) — details** | _Not reported_ |
-| **Policy on PQ (overall)** | Dependent on G6PD status |
-
-::: {.country-policy-matrix}
-### Radical-cure treatment by G6PD status
-
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
-|---|---|---|---|---|---|---|---|
-| **G6PD normal: no definition** | PQ 0.5 mg/kg/day over 7 days | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
-| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
-| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
-| **If no testing available** | PQ 0.25 mg/kg/day over 14 days | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Not specified |
-:::
-
-::: {.country-policy-matrix}
-### Radical-cure follow-up by G6PD status
-
-| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
-|---|---|---|---|
-| **G6PD normal: no definition** | DOT | Implemented | _Not reported_ |
-| **G6PD normal: no definition** | _Not reported_ | _Not reported_ | _Not reported_ |
-| **G6PD deficient: no definition** | _Not reported_ | _Not reported_ | _Not reported_ |
-| **If no testing available** | _Not reported_ | _Not reported_ | _Not reported_ |
-:::
-
-| | |
-|---|---|
-| **Next policy update** | _Not reported_ |
-| **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | <a href="https://www.gob.mx/cms/uploads/attachment/file/805562/Manual_de_Tratamientos_para_Paludismo_Definitivo.pdf" target="_blank" rel="noopener noreferrer">https://www.gob.mx/cms/uploads/attachment/file/805562/Manual_de_Tratamientos_para_Paludismo_Definitivo.pdf</a> |
-| **National Strategic Plan (URL)** | _Not reported_ |
-
-### Country-specific policy context
-
-<div class="country-policy-context"><p>The 0.5mg/kg/day regimen for G6PD normal individuals is used in high endemicity areas. The implementation status of follow-up is from the 2024 World Malaria Report.</p></div>
 
 ## Countries with similar reported characteristics
 

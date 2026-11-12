@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | South-East Asia |
 | ***P. vivax* endemicity** | Previously |
 | **Programme phase** | Eliminated/certified malaria-free |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | Imported cases from Indonesia |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | Migrant workers from West Timor going to Indonesia and coming back |
-| **High-risk populations** | _Not reported_ |
 | **Economic status** | Lower-middle income |
 :::
 
@@ -38,17 +36,65 @@ toc: true
 | **First-line schizontocidal treatment** | AL |
 | **Second-line schizontocidal treatment** | Quinine + Clindamycin |
 | **Radical-cure regimen** | Low-dose 14-day primaquine; Weekly primaquine for 8 weeks |
-| **Rationale for ACT use** | Because of chloroquine resistance detected through iDES |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | Yes |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Heightened surveillance in border areas where imported cases occur - stratification related to surveillance activities not treatment</p>
+</div>
+<div class="country-note-item">
+<h4>Cross-border context</h4>
+<p>Imported cases from Indonesia</p>
+</div>
+<div class="country-note-item">
+<h4>Mobile and migrant population context</h4>
+<p>Migrant workers from West Timor going to Indonesia and coming back</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>RDT, microscopy</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Treatment and community-care context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Rationale for ACT use</h4>
+<p>Because of chloroquine resistance detected through iDES</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -86,6 +132,17 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | Dependent on G6PD status |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.25 mg/kg/day over 14 days | Not implemented | Implemented without G6PD testing for imported cases | 2016 | DOT, adverse event counseling | Implemented for imported cases | 2016 |
+| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Not implemented | Implemented without G6PD testing for imported cases | 2016 | DOT, adverse event counseling | Implemented for imported cases | 2016 |
+| **If no testing available** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | Implemented without G6PD testing for imported cases | 2016 | DOT, adverse event counseling | Implemented for imported cases | 2016 |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -113,9 +170,51 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>Changed first line schizonticidal treatment from CQ to AL in 2016</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD normal: no definition</h4>
+<p>0.11-0.25 vs 0.25</p>
+</div>
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD deficient: no definition, If no testing available</h4>
+<p>0.34-0.89 vs 0.75</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>1 adult weight band: ≥ 45 kgs</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>1 adult weight band : &gt; 35 kgs</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>Changed first line schizonticidal treatment from CQ to AL in 2016</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

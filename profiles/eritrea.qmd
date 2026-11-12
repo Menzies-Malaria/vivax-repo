@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | African |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Burden reduction |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | With Sudan and Ethiopia |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | Internal migration to high endemicity areas |
-| **High-risk populations** | _Not reported_ |
 | **Economic status** | Low income |
 :::
 
@@ -38,17 +36,65 @@ toc: true
 | **First-line schizontocidal treatment** | AS+AQ |
 | **Second-line schizontocidal treatment** | _Not reported_ |
 | **Radical-cure regimen** | _Not reported_ |
-| **Rationale for ACT use** | Resistance to CQ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | No |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | _Not reported_ |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | _Not reported_ |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | _Not reported_ |
 | **Community follow-up of radical cure** | _Not reported_ |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Zoba/sub-zoba level&#39; 3 cateogires; High-transmission, low-transmission and malaria-free areas</p>
+</div>
+<div class="country-note-item">
+<h4>Cross-border context</h4>
+<p>With Sudan and Ethiopia</p>
+</div>
+<div class="country-note-item">
+<h4>Mobile and migrant population context</h4>
+<p>Internal migration to high endemicity areas</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy + RDT; Pf/Pv-specific combination RDT</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Treatment and community-care context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Rationale for ACT use</h4>
+<p>Resistance to CQ</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -94,6 +140,15 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | _Not reported_ |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **Overall policy** | _Not specified_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -117,9 +172,20 @@ toc: true
 | **Treatment guidelines (URL)** | _Not reported_ |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
-
-<div class="country-policy-context"><p>G6PD testing policy from 2024 World Malaria Report</p></div>
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>G6PD testing policy from 2024 World Malaria Report</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

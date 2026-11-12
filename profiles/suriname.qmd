@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Americas |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Eliminated/certified malaria-free |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Miners |
 | **Economic status** | Upper-middle income |
 :::
 
@@ -37,18 +35,50 @@ toc: true
 |---|---|
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | AL |
-| **Radical-cure regimen** | High-dose 14-day primaquine |
-| **Rationale for ACT use** | _Not reported_ |
+| **Radical-cure regimen** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | Yes |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Locality/focus level; Foci; mobility; importation; occupational/forest risk; High transmission: 4%; low transmission: 11%; malaria-free areas: 85%; 0 indigenous cases in 2023, WHO Certification: 2025</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Miners</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy and RDT (P.f + all species combo)</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ## Reported case numbers
@@ -68,48 +98,6 @@ toc: true
 <div class="vivax-chart__plot vivax-chart__plot--cases-line" data-vivax-chart="cases-line"></div>
 <script type="application/json" class="vivax-chart-payload">{"country":"Suriname","series":[{"year":"2018","value":12},{"year":"2019","value":104},{"year":"2020","value":147},{"year":"2021","value":22}]}</script>
 </div>
-
-## Case-management policy detail
-
-| | |
-|---|---|
-| **Last policy update** | 2018 |
-| **Schizontocidal drug** | CQ |
-| **G6PD testing policy** | Not explicitly mentioned |
-| **G6PD testing policy — details** | G6PD testing implemented for TQ use but not reflected in 2018 guidelines |
-| **G6PD implementation** | Implemented |
-| **G6PD implementation — details** | SD Biosensor introduced in 2022 for high-risk localities and active screening for Amerindian tribal population.  G6PD testing to be required for TQ after introduction. |
-| **Year of G6PD implementation** | _Not reported_ |
-| **Health system level (G6PD)** | _Not reported_ |
-| **Health system level (G6PD) — details** | _Not reported_ |
-| **Policy on PQ (overall)** | PQ 0.5 mg/kg/day over 14 days |
-
-::: {.country-policy-matrix}
-### Radical-cure treatment by G6PD status
-
-| G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
-|---|---|---|---|---|---|---|---|
-| **Overall policy** | PQ 0.5 mg/kg/day over 14 days | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | Be aware of adverse events if patient G6PD deficient |
-:::
-
-::: {.country-policy-matrix}
-### Radical-cure follow-up by G6PD status
-
-| G6PD category | Follow-up approach | Follow-up implementation | Follow-up implementation year |
-|---|---|---|---|
-| **Overall policy** | DOT | Not implemented | _Not reported_ |
-:::
-
-| | |
-|---|---|
-| **Next policy update** | _Not reported_ |
-| **Treatments under consideration** | _Not reported_ |
-| **Treatment guidelines (URL)** | _Not reported_ |
-| **National Strategic Plan (URL)** | _Not reported_ |
-
-### Country-specific policy context
-
-<div class="country-policy-context"><p>Follow-up implementation status from the 2024 World Malaria Report</p></div>
 
 ## Countries with similar reported characteristics
 

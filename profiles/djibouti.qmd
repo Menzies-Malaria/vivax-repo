@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Eastern Mediterranean |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Urban residents, outdoor workers, mobile migrants |
 | **Economic status** | Lower-middle income |
 :::
 
@@ -38,17 +36,39 @@ toc: true
 | **First-line schizontocidal treatment** | AL |
 | **Second-line schizontocidal treatment** | AS-AQ |
 | **Radical-cure regimen** | High-dose 14-day primaquine; Weekly primaquine for 8 weeks |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Yes |
 | **Type of G6PD testing** | Quantitative |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Partial (G6PD Deficient Only) |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<section class="country-note-group country-note-group--visible">
+<h3>Programme and transmission context</h3>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Urban residents, outdoor workers, mobile migrants</p>
+</div>
+</div>
+</section>
+<section class="country-note-group country-note-group--visible">
+<h3>Diagnosis and G6PD context</h3>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy, RDTs</p>
+</div>
+</div>
+</section>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -93,13 +113,25 @@ toc: true
 | **Health system level (G6PD) — details** | Up to health centre level |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: > 30% enzyme activity** | PQ 0.25-0.5 mg/kg/day over 14 days | Implemented | Implemented in health facilities where G6PD testing is available - limited implementation prior to 2023 | 2019 in certain hospitals, since 2023 up to the primary care level | No follow-up | _Not reported_ | _Not reported_ |
+| **G6PD intermediate female: 30-50% enzyme activity** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | Implemented in health facilities where G6PD testing is available - limited implementation prior to 2023 | 2019 in certain hospitals, since 2023 up to the primary care level | DOT | Not implemented | _Not reported_ |
+| **G6PD deficient: < 30% enzyme activity** | No PQ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+| **If no testing available** | No PQ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
 | G6PD category | Radical-cure treatment policy | Treatment implementation | Implementation details | Health-system level | Health-system details | Implementation year | Additional safety recommendations |
 |---|---|---|---|---|---|---|---|
-| **G6PD normal: > 30% enzyme activity** | PQ 0.25-0.5 mg/kg/day over 14 days | Implemented | Implemented in health facilities where G6PD testing is available - limited implementation prior to 2023 | Up to the health centre level | Up to the health centre level starting from 2023 | 2019 in certain hospitals, since 2023 up to the primary care  level | Not specified |
-| **G6PD intermediate female: 30-50% enzyme activity** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | Implemented in health facilities where G6PD testing is available - limited implementation prior to 2023 | Up to the health centre level | Up to the health centre level starting from 2023 | 2019 in certain hospitals, since 2023 up to the primary care  level | Under medical supervision |
+| **G6PD normal: > 30% enzyme activity** | PQ 0.25-0.5 mg/kg/day over 14 days | Implemented | Implemented in health facilities where G6PD testing is available - limited implementation prior to 2023 | Up to the health centre level | Up to the health centre level starting from 2023 | 2019 in certain hospitals, since 2023 up to the primary care level | Not specified |
+| **G6PD intermediate female: 30-50% enzyme activity** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | Implemented in health facilities where G6PD testing is available - limited implementation prior to 2023 | Up to the health centre level | Up to the health centre level starting from 2023 | 2019 in certain hospitals, since 2023 up to the primary care level | Under medical supervision |
 | **G6PD deficient: < 30% enzyme activity** | No PQ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
 | **If no testing available** | No PQ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ | _Not reported_ |
 :::
@@ -121,6 +153,57 @@ toc: true
 | **Treatments under consideration** | Tafenoquine |
 | **Treatment guidelines (URL)** | Yes |
 | **National Strategic Plan (URL)** | Yes |
+
+### Dosing and special populations
+
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>No dosage table</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Quinine and Clyndamicine</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>AL</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>Yes</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>None</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | South-East Asia |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | Two border districts - borders with Myanmar and India. Significant challenge |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | Forest product traders in hilly border areas |
-| **High-risk populations** | Mobile migrant populations, farmers, traders (forest product in hilly border areas), miners, fishermen, forest-goers, refugees (almost 1 million for Myanmar) |
 | **Economic status** | Lower-middle income |
 :::
 
@@ -38,17 +36,57 @@ toc: true
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | AL |
 | **Radical-cure regimen** | Low-dose 14-day primaquine |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | No |
 | **G6PD testing implemented** | Partial |
 | **Type of G6PD testing** | _Not reported_ |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | Yes |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>District level; 3 categories; API; receptivity, vulnerability, eco-epidemiology; Stratum 3: API ≥1/1,000 high burden/high transmission; Stratum 2: API &lt;1/1,000 low burden/low transmission; Stratum 1: API=0 with receptive/vulnerable or traditionally non-endemic areas</p>
+</div>
+<div class="country-note-item">
+<h4>Cross-border context</h4>
+<p>Two border districts - borders with Myanmar and India. Significant challenge</p>
+</div>
+<div class="country-note-item">
+<h4>Mobile and migrant population context</h4>
+<p>Forest product traders in hilly border areas</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Mobile migrant populations, farmers, traders (forest product in hilly border areas), miners, fishermen, forest-goers, refugees (almost 1 million for Myanmar)</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>RDT, microscopy</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -93,6 +131,15 @@ toc: true
 | **Health system level (G6PD) — details** | _Not reported_ |
 | **Policy on PQ (overall)** | PQ 0.25 mg/kg/day over 14 days |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **Not specified** | PQ 0.25 mg/kg/day over 14 days | Implemented | G6PD testing used in some at areas to guide treatment | 1994 | Close medical supervision, follow-up by community health workers three times for one vivax episode | Implemented | 2018 |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -116,13 +163,86 @@ toc: true
 | **Treatment guidelines (URL)** | <a href="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2024/12/03a1d62917a148e4a51c9188d79cb5ae.pdf" target="_blank" rel="noopener noreferrer">https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2024/12/03a1d62917a148e4a51c9188d79cb5ae.pdf</a> |
 | **National Strategic Plan (URL)** | <a href="https://apmen.org/sites/default/files/all_resources/National%20Strategic%20Plan_Malaria%20Elimination_Bangladesh_2021-2025.pdf" target="_blank" rel="noopener noreferrer">https://apmen.org/sites/default/files/all_resources/National%20Strategic%20Plan_Malaria%20Elimination_Bangladesh_2021-2025.pdf</a> |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>2017 is most recent guidelines, and they are being updated this year (2026). G6PD testing (quantitative) will be included as a recommendation in the new guidelines. There are plans to roll out the STANDARD G6PD test at the district health centre level, after a pilot in the community showed that community testing was not possible. According to the NSP, phased implementation is planned.</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
 
-### Additional policy notes
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage</h4>
+<p>No weight bands - weight dose calculation</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding</h4>
+<p>No weight bands - weight dose calculation</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>1 adult weight band: ≥ 50 kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>No</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>Provision of PQ after delivery and end of breastfeeding</p>
+</div>
+</div>
+</details>
+</div>
 
-<div class="country-policy-context"><p>G6PD Testing GF supported, update of guidelines 2023 but have not been able to find them online - according to Dr Mosiqure, 2017 is most recent guidelines, and they are being updated this year (2026). G6PD testing (quantitative) will be included as a recommendation in the new guidelines. There are plans to roll out the STANDARD G6PD test at the district health centre level, after a pilot in the community showed that community testing was not possible. According to the NSP, phased implementation is planned.</p></div>
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>2017 is most recent guidelines, and they are being updated this year (2026). G6PD testing (quantitative) will be included as a recommendation in the new guidelines. There are plans to roll out the STANDARD G6PD test at the district health centre level, after a pilot in the community showed that community testing was not possible. According to the NSP, phased implementation is planned.</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Additional policy notes</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>G6PD Testing GF supported, update of guidelines 2023 but have not been able to find them online - according to Dr Mosiqure, 2017 is most recent guidelines, and they are being updated this year (2026). G6PD testing (quantitative) will be included as a recommendation in the new guidelines. There are plans to roll out the STANDARD G6PD test at the district health centre level, after a pilot in the community showed that community testing was not possible. According to the NSP, phased implementation is planned.</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

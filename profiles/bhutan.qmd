@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | South-East Asia |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Elimination |
+| **Subnational programme phases** | No |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | Mostly from India |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | Construction workers |
-| **High-risk populations** | Construction workers (mobile migrant population) |
 | **Economic status** | Lower-middle income |
 :::
 
@@ -38,17 +36,65 @@ toc: true
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | ACT/AL |
 | **Radical-cure regimen** | Low-dose 7-day primaquine; Weekly primaquine for 8 weeks |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Yes |
 | **Type of G6PD testing** | Quantitative |
 | **Community malaria care** | Partial |
-| **Community malaria care — details** | Refer febrile patients for testing and treatment |
 | **Community vivax care** | No |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | Yes |
 | **Community follow-up of radical cure** | Yes (after DOT at hospital) |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>3 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Cross-border context</h4>
+<p>Mostly from India</p>
+</div>
+<div class="country-note-item">
+<h4>Mobile and migrant population context</h4>
+<p>Construction workers</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Construction workers (mobile migrant population)</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy, RDT, PCR</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Treatment and community-care context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Community malaria-care context</h4>
+<p>Refer febrile patients for testing and treatment</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -92,6 +138,18 @@ toc: true
 | **Health system level (G6PD) — details** | Up to health centre level |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: no definition** | PQ 0.5 mg/kg/day over 7 days | Implemented | Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan | 2023 | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented | 2013 |
+| **G6PD intermediate: no definition** | PQ 0.5 mg/kg/day over 7 days | Implemented | Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan | 2023 | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented | 2013 |
+| **G6PD deficient: no definition** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan | 2023 | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented | 2013 |
+| **If no testing available** | Based on risk-benefit assessment | Implemented | Prior to 2022/2023, 14 day low dose PQ implemented without G6PD testing for a long time in Bhutan | 2023 | DOT by health centre, all vivax cases are admitted in hospital for 3 days for treatment and monitoring - blood slides taken on day 1,2, 7, 28, 3 months, and one year | Implemented | 2013 |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -121,9 +179,79 @@ toc: true
 | **Treatment guidelines (URL)** | <a href="https://moh.gov.bt/wp-content/uploads/2025/01/MALARIA-TREATMENT-PROTOCOL_FINAL-PRINT-VERSION.pdf" target="_blank" rel="noopener noreferrer">https://moh.gov.bt/wp-content/uploads/2025/01/MALARIA-TREATMENT-PROTOCOL_FINAL-PRINT-VERSION.pdf</a><br><a href="https://moh.gov.bt/wp-content/uploads/2025/01/Revised-National-Guideline-on-Diagnosis-and-Treatment-on-Malaria-.pdf" target="_blank" rel="noopener noreferrer">https://moh.gov.bt/wp-content/uploads/2025/01/Revised-National-Guideline-on-Diagnosis-and-Treatment-on-Malaria-.pdf</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>Follow up of non-Bhutanese very difficult as they go back across the border; Prophylaxis treatment being considered for travellers and reactive treatment of index house and contacts travellers</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>5 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD normal: no definition, G6PD intermediate: no definition</h4>
+<p>Age banding</p>
+</div>
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD deficient: no definition</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding — G6PD normal: no definition, G6PD intermediate: no definition</h4>
+<p>Age banding - 1 adult age band : ≥ 16 years</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding — G6PD deficient: no definition</h4>
+<p>No dosage table</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding</h4>
+<p>Age banding - 1 adult age band : ≥ 16 years</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>Yes</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>Provision of PQ after the baby is 6 months old</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>Follow up of non-Bhutanese very difficult as they go back across the border; Prophylaxis treatment being considered for travellers and reactive treatment of index house and contacts travellers</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 

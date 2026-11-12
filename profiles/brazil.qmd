@@ -20,11 +20,9 @@ toc: true
 | **WHO Region** | Americas |
 | ***P. vivax* endemicity** | Yes |
 | **Programme phase** | Pre-elimination/elimination-intent |
+| **Subnational programme phases** | Yes |
 | **Cross-border transmission** | Yes |
-| **Cross-border transmission — details** | _Not reported_ |
 | **Mobile / migrant populations** | Yes |
-| **Mobile / migrant populations — details** | _Not reported_ |
-| **High-risk populations** | Indigenous populations, gold miners, forest and agricultural workers |
 | **Economic status** | Upper-middle income |
 :::
 
@@ -38,17 +36,49 @@ toc: true
 | **First-line schizontocidal treatment** | CQ |
 | **Second-line schizontocidal treatment** | Quinine + Clindamycin |
 | **Radical-cure regimen** | Tafenoquine; Low-dose 7-day primaquine; Weekly primaquine for 8 weeks |
-| **Rationale for ACT use** | _Not reported_ |
 | **G6PD testing in guidelines** | Yes |
 | **G6PD testing implemented** | Yes |
 | **Type of G6PD testing** | Quantitative |
 | **Community malaria care** | Yes |
-| **Community malaria care — details** | _Not reported_ |
 | **Community vivax care** | Yes |
-| **Community vivax care — details** | _Not reported_ |
 | **Follow-up of radical cure** | No |
 | **Community follow-up of radical cure** | No |
 :::
+
+## Detailed country context
+
+Country-specific information that adds context to the summary indicators above.
+
+<div class="country-note-groups">
+<details class="country-note-group">
+<summary>
+<span>Programme and transmission context</span>
+<small>2 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Subnational programme context</h4>
+<p>Municipacilty level; 3 categories; API, receptivity, transmission, High transmission: 2%; low transmission: 18%; malaria-free areas: 80%</p>
+</div>
+<div class="country-note-item">
+<h4>High-risk populations</h4>
+<p>Indigenous populations, gold miners, forest and agricultural workers</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Diagnosis and G6PD context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Diagnostic approach</h4>
+<p>Microscopy and RDT (P.f + P.v combo)</p>
+</div>
+</div>
+</details>
+</div>
 
 
 ::: {.country-contact-card data-profile-contact=true}
@@ -94,6 +124,18 @@ toc: true
 | **Health system level (G6PD) — details** | Up to community malaria unit level |
 | **Policy on PQ (overall)** | Dependent on G6PD test result |
 
+::: {.country-policy-matrix .country-policy-matrix--new}
+<div class="country-feature-new">NEW</div>
+### Combined treatment and follow-up by G6PD status
+
+| G6PD category | Radical-cure treatment policy | Treatment implementation | Treatment implementation details | Treatment implementation year | Follow-up approach | Follow-up implementation | Follow-up implementation year |
+|---|---|---|---|---|---|---|---|
+| **G6PD normal: ≥ 6.1 Ul/gHb** | TQ 300 mg or 100mg, 200 mg | Implemented | No primaquine or tafenoquine without G6PD testing | 2024 | No follow-up | _Not reported_ | _Not reported_ |
+| **G6PD intermediate: 4.1-6.0 Ul/gHb** | PQ 0.5 mg/kg/day over 7 days | Implemented | No primaquine or tafenoquine without G6PD testing | 2024 | No follow-up | _Not reported_ | _Not reported_ |
+| **G6PD deficient: ≤ 4.0 Ul/gHb** | PQ 0.75 mg/kg/week weekly for 8 weeks | Implemented | No primaquine or tafenoquine without G6PD testing | 2024 | DOT where possible | Partially implemented | 2024 |
+| **If no testing available** | No PQ or TQ | Implemented | No primaquine or tafenoquine without G6PD testing | 2024 | _Not reported_ | _Not reported_ | _Not reported_ |
+:::
+
 ::: {.country-policy-matrix}
 ### Radical-cure treatment by G6PD status
 
@@ -123,13 +165,106 @@ toc: true
 | **Treatment guidelines (URL)** | <a href="https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/malaria/tratamento/guia_tratamento_malaria_2nov21_isbn_site.pdf/view" target="_blank" rel="noopener noreferrer">https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/malaria/tratamento/guia_tratamento_malaria_2nov21_isbn_site.pdf/view</a> |
 | **National Strategic Plan (URL)** | _Not reported_ |
 
-### Country-specific policy context
+### Dosing and special populations
 
-<div class="country-policy-context"><p>Brazil has approved the use of TQ in adults in 2023 with quant G6PD testing being rolled out being completed between June 2024 and April 2025 in 49 municipalities in six states and nine Special Indigenous Health Districts. In June 2025, Brazil adopted a child formulation of TQ.</p></div>
+Reported dosing structures and treatment recommendations for specific populations.
 
-### Additional policy notes
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Dosing and weight banding</span>
+<small>8 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Adult primaquine dosage bG6PD normal: ≥ 6.1 Ul/gHb</h4>
+<p>Fixed dose</p>
+</div>
+<div class="country-note-item">
+<h4>Adult primaquine dosage — G6PD intermediate: 4.1-6.0 Ul/gHb</h4>
+<p>0.4 - 1 vs 0.5</p>
+</div>
+<div class="country-note-item">
+<h4>Adult primaquine dosage bG6PD deficient: ≤ 4.0 Ul/gHb</h4>
+<p>0.6 - 1.3 vs 0.75</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding bG6PD normal: ≥ 6.1 Ul/gHb</h4>
+<p>Fixed dose</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding — G6PD intermediate: 4.1-6.0 Ul/gHb</h4>
+<p>3 adult weight bands: 50-69 kgs, 70-89 kgs, 90-120 kgs</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine weight-based banding bG6PD deficient: ≤ 4.0 Ul/gHb</h4>
+<p>3 adult weight bands: 50-69kgs, 70-89kgs, 90-120kgs</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding bG6PD normal: ≥ 6.1 Ul/gHb</h4>
+<p>1 adult weight band: ≥ 50 kgs</p>
+</div>
+<div class="country-note-item">
+<h4>Schizontocidal weight-based banding bG6PD intermediate: 4.1-6.0 Ul/gHb, G6PD deficient: ≤ 4.0 Ul/gHb</h4>
+<p>3 adult weight bands: 50-69 kgs, 70-89 kgs, 90-120 kgs</p>
+</div>
+</div>
+</details>
+<details class="country-note-group">
+<summary>
+<span>Pregnancy and treatment policy</span>
+<small>4 notes</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Treatment in the first trimester</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Treatment in the second and third trimesters</h4>
+<p>Chloroquine</p>
+</div>
+<div class="country-note-item">
+<h4>Chloroquine prophylaxis</h4>
+<p>No</p>
+</div>
+<div class="country-note-item">
+<h4>Primaquine recommendation</h4>
+<p>First month after finishing breastfeeding, to be tested for malaria. If negative only provided 7 day PQ. If positive, provided CQ + 7-day PQ</p>
+</div>
+</div>
+</details>
+</div>
 
-<div class="country-policy-context"><p>TQ not included in 2021 Policy, but Brazil has approved the use of TQ in adults in 2023 with quant G6PD testing being rolled out being completed between June 2024 and April 2025 in 49 municipalities in six states and nine Special Indigenous Health Districts. In June 2025, Brazil adopted a child formulation of TQ</p></div>
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Country-specific policy context</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>Brazil has approved the use of TQ in adults in 2023 with quant G6PD testing being rolled out being completed between June 2024 and April 2025 in 49 municipalities in six states and nine Special Indigenous Health Districts. In June 2025, Brazil adopted a child formulation of TQ.</p>
+</div>
+</div>
+</details>
+</div>
+
+<div class="country-note-groups country-note-groups--case-management">
+<details class="country-note-group">
+<summary>
+<span>Additional policy notes</span>
+<small>1 note</small>
+</summary>
+<div class="country-note-group__body">
+<div class="country-note-item">
+<h4>Policy note</h4>
+<p>TQ not included in 2021 Policy, but Brazil has approved the use of TQ in adults in 2023 with quant G6PD testing being rolled out being completed between June 2024 and April 2025 in 49 municipalities in six states and nine Special Indigenous Health Districts. In June 2025, Brazil adopted a child formulation of TQ</p>
+</div>
+</div>
+</details>
+</div>
 
 ## Countries with similar reported characteristics
 
