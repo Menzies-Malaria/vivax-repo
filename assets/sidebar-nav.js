@@ -1,9 +1,10 @@
 (function () {
   "use strict";
 
-  const STORAGE_KEY = "vivax-sidebar-collapsed";
+  // Version the preference key so the former automatic compact-desktop
+  // behaviour does not leave existing visitors with a collapsed sidebar.
+  const STORAGE_KEY = "vivax-sidebar-collapsed-v2";
   const DESKTOP_QUERY = "(min-width: 1280px)";
-  const COMPACT_DESKTOP_QUERY = "(min-width: 1280px) and (max-width: 1599.98px)";
   const icons = [
     ["index.html", "bi-geo-alt"],
     ["overview.html", "bi-house"],
@@ -85,13 +86,6 @@
       return !mobileSiteRequested && window.matchMedia(DESKTOP_QUERY).matches;
     }
 
-    function isCompactDesktop() {
-      return isDesktopLayout() && window.matchMedia(COMPACT_DESKTOP_QUERY).matches;
-    }
-
-    let hasSavedPreference = localStorage.getItem(STORAGE_KEY) !== null;
-    let compactOverride = false;
-
     function syncButton() {
       const desktop = isDesktopLayout();
       const collapsed = desktop && isCollapsed();
@@ -106,36 +100,26 @@
       syncButton();
       if (persist) {
         localStorage.setItem(STORAGE_KEY, collapsed ? "true" : "false");
-        hasSavedPreference = true;
       }
       window.dispatchEvent(new Event("resize"));
     }
 
     const saved = localStorage.getItem(STORAGE_KEY);
-    const initialCollapsed = isCompactDesktop()
-      ? true
-      : hasSavedPreference && saved === "true";
+    const initialCollapsed = saved === "true";
     apply(initialCollapsed, false);
 
     button.addEventListener("click", () => {
-      const compact = isCompactDesktop();
-      compactOverride = compact;
-      apply(!isCollapsed(), !compact);
+      apply(!isCollapsed(), true);
     });
     window.addEventListener("resize", () => {
       const desktop = isDesktopLayout();
-      const compact = isCompactDesktop();
       if (!desktop) {
         document.body.classList.remove("vivax-sidebar-collapsed");
-        compactOverride = false;
-      } else if (compact && !compactOverride) {
-        document.body.classList.add("vivax-sidebar-collapsed");
-      } else if (!compact) {
+      } else {
         document.body.classList.toggle(
           "vivax-sidebar-collapsed",
-          hasSavedPreference && localStorage.getItem(STORAGE_KEY) === "true"
+          localStorage.getItem(STORAGE_KEY) === "true"
         );
-        compactOverride = false;
       }
       syncButton();
     });

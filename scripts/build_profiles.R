@@ -657,7 +657,7 @@ similar_country_cards <- function(current_row, all_rows) {
   )
 }
 
-change_date_key <- function(value) {
+parse_change_date <- function(value) {
   value <- str_squish(as.character(value))
   formats <- c("%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%d %B %Y", "%d %b %Y")
   parsed <- rep(as.Date(NA), length(value))
@@ -665,7 +665,16 @@ change_date_key <- function(value) {
     missing <- is.na(parsed) & nzchar(value)
     parsed[missing] <- as.Date(value[missing], format = format)
   }
-  as.numeric(parsed)
+  parsed
+}
+
+change_date_key <- function(value) {
+  as.numeric(parse_change_date(value))
+}
+
+change_year_label <- function(value) {
+  parsed <- parse_change_date(value)
+  ifelse(is.na(parsed), "Date unavailable", format(parsed, "%Y"))
 }
 
 change_log_section <- function(country, all_changes) {
@@ -691,14 +700,28 @@ change_log_section <- function(country, all_changes) {
     ))
   }
 
-  date_key <- change_date_key(changes$`Published date`)
+  timeline_dates <- ifelse(
+    nzchar(str_squish(changes$`Published date`)),
+    changes$`Published date`,
+    changes$`Effective date`
+  )
+  date_key <- change_date_key(timeline_dates)
   changes <- changes[order(-date_key, na.last = TRUE), , drop = FALSE]
+  timeline_dates <- timeline_dates[order(-date_key, na.last = TRUE)]
+  year_labels <- change_year_label(timeline_dates)
 
-  entries <- unlist(lapply(seq_len(nrow(changes)), function(i) {
+  entry_for <- function(i) {
     change <- changes[i, , drop = FALSE]
-    published <- row_val(change, "Published date", "Date not reported")
+    published <- row_val(change, "Published date")
     summary <- row_val(change, "Public summary", "Repository record updated")
     effective <- row_val(change, "Effective date")
+    display_date <- if (nzchar(published)) {
+      published
+    } else if (nzchar(effective)) {
+      effective
+    } else {
+      "Date unavailable"
+    }
     fields <- row_val(change, "Fields changed")
     source_type <- row_val(change, "Source type")
     source_url <- row_val(change, "Public source link")
@@ -709,6 +732,12 @@ change_log_section <- function(country, all_changes) {
       meta <- c(meta, sprintf(
         '<div><dt>Effective date</dt><dd>%s</dd></div>',
         html_escape(effective)
+      ))
+    }
+    if (nzchar(published)) {
+      meta <- c(meta, sprintf(
+        '<div><dt>Published date</dt><dd>%s</dd></div>',
+        html_escape(published)
       ))
     }
     if (nzchar(source_type)) {
@@ -752,14 +781,38 @@ change_log_section <- function(country, all_changes) {
     c(
       '<article class="country-change-log__entry">',
       '<div class="country-change-log__marker" aria-hidden="true"></div>',
-      '<div class="country-change-log__content">',
-      sprintf('<div class="country-change-log__date">%s</div>', html_escape(published)),
-      sprintf('<h3>%s</h3>', html_escape(summary)),
+      '<details class="country-change-log__content">',
+      '<summary class="country-change-log__summary">',
+      '<div class="country-change-log__summary-main">',
+      sprintf('<div class="country-change-log__date">%s</div>', html_escape(display_date)),
+      sprintf('<h4>%s</h4>', html_escape(summary)),
       field_tags,
+      "</div>",
+      '<span class="country-change-log__toggle" aria-hidden="true"></span>',
+      "</summary>",
+      '<div class="country-change-log__details">',
       if (length(meta)) c('<dl class="country-change-log__meta">', meta, '</dl>') else character(),
       source_link,
       "</div>",
+      "</details>",
       "</article>"
+    )
+  }
+
+  years <- unique(year_labels)
+  year_groups <- unlist(lapply(years, function(year) {
+    indices <- which(year_labels == year)
+    entries <- unlist(lapply(indices, entry_for), use.names = FALSE)
+    c(
+      '<section class="country-change-log__year">',
+      sprintf(
+        '<div class="country-change-log__year-label" role="heading" aria-level="3">%s</div>',
+        html_escape(year)
+      ),
+      '<div class="country-change-log__entries">',
+      entries,
+      "</div>",
+      "</section>"
     )
   }), use.names = FALSE)
 
@@ -769,7 +822,7 @@ change_log_section <- function(country, all_changes) {
     intro,
     "",
     '<div class="country-change-log">',
-    entries,
+    year_groups,
     "</div>",
     ""
   )

@@ -113,6 +113,33 @@ change_log_data_source <- function(
   ""
 }
 
+repair_mojibake <- function(value) {
+  # Google Sheets/CSV exports can occasionally expose UTF-8 punctuation as
+  # Windows-1252 mojibake (for example, an en dash becomes "â€“"). Repair the
+  # small set of punctuation used by repository content at the data boundary.
+  replacements <- c(
+    "â€“" = "–",
+    "â€”" = "—",
+    "â€˜" = "‘",
+    "â€™" = "’",
+    "â€œ" = "“",
+    "â€" = "”",
+    "â‰¤" = "≤",
+    "â‰¥" = "≥",
+    "Â·" = "·",
+    "Â©" = "©"
+  )
+  result <- as.character(value)
+  for (broken in names(replacements)) {
+    result <- stringr::str_replace_all(
+      result,
+      stringr::fixed(broken),
+      replacements[[broken]]
+    )
+  }
+  result
+}
+
 load_sheet <- function(path) {
   df <- readr::read_csv(
     path,
@@ -122,7 +149,10 @@ load_sheet <- function(path) {
   )
   df[is.na(df)] <- ""
   df[] <- lapply(df, function(column) {
-    iconv(as.character(column), from = "", to = "UTF-8", sub = "�")
+    column |>
+      as.character() |>
+      iconv(from = "", to = "UTF-8", sub = "�") |>
+      repair_mojibake()
   })
   names(df) <- trimws(names(df))
   df
